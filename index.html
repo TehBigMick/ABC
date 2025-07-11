@@ -1,0 +1,76 @@
+<!-- index.html - Home page -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="AuthorsBookClub - A community and toolkit for indie authors" />
+  <title>AuthorsBookClub - Home</title>
+  <!-- Include Google Fonts for styling -->
+  <link href="https://fonts.googleapis.com/css2?family=Merriweather&family=Open+Sans&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <!-- Navigation Bar -->
+  <nav>
+    <a href="index.html" class="logo">AuthorsBookClub</a>
+    <button class="menu-toggle" onclick="toggleMenu()">☰ Menu</button>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="resources.html">Resources</a></li>
+      <li><a href="services.html">Services</a></li>
+      <li><a href="forum.html">Community</a></li>
+      <li><a href="store.html">Store</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </nav>
+
+  <!-- Hero Section with Book of the Day -->
+  <header class="hero">
+    <div class="book-of-day">
+      <img id="book-cover" src="images/book1.jpg" alt="Cover of 'Example Book Title' by Author Name" />
+      <div class="book-info">
+        <h2 id="book-title">Example Book Title</h2>
+        <p id="book-author">by Author Name</p>
+        <p id="book-description">This is a brief description or tagline for the book of the day to entice readers.</p>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main content sections -->
+  <main>
+    <section class="intro">
+      <h1>Welcome to AuthorsBookClub</h1>
+      <p>AuthorsBookClub is a one-stop community and resource hub for independent authors. Our mission is to help you transform your manuscript into a polished, published, and well-marketed book.</p>
+      <p>Join our community of indie authors to share experiences, get feedback, and learn from each other. Whether you're plotting your first novel or marketing your latest release, we have tools, resources, and a supportive network to guide you.</p>
+    </section>
+
+    <section class="highlights">
+      <div class="highlight">
+        <h3>Writing & Publishing Resources</h3>
+        <p>From drafting your manuscript to launching your book, explore our guides and recommended tools in the <a href="resources.html">Resources</a> section.</p>
+      </div>
+      <div class="highlight">
+        <h3>Professional Services</h3>
+        <p>Need an editor or a cover designer? Find trusted professionals in our <a href="services.html">Services</a> directory to help polish your book.</p>
+      </div>
+      <div class="highlight">
+        <h3>Author Community</h3>
+        <p>Writing doesn't have to be lonely. Connect with fellow authors in our <a href="forum.html">community forum</a> to exchange tips, find beta readers, and stay motivated.</p>
+      </div>
+      <div class="highlight">
+        <h3>Tools & Store</h3>
+        <p>Discover software, apps, and other products that make writing and publishing easier in our <a href="store.html">Store</a> section.</p>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2025 AuthorsBookClub. All rights reserved.</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
