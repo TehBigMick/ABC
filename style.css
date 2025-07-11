@@ -1,0 +1,247 @@
+/* style.css - Main stylesheet */
+body {
+  font-family: 'Open Sans', sans-serif;
+  font-size: 16px;
+  color: #333;
+  line-height: 1.6;
+  margin: 0;
+  padding: 0;
+  background: #FFFFFF;
+}
+
+/* Headings: use a serif font for a literary feel */
+h1, h2, h3, h4, h5 {
+  font-family: 'Merriweather', serif;
+  color: #333;
+  margin-top: 1rem;
+}
+
+/* Links */
+a {
+  color: #3498db;
+  text-decoration: none;
+}
+a:hover {
+  text-decoration: underline;
+  color: #2980b9;
+}
+
+/* Navigation Bar Styles */
+nav {
+  background: #34495e;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.5rem 1rem;
+  position: relative;
+}
+nav .logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #fff;
+  text-decoration: none;
+}
+nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+}
+nav ul li {
+  margin-left: 1rem;
+}
+nav ul li a {
+  color: #fff;
+  text-decoration: none;
+}
+nav ul li a:hover {
+  text-decoration: underline;
+}
+/* Menu toggle button (for mobile) */
+nav .menu-toggle {
+  display: none;
+  background: none;
+  border: none;
+  color: #fff;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+nav .menu-toggle:focus {
+  outline: 2px solid #fff;
+}
+
+/* Hero section (Home page) */
+.hero {
+  padding: 2rem 1rem;
+  background: #f0f0f0;  /* Placeholder background; could be replaced with an image or banner */
+  text-align: center;
+}
+.book-of-day {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+.book-of-day img {
+  width: 150px;
+  height: auto;
+  border: 2px solid #ccc;
+  margin: 0 1rem 1rem 0;
+}
+.book-of-day .book-info {
+  max-width: 600px;
+  text-align: left;
+}
+.book-of-day h2 {
+  font-size: 1.5rem;
+  margin: 0.2rem 0;
+}
+.book-of-day p {
+  margin: 0.2rem 0;
+}
+
+/* Highlights section (Home) */
+.highlights {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin: 2rem 0;
+}
+.highlight {
+  flex: 1 1 45%;
+  background: #f9f9f9;
+  padding: 1rem;
+  border-radius: 5px;
+}
+.highlight h3 {
+  margin-top: 0;
+}
+
+/* Main content common styles */
+main {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 1rem;
+}
+main header h1 {
+  margin-top: 0;
+}
+section {
+  margin-bottom: 2rem;
+}
+main ul {
+  margin: 0 0 1rem 1.25rem;
+}
+main ul li {
+  margin-bottom: 0.5rem;
+}
+
+/* Store product list */
+.product-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+}
+.product {
+  flex: 1 1 45%;
+  background: #f9f9f9;
+  padding: 1rem;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+}
+.product img {
+  max-width: 100%;
+  height: auto;
+}
+.product h2 {
+  margin-top: 0.5rem;
+}
+.product p {
+  font-size: 0.95rem;
+  line-height: 1.4;
+}
+
+/* Contact form styles */
+form {
+  max-width: 600px;
+}
+.form-group {
+  margin-bottom: 1rem;
+}
+label {
+  font-weight: bold;
+  display: block;
+  margin-bottom: 0.3rem;
+}
+input, textarea {
+  width: 100%;
+  padding: 0.5rem;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 1rem;
+}
+textarea {
+  resize: vertical;
+}
+button[type=submit] {
+  background: #3498db;
+  color: #fff;
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
+  font-size: 1rem;
+}
+button[type=submit]:hover {
+  background: #2980b9;
+}
+
+/* Footer */
+footer {
+  background: #34495e;
+  color: #fff;
+  text-align: center;
+  padding: 1rem;
+}
+footer p {
+  margin: 0;
+  font-size: 0.9rem;
+}
+
+/* Responsive Design: Mobile Styles */
+@media (max-width: 768px) {
+  /* Navigation adjusts for mobile */
+  nav ul {
+    display: none;  /* hide menu links by default on small screens */
+    flex-direction: column;
+    background: #34495e;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+  }
+  nav ul.open {
+    display: flex;  /* show menu when .open is added */
+  }
+  nav ul li {
+    margin: 0;
+    border-top: 1px solid #465b72;
+  }
+  nav ul li a {
+    display: block;
+    padding: 0.5rem 1rem;
+  }
+  nav .menu-toggle {
+    display: block;
+    position: absolute;
+    right: 1rem;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+  /* Make highlights and products full-width on narrow screens */
+  .highlight, .product {
+    flex: 1 1 100%;
+  }
+}
