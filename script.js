@@ -12,7 +12,6 @@
       toggle.setAttribute("aria-label", isOpen ? "Close menu" : "Open menu");
     });
 
-    // Close menu when a link is clicked (mobile)
     nav.querySelectorAll("a").forEach((a) => {
       a.addEventListener("click", () => {
         if (nav.classList.contains("is-open")) {
@@ -24,11 +23,23 @@
     });
   }
 
-  // Placeholder contact form action
-  const contactBtn = document.getElementById("contactSubmit");
-  if (contactBtn) {
-    contactBtn.addEventListener("click", () => {
-      alert("Placeholder form. Next step: connect this to Formspree/Netlify Forms or your backend.");
+  // Placeholder demo form behaviour
+  const demoBtn = document.getElementById("demoSubmit");
+  if (demoBtn) {
+    demoBtn.addEventListener("click", () => {
+      const name = (document.getElementById("name")?.value || "").trim();
+      const email = (document.getElementById("email")?.value || "").trim();
+      const penname = (document.getElementById("penname")?.value || "").trim();
+      const genre = (document.getElementById("genre")?.value || "").trim();
+
+      if (!name || !email || !penname || !genre) {
+        alert("Please fill in the required fields.");
+        return;
+      }
+
+      alert(
+        "Demo request captured (placeholder).\n\nNext step: connect this form to Formspree/Netlify Forms or your backend so requests are actually sent."
+      );
     });
   }
 })();
