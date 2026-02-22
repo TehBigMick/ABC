@@ -1,201 +1,542 @@
 <!doctype html>
 <html lang="en-GB">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>AuthorsBookClub — Done-for-you author pages for indie authors</title>
-  <meta name="description" content="Professional author landing pages built and maintained for indie authors. We handle the tech. You focus on writing." />
-  <link rel="canonical" href="https://www.authorsbookclub.com/" />
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Lindsay Buroker | Fantasy & Science Fiction</title>
+<meta name="description" content="Fantasy and science fiction adventures, series reading order, and links to start reading today." />
+<link rel="canonical" href="https://www.authorsbookclub.com/authors/lindsay-buroker/" />
+<link rel="stylesheet" href="../../styles.css" />
 
-  <meta property="og:title" content="AuthorsBookClub — Done-for-you author pages for indie authors" />
-  <meta property="og:description" content="We build and manage your author landing page with your books and buy links — without the tech headache." />
-  <meta property="og:url" content="https://www.authorsbookclub.com/" />
-  <meta property="og:type" content="website" />
+<style>
+:root{
+  --ink:#1c1713;
+  --ink-soft:#3b342c;
+  --gold:#c7a44c;
+  --emerald:#2d7a66;
+  --paper:#f5edd9;
+  --paper-2:#e9dfc9;
+  --panel: rgba(255,255,255,.72);
+  --line: rgba(28,23,19,.18);
+  --shadow: 0 18px 40px rgba(0,0,0,.14);
+  --radius:18px;
 
-  <link rel="stylesheet" href="styles.css" />
+  /* Glow colours tuned to fantasy covers */
+  --glow-gold: rgba(199,164,76,.40);
+  --glow-emerald: rgba(45,122,102,.28);
+  --glow-warm: rgba(168,86,45,.22);
+}
+
+/* Background inspired by cover tones */
+body.author-page{
+  background:
+    radial-gradient(900px 500px at 20% 15%, rgba(199,164,76,.22), transparent 60%),
+    radial-gradient(900px 500px at 80% 25%, rgba(45,122,102,.16), transparent 60%),
+    radial-gradient(900px 500px at 55% 90%, rgba(168,86,45,.14), transparent 60%),
+    linear-gradient(180deg, var(--paper) 0%, var(--paper-2) 100%);
+  color: var(--ink);
+}
+
+main, header, footer{ position:relative; z-index:2; }
+
+/* Header */
+.site-header{
+  background: rgba(245,237,217,.92);
+  border-bottom: 1px solid rgba(0,0,0,.08);
+  backdrop-filter: blur(8px);
+}
+.brand-mark{
+  background: linear-gradient(135deg, var(--gold), var(--emerald));
+  color: var(--ink);
+}
+
+/* HERO */
+.hero{ padding: 4rem 0 2rem; }
+.author-flex{
+  display:flex;
+  gap:2rem;
+  align-items:center;
+}
+.author-photo{
+  width:120px;
+  height:120px;
+  border-radius:50%;
+  object-fit:cover;
+  box-shadow: var(--shadow);
+  border: 1px solid rgba(0,0,0,.15);
+}
+
+h1{
+  margin:0;
+  font-family: Georgia, serif;
+  font-size: clamp(2rem, 3vw, 2.6rem);
+}
+.lead{
+  color: var(--ink-soft);
+  margin: .6rem 0 1.2rem;
+  font-size: 1.05rem;
+}
+
+.hero-actions{
+  display:flex;
+  gap:1rem;
+  flex-wrap:wrap;
+}
+
+.btn{
+  padding: .7rem 1.2rem;
+  font-weight: 800;
+  border-radius: 12px;
+  border: 1px solid rgba(0,0,0,.20);
+  text-decoration:none;
+  cursor:pointer;
+}
+.btn-primary{
+  background: linear-gradient(135deg, var(--gold), var(--emerald));
+  color: var(--ink); /* no white text */
+  border:none;
+}
+.btn-ghost{
+  background: rgba(255,255,255,.80);
+  color: var(--ink);
+}
+
+/* Sections */
+.section{ padding: 3rem 0; }
+.section-alt{
+  background: rgba(255,255,255,.35);
+  border-top: 1px solid rgba(0,0,0,.06);
+  border-bottom: 1px solid rgba(0,0,0,.06);
+}
+
+/* Book grid */
+.grid{
+  display:grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+}
+.book-card{
+  background: var(--panel);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  border: 1px solid var(--line);
+  padding: 1rem;
+  display:flex;
+  flex-direction:column;
+  overflow:hidden;
+}
+
+/* Cover + glow */
+.cover-wrap{
+  position:relative;
+  border-radius: 14px;
+  overflow:hidden;
+  margin-bottom: 1rem;
+}
+.book-cover{
+  width:100%;
+  aspect-ratio: 2 / 3;
+  object-fit:cover;
+  border-radius: 14px;
+  display:block;
+  box-shadow: 0 12px 30px rgba(0,0,0,.14);
+}
+
+/* The glow sits behind the cover */
+.cover-wrap::before{
+  content:"";
+  position:absolute;
+  inset: -18px;
+  background:
+    radial-gradient(240px 240px at 30% 25%, var(--glow-gold), transparent 60%),
+    radial-gradient(280px 280px at 70% 55%, var(--glow-emerald), transparent 62%),
+    radial-gradient(260px 260px at 40% 90%, var(--glow-warm), transparent 65%);
+  filter: blur(10px);
+  opacity: .95;
+  z-index: 0;
+}
+.cover-wrap img{ position:relative; z-index:1; }
+
+/* Slight animated shimmer (very subtle) */
+@media (prefers-reduced-motion: no-preference){
+  .cover-wrap::before{
+    animation: glowDrift 6.5s ease-in-out infinite;
+  }
+  @keyframes glowDrift{
+    0%{ transform: translate3d(0,0,0) scale(1); opacity:.88; }
+    50%{ transform: translate3d(6px,-6px,0) scale(1.02); opacity:.96; }
+    100%{ transform: translate3d(0,0,0) scale(1); opacity:.88; }
+  }
+}
+
+.book-title{
+  font-family: Georgia, serif;
+  margin: .2rem 0 .5rem;
+  font-size: 1.2rem;
+}
+.book-desc{
+  color: var(--ink-soft);
+  font-size: .95rem;
+  margin: 0 0 1rem;
+}
+.book-actions{ margin-top:auto; }
+
+/* Accordion */
+.accordion{
+  display:grid;
+  gap: .85rem;
+  margin-top: 1rem;
+}
+details.accordion-item{
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  overflow:hidden;
+}
+details.accordion-item summary{
+  list-style:none;
+  cursor:pointer;
+  padding: 1rem 1.1rem;
+  font-weight: 900;
+  color: var(--ink);
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap: 1rem;
+}
+details.accordion-item summary::-webkit-details-marker{ display:none; }
+
+.accordion-meta{
+  font-weight: 800;
+  color: var(--ink-soft);
+  font-size: .92rem;
+}
+
+.accordion-content{
+  padding: 0 1.1rem 1.1rem;
+  color: var(--ink-soft);
+}
+.reading-list{
+  margin: .75rem 0 0;
+  padding-left: 1.1rem;
+}
+.reading-list li{ margin: .35rem 0; }
+
+.accordion-chevron{
+  width: 34px;
+  height: 34px;
+  border-radius: 12px;
+  border: 1px solid rgba(0,0,0,.16);
+  background: rgba(255,255,255,.70);
+  display:grid;
+  place-items:center;
+  flex: 0 0 auto;
+}
+details[open] .accordion-chevron{
+  transform: rotate(180deg);
+}
+
+/* Newsletter */
+.signup{
+  display:grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  align-items: start;
+}
+.contact-form{
+  background: var(--panel);
+  padding: 1.5rem;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  border: 1px solid var(--line);
+}
+label{ font-weight: 900; display:block; margin-bottom:.35rem; }
+input{
+  width:100%;
+  padding:.75rem;
+  border-radius: 10px;
+  border: 1px solid rgba(0,0,0,.25);
+  margin-bottom: 1rem;
+  background: rgba(255,255,255,.88);
+  color: var(--ink);
+}
+
+/* Footer */
+footer{
+  background: rgba(240,230,209,.92);
+  padding: 2rem 0;
+  border-top: 1px solid rgba(0,0,0,.08);
+}
+
+/* Sticky bar */
+.sticky-bar{
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 9999;
+  padding: .75rem 0;
+  background: rgba(245,237,217,.94);
+  border-top: 1px solid rgba(0,0,0,.12);
+  backdrop-filter: blur(10px);
+  transform: translateY(110%);
+  transition: transform .25s ease;
+}
+.sticky-bar.is-visible{ transform: translateY(0); }
+
+.sticky-inner{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap: 1rem;
+}
+.sticky-left{
+  display:flex;
+  align-items:center;
+  gap: .75rem;
+  min-width: 0;
+}
+.sticky-avatar{
+  width: 38px;
+  height: 38px;
+  border-radius: 999px;
+  object-fit: cover;
+  border: 1px solid rgba(0,0,0,.15);
+}
+.sticky-title{
+  font-weight: 900;
+  color: var(--ink);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 42vw;
+}
+.sticky-actions{
+  display:flex;
+  gap: .6rem;
+  flex-wrap: wrap;
+  justify-content:flex-end;
+}
+.sticky-close{
+  background: rgba(255,255,255,.80);
+  color: var(--ink);
+  border: 1px solid rgba(0,0,0,.18);
+  border-radius: 12px;
+  padding: .55rem .75rem;
+  font-weight: 900;
+  cursor: pointer;
+}
+
+@media (max-width: 900px){
+  .grid{ grid-template-columns: 1fr; }
+  .signup{ grid-template-columns: 1fr; }
+  .author-flex{ flex-direction: column; align-items:flex-start; }
+  .sticky-title{ max-width: 50vw; }
+}
+@media (max-width: 520px){
+  .sticky-actions .btn{ padding: .6rem .9rem; }
+  .sticky-title{ max-width: 46vw; }
+}
+</style>
 </head>
 
-<body>
-<a class="skip-link" href="#main">Skip to content</a>
+<body class="author-page">
 
 <header class="site-header">
   <div class="container header-inner">
-    <a class="brand" href="/">
-      <span class="brand-mark">ABC</span>
+    <a class="brand" href="/" aria-label="AuthorsBookClub home">
+      <span class="brand-mark" aria-hidden="true">ABC</span>
       <span class="brand-text">AuthorsBookClub</span>
     </a>
-
-    <nav class="site-nav">
-      <a href="#examples">Examples</a>
-      <a href="#how">How it works</a>
-      <a href="#included">What’s included</a>
-      <a class="nav-cta" href="#get-started">Get a free demo page</a>
-    </nav>
   </div>
 </header>
 
-<main id="main">
+<main>
 
 <!-- HERO -->
 <section class="hero">
-  <div class="container hero-grid">
+  <div class="container author-flex">
+    <img
+      src="./assets/author.webp"
+      alt="Lindsay Buroker author portrait"
+      class="author-photo"
+      loading="lazy"
+      width="120"
+      height="120"
+    />
+
     <div>
-      <p class="eyebrow">Done-for-you author landing pages</p>
-      <h1>A Professional Author Page Built for You — and Kept Updated</h1>
+      <h1>Lindsay Buroker</h1>
       <p class="lead">
-        A clean, credible author landing page with your books and buy links.
-        We build it, host it, and handle updates so you don’t waste time on tech.
+        Fast-paced fantasy and science fiction adventures with series you can disappear into.
       </p>
 
       <div class="hero-actions">
-        <a class="btn btn-primary" href="#get-started">Get a free demo page</a>
-        <a class="btn btn-ghost" href="#examples">See examples</a>
+        <a class="btn btn-primary" href="#start">Start reading</a>
+        <a class="btn btn-ghost" href="#books">Browse books</a>
+        <a class="btn btn-ghost" href="https://www.amazon.com/stores/Lindsay-Buroker/author/B004FSRHUE" target="_blank" rel="noopener">Amazon</a>
       </div>
-
-      <p class="trust-line">
-        No contracts. Cancel anytime. You own your content.
-      </p>
-    </div>
-
-    <div class="hero-visual">
-      <div class="mock-grid">
-        <div class="mock-card"></div>
-        <div class="mock-card"></div>
-      </div>
-      <p class="microcopy">
-        Real case-study examples below.
-      </p>
     </div>
   </div>
 </section>
 
-<!-- HOW IT WORKS -->
-<section id="how" class="section section-alt">
+<!-- START HERE -->
+<section class="section section-alt" id="start">
   <div class="container">
-    <h2>How it works</h2>
-    <div class="steps">
-      <div class="step">
-        <span class="step-num">1</span>
-        <h3>Send your details</h3>
-        <p>Bio, books, covers, buy links.</p>
-      </div>
-      <div class="step">
-        <span class="step-num">2</span>
-        <h3>We build your page</h3>
-        <p>Professional layout, series grouped clearly.</p>
-      </div>
-      <div class="step">
-        <span class="step-num">3</span>
-        <h3>You share one link</h3>
-        <p>Readers get everything in one place.</p>
-      </div>
+    <h2>Start here</h2>
+    <p class="lead" style="margin-top:.35rem;">Pick a Book 1 and you’re off.</p>
+
+    <div class="grid">
+
+      <article class="book-card">
+        <div class="cover-wrap">
+          <img
+            src="./assets/emperors-edge.webp"
+            alt="The Emperor’s Edge cover"
+            class="book-cover"
+            loading="lazy"
+            width="600"
+            height="900"
+          />
+        </div>
+        <h3 class="book-title">The Emperor’s Edge</h3>
+        <p class="book-desc">Intrigue, rebellion, and razor-sharp strategy in a long-running series.</p>
+        <div class="book-actions">
+          <a class="btn btn-primary" href="https://www.amazon.com/dp/B004QGYGJQ" target="_blank" rel="noopener">Buy on Amazon</a>
+        </div>
+      </article>
+
+      <article class="book-card">
+        <div class="cover-wrap">
+          <img
+            src="./assets/dragon-blood.webp"
+            alt="Dragon Blood cover"
+            class="book-cover"
+            loading="lazy"
+            width="600"
+            height="900"
+          />
+        </div>
+        <h3 class="book-title">Dragon Blood</h3>
+        <p class="book-desc">Dragons, conflict, and high-stakes action with serious momentum.</p>
+        <div class="book-actions">
+          <a class="btn btn-primary" href="https://www.amazon.com/dp/B00GQ0Q9W4" target="_blank" rel="noopener">Buy on Amazon</a>
+        </div>
+      </article>
+
+      <article class="book-card">
+        <div class="cover-wrap">
+          <img
+            src="./assets/death-before-dragons.webp"
+            alt="Death Before Dragons cover"
+            class="book-cover"
+            loading="lazy"
+            width="600"
+            height="900"
+          />
+        </div>
+        <h3 class="book-title">Death Before Dragons</h3>
+        <p class="book-desc">Urban fantasy with wit, magic, and relentless forward motion.</p>
+        <div class="book-actions">
+          <a class="btn btn-primary" href="https://www.amazon.com/dp/B07VZ8J98T" target="_blank" rel="noopener">Buy on Amazon</a>
+        </div>
+      </article>
+
     </div>
   </div>
 </section>
 
-<!-- WHAT’S INCLUDED -->
-<section id="included" class="section">
-  <div class="container two-col">
-    <div class="card">
-      <h2>What’s included</h2>
-      <ul class="tick-list">
-        <li>Adding new books</li>
-        <li>Updating buy links</li>
-        <li>Bio/photo updates</li>
-        <li>Hosting included</li>
-      </ul>
-    </div>
-
-    <div class="card">
-      <h3>Not included</h3>
-      <ul class="x-list">
-        <li>Full custom redesigns</li>
-        <li>Unlimited copywriting</li>
-        <li>Complex e-commerce systems</li>
-      </ul>
-    </div>
-  </div>
-</section>
-
-<!-- EXAMPLES -->
-<section id="examples" class="section section-alt">
+<!-- BOOKS + ACCORDION -->
+<section class="section" id="books">
   <div class="container">
-    <h2>Case Study Examples</h2>
-    <p class="sublead">
-      Structural inspiration pages demonstrating how we present indie authors.
+    <h2>Series reading order</h2>
+    <p class="lead" style="margin-top:.35rem;">Expand a series to see how a full page would guide readers.</p>
+
+    <div class="accordion" id="seriesAccordion">
+
+      <details class="accordion-item">
+        <summary>
+          <span>
+            The Emperor’s Edge
+            <span class="accordion-meta">— reading order</span>
+          </span>
+          <span class="accordion-chevron" aria-hidden="true">⌄</span>
+        </summary>
+        <div class="accordion-content">
+          <ol class="reading-list">
+            <li>Book 1: The Emperor’s Edge</li>
+            <li>Book 2: (next in series)</li>
+            <li>Book 3: (next in series)</li>
+          </ol>
+          <p style="margin:.8rem 0 0;">
+            <a class="btn btn-ghost" href="https://www.amazon.com/dp/B004QGYGJQ" target="_blank" rel="noopener">Start with Book 1 on Amazon</a>
+          </p>
+        </div>
+      </details>
+
+      <details class="accordion-item">
+        <summary>
+          <span>
+            Dragon Blood
+            <span class="accordion-meta">— reading order</span>
+          </span>
+          <span class="accordion-chevron" aria-hidden="true">⌄</span>
+        </summary>
+        <div class="accordion-content">
+          <ol class="reading-list">
+            <li>Book 1: Dragon Blood</li>
+            <li>Book 2: (next in series)</li>
+            <li>Book 3: (next in series)</li>
+          </ol>
+          <p style="margin:.8rem 0 0;">
+            <a class="btn btn-ghost" href="https://www.amazon.com/dp/B00GQ0Q9W4" target="_blank" rel="noopener">Start with Book 1 on Amazon</a>
+          </p>
+        </div>
+      </details>
+
+      <details class="accordion-item">
+        <summary>
+          <span>
+            Death Before Dragons
+            <span class="accordion-meta">— reading order</span>
+          </span>
+          <span class="accordion-chevron" aria-hidden="true">⌄</span>
+        </summary>
+        <div class="accordion-content">
+          <ol class="reading-list">
+            <li>Book 1: Death Before Dragons</li>
+            <li>Book 2: (next in series)</li>
+            <li>Book 3: (next in series)</li>
+          </ol>
+          <p style="margin:.8rem 0 0;">
+            <a class="btn btn-ghost" href="https://www.amazon.com/dp/B07VZ8J98T" target="_blank" rel="noopener">Start with Book 1 on Amazon</a>
+          </p>
+        </div>
+      </details>
+
+    </div>
+
+    <p style="margin-top: 1.25rem;">
+      <a class="btn btn-primary" href="https://www.amazon.com/stores/Lindsay-Buroker/author/B004FSRHUE" target="_blank" rel="noopener">View full catalogue on Amazon</a>
     </p>
-
-    <div class="examples-grid">
-
-      <article class="example-card">
-        <div class="example-cover"></div>
-        <div class="example-body">
-          <h3>Lindsay Buroker</h3>
-          <p>Fantasy & sci-fi — series-first layout.</p>
-          <a class="btn btn-small" href="/authors/lindsay-buroker/">View example</a>
-        </div>
-      </article>
-
-      <article class="example-card">
-        <div class="example-cover"></div>
-        <div class="example-body">
-          <h3>Mark Dawson</h3>
-          <p>Thriller — strong “start here” structure.</p>
-          <a class="btn btn-small" href="/authors/mark-dawson/">View example</a>
-        </div>
-      </article>
-
-      <article class="example-card">
-        <div class="example-cover"></div>
-        <div class="example-body">
-          <h3>Hugh Howey</h3>
-          <p>Sci-fi — flagship series layout.</p>
-          <a class="btn btn-small" href="/authors/hugh-howey/">View example</a>
-        </div>
-      </article>
-
-    </div>
   </div>
 </section>
 
-<!-- CTA -->
-<section id="get-started" class="section cta">
-  <div class="container cta-inner">
+<!-- NEWSLETTER -->
+<section class="section section-alt" id="updates">
+  <div class="container signup">
     <div>
-      <h2>Get a free demo page</h2>
-      <p>
-        Send us your author name and genre. We’ll create a preview layout
-        showing how your catalogue would look.
-      </p>
+      <h2>Get new release updates</h2>
+      <p class="lead">New books, deals, and reading order updates.</p>
     </div>
 
-    <form class="contact-form" onsubmit="return false;">
-      <div class="form-row">
-        <label>Name</label>
-        <input type="text" required />
-      </div>
-
-      <div class="form-row">
-        <label>Email</label>
-        <input type="email" required />
-      </div>
-
-      <div class="form-row">
-        <label>Author name</label>
-        <input type="text" required />
-      </div>
-
-      <div class="form-row">
-        <label>Genre</label>
-        <input type="text" required />
-      </div>
-
-      <button class="btn btn-primary btn-block">
-        Request my demo
-      </button>
-
-      <p class="fineprint">
-        Form connection coming next.
+    <form class="contact-form" id="newsletterForm" action="#" method="post" onsubmit="return false;">
+      <label for="nl-email">Email</label>
+      <input id="nl-email" name="email" type="email" placeholder="you@example.com" autocomplete="email" required />
+      <button class="btn btn-primary" type="submit" id="nlSubmit">Subscribe</button>
+      <p class="lead" style="margin:.75rem 0 0; font-size:.95rem;">
+        (Placeholder — connect to your email provider later.)
       </p>
     </form>
   </div>
@@ -203,15 +544,92 @@
 
 </main>
 
-<footer class="site-footer">
+<footer>
   <div class="container footer-inner">
     <p>© <span id="year"></span> AuthorsBookClub</p>
     <div class="footer-links">
       <a href="/">Home</a>
+      <a href="#start">Start here</a>
+      <a href="https://www.amazon.com/stores/Lindsay-Buroker/author/B004FSRHUE" target="_blank" rel="noopener">Amazon</a>
     </div>
   </div>
 </footer>
 
-<script src="script.js"></script>
+<!-- Sticky bar -->
+<div class="sticky-bar" id="stickyBar" aria-label="Quick actions">
+  <div class="container sticky-inner">
+    <div class="sticky-left">
+      <img class="sticky-avatar" src="./assets/author.webp" alt="" loading="lazy" width="38" height="38" />
+      <div class="sticky-title">Start reading Lindsay Buroker</div>
+    </div>
+    <div class="sticky-actions">
+      <a class="btn btn-primary" href="#start">Start here</a>
+      <a class="btn btn-ghost" href="https://www.amazon.com/stores/Lindsay-Buroker/author/B004FSRHUE" target="_blank" rel="noopener">Amazon</a>
+      <a class="btn btn-ghost" href="#updates">Subscribe</a>
+      <button class="sticky-close" type="button" id="stickyClose" aria-label="Close">✕</button>
+    </div>
+  </div>
+</div>
+
+<script>
+  // Year
+  document.getElementById("year").textContent = new Date().getFullYear();
+
+  // Sticky bar shows after a small scroll, and can be dismissed
+  (function () {
+    const bar = document.getElementById("stickyBar");
+    const closeBtn = document.getElementById("stickyClose");
+    const dismissedKey = "abc_sticky_dismissed_buroker";
+
+    if (!bar) return;
+
+    const dismissed = sessionStorage.getItem(dismissedKey) === "1";
+    if (dismissed) return;
+
+    const showAfter = 260; // px
+    const onScroll = () => {
+      if (window.scrollY > showAfter) bar.classList.add("is-visible");
+      else bar.classList.remove("is-visible");
+    };
+
+    window.addEventListener("scroll", onScroll, { passive: true });
+    onScroll();
+
+    closeBtn?.addEventListener("click", () => {
+      bar.classList.remove("is-visible");
+      sessionStorage.setItem(dismissedKey, "1");
+    });
+  })();
+
+  // Accordion behaviour: only one open at a time
+  (function () {
+    const wrapper = document.getElementById("seriesAccordion");
+    if (!wrapper) return;
+    const items = Array.from(wrapper.querySelectorAll("details.accordion-item"));
+
+    items.forEach((d) => {
+      d.addEventListener("toggle", () => {
+        if (!d.open) return;
+        items.forEach((other) => {
+          if (other !== d) other.removeAttribute("open");
+        });
+      });
+    });
+  })();
+
+  // Newsletter placeholder
+  (function () {
+    const btn = document.getElementById("nlSubmit");
+    btn?.addEventListener("click", () => {
+      const email = (document.getElementById("nl-email")?.value || "").trim();
+      if (!email) {
+        alert("Please enter your email.");
+        return;
+      }
+      alert("Subscribed (placeholder). Connect to your email provider to make this live.");
+    });
+  })();
+</script>
+
 </body>
 </html>
