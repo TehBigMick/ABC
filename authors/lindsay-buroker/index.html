@@ -3,140 +3,125 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Lindsay Buroker — Case Study Example | AuthorsBookClub</title>
-  <meta name="description" content="Case study example inspired by indie fantasy author Lindsay Buroker. Demonstration of a genre-styled author landing page." />
+  <title>Lindsay Buroker | Official Author Page (Example) — AuthorsBookClub</title>
+  <meta name="description" content="Fantasy and science fiction adventures, series reading order, and links to start reading today." />
   <link rel="canonical" href="https://www.authorsbookclub.com/authors/lindsay-buroker/" />
   <link rel="stylesheet" href="../../styles.css" />
 
-  <!-- Page-specific theme (keeps the rest of the site unchanged) -->
   <style>
-    /* ===== Buroker theme: fantasy parchment + ink ===== */
+    /* ===== Fantasy theme (page-specific, does not affect the rest of the site) ===== */
     :root{
-      --bk-paper: #efe6d4;
-      --bk-paper-2: #e6dcc8;
-      --bk-ink: #1e1a16;
-      --bk-ink-2: #3a312b;
-      --bk-gold: #a67c2d;
-      --bk-emerald: #1f7a5a;
-      --bk-wine: #6b2a2f;
-      --bk-line: rgba(30, 26, 22, .18);
-      --bk-shadow: 0 18px 40px rgba(0,0,0,.18);
-      --bk-radius: 18px;
+      --paper: #efe6d4;
+      --paper-2: #e6dcc8;
+      --ink: #1e1a16;
+      --ink-2: #3a312b;
+      --gold: #a67c2d;
+      --emerald: #1f7a5a;
+      --wine: #6b2a2f;
+      --line: rgba(30, 26, 22, .18);
+      --shadow: 0 18px 40px rgba(0,0,0,.18);
+      --radius: 18px;
     }
 
-    body.theme-buroker{
+    body.author-fantasy{
       background:
         radial-gradient(900px 500px at 15% 10%, rgba(166,124,45,.18), transparent 60%),
         radial-gradient(700px 420px at 85% 18%, rgba(31,122,90,.14), transparent 60%),
-        linear-gradient(180deg, var(--bk-paper) 0%, var(--bk-paper-2) 100%);
-      color: var(--bk-ink);
+        linear-gradient(180deg, var(--paper) 0%, var(--paper-2) 100%);
+      color: var(--ink);
     }
 
-    body.theme-buroker a{ color: inherit; }
-    body.theme-buroker a:hover{ text-decoration: none; }
-
-    /* Header: fantasy banner vibe */
-    body.theme-buroker .site-header{
+    body.author-fantasy .site-header{
       background: rgba(239,230,212,.86);
-      border-bottom: 1px solid var(--bk-line);
+      border-bottom: 1px solid var(--line);
       backdrop-filter: blur(8px);
     }
-    body.theme-buroker .brand-mark{
-      color: var(--bk-paper);
-      background: linear-gradient(135deg, var(--bk-wine), var(--bk-gold));
-      box-shadow: var(--bk-shadow);
+    body.author-fantasy .brand-mark{
+      color: var(--paper);
+      background: linear-gradient(135deg, var(--wine), var(--gold));
+      box-shadow: var(--shadow);
     }
-    body.theme-buroker .brand-text{ color: var(--bk-ink); }
-    body.theme-buroker .site-nav a{
-      color: var(--bk-ink-2);
-      border: 1px solid transparent;
+    body.author-fantasy .brand-text{ color: var(--ink); }
+    body.author-fantasy .site-nav a{
+      color: var(--ink-2);
     }
-    body.theme-buroker .site-nav a:hover{
+    body.author-fantasy .site-nav a:hover{
+      text-decoration: none;
       background: rgba(166,124,45,.10);
-      border-color: rgba(166,124,45,.25);
+      border-radius: 10px;
     }
-    body.theme-buroker .nav-cta{
-      background: linear-gradient(135deg, var(--bk-gold), rgba(31,122,90,.95));
-      color: var(--bk-paper) !important;
-      box-shadow: var(--bk-shadow);
-    }
-
-    /* Typography: add a more “bookish” feel using safe fonts */
-    body.theme-buroker h1, body.theme-buroker h2, body.theme-buroker h3{
-      letter-spacing: -0.01em;
-      color: var(--bk-ink);
-    }
-    body.theme-buroker h1{
-      font-family: Georgia, "Times New Roman", serif;
-      font-weight: 800;
-    }
-    body.theme-buroker h2, body.theme-buroker h3{
-      font-family: Georgia, "Times New Roman", serif;
-    }
-    body.theme-buroker .lead, body.theme-buroker .sublead, body.theme-buroker .microcopy{
-      color: var(--bk-ink-2);
+    body.author-fantasy .nav-cta{
+      background: linear-gradient(135deg, var(--gold), rgba(31,122,90,.95));
+      color: var(--paper) !important;
+      box-shadow: var(--shadow);
     }
 
-    /* Eyebrow: looks like a stamped label */
-    body.theme-buroker .eyebrow{
+    body.author-fantasy h1, body.author-fantasy h2, body.author-fantasy h3{
+      font-family: Georgia, "Times New Roman", serif;
+      color: var(--ink);
+    }
+    body.author-fantasy .lead,
+    body.author-fantasy .sublead,
+    body.author-fantasy .microcopy{ color: var(--ink-2); }
+
+    body.author-fantasy .eyebrow{
       background: rgba(166,124,45,.10);
       border: 1px solid rgba(166,124,45,.25);
-      color: var(--bk-ink-2);
-      font-weight: 800;
-    }
-
-    /* Hero: ornamental divider */
-    .ornament{
-      display: grid;
-      grid-template-columns: 1fr auto 1fr;
-      gap: .9rem;
-      align-items: center;
-      margin: 1.15rem 0 0;
-      color: rgba(30,26,22,.55);
+      color: var(--ink-2);
       font-weight: 900;
-      letter-spacing: .18em;
-      text-transform: uppercase;
-      font-size: .82rem;
-    }
-    .ornament::before,
-    .ornament::after{
-      content: "";
-      height: 1px;
-      background: linear-gradient(90deg, transparent, rgba(30,26,22,.22), transparent);
     }
 
-    /* Cards: parchment panels */
-    body.theme-buroker .card,
-    body.theme-buroker .feature,
-    body.theme-buroker .example-card,
-    body.theme-buroker .hero-visual{
+    body.author-fantasy .card,
+    body.author-fantasy .hero-visual{
       background: rgba(255,255,255,.35);
-      border: 1px solid var(--bk-line);
-      box-shadow: var(--bk-shadow);
+      border: 1px solid var(--line);
+      box-shadow: var(--shadow);
     }
 
-    /* Buttons: ink + gold */
-    body.theme-buroker .btn{
+    body.author-fantasy .btn{
       border: 1px solid rgba(30,26,22,.22);
     }
-    body.theme-buroker .btn-primary{
-      background: linear-gradient(135deg, var(--bk-wine), var(--bk-gold));
-      color: var(--bk-paper);
-      box-shadow: var(--bk-shadow);
+    body.author-fantasy .btn-primary{
+      background: linear-gradient(135deg, var(--wine), var(--gold));
+      color: var(--paper);
+      box-shadow: var(--shadow);
+      border: none;
     }
-    body.theme-buroker .btn-ghost{
+    body.author-fantasy .btn-ghost{
       background: rgba(255,255,255,.25);
-      color: var(--bk-ink);
+      color: var(--ink);
     }
-
-    /* Badges: small “coins” */
-    body.theme-buroker .badge{
+    body.author-fantasy .badge{
       background: rgba(255,255,255,.28);
       border: 1px solid rgba(166,124,45,.30);
-      color: var(--bk-ink-2);
+      color: var(--ink-2);
+      font-weight: 900;
+      text-decoration: none;
     }
 
-    /* Book shelf grid */
+    .author-wrap{
+      padding: 1.25rem 0 0;
+    }
+
+    .author-hero{
+      padding: 3.5rem 0 1.25rem;
+    }
+
+    .author-panel{
+      border-radius: var(--radius);
+      border: 1px solid rgba(166,124,45,.28);
+      background: linear-gradient(180deg, rgba(255,255,255,.38), rgba(255,255,255,.25));
+      box-shadow: var(--shadow);
+      padding: 1.2rem;
+    }
+
+    .pill-row{
+      display: flex;
+      flex-wrap: wrap;
+      gap: .6rem;
+      margin-top: .9rem;
+    }
+
     .shelf-grid{
       display: grid;
       grid-template-columns: repeat(3, 1fr);
@@ -144,13 +129,14 @@
       margin-top: 1rem;
     }
     .book-card{
-      border-radius: var(--bk-radius);
-      border: 1px solid var(--bk-line);
+      border-radius: var(--radius);
+      border: 1px solid var(--line);
       background: rgba(255,255,255,.35);
-      box-shadow: var(--bk-shadow);
+      box-shadow: var(--shadow);
       overflow: hidden;
       display: flex;
       flex-direction: column;
+      min-height: 100%;
     }
     .book-top{
       padding: 1rem;
@@ -159,23 +145,23 @@
         radial-gradient(600px 260px at 10% 0%, rgba(166,124,45,.18), transparent 55%),
         radial-gradient(520px 240px at 90% 10%, rgba(31,122,90,.14), transparent 55%);
     }
-    .book-kicker{
+    .kicker{
       display: inline-flex;
       gap: .45rem;
       align-items: center;
-      font-size: .85rem;
+      font-size: .82rem;
       font-weight: 900;
       color: rgba(30,26,22,.70);
       text-transform: uppercase;
       letter-spacing: .12em;
     }
     .book-title{
-      margin: .6rem 0 .25rem;
+      margin: .55rem 0 .25rem;
       font-size: 1.25rem;
     }
     .book-desc{
       margin: 0;
-      color: var(--bk-ink-2);
+      color: var(--ink-2);
     }
     .book-actions{
       display: flex;
@@ -185,32 +171,49 @@
       background: rgba(255,255,255,.22);
     }
 
-    /* CTA panel: looks like a signpost */
-    .cta-panel{
-      border-radius: var(--bk-radius);
-      border: 1px solid rgba(166,124,45,.30);
-      background:
-        linear-gradient(180deg, rgba(255,255,255,.35), rgba(255,255,255,.22));
-      box-shadow: var(--bk-shadow);
-      padding: 1.2rem;
+    .section-divider{
+      height: 1px;
+      background: linear-gradient(90deg, transparent, rgba(30,26,22,.18), transparent);
+      margin: 1.1rem 0;
     }
-    .cta-panel strong{ color: var(--bk-ink); }
 
-    /* Footer */
-    body.theme-buroker .site-footer{
+    .signup{
+      display: grid;
+      grid-template-columns: 1.1fr .9fr;
+      gap: 1rem;
+      align-items: start;
+      margin-top: 1rem;
+    }
+    .signup .contact-form{
+      background: rgba(255,255,255,.28);
+      border: 1px solid var(--line);
+      box-shadow: var(--shadow);
+    }
+    body.author-fantasy input{
+      background: rgba(255,255,255,.35);
+      border: 1px solid rgba(30,26,22,.22);
+      color: var(--ink);
+    }
+    body.author-fantasy input:focus{
+      border-color: rgba(166,124,45,.55);
+      box-shadow: 0 0 0 3px rgba(166,124,45,.18);
+    }
+
+    body.author-fantasy .site-footer{
       background: rgba(239,230,212,.70);
-      border-top: 1px solid var(--bk-line);
+      border-top: 1px solid var(--line);
       color: rgba(30,26,22,.70);
     }
-    body.theme-buroker .footer-links a{ color: rgba(30,26,22,.70); }
+    body.author-fantasy .footer-links a{ color: rgba(30,26,22,.70); }
 
     @media (max-width: 920px){
       .shelf-grid{ grid-template-columns: 1fr; }
+      .signup{ grid-template-columns: 1fr; }
     }
   </style>
 </head>
 
-<body class="theme-buroker">
+<body class="author-fantasy">
   <a class="skip-link" href="#main">Skip to content</a>
 
   <header class="site-header" id="top">
@@ -221,115 +224,110 @@
       </a>
 
       <nav class="site-nav" aria-label="Site">
-        <a href="/">Home</a>
-        <a class="nav-cta" href="/#get-started">Get a free demo page</a>
+        <a href="#books">Books</a>
+        <a href="#start-here">Start here</a>
+        <a href="#updates">Get updates</a>
+        <a class="nav-cta" href="https://www.amazon.com/stores/Lindsay-Buroker/author/B004FSRHUE" target="_blank" rel="noopener">Amazon</a>
       </nav>
     </div>
   </header>
 
   <main id="main">
 
-    <!-- Hero -->
-    <section class="hero">
+    <!-- HERO -->
+    <section class="author-hero">
       <div class="container two-col">
         <div>
-          <p class="eyebrow">Fantasy / Science Fiction — Case Study</p>
+          <p class="eyebrow">Fantasy • Science Fiction • Adventure</p>
           <h1>Lindsay Buroker</h1>
           <p class="lead">
-            A strong example of how a prolific indie author page can stay readable:
-            series-led structure, clear entry points, and frictionless retailer links.
+            Action-forward fantasy and sci-fi adventures with series you can sink into.
           </p>
 
           <div class="hero-actions">
-            <a class="btn btn-primary"
-               href="https://www.amazon.com/stores/Lindsay-Buroker/author/B004FSRHUE"
-               target="_blank" rel="noopener">
-              View Amazon Author Page
-            </a>
-            <a class="btn btn-ghost" href="/#get-started">Get a free demo page</a>
+            <a class="btn btn-primary" href="#start-here">Start reading</a>
+            <a class="btn btn-ghost" href="#books">Browse books</a>
           </div>
 
-          <div class="ornament">ADVENTURE • MAGIC • SERIES</div>
+          <div class="pill-row" aria-label="Quick retailer links">
+            <a class="badge" href="https://www.amazon.com/stores/Lindsay-Buroker/author/B004FSRHUE" target="_blank" rel="noopener">Amazon</a>
+            <a class="badge" href="#" aria-disabled="true">Kobo</a>
+            <a class="badge" href="#" aria-disabled="true">Apple Books</a>
+            <a class="badge" href="#" aria-disabled="true">Newsletter</a>
+          </div>
 
           <p class="microcopy" style="margin-top: .9rem;">
-            This is a structural inspiration page created by AuthorsBookClub. Not an official page.
-            All summary text here is original (we don’t copy Amazon bios/blurbs).
+            Prefer reading in order? Use the “Start here” picks below.
           </p>
         </div>
 
-        <div class="cta-panel">
-          <h3 style="margin-top: 0;">What this design is showing</h3>
-          <ul class="tick-list" style="margin-bottom: 0;">
-            <li><strong>Genre-first</strong> header that sets expectations instantly</li>
-            <li><strong>Series-led</strong> navigation (start here, then expand)</li>
-            <li><strong>Retailer clarity</strong> — buy links stay obvious</li>
-            <li><strong>Bookish styling</strong> that matches the reading experience</li>
+        <aside class="author-panel">
+          <h3 style="margin-top:0;">About</h3>
+          <p class="sublead" style="margin-bottom:.75rem;">
+            Independent author of long-running fantasy and science fiction series.
+          </p>
+          <ul class="tick-list" style="margin:0;">
+            <li>Series-led reading order</li>
+            <li>Fast, plot-driven pacing</li>
+            <li>Easy retailer links</li>
           </ul>
-        </div>
+
+          <div class="section-divider"></div>
+
+          <p class="microcopy" style="margin:0;">
+            For fans of: adventurous fantasy, clever leads, and page-turning series.
+          </p>
+        </aside>
       </div>
     </section>
 
-    <!-- Featured shelf -->
-    <section class="section section-alt">
+    <!-- START HERE -->
+    <section class="section section-alt" id="start-here">
       <div class="container">
-        <h2>Featured series entry points</h2>
-        <p class="sublead">
-          For big catalogues, don’t dump everything on the reader. Offer a few clear “Book 1” starts.
-        </p>
+        <h2>Start here</h2>
+        <p class="sublead">Three easy entry points. Choose the vibe you want.</p>
 
         <div class="shelf-grid">
 
           <article class="book-card">
             <div class="book-top">
-              <div class="book-kicker">Book 1 • Series Start</div>
+              <div class="kicker">Series start • Book 1</div>
               <h3 class="book-title">The Emperor’s Edge</h3>
-              <p class="book-desc">
-                A clean entry point for readers who want intrigue, action, and a long series runway.
-              </p>
+              <p class="book-desc">Intrigue + action with a long series runway.</p>
             </div>
             <div class="book-actions">
               <a class="btn btn-small btn-primary"
                  href="https://www.amazon.com/dp/B004QGYGJQ"
-                 target="_blank" rel="noopener">
-                View on Amazon
-              </a>
-              <a class="btn btn-small btn-ghost" href="#why">Why this works</a>
+                 target="_blank" rel="noopener">Buy on Amazon</a>
+              <a class="btn btn-small btn-ghost" href="#books">See more books</a>
             </div>
           </article>
 
           <article class="book-card">
             <div class="book-top">
-              <div class="book-kicker">Book 1 • Series Start</div>
+              <div class="kicker">Series start • Book 1</div>
               <h3 class="book-title">Dragon Blood</h3>
-              <p class="book-desc">
-                Military-ish momentum + dragon magic: strong hook, obvious starting point.
-              </p>
+              <p class="book-desc">Dragon magic, conflict, and high momentum.</p>
             </div>
             <div class="book-actions">
               <a class="btn btn-small btn-primary"
                  href="https://www.amazon.com/dp/B00GQ0Q9W4"
-                 target="_blank" rel="noopener">
-                View on Amazon
-              </a>
-              <a class="btn btn-small btn-ghost" href="#why">Why this works</a>
+                 target="_blank" rel="noopener">Buy on Amazon</a>
+              <a class="btn btn-small btn-ghost" href="#books">See more books</a>
             </div>
           </article>
 
           <article class="book-card">
             <div class="book-top">
-              <div class="book-kicker">Book 1 • Series Start</div>
+              <div class="kicker">Series start • Book 1</div>
               <h3 class="book-title">Death Before Dragons</h3>
-              <p class="book-desc">
-                Urban fantasy entry that’s easy to sell to new readers with one clear click.
-              </p>
+              <p class="book-desc">Urban fantasy with humour and chaos.</p>
             </div>
             <div class="book-actions">
               <a class="btn btn-small btn-primary"
                  href="https://www.amazon.com/dp/B07VZ8J98T"
-                 target="_blank" rel="noopener">
-                View on Amazon
-              </a>
-              <a class="btn btn-small btn-ghost" href="#why">Why this works</a>
+                 target="_blank" rel="noopener">Buy on Amazon</a>
+              <a class="btn btn-small btn-ghost" href="#books">See more books</a>
             </div>
           </article>
 
@@ -337,35 +335,65 @@
       </div>
     </section>
 
-    <!-- Why / structure -->
-    <section class="section" id="why">
+    <!-- BOOKS (lightweight preview; you can expand later) -->
+    <section class="section" id="books">
       <div class="container two-col">
         <div class="card">
-          <h2>Why this style matches the books</h2>
-          <p class="sublead" style="margin-bottom: .8rem;">
-            You’re selling an *experience*. The page should feel like it belongs to the genre.
+          <h2>Books</h2>
+          <p class="sublead" style="margin-bottom:.8rem;">
+            Browse the full catalogue on Amazon, or use the “Start here” section above.
           </p>
-          <ul class="tick-list" style="margin-bottom: 0;">
-            <li>Parchment tones + serif headings = “bookish” without being tacky</li>
-            <li>Gold/emerald accents hint at fantasy without screaming “clip art dragon”</li>
-            <li>Featured shelf keeps choice overload under control</li>
-            <li>Buy buttons remain the loudest action on the page</li>
-          </ul>
+          <div class="hero-actions">
+            <a class="btn btn-primary"
+               href="https://www.amazon.com/stores/Lindsay-Buroker/author/B004FSRHUE"
+               target="_blank" rel="noopener">View all books on Amazon</a>
+            <a class="btn btn-ghost" href="#updates">Get updates</a>
+          </div>
         </div>
 
         <div class="card">
-          <h3 class="card-title">How AuthorsBookClub would build the full version</h3>
-          <ul class="tick-list">
-            <li>Series sections with reading order</li>
-            <li>“Start here” guidance pinned at the top</li>
-            <li>Retailer buttons for Amazon/Kobo/Apple Books (author choice)</li>
-            <li>Optional mailing list / social links block</li>
+          <h3 class="card-title">Looking for a specific series?</h3>
+          <p class="sublead" style="margin-bottom:.8rem;">
+            This section is where series blocks and reading order would appear on a full build.
+          </p>
+          <ul class="tick-list" style="margin:0;">
+            <li>Series: reading order (Book 1 → last)</li>
+            <li>Standalone: clearly labelled</li>
+            <li>New release: pinned to the top</li>
           </ul>
+        </div>
+      </div>
+    </section>
 
-          <div class="hero-actions" style="margin-top: .8rem;">
-            <a class="btn btn-primary" href="/#get-started">Get a free demo page</a>
-            <a class="btn btn-ghost" href="/">Back to homepage</a>
+    <!-- UPDATES / NEWSLETTER -->
+    <section class="section section-alt" id="updates">
+      <div class="container">
+        <h2>Get updates</h2>
+        <p class="sublead">New releases, deals, and reading order updates.</p>
+
+        <div class="signup">
+          <div class="card">
+            <h3 class="card-title">Join the newsletter</h3>
+            <p class="sublead" style="margin-bottom:.8rem;">
+              One email field. No fuss.
+            </p>
+            <ul class="tick-list" style="margin:0;">
+              <li>New releases</li>
+              <li>Discounts and free promos</li>
+              <li>Reading order guidance</li>
+            </ul>
           </div>
+
+          <form class="contact-form" action="#" method="post" onsubmit="return false;" aria-label="Newsletter signup form">
+            <div class="form-row">
+              <label for="nl-email">Email</label>
+              <input id="nl-email" name="email" type="email" placeholder="you@example.com" autocomplete="email" required />
+            </div>
+            <button class="btn btn-primary btn-block" type="submit" id="nlSubmit">Subscribe</button>
+            <p class="microcopy" style="margin:.7rem 0 0;">
+              (Placeholder — connect to your email provider later.)
+            </p>
+          </form>
         </div>
       </div>
     </section>
@@ -374,14 +402,30 @@
 
   <footer class="site-footer">
     <div class="container footer-inner">
-      <p>© <span id="year"></span> AuthorsBookClub. Case study example.</p>
+      <p>© <span id="year"></span> AuthorsBookClub</p>
       <div class="footer-links">
         <a href="/">Home</a>
-        <a href="/#get-started">Get started</a>
+        <a href="#start-here">Start here</a>
+        <a href="https://www.amazon.com/stores/Lindsay-Buroker/author/B004FSRHUE" target="_blank" rel="noopener">Amazon</a>
       </div>
     </div>
   </footer>
 
   <script src="../../script.js"></script>
+  <script>
+    // page-local placeholder: newsletter form
+    (function () {
+      const btn = document.getElementById("nlSubmit");
+      if (!btn) return;
+      btn.addEventListener("click", () => {
+        const email = (document.getElementById("nl-email")?.value || "").trim();
+        if (!email) {
+          alert("Please enter your email.");
+          return;
+        }
+        alert("Subscribed (placeholder). Connect to your email provider to make this live.");
+      });
+    })();
+  </script>
 </body>
 </html>
