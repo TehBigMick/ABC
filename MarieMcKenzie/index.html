@@ -1,13 +1,26 @@
 <!doctype html>
 <html lang="en-GB">
 <head>
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-0DYQYNMX6T"></script>
+
+<!-- Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-0DYQYNMX6T"></script>
 <script>
 window.dataLayer = window.dataLayer || [];
 function gtag(){dataLayer.push(arguments);}
 gtag('js', new Date());
 gtag('config', 'G-0DYQYNMX6T');
+
+function trackAmazonClick(label, url) {
+  try {
+    gtag('event', 'amazon_click', {
+      event_category: 'Outbound',
+      event_label: label,
+      link_url: url
+    });
+  } catch(e) {}
+}
 </script>
+
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Marie McKenzie | Trauma-Informed Author</title>
@@ -135,7 +148,7 @@ h1{ font-size:42px; margin-bottom:10px; }
       </div>
 
       <p class="tagline">
-        Writing about healing, care, and being human, with steadiness, dignity, and compassion.
+        Writing about healing, care, and being human — with steadiness, dignity, and compassion.
       </p>
 
       <a href="#books" class="btn">Explore Her Books</a>
@@ -153,11 +166,11 @@ h1{ font-size:42px; margin-bottom:10px; }
   </p>
 
   <p>
-    With over two decades of healthcare experience, she writes with clinical insight and human depth, offering language that feels calm, steady, and safe.
+    With over two decades of healthcare experience, she writes with clinical insight and human depth — offering language that feels calm, steady, and safe.
   </p>
 
   <p>
-    Rooted in dignity, choice, and compassion, Marie believes healing happens best when people feel respected, never pressured. Readers often describe her books as grounding and practical.
+    Rooted in dignity, choice, and compassion, Marie believes healing happens best when people feel respected — never pressured. Readers often describe her books as grounding and practical.
   </p>
 </section>
 
@@ -173,16 +186,22 @@ h1{ font-size:42px; margin-bottom:10px; }
       <h3>Things That Keep Me Up at Night</h3>
       <p>A deeply honest exploration of trauma, reflection, and healing.</p>
       <a href="https://www.amazon.com/Things-That-Keep-Me-Night-ebook/dp/B09X29GKSV"
-         class="btn" target="_blank">View on Amazon</a>
+         class="btn" target="_blank" rel="noopener"
+         onclick="trackAmazonClick('Book: Things That Keep Me Up at Night', this.href);">
+        View on Amazon
+      </a>
     </div>
 
     <div class="book-card">
       <img src="who-says-you-cant-heal.webp"
-           alt="Who Says You Can't Heal by Marie McKenzie">
+           alt="Who Says You Can’t Heal by Marie McKenzie">
       <h3>Who Says You Can’t Heal?</h3>
       <p>A trauma-informed guide toward dignity, clarity, and self-understanding.</p>
       <a href="https://www.amazon.com/Who-Says-You-Cant-Heal-ebook/dp/B0FFWNHPSW"
-         class="btn" target="_blank">View on Amazon</a>
+         class="btn" target="_blank" rel="noopener"
+         onclick="trackAmazonClick('Book: Who Says You Can’t Heal?', this.href);">
+        View on Amazon
+      </a>
     </div>
 
     <div class="book-card">
@@ -191,23 +210,13 @@ h1{ font-size:42px; margin-bottom:10px; }
       <h3>Stuck to Limitless</h3>
       <p>An empowering shift from limitation toward grounded personal growth.</p>
       <a href="https://www.amazon.com/Stuck-Limitless-Marie-McKenzie-ebook/dp/B0C41S9JMD"
-         class="btn" target="_blank">View on Amazon</a>
+         class="btn" target="_blank" rel="noopener"
+         onclick="trackAmazonClick('Book: Stuck to Limitless', this.href);">
+        View on Amazon
+      </a>
     </div>
 
   </div>
-</section>
-
-<!-- SOCIAL -->
-<section class="section reveal">
-  <h2 style="color:var(--teal); text-align:center;">Connect With Marie</h2>
-
-  <p style="text-align:center;">
-    <a href="https://www.facebook.com/marie.mckenzie" target="_blank">Facebook</a> |
-    <a href="https://instagram.com/mariemlmckenzie" target="_blank">Instagram</a> |
-    <a href="https://www.tiktok.com/@marielmckenzie" target="_blank">TikTok</a> |
-    <a href="https://www.youtube.com/@marielmckenzie" target="_blank">YouTube</a> |
-    <a href="https://www.threads.com/@mariemckenziecoaching" target="_blank">Threads</a>
-  </p>
 </section>
 
 <!-- FINAL CTA -->
@@ -215,7 +224,10 @@ h1{ font-size:42px; margin-bottom:10px; }
   <h2 style="color:var(--plum);">Begin Where You Are</h2>
   <p>Her books offer steady language for difficult seasons.</p>
   <a href="https://www.amazon.com/author/mariemckenzie"
-     class="btn" target="_blank">Browse All Books on Amazon</a>
+     class="btn" target="_blank" rel="noopener"
+     onclick="trackAmazonClick('Amazon Author Page', this.href);">
+     Browse All Books on Amazon
+  </a>
 </section>
 
 <script>
