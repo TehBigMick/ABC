@@ -1,0 +1,559 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Marie McKenzie | Trauma-Informed Author</title>
+<meta name="description" content="Award-Winning and #1 Amazon Bestselling Author Marie McKenzie writes trauma-informed books about healing, care, and being human." />
+<link rel="stylesheet" href="../../styles.css" />
+
+<style>
+:root{
+  --teal:#1F6F78;
+  --teal-soft:#A7D3D8;
+  --plum:#5E4B8B;
+  --lavender:#F4F1F8;
+  --ink:#2a2a2a;
+  --white:#ffffff;
+  --shadow: 0 10px 25px rgba(0,0,0,0.06);
+  --shadow-hover: 0 18px 40px rgba(0,0,0,0.10);
+}
+
+*{ box-sizing:border-box; }
+
+body{
+  margin:0;
+  font-family: "Segoe UI", system-ui, -apple-system, sans-serif;
+  color:var(--ink);
+  background:var(--white);
+  line-height:1.6;
+}
+
+.section{
+  padding:80px 20px;
+  max-width:1100px;
+  margin:auto;
+}
+
+.hero{ background:var(--lavender); }
+
+.hero-grid{
+  display:grid;
+  grid-template-columns: 1fr 1fr;
+  gap:60px;
+  align-items:center;
+}
+
+.profile-placeholder{
+  background:#ddd;
+  width:100%;
+  aspect-ratio:1/1;
+  border-radius:12px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size:14px;
+  color:#666;
+  box-shadow:var(--shadow);
+}
+
+h1{
+  font-size:42px;
+  margin:0 0 10px 0;
+  letter-spacing:-0.02em;
+}
+
+.subtitle{
+  color:var(--plum);
+  font-weight:500;
+  margin:0 0 20px 0;
+}
+
+.tagline{
+  font-size:18px;
+  margin:0 0 30px 0;
+  max-width:52ch;
+}
+
+.btn{
+  display:inline-block;
+  background:var(--teal);
+  color:white;
+  padding:14px 28px;
+  border-radius:10px;
+  text-decoration:none;
+  transition: transform .25s ease, box-shadow .25s ease, background .25s ease;
+  box-shadow: 0 8px 18px rgba(31,111,120,0.22);
+  will-change: transform;
+}
+
+.btn:hover{
+  background:#155a60;
+  transform: translateY(-2px);
+  box-shadow: 0 14px 26px rgba(31,111,120,0.28);
+}
+
+.bio{ background:white; }
+.bio h2{ color:var(--teal); margin-top:0; }
+
+.books{ background:var(--lavender); }
+
+.book-grid{
+  display:grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px,1fr));
+  gap:28px;
+  margin-top:40px;
+}
+
+.book-card{
+  background:white;
+  padding:20px;
+  border-radius:14px;
+  box-shadow:var(--shadow);
+  text-align:center;
+  transition: transform .28s ease, box-shadow .28s ease;
+  will-change: transform;
+}
+
+.book-card:hover{
+  transform: translateY(-6px);
+  box-shadow:var(--shadow-hover);
+}
+
+.book-placeholder{
+  background:#ddd;
+  width:100%;
+  aspect-ratio:2/3;
+  border-radius:10px;
+  margin-bottom:18px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size:14px;
+  color:#666;
+  transition: transform .28s ease, filter .28s ease;
+}
+
+.book-card:hover .book-placeholder{
+  transform: scale(1.02);
+  filter: brightness(0.98);
+}
+
+.book-card h3{
+  margin:10px 0 10px;
+  color:var(--plum);
+}
+
+.book-card p{
+  margin:0 0 18px 0;
+  color:#444;
+}
+
+.credibility{
+  text-align:center;
+}
+
+.credibility ul{
+  list-style:none;
+  padding:0;
+  margin:30px auto 0 auto;
+  max-width:680px;
+}
+
+.credibility li{
+  margin:10px 0;
+}
+
+.testimonials{
+  background:white;
+}
+
+.testimonials h2{
+  color:var(--teal);
+  margin-top:0;
+  text-align:center;
+}
+
+.slider{
+  max-width:820px;
+  margin:34px auto 0;
+  position:relative;
+}
+
+.slide{
+  display:none;
+  background:var(--lavender);
+  border-radius:14px;
+  padding:26px 24px;
+  box-shadow:var(--shadow);
+  border: 1px solid rgba(94,75,139,0.08);
+}
+
+.slide.active{
+  display:block;
+}
+
+.quote{
+  margin:0;
+  font-size:18px;
+  color:#2f2f2f;
+}
+
+.quote:before{ content:"“"; }
+.quote:after{ content:"”"; }
+
+.attribution{
+  margin-top:14px;
+  color:var(--plum);
+  font-weight:600;
+  font-size:14px;
+}
+
+.slider-controls{
+  display:flex;
+  gap:10px;
+  justify-content:center;
+  align-items:center;
+  margin-top:16px;
+}
+
+.icon-btn{
+  border:1px solid rgba(31,111,120,0.25);
+  background:white;
+  color:var(--teal);
+  padding:10px 12px;
+  border-radius:10px;
+  cursor:pointer;
+  transition: transform .2s ease, box-shadow .2s ease;
+  box-shadow: 0 8px 18px rgba(0,0,0,0.06);
+}
+
+.icon-btn:hover{
+  transform: translateY(-1px);
+  box-shadow: 0 12px 24px rgba(0,0,0,0.08);
+}
+
+.dots{
+  display:flex;
+  gap:8px;
+  margin-left:6px;
+}
+
+.dot{
+  width:9px;
+  height:9px;
+  border-radius:999px;
+  background: rgba(94,75,139,0.25);
+  border: 1px solid rgba(94,75,139,0.18);
+  cursor:pointer;
+  transition: transform .2s ease, background .2s ease;
+}
+
+.dot.active{
+  background: var(--plum);
+  transform: scale(1.05);
+}
+
+.social{
+  background:white;
+  text-align:center;
+}
+
+.social h2{ color:var(--teal); margin-top:0; }
+
+.social a{
+  margin:0 12px;
+  text-decoration:none;
+  color:var(--teal);
+  font-weight:600;
+  transition: color .2s ease;
+}
+
+.social a:hover{
+  color:#155a60;
+}
+
+.cta{
+  background:var(--lavender);
+  text-align:center;
+}
+
+footer{
+  text-align:center;
+  padding:40px 20px;
+  font-size:14px;
+  color:#666;
+}
+
+/* --- Gentle fade-in on scroll --- */
+.reveal{
+  opacity:0;
+  transform: translateY(14px);
+  transition: opacity .8s ease, transform .8s ease;
+}
+
+.reveal.is-visible{
+  opacity:1;
+  transform: translateY(0);
+}
+
+/* Respect reduced motion */
+@media (prefers-reduced-motion: reduce){
+  .reveal{ opacity:1; transform:none; transition:none; }
+  .btn, .book-card, .book-placeholder, .icon-btn{ transition:none; }
+}
+
+/* Mobile */
+@media(max-width:768px){
+  .hero-grid{ grid-template-columns:1fr; }
+  h1{ font-size:36px; }
+}
+</style>
+</head>
+
+<body>
+
+<!-- HERO SECTION -->
+<section class="section hero reveal">
+  <div class="hero-grid">
+
+    <!-- Replace this div with your <img> when ready -->
+    <div class="profile-placeholder">
+      Profile Photo Placeholder
+    </div>
+
+    <div>
+      <h1>Marie McKenzie</h1>
+      <div class="subtitle">
+        Award-Winning & #1 Amazon Bestselling Author<br>
+        Registered Nurse | Educator | Trauma-Informed Writer
+      </div>
+
+      <p class="tagline">
+        Writing about healing, care, and being human — with steadiness, dignity, and compassion.
+      </p>
+
+      <a href="#books" class="btn">Explore Her Books</a>
+    </div>
+
+  </div>
+</section>
+
+<!-- BIO SECTION -->
+<section class="section bio reveal">
+  <h2>About Marie</h2>
+
+  <p>
+    Marie McKenzie is a registered nurse, educator, and award-winning #1 Amazon bestselling author whose work centres on trauma-informed healing.
+  </p>
+
+  <p>
+    With over two decades of healthcare experience, she writes with clinical insight and human depth — but what readers often notice first is the tone: calm, honest, and steady. Her books do not rush healing or promise quick transformation. Instead, they offer clarity and language for those navigating difficult seasons.
+  </p>
+
+  <p>
+    Rooted in dignity, choice, and compassion, Marie believes healing happens best when people feel respected — never pressured to explain or perform their pain. Readers often describe her books as grounding — something to return to when life feels heavy or unclear.
+  </p>
+</section>
+
+<!-- BOOKS SECTION -->
+<section id="books" class="section books reveal">
+  <h2 style="text-align:center;color:var(--teal);margin-top:0;">Featured Books</h2>
+
+  <div class="book-grid">
+
+    <div class="book-card">
+      <!-- Replace with <img src="..." alt="Book cover: ..."> -->
+      <div class="book-placeholder">Book Cover Placeholder</div>
+      <h3>Book Title One</h3>
+      <p>A steady, trauma-informed guide to healing and reflection.</p>
+      <a href="#" class="btn">View on Amazon</a>
+    </div>
+
+    <div class="book-card">
+      <div class="book-placeholder">Book Cover Placeholder</div>
+      <h3>Book Title Two</h3>
+      <p>Practical insight grounded in dignity and compassionate care.</p>
+      <a href="#" class="btn">View on Amazon</a>
+    </div>
+
+    <div class="book-card">
+      <div class="book-placeholder">Book Cover Placeholder</div>
+      <h3>Book Title Three</h3>
+      <p>Language for difficult seasons, written with clarity and steadiness.</p>
+      <a href="#" class="btn">View on Amazon</a>
+    </div>
+
+  </div>
+</section>
+
+<!-- CREDIBILITY -->
+<section class="section credibility reveal">
+  <h2 style="color:var(--plum);margin-top:0;">Trusted by Readers</h2>
+
+  <ul>
+    <li>#1 Amazon Bestselling Author</li>
+    <li>Award-Winning Writer</li>
+    <li>20+ Years Healthcare Experience</li>
+    <li>Trauma-Informed Approach</li>
+  </ul>
+</section>
+
+<!-- TESTIMONIALS SLIDER -->
+<section class="section testimonials reveal">
+  <h2>What Readers Say</h2>
+
+  <div class="slider" aria-label="Testimonials">
+    <!-- Replace text with real quotes when you have them -->
+    <div class="slide active" data-slide="0">
+      <p class="quote">This felt grounding. Not preachy. Just steady words I could actually take in.</p>
+      <div class="attribution">Reader feedback</div>
+    </div>
+
+    <div class="slide" data-slide="1">
+      <p class="quote">The tone is calm and respectful. It didn’t push me — it gave me language.</p>
+      <div class="attribution">Reader feedback</div>
+    </div>
+
+    <div class="slide" data-slide="2">
+      <p class="quote">Practical, deeply human, and written in a way that feels safe to return to.</p>
+      <div class="attribution">Reader feedback</div>
+    </div>
+
+    <div class="slider-controls">
+      <button class="icon-btn" type="button" id="prevSlide" aria-label="Previous testimonial">‹</button>
+      <div class="dots" id="dots" aria-label="Testimonial navigation"></div>
+      <button class="icon-btn" type="button" id="nextSlide" aria-label="Next testimonial">›</button>
+    </div>
+  </div>
+</section>
+
+<!-- SOCIAL LINKS -->
+<section class="section social reveal">
+  <h2>Connect With Marie</h2>
+
+  <p>
+    <a href="https://www.facebook.com/marie.mckenzie" target="_blank" rel="noopener">Facebook</a>
+    <a href="https://instagram.com/mariemlmckenzie" target="_blank" rel="noopener">Instagram</a>
+    <a href="https://www.tiktok.com/@marielmckenzie" target="_blank" rel="noopener">TikTok</a>
+    <a href="https://www.youtube.com/@marielmckenzie" target="_blank" rel="noopener">YouTube</a>
+    <a href="https://www.threads.com/@mariemckenziecoaching" target="_blank" rel="noopener">Threads</a>
+  </p>
+</section>
+
+<!-- FINAL CTA -->
+<section class="section cta reveal">
+  <h2 style="color:var(--plum);margin-top:0;">Begin Where You Are</h2>
+  <p style="max-width:70ch;margin:0 auto 22px;">
+    If you’re looking for language that feels steady, grounded, and respectful, her books are a place to start.
+  </p>
+  <a href="https://www.amazon.com/author/mariemckenzie" class="btn" target="_blank" rel="noopener">Browse All Books on Amazon</a>
+</section>
+
+<footer>
+  © Marie McKenzie | All Rights Reserved
+</footer>
+
+<script>
+/* ----------------------------
+   Gentle reveal on scroll
+----------------------------- */
+(function(){
+  const prefersReduced = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const els = Array.from(document.querySelectorAll('.reveal'));
+
+  if (prefersReduced) {
+    els.forEach(el => el.classList.add('is-visible'));
+    return;
+  }
+
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('is-visible');
+        io.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.12 });
+
+  els.forEach(el => io.observe(el));
+})();
+
+/* ----------------------------
+   Testimonials slider
+----------------------------- */
+(function(){
+  const slides = Array.from(document.querySelectorAll('.slide'));
+  const dotsWrap = document.getElementById('dots');
+  const prevBtn = document.getElementById('prevSlide');
+  const nextBtn = document.getElementById('nextSlide');
+
+  if (!slides.length || !dotsWrap || !prevBtn || !nextBtn) return;
+
+  let index = 0;
+  let timer = null;
+
+  // Build dots
+  slides.forEach((_, i) => {
+    const d = document.createElement('button');
+    d.type = 'button';
+    d.className = 'dot' + (i === 0 ? ' active' : '');
+    d.setAttribute('aria-label', 'Go to testimonial ' + (i + 1));
+    d.addEventListener('click', () => goTo(i, true));
+    dotsWrap.appendChild(d);
+  });
+
+  const dots = Array.from(dotsWrap.querySelectorAll('.dot'));
+
+  function render(){
+    slides.forEach((s, i) => s.classList.toggle('active', i === index));
+    dots.forEach((d, i) => d.classList.toggle('active', i === index));
+  }
+
+  function goTo(i, userTriggered){
+    index = (i + slides.length) % slides.length;
+    render();
+    if (userTriggered) restart();
+  }
+
+  function next(userTriggered){ goTo(index + 1, userTriggered); }
+  function prev(userTriggered){ goTo(index - 1, userTriggered); }
+
+  prevBtn.addEventListener('click', () => prev(true));
+  nextBtn.addEventListener('click', () => next(true));
+
+  // Keyboard accessibility
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'ArrowLeft') prev(true);
+    if (e.key === 'ArrowRight') next(true);
+  });
+
+  // Auto-rotate (gentle)
+  const prefersReduced = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  function start(){
+    if (prefersReduced) return;
+    timer = window.setInterval(() => next(false), 6500);
+  }
+  function stop(){
+    if (timer) window.clearInterval(timer);
+    timer = null;
+  }
+  function restart(){
+    stop();
+    start();
+  }
+
+  // Pause on hover/focus
+  const slider = document.querySelector('.slider');
+  slider.addEventListener('mouseenter', stop);
+  slider.addEventListener('mouseleave', start);
+  slider.addEventListener('focusin', stop);
+  slider.addEventListener('focusout', start);
+
+  render();
+  start();
+})();
+</script>
+
+</body>
+</html>
