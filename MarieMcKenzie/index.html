@@ -1,0 +1,227 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Marie McKenzie | Trauma-Informed Author</title>
+<meta name="description" content="Award-Winning and #1 Amazon Bestselling Author Marie McKenzie writes trauma-informed books about healing, care, and being human." />
+
+<style>
+:root{
+  --teal:#1F6F78;
+  --plum:#5E4B8B;
+  --lavender:#F4F1F8;
+  --ink:#2a2a2a;
+  --shadow: 0 10px 25px rgba(0,0,0,0.06);
+  --shadow-hover: 0 18px 40px rgba(0,0,0,0.10);
+}
+
+body{
+  margin:0;
+  font-family: "Segoe UI", system-ui, sans-serif;
+  color:var(--ink);
+  line-height:1.6;
+}
+
+.section{
+  padding:80px 20px;
+  max-width:1100px;
+  margin:auto;
+}
+
+.hero{ background:var(--lavender); }
+
+.hero-grid{
+  display:grid;
+  grid-template-columns: 1fr 1fr;
+  gap:60px;
+  align-items:center;
+}
+
+h1{ font-size:42px; margin-bottom:10px; }
+
+.subtitle{
+  color:var(--plum);
+  margin-bottom:20px;
+}
+
+.tagline{
+  font-size:18px;
+  margin-bottom:30px;
+}
+
+.btn{
+  display:inline-block;
+  background:var(--teal);
+  color:white;
+  padding:14px 28px;
+  border-radius:10px;
+  text-decoration:none;
+  transition:0.3s ease;
+  box-shadow: 0 8px 18px rgba(31,111,120,0.22);
+}
+
+.btn:hover{
+  background:#155a60;
+  transform: translateY(-2px);
+}
+
+.book-grid{
+  display:grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px,1fr));
+  gap:30px;
+  margin-top:40px;
+}
+
+.book-card{
+  background:white;
+  padding:20px;
+  border-radius:14px;
+  box-shadow:var(--shadow);
+  text-align:center;
+  transition:0.3s ease;
+}
+
+.book-card:hover{
+  transform:translateY(-6px);
+  box-shadow:var(--shadow-hover);
+}
+
+.book-card img{
+  width:100%;
+  border-radius:10px;
+  margin-bottom:20px;
+}
+
+.reveal{
+  opacity:0;
+  transform:translateY(20px);
+  transition:0.8s ease;
+}
+
+.reveal.visible{
+  opacity:1;
+  transform:none;
+}
+
+@media(max-width:768px){
+  .hero-grid{ grid-template-columns:1fr; }
+}
+</style>
+</head>
+
+<body>
+
+<!-- HERO -->
+<section class="section hero reveal">
+  <div class="hero-grid">
+
+    <img src="marie-mckenzie-profile.webp"
+         alt="Marie McKenzie"
+         style="width:100%; border-radius:14px; box-shadow:var(--shadow);" />
+
+    <div>
+      <h1>Marie McKenzie</h1>
+      <div class="subtitle">
+        Award-Winning & #1 Amazon Bestselling Author<br>
+        Registered Nurse | Educator | Trauma-Informed Writer
+      </div>
+
+      <p class="tagline">
+        Writing about healing, care, and being human — with steadiness, dignity, and compassion.
+      </p>
+
+      <a href="#books" class="btn">Explore Her Books</a>
+    </div>
+
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section class="section reveal">
+  <h2 style="color:var(--teal);">About Marie</h2>
+
+  <p>
+    Marie McKenzie is a registered nurse, educator, and award-winning #1 Amazon bestselling author whose work centres on trauma-informed healing.
+  </p>
+
+  <p>
+    With over two decades of healthcare experience, she writes with clinical insight and human depth — offering language that feels calm, steady, and safe.
+  </p>
+
+  <p>
+    Rooted in dignity, choice, and compassion, Marie believes healing happens best when people feel respected — never pressured. Readers often describe her books as grounding and practical.
+  </p>
+</section>
+
+<!-- BOOKS -->
+<section id="books" class="section reveal" style="background:var(--lavender);">
+  <h2 style="text-align:center;color:var(--teal);">Featured Books</h2>
+
+  <div class="book-grid">
+
+    <div class="book-card">
+      <img src="things-that-keep-me-up-at-night.webp"
+           alt="Things That Keep Me Up at Night by Marie McKenzie">
+      <h3>Things That Keep Me Up at Night</h3>
+      <p>A deeply honest exploration of trauma, reflection, and healing.</p>
+      <a href="https://www.amazon.com/Things-That-Keep-Me-Night-ebook/dp/B09X29GKSV"
+         class="btn" target="_blank">View on Amazon</a>
+    </div>
+
+    <div class="book-card">
+      <img src="who-says-you-cant-heal.webp"
+           alt="Who Says You Can't Heal by Marie McKenzie">
+      <h3>Who Says You Can’t Heal?</h3>
+      <p>A trauma-informed guide toward dignity, clarity, and self-understanding.</p>
+      <a href="https://www.amazon.com/Who-Says-You-Cant-Heal-ebook/dp/B0FFWNHPSW"
+         class="btn" target="_blank">View on Amazon</a>
+    </div>
+
+    <div class="book-card">
+      <img src="stuck-to-limitless.webp"
+           alt="Stuck to Limitless by Marie McKenzie">
+      <h3>Stuck to Limitless</h3>
+      <p>An empowering shift from limitation toward grounded personal growth.</p>
+      <a href="https://www.amazon.com/Stuck-Limitless-Marie-McKenzie-ebook/dp/B0C41S9JMD"
+         class="btn" target="_blank">View on Amazon</a>
+    </div>
+
+  </div>
+</section>
+
+<!-- SOCIAL -->
+<section class="section reveal">
+  <h2 style="color:var(--teal); text-align:center;">Connect With Marie</h2>
+
+  <p style="text-align:center;">
+    <a href="https://www.facebook.com/marie.mckenzie" target="_blank">Facebook</a> |
+    <a href="https://instagram.com/mariemlmckenzie" target="_blank">Instagram</a> |
+    <a href="https://www.tiktok.com/@marielmckenzie" target="_blank">TikTok</a> |
+    <a href="https://www.youtube.com/@marielmckenzie" target="_blank">YouTube</a> |
+    <a href="https://www.threads.com/@mariemckenziecoaching" target="_blank">Threads</a>
+  </p>
+</section>
+
+<!-- FINAL CTA -->
+<section class="section reveal" style="background:var(--lavender); text-align:center;">
+  <h2 style="color:var(--plum);">Begin Where You Are</h2>
+  <p>Her books offer steady language for difficult seasons.</p>
+  <a href="https://www.amazon.com/author/mariemckenzie"
+     class="btn" target="_blank">Browse All Books on Amazon</a>
+</section>
+
+<script>
+const reveals = document.querySelectorAll('.reveal');
+const observer = new IntersectionObserver(entries=>{
+  entries.forEach(entry=>{
+    if(entry.isIntersecting){
+      entry.target.classList.add('visible');
+    }
+  });
+});
+reveals.forEach(r=>observer.observe(r));
+</script>
+
+</body>
+</html>
