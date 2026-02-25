@@ -22,70 +22,210 @@ gtag('config', 'G-0DYQYNMX6T', { anonymize_ip: true });
 
 <style>
 :root{
---ink:#1d1f21;
---ink-soft:#4b5258;
---brand:#0f4c5c;
---brand-soft:#1f6f82;
---paper:#f7f7f5;
---white:#ffffff;
+  --ink:#1d1f21;
+  --ink-soft:#4b5258;
+  --brand:#0f4c5c;
+  --brand-soft:#1f6f82;
+  --paper:#f7f7f5;
+  --white:#ffffff;
+  --shadow:0 12px 30px rgba(0,0,0,0.12);
 }
+
 body{
-margin:0;
-font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif;
-background:var(--paper);
-color:var(--ink);
-line-height:1.6;
+  margin:0;
+  font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif;
+  background:var(--paper);
+  color:var(--ink);
+  line-height:1.6;
 }
+
 .wrap{max-width:1100px;margin:auto;padding:60px 20px;}
-.hero{text-align:center;padding:80px 20px 60px;background:var(--white);}
-.monogram{
-width:90px;height:90px;margin:0 auto 25px;border-radius:50%;
-background:var(--brand);display:flex;align-items:center;justify-content:center;
-font-size:32px;font-weight:600;color:white;letter-spacing:2px;
+
+.hero{
+  text-align:center;
+  padding:80px 20px 60px;
+  background:var(--white);
 }
+
+.monogram{
+  width:90px;height:90px;margin:0 auto 25px;border-radius:50%;
+  background:var(--brand);display:flex;align-items:center;justify-content:center;
+  font-size:32px;font-weight:600;color:white;letter-spacing:2px;
+}
+
 .section{padding:70px 20px;}
 .section h2{text-align:center;margin-bottom:28px;font-size:26px;}
-.lead{max-width:950px;margin:0 auto 18px;color:var(--ink-soft);font-size:17px;}
+
 .book-grid{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
-gap:40px;margin-top:40px;
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+  gap:40px;
+  margin-top:40px;
 }
+
 .book-card{
-background:var(--white);
-padding:20px;
-border-radius:10px;
-box-shadow:0 8px 20px rgba(0,0,0,0.05);
-text-align:center;
-transition:transform .25s ease, box-shadow .25s ease;
+  background:var(--white);
+  padding:20px;
+  border-radius:10px;
+  box-shadow:0 8px 20px rgba(0,0,0,0.05);
+  text-align:center;
+  transition:transform .25s ease, box-shadow .25s ease;
+  position:relative;
 }
+
 .book-card:hover{
-transform:translateY(-6px);
-box-shadow:0 12px 30px rgba(0,0,0,0.08);
+  transform:translateY(-6px);
+  box-shadow:0 12px 30px rgba(0,0,0,0.08);
 }
+
 .book-card img{
-max-width:100%;
-height:auto;
-border-radius:6px;
-margin-bottom:14px;
+  max-width:100%;
+  height:auto;
+  border-radius:6px;
+  margin-bottom:14px;
 }
+
+.book-card a{display:block;}
+
+.book-title{
+  margin:0 0 8px;
+  color:var(--brand);
+  font-size:17px;
+  line-height:1.35;
+}
+
+/* Review hover popover */
+.review-trigger{
+  display:inline-block;
+  position:relative;
+  outline:none;
+  cursor:help;
+}
+
+.review-trigger:focus-visible{
+  outline:3px solid rgba(15,76,92,0.25);
+  outline-offset:4px;
+  border-radius:8px;
+}
+
+.review-pop{
+  position:absolute;
+  left:50%;
+  transform:translateX(-50%);
+  top:115%;
+  width:min(320px, 80vw);
+  background:var(--white);
+  color:var(--ink);
+  border-radius:12px;
+  padding:14px 14px 12px;
+  box-shadow:var(--shadow);
+  border:1px solid rgba(0,0,0,0.06);
+  text-align:left;
+  z-index:20;
+  opacity:0;
+  pointer-events:none;
+  transition:opacity .15s ease, transform .15s ease;
+}
+
+.review-pop::before{
+  content:"";
+  position:absolute;
+  top:-8px;
+  left:50%;
+  transform:translateX(-50%);
+  border-width:0 9px 9px 9px;
+  border-style:solid;
+  border-color:transparent transparent var(--white) transparent;
+  filter:drop-shadow(0 -1px 0 rgba(0,0,0,0.06));
+}
+
+.review-trigger:hover .review-pop,
+.review-trigger:focus .review-pop{
+  opacity:1;
+  pointer-events:auto;
+  transform:translateX(-50%) translateY(2px);
+}
+
+.review-head{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:10px;
+  margin-bottom:10px;
+}
+
+.stars{
+  display:inline-flex;
+  align-items:center;
+  gap:8px;
+  padding:6px 10px;
+  border-radius:999px;
+  background:rgba(15,76,92,0.08);
+  color:var(--brand);
+  font-weight:700;
+  font-size:13px;
+  letter-spacing:0.2px;
+}
+
+.star-glyph{
+  font-size:14px;
+  letter-spacing:1px;
+}
+
+.review-list{
+  margin:0;
+  padding:0;
+  list-style:none;
+  display:grid;
+  gap:10px;
+}
+
+.review{
+  border-top:1px solid rgba(0,0,0,0.06);
+  padding-top:10px;
+}
+
+.review:first-child{
+  border-top:0;
+  padding-top:0;
+}
+
+.r-name{
+  font-weight:700;
+  font-size:13px;
+  margin-bottom:2px;
+}
+
+.r-quote{
+  font-size:13px;
+  color:var(--ink-soft);
+  margin:0;
+}
+
 .manifesto{
-background:var(--brand);
-color:white;
-text-align:center;
-padding:80px 20px;
+  background:var(--brand);
+  color:white;
+  text-align:center;
+  padding:80px 20px;
 }
 .manifesto p{font-size:22px;margin:10px auto;max-width:760px;}
+
 .bio{max-width:950px;margin:auto;color:var(--ink-soft);}
 .bio p{margin-bottom:16px;}
+
 .cta{text-align:center;padding:70px 20px;}
 .cta a{
-display:inline-block;padding:14px 32px;
-background:var(--brand);color:white;text-decoration:none;
-border-radius:8px;font-weight:700;
-transition:background .2s ease;
+  display:inline-block;
+  padding:14px 32px;
+  background:var(--brand);
+  color:white;
+  text-decoration:none;
+  border-radius:8px;
+  font-weight:700;
+  transition:background .2s ease;
 }
 .cta a:hover{background:var(--brand-soft);}
+
 footer{text-align:center;padding:40px 20px;font-size:14px;color:#777;}
 </style>
 </head>
@@ -93,107 +233,194 @@ footer{text-align:center;padding:40px 20px;font-size:14px;color:#777;}
 <body>
 
 <section class="hero">
-<div class="monogram">TH</div>
-<h1>Tory Hunt</h1>
-<p>Practical life-skills books parents trust-helping teens become confident, capable, and prepared for real life.</p>
+  <div class="monogram">TH</div>
+  <h1>Tory Hunt</h1>
+  <p>Practical life-skills books parents trust-helping teens become confident, capable, and prepared for real life.</p>
 </section>
 
 <section class="section wrap">
-<h2>Featured Books</h2>
+  <h2>Featured Books</h2>
 
-<div class="book-grid">
+  <div class="book-grid">
 
-<div class="book-card">
-<a href="https://www.amazon.com/dp/B0CM54R89D"
-target="_blank" rel="noopener noreferrer"
-class="js-amazon-link"
-data-cta="110-life-skills-teenage-boys">
-<img src="/ToryHunt/110-life-skills-teenage-boys.webp"
-width="300" height="450" loading="lazy"
-alt="110 Life Skills for Teenage Boys by Tory Hunt">
-</a>
-<h3>110 Life Skills for Teenage Boys</h3>
-<p>A practical guide helping teenage boys build responsibility and confidence.</p>
-</div>
+    <!-- 110 Life Skills -->
+    <div class="book-card">
+      <a href="https://www.amazon.com/dp/B0CM54R89D"
+         target="_blank" rel="noopener noreferrer"
+         class="js-amazon-link"
+         data-cta="110-life-skills-teenage-boys">
+        <img src="/ToryHunt/110-life-skills-teenage-boys.webp"
+             width="300" height="450" loading="lazy"
+             alt="110 Life Skills for Teenage Boys by Tory Hunt">
+      </a>
 
-<div class="book-card">
-<a href="https://www.amazon.com/dp/B0BS8Z3W1C"
-target="_blank" rel="noopener noreferrer"
-class="js-amazon-link"
-data-cta="adulting-life-skills-for-teens">
-<img src="/ToryHunt/adulting-life-skills-for-teens-everything-you-need-to-know.webp"
-width="300" height="450" loading="lazy"
-alt="Adulting Life Skills for Teens Everything You Need to Know by Tory Hunt">
-</a>
-<h3>Adulting Life Skills for Teens: Everything You Need to Know</h3>
-<p>A modern guide covering everyday life skills teens need for independence.</p>
-</div>
+      <h3 class="book-title">
+        <span class="review-trigger" tabindex="0" aria-label="Reviews for 110 Life Skills for Teenage Boys">
+          110 Life Skills for Teenage Boys
+          <span class="review-pop" role="tooltip">
+            <div class="review-head">
+              <strong>Top reviews</strong>
+              <span class="stars" aria-hidden="true">
+                <span class="star-glyph">★★★★★</span> 5.0
+              </span>
+            </div>
+            <ul class="review-list">
+              <li class="review">
+                <div class="r-name">Evelyn M</div>
+                <p class="r-quote">“Practical, Empowering, and Genuinely Useful.”</p>
+              </li>
+              <li class="review">
+                <div class="r-name">Lisa</div>
+                <p class="r-quote">“Toolbox For Teenager Life Skills and Confidence.”</p>
+              </li>
+              <li class="review">
+                <div class="r-name">Lori</div>
+                <p class="r-quote">“Teenage Boys skills for life.”</p>
+              </li>
+            </ul>
+          </span>
+        </span>
+      </h3>
 
-<div class="book-card">
-<a href="https://www.amazon.com/dp/B0BS8Z3W1C"
-target="_blank" rel="noopener noreferrer"
-class="js-amazon-link"
-data-cta="life-skills-for-tweens">
-<img src="/ToryHunt/life-skills-for-tweens-responsibility-and-independence.webp"
-width="300" height="450" loading="lazy"
-alt="Life Skills for Tweens Responsibility and Independence by Tory Hunt">
-</a>
-<h3>Life Skills for Tweens: Responsibility and Independence</h3>
-<p>A practical guide for tweens focused on responsibility and confidence-building habits.</p>
-</div>
+      <p>A practical guide helping teenage boys build responsibility and confidence.</p>
+    </div>
 
-</div>
+    <!-- Adulting -->
+    <div class="book-card">
+      <a href="https://www.amazon.com/dp/B0BS8Z3W1C"
+         target="_blank" rel="noopener noreferrer"
+         class="js-amazon-link"
+         data-cta="adulting-life-skills-for-teens">
+        <img src="/ToryHunt/adulting-life-skills-for-teens-everything-you-need-to-know.webp"
+             width="300" height="450" loading="lazy"
+             alt="Adulting Life Skills for Teens Everything You Need to Know by Tory Hunt">
+      </a>
+
+      <h3 class="book-title">
+        <span class="review-trigger" tabindex="0" aria-label="Reviews for Adulting Life Skills for Teens">
+          Adulting Life Skills for Teens: Everything You Need to Know
+          <span class="review-pop" role="tooltip">
+            <div class="review-head">
+              <strong>Top reviews</strong>
+              <span class="stars" aria-hidden="true">
+                <span class="star-glyph">★★★★★</span> 5.0
+              </span>
+            </div>
+            <ul class="review-list">
+              <li class="review">
+                <div class="r-name">Monika S</div>
+                <p class="r-quote">“Super practical.”</p>
+              </li>
+              <li class="review">
+                <div class="r-name">Shanskan</div>
+                <p class="r-quote">“Essential Skills For Life.”</p>
+              </li>
+              <li class="review">
+                <div class="r-name">Martin Ross</div>
+                <p class="r-quote">“One of the best money books for young people I’ve seen.”</p>
+              </li>
+            </ul>
+          </span>
+        </span>
+      </h3>
+
+      <p>A modern guide covering everyday life skills teens need for independence.</p>
+    </div>
+
+    <!-- Tweens -->
+    <div class="book-card">
+      <a href="https://www.amazon.com/dp/B0BYV99X2F"
+         target="_blank" rel="noopener noreferrer"
+         class="js-amazon-link"
+         data-cta="life-skills-for-tweens">
+        <img src="/ToryHunt/life-skills-for-tweens-responsibility-and-independence.webp"
+             width="300" height="450" loading="lazy"
+             alt="Life Skills for Tweens Responsibility and Independence by Tory Hunt">
+      </a>
+
+      <h3 class="book-title">
+        <span class="review-trigger" tabindex="0" aria-label="Reviews for Life Skills for Tweens">
+          Life Skills for Tweens: Responsibility and Independence
+          <span class="review-pop" role="tooltip">
+            <div class="review-head">
+              <strong>Top reviews</strong>
+              <span class="stars" aria-hidden="true">
+                <span class="star-glyph">★★★★★</span> 5.0
+              </span>
+            </div>
+            <ul class="review-list">
+              <li class="review">
+                <div class="r-name">Lizzy</div>
+                <p class="r-quote">“Must-read for children in their developmental stages.”</p>
+              </li>
+              <li class="review">
+                <div class="r-name">Angela Carroll</div>
+                <p class="r-quote">“How to be a capable adult.”</p>
+              </li>
+              <li class="review">
+                <div class="r-name">Alesi Nivres</div>
+                <p class="r-quote">“A Practical Guide for Tweens Growing Up.”</p>
+              </li>
+            </ul>
+          </span>
+        </span>
+      </h3>
+
+      <p>A practical guide for tweens focused on responsibility and confidence-building habits.</p>
+    </div>
+
+  </div>
 </section>
 
 <section class="manifesto">
-<p>Confidence isn’t given.</p>
-<p>It’s built through habits, responsibility and direction.</p>
+  <p>Confidence isn’t given.</p>
+  <p>It’s built through habits, responsibility and direction.</p>
 </section>
 
 <section class="section wrap">
-<h2>About Tory</h2>
+  <h2>About Tory</h2>
 
-<div class="bio">
-<p>
-Tory Hunt is an entrepreneur and writer with a passion for helping teens build confidence, life skills, and a strong sense of direction. As a devoted mother of four, she understands the real challenges young people face today—pressure, identity, money decisions, and growing independence—and she’s committed to making those years easier to navigate.
-</p>
+  <div class="bio">
+    <p>
+      Tory Hunt is an entrepreneur and writer with a passion for helping teens build confidence, life skills, and a strong sense of direction. As a devoted mother of four, she understands the real challenges young people face today—pressure, identity, money decisions, and growing independence—and she’s committed to making those years easier to navigate.
+    </p>
 
-<p>
-Tory’s work in the teen niche grew from a simple goal: create practical, encouraging resources that speak to teens in a clear, relatable way. Through engaging guides and tools, she helps young readers develop habits and skills they can carry into adulthood.
-</p>
+    <p>
+      Tory’s work in the teen niche grew from a simple goal: create practical, encouraging resources that speak to teens in a clear, relatable way. Through engaging guides and tools, she helps young readers develop habits and skills they can carry into adulthood.
+    </p>
 
-<p>
-When she’s not working, Tory loves exploring new places and cultures, always chasing the next experience. She’s also an avid reader who enjoys learning, finding inspiration, and escaping into great stories. Most of all, she treasures family time and the memories that keep her grounded and motivated.
-</p>
-</div>
+    <p>
+      When she’s not working, Tory loves exploring new places and cultures, always chasing the next experience. She’s also an avid reader who enjoys learning, finding inspiration, and escaping into great stories. Most of all, she treasures family time and the memories that keep her grounded and motivated.
+    </p>
+  </div>
 </section>
 
 <section class="cta">
-<a href="https://www.amazon.com/stores/author/B0BSMJ25KD"
-target="_blank" rel="noopener noreferrer"
-class="js-amazon-link"
-data-cta="author-store">
-Explore Tory Hunt on Amazon
-</a>
+  <a href="https://www.amazon.com/stores/author/B0BSMJ25KD"
+     target="_blank" rel="noopener noreferrer"
+     class="js-amazon-link"
+     data-cta="author-store">
+    Explore Tory Hunt on Amazon
+  </a>
 </section>
 
 <footer>
-© 2026 AuthorsBookClub.com
+  © 2026 AuthorsBookClub.com
 </footer>
 
 <script>
 document.querySelectorAll('.js-amazon-link').forEach(function(link){
-link.addEventListener('click', function(){
-if(typeof gtag === 'function'){
-gtag('event','amazon_click',{
-event_category:'outbound',
-event_label:link.getAttribute('data-cta'),
-link_url:link.href,
-author:'Tory Hunt',
-transport_type:'beacon'
-});
-}
-});
+  link.addEventListener('click', function(){
+    if(typeof gtag === 'function'){
+      gtag('event','amazon_click',{
+        event_category:'outbound',
+        event_label:link.getAttribute('data-cta'),
+        link_url:link.href,
+        author:'Tory Hunt',
+        transport_type:'beacon'
+      });
+    }
+  });
 });
 </script>
 
