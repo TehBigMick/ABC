@@ -1,758 +1,220 @@
 <!doctype html>
 <html lang="en-GB">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Authors Book Club | Discover Indie Authors</title>
-  <meta name="description" content="A cosy indie-bookstore corner of the internet. Discover new indie authors by genre, vibe, and surprise picks." />
-  <link rel="canonical" href="https://www.authorsbookclub.com/" />
-  <link rel="stylesheet" href="./styles.css" />
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Authors Book Club | Discover Indie Authors</title>
 
-  <style>
-    :root{
-      /* Autumn coffee-shop palette */
-      --ink:#1c1410;
-      --ink-soft:#3a2b22;
-      --muted:#6b574b;
+<link rel="stylesheet" href="./styles.css" />
 
-      --cream:#fbf2e6;
-      --cream-2:#f3e6d7;
-      --cream-3:#ead8c5;
+<style>
+:root{
+  --ink:#1c1410;
+  --muted:#6b574b;
+  --cream:#fbf2e6;
+  --caramel:#c08a4b;
+  --rust:#8a3b25;
+  --evergreen:#2f5a4c;
+  --radius:18px;
+  --max:1100px;
+}
 
-      --latte:#d6b590;
-      --caramel:#c08a4b;
-      --rust:#8a3b25;
-      --evergreen:#2f5a4c;
+/* ===== Background (autumn coffee shop) ===== */
+body{
+  margin:0;
+  font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
+  background:var(--cream);
+  color:var(--ink);
+  position:relative;
+}
 
-      --shadow: 0 18px 55px rgba(28,20,16,.14);
-      --shadow-soft: 0 10px 26px rgba(28,20,16,.12);
+body::before{
+  content:"";
+  position:fixed;
+  inset:0;
+  background:url("./assets/bg-autumn-coffee.webp") center/cover no-repeat;
+  z-index:-2;
+}
 
-      --radius: 18px;
-      --radius-2: 24px;
-      --max: 1100px;
+body::after{
+  content:"";
+  position:fixed;
+  inset:0;
+  background:linear-gradient(rgba(251,242,230,.88), rgba(243,230,215,.92));
+  z-index:-1;
+}
 
-      /* Adjust this if your sticky header changes height */
-      --sticky-offset: 86px;
-    }
+.wrap{
+  max-width:var(--max);
+  margin:auto;
+  padding:20px 16px 80px;
+}
 
-    /* Base */
-    html,body{ height:100%; }
-    body{
-      margin:0;
-      color:var(--ink);
-      font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji";
-      line-height:1.5;
-      background: var(--cream);
-      position:relative;
-      overflow-x:hidden;
-    }
+/* ===== Header ===== */
+header{
+  position:sticky;
+  top:0;
+  backdrop-filter:blur(12px);
+  background:rgba(251,242,230,.75);
+  border-bottom:1px solid rgba(0,0,0,.08);
+  z-index:20;
+}
 
-    /* Fixed background image (replace the URL with your chosen asset) */
-    body::before{
-      content:"";
-      position:fixed;
-      inset:0;
-      background-image: url("./assets/bg-autumn-coffee.webp"); /* <-- add this file */
-      background-size: cover;
-      background-position: center;
-      background-repeat: no-repeat;
-      z-index:-2;
-      transform: translateZ(0);
-      filter: saturate(0.95) contrast(1.02);
-    }
+.nav{
+  max-width:var(--max);
+  margin:auto;
+  padding:12px 16px;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+}
 
-    /* Warm overlay so text stays readable over the photo */
-    body::after{
-      content:"";
-      position:fixed;
-      inset:0;
-      background:
-        radial-gradient(1200px 650px at 18% 0%, rgba(192,138,75,.22), transparent 55%),
-        radial-gradient(900px 560px at 90% 12%, rgba(47,90,76,.14), transparent 55%),
-        linear-gradient(180deg, rgba(251,242,230,.86), rgba(243,230,215,.90));
-      z-index:-1;
-      pointer-events:none;
-    }
+.brand{
+  font-weight:800;
+}
 
-    a{ color:inherit; text-decoration:none; }
-    a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible{
-      outline: 3px solid rgba(192,138,75,.60);
-      outline-offset: 2px;
-      border-radius: 10px;
-    }
+.pill{
+  padding:8px 12px;
+  border-radius:999px;
+  background:rgba(255,255,255,.6);
+  border:1px solid rgba(0,0,0,.08);
+  font-weight:600;
+  text-decoration:none;
+  color:var(--ink);
+}
 
-    .wrap{ max-width: var(--max); margin:0 auto; padding: 18px 16px 80px; }
-    .card{
-      background: rgba(255,255,255,.72);
-      border: 1px solid rgba(28,20,16,.12);
-      border-radius: var(--radius);
-      box-shadow: var(--shadow-soft);
-      backdrop-filter: blur(6px);
-      position:relative;
-      z-index:1; /* keep cards above any weird overlap */
-    }
-    .soft{
-      background: rgba(255,255,255,.58);
-      border: 1px solid rgba(28,20,16,.10);
-    }
+.pill:hover{ background:rgba(255,255,255,.85); }
 
-    /* Header */
-    header{
-      position: sticky;
-      top:0;
-      z-index:10;
-      backdrop-filter: blur(12px);
-      background: rgba(251,242,230,.76);
-      border-bottom: 1px solid rgba(28,20,16,.10);
-    }
-    .nav{
-      max-width: var(--max);
-      margin:0 auto;
-      padding: 12px 16px;
-      display:flex;
-      align-items:center;
-      justify-content:space-between;
-      gap: 12px;
-    }
-    .brand{
-      display:flex;
-      align-items:center;
-      gap:10px;
-      font-weight: 850;
-      letter-spacing:.2px;
-    }
-    .mark{
-      width:34px; height:34px;
-      border-radius: 12px;
-      background: linear-gradient(135deg, rgba(192,138,75,.95), rgba(138,59,37,.95));
-      box-shadow: 0 10px 18px rgba(28,20,16,.20);
-      position: relative;
-      overflow:hidden;
-    }
-    .mark:after{
-      content:"";
-      position:absolute; inset:-30%;
-      background: radial-gradient(circle at 35% 35%, rgba(255,255,255,.55), transparent 55%);
-      transform: rotate(18deg);
-    }
-    .navlinks{ display:flex; gap: 10px; align-items:center; flex-wrap:wrap; justify-content:flex-end; }
-    .pill{
-      display:inline-flex;
-      align-items:center;
-      gap:8px;
-      padding: 10px 12px;
-      border-radius: 999px;
-      border: 1px solid rgba(28,20,16,.14);
-      background: rgba(255,255,255,.52);
-      transition: transform .14s ease, background .14s ease, border-color .14s ease;
-      font-weight: 700;
-      color: var(--ink-soft);
-    }
-    .pill:hover{ transform: translateY(-1px); background: rgba(255,255,255,.70); border-color: rgba(28,20,16,.20); }
-    .pill.primary{
-      background: linear-gradient(180deg, rgba(192,138,75,.26), rgba(192,138,75,.14));
-      border-color: rgba(192,138,75,.50);
-      color: var(--ink);
-    }
-    .pill.author{
-      background: linear-gradient(180deg, rgba(47,90,76,.20), rgba(47,90,76,.10));
-      border-color: rgba(47,90,76,.40);
-    }
+/* ===== Sections ===== */
+section{
+  margin-top:38px;
+}
 
-    /* Hero */
-    .hero{
-      margin-top: 18px;
-      padding: 26px 18px;
-      border-radius: var(--radius-2);
-      overflow:hidden;
-      position:relative;
-    }
-    .hero:before{
-      content:"";
-      position:absolute; inset:-2px;
-      background:
-        radial-gradient(700px 520px at 20% 30%, rgba(192,138,75,.22), transparent 60%),
-        radial-gradient(600px 440px at 90% 25%, rgba(138,59,37,.18), transparent 62%),
-        linear-gradient(135deg, rgba(255,255,255,.68), rgba(255,255,255,.30));
-      z-index:0;
-    }
-    .hero > *{ position:relative; z-index:1; }
-    .hero-grid{
-      display:grid;
-      grid-template-columns: 1.2fr .8fr;
-      gap: 16px;
-      align-items:stretch;
-    }
-    @media (max-width: 900px){
-      .hero-grid{ grid-template-columns: 1fr; }
-    }
-    h1{
-      margin: 0 0 10px;
-      font-size: clamp(28px, 3.2vw, 44px);
-      line-height: 1.1;
-      letter-spacing: -.3px;
-    }
-    .lede{
-      margin: 0 0 18px;
-      color: var(--muted);
-      font-size: 1.05rem;
-      max-width: 56ch;
-    }
-    .cta-row{
-      display:flex;
-      gap:10px;
-      flex-wrap:wrap;
-      align-items:center;
-      margin-top: 12px;
-    }
-    .btn{
-      appearance:none;
-      border:1px solid rgba(28,20,16,.16);
-      background: rgba(255,255,255,.72);
-      border-radius: 999px;
-      padding: 12px 14px;
-      font-weight: 850;
-      cursor:pointer;
-      transition: transform .14s ease, border-color .14s ease, background .14s ease;
-      box-shadow: 0 12px 24px rgba(28,20,16,.12);
-      display:inline-flex;
-      align-items:center;
-      justify-content:center;
-    }
-    .btn:hover{ transform: translateY(-1px); border-color: rgba(28,20,16,.22); background: rgba(255,255,255,.82); }
-    .btn.primary{
-      background: linear-gradient(180deg, rgba(192,138,75,.36), rgba(192,138,75,.18));
-      border-color: rgba(192,138,75,.60);
-    }
-    .btn.green{
-      background: linear-gradient(180deg, rgba(47,90,76,.28), rgba(47,90,76,.12));
-      border-color: rgba(47,90,76,.48);
-    }
+/* ===== Featured Cards (RENAMED) ===== */
+.author-card{
+  padding:16px;
+  border-radius:var(--radius);
+  background:rgba(255,255,255,.65);
+  border:1px solid rgba(0,0,0,.08);
+  display:flex;
+  gap:14px;
+  align-items:flex-start;
+  transition:.15s ease;
+}
 
-    /* Surprise box */
-    .surprise{
-      padding: 16px;
-      border-radius: var(--radius);
-      display:flex;
-      flex-direction:column;
-      gap: 12px;
-    }
-    .surprise h2{
-      margin:0;
-      font-size: 1.1rem;
-      letter-spacing: -.2px;
-    }
-    .surprise p{
-      margin:0;
-      color: var(--muted);
-      font-size: .95rem;
-    }
-    .form{
-      display:grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 10px;
-    }
-    @media (max-width: 520px){
-      .form{ grid-template-columns: 1fr; }
-    }
-    .field label{
-      display:block;
-      font-size:.85rem;
-      color: var(--ink-soft);
-      margin: 0 0 6px;
-      font-weight:800;
-    }
-    .field select{
-      width:100%;
-      padding: 11px 12px;
-      border-radius: 12px;
-      border:1px solid rgba(28,20,16,.16);
-      background: rgba(255,255,255,.78);
-      color: var(--ink);
-    }
-    .hint{
-      font-size: .82rem;
-      color: var(--muted);
-    }
+.author-card:hover{
+  transform:translateY(-3px);
+  box-shadow:0 15px 35px rgba(0,0,0,.15);
+}
 
-    /* Sections */
-    section{
-      margin-top: 30px;
-      scroll-margin-top: var(--sticky-offset); /* fixes sticky header overlap when jumping to anchors */
-      position:relative;
-      z-index:1;
-    }
-    .section-head{
-      display:flex;
-      align-items:flex-end;
-      justify-content:space-between;
-      gap:10px;
-      margin: 0 0 12px;
-    }
-    .section-head h2{
-      margin:0;
-      font-size: 1.25rem;
-      letter-spacing: -.2px;
-    }
-    .section-head .sub{
-      margin:0;
-      color: var(--muted);
-      font-size: .95rem;
-    }
+.cover{
+  width:56px;
+  height:80px;
+  border-radius:10px;
+  background:linear-gradient(135deg,var(--rust),var(--caramel));
+}
 
-    /* Genre grid */
-    .genres{
-      display:grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 10px;
-    }
-    @media (max-width: 920px){ .genres{ grid-template-columns: repeat(2, 1fr); } }
-    @media (max-width: 520px){ .genres{ grid-template-columns: 1fr; } }
+.author-card h3{
+  margin:0 0 6px;
+}
 
-    button.genre{
-      text-align:left;
-      width:100%;
-      padding: 14px;
-      border-radius: var(--radius);
-      position:relative;
-      overflow:hidden;
-      min-height: 92px;
-      display:flex;
-      flex-direction:column;
-      justify-content:space-between;
-      transition: transform .14s ease, box-shadow .14s ease, border-color .14s ease, background .14s ease;
-      border: 1px solid rgba(28,20,16,.12);
-      background:
-        radial-gradient(240px 160px at 20% 10%, rgba(192,138,75,.22), transparent 60%),
-        radial-gradient(240px 160px at 90% 30%, rgba(47,90,76,.14), transparent 60%),
-        rgba(255,255,255,.62);
-      cursor:pointer;
-    }
-    button.genre:hover{
-      transform: translateY(-2px);
-      box-shadow: var(--shadow);
-      border-color: rgba(28,20,16,.20);
-      background:
-        radial-gradient(240px 160px at 20% 10%, rgba(192,138,75,.26), transparent 60%),
-        radial-gradient(240px 160px at 90% 30%, rgba(47,90,76,.16), transparent 60%),
-        rgba(255,255,255,.72);
-    }
-    button.genre .name{ font-weight: 900; letter-spacing: -.2px; }
-    button.genre .meta{ color: var(--muted); font-size: .9rem; }
+.by{
+  margin:0 0 6px;
+  color:var(--muted);
+}
 
-    /* Featured rows */
-    .row{
-      display:grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 10px;
-    }
-    @media (max-width: 920px){ .row{ grid-template-columns: 1fr; } }
+.badge{
+  display:inline-block;
+  margin-top:8px;
+  padding:4px 10px;
+  border-radius:999px;
+  background:rgba(192,138,75,.2);
+  border:1px solid rgba(192,138,75,.4);
+  font-weight:700;
+  font-size:.8rem;
+}
 
-    .book{
-      padding: 14px;
-      border-radius: var(--radius);
-      display:flex;
-      gap: 12px;
-      align-items:flex-start;
-      border: 1px solid rgba(28,20,16,.12);
-      background: rgba(255,255,255,.62);
-      transition: transform .14s ease, box-shadow .14s ease, border-color .14s ease;
-    }
-    .book:hover{ transform: translateY(-2px); box-shadow: var(--shadow); border-color: rgba(28,20,16,.22); }
-    .cover{
-      width: 54px; height: 80px;
-      border-radius: 10px;
-      background:
-        linear-gradient(135deg, rgba(138,59,37,.32), rgba(192,138,75,.26)),
-        radial-gradient(circle at 30% 30%, rgba(255,255,255,.52), transparent 55%);
-      border: 1px solid rgba(28,20,16,.16);
-      box-shadow: 0 10px 16px rgba(28,20,16,.14);
-      flex: 0 0 auto;
-    }
-    .book h3{
-      margin:0 0 4px;
-      font-size: 1.05rem;
-      letter-spacing: -.15px;
-    }
-    .book .by{ margin:0 0 6px; color: var(--muted); font-size: .92rem; }
-    .tagline{ margin:0; color: var(--ink-soft); font-size: .92rem; }
-    .badge{
-      display:inline-flex;
-      align-items:center;
-      gap:6px;
-      font-size:.82rem;
-      padding: 6px 10px;
-      border-radius: 999px;
-      border: 1px solid rgba(192,138,75,.55);
-      background: rgba(192,138,75,.18);
-      color: var(--ink);
-      font-weight: 900;
-      margin-top: 8px;
-    }
-
-    /* Newsletter + Author CTA */
-    .split{
-      display:grid;
-      grid-template-columns: 1.1fr .9fr;
-      gap: 12px;
-    }
-    @media (max-width: 900px){ .split{ grid-template-columns: 1fr; } }
-    .block{ padding: 18px; border-radius: var(--radius); }
-    .block h2{ margin:0 0 6px; font-size: 1.2rem; }
-    .block p{ margin:0 0 12px; color: var(--muted); }
-    .signup{
-      display:flex;
-      gap: 8px;
-      flex-wrap:wrap;
-    }
-    .signup input{
-      flex: 1 1 220px;
-      padding: 12px 12px;
-      border-radius: 12px;
-      border:1px solid rgba(28,20,16,.16);
-      background: rgba(255,255,255,.82);
-    }
-
-    /* Footer */
-    footer{
-      margin-top: 34px;
-      color: rgba(107,87,75,.95);
-      font-size: .9rem;
-      display:flex;
-      align-items:center;
-      justify-content:space-between;
-      flex-wrap:wrap;
-      gap: 10px;
-      padding: 12px 4px;
-    }
-
-    /* Utility */
-    .sr-only{
-      position:absolute; width:1px; height:1px; padding:0; margin:-1px;
-      overflow:hidden; clip:rect(0,0,0,0); white-space:nowrap; border:0;
-    }
-  </style>
+/* ===== Footer ===== */
+footer{
+  margin-top:50px;
+  padding:20px 0;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  font-size:.9rem;
+  color:var(--muted);
+}
+</style>
 </head>
 
 <body>
-<header>
-  <nav class="nav" aria-label="Primary">
-    <a class="brand" href="/" aria-label="Authors Book Club home">
-      <span class="mark" aria-hidden="true"></span>
-      <span>Authors Book Club</span>
-    </a>
 
-    <div class="navlinks">
+<header>
+  <div class="nav">
+    <div class="brand">Authors Book Club</div>
+    <div>
       <a class="pill" href="#browse">Browse</a>
       <a class="pill" href="#featured">Featured</a>
-      <a class="pill primary" href="#surprise">Surprise me</a>
-      <a class="pill author" href="/for-authors/">For Authors</a>
+      <a class="pill" href="/for-authors/">For Authors</a>
     </div>
-  </nav>
+  </div>
 </header>
 
 <main class="wrap">
-  <section class="hero card">
-    <div class="hero-grid">
+
+<section id="featured">
+  <h2>Featured today</h2>
+  <p>A small shelf you can browse in under a minute.</p>
+
+  <div style="display:grid;gap:16px;margin-top:16px;">
+    
+    <a class="author-card" href="/MarieMcKenzie/">
+      <div class="cover"></div>
       <div>
-        <h1>Discover your next favourite indie author.</h1>
-        <p class="lede">
-          Settle in. Browse a few cosy shelves, or let the “surprise me” button send you somewhere new.
-        </p>
-
-        <div class="cta-row">
-          <button class="btn primary" id="heroSurpriseBtn" type="button">🎲 Surprise me</button>
-          <a class="btn" href="#browse">Browse by genre</a>
-          <a class="btn green" href="#featured">See featured picks</a>
-        </div>
-
-        <p class="hint" style="margin-top:10px;">
-          Authors: use the <strong>For Authors</strong> button in the top-right.
-        </p>
+        <h3>Marie McKenzie</h3>
+        <p class="by">Featured author</p>
+        <p>Trauma-informed books about healing, care, and being human.</p>
+        <span class="badge">★ Featured</span>
       </div>
+    </a>
 
-      <aside id="surprise" class="surprise card soft" aria-label="Surprise me picker">
-        <h2>🎲 Find a bookish match</h2>
-        <p>Pick a genre (and optionally a vibe). We’ll send you to a random author page already on the site.</p>
-
-        <div class="form" role="form" aria-label="Surprise picker form">
-          <div class="field">
-            <label for="genre">Genre</label>
-            <select id="genre">
-              <option value="">Any genre</option>
-              <option>Fantasy</option>
-              <option>Romance</option>
-              <option>Science Fiction</option>
-              <option>Mystery / Thriller</option>
-              <option>Horror</option>
-              <option>Young Adult</option>
-              <option>Historical</option>
-              <option>Non-fiction</option>
-            </select>
-          </div>
-
-          <div class="field">
-            <label for="format">Format</label>
-            <select id="format">
-              <option value="">Anything</option>
-              <option value="series">Series</option>
-              <option value="standalone">Standalone</option>
-            </select>
-          </div>
-
-          <div class="field">
-            <label for="tone">Tone</label>
-            <select id="tone">
-              <option value="">Any vibe</option>
-              <option value="cosy">Cosy / uplifting</option>
-              <option value="dark">Dark / intense</option>
-              <option value="fun">Fun / witty</option>
-              <option value="epic">Epic / sweeping</option>
-            </select>
-          </div>
-
-          <div class="field">
-            <label for="pace">Pace</label>
-            <select id="pace">
-              <option value="">Any pace</option>
-              <option value="fast">Fast-paced</option>
-              <option value="steady">Steady</option>
-              <option value="character">Character-driven</option>
-            </select>
-          </div>
-        </div>
-
-        <div class="cta-row" style="margin-top: 2px;">
-          <button class="btn primary" id="findBtn" type="button">Find my author</button>
-          <button class="btn" id="resetBtn" type="button">Reset</button>
-        </div>
-
-        <p class="hint" id="surpriseHint">Currently using the 2 active authors on the site.</p>
-      </aside>
-    </div>
-  </section>
-
-  <section id="browse" aria-label="Browse by genre">
-    <div class="section-head">
+    <a class="author-card" href="/ToryHunt/">
+      <div class="cover"></div>
       <div>
-        <h2>Browse by genre</h2>
-        <p class="sub">Start with what you love — then wander.</p>
+        <h3>Tory Hunt</h3>
+        <p class="by">Featured author</p>
+        <p>A cosy browse and a clear shelf — no endless scrolling.</p>
+        <span class="badge">★ Featured</span>
       </div>
-      <a class="pill primary" href="#surprise">Try “Surprise me”</a>
-    </div>
+    </a>
 
-    <div class="genres" id="genreGrid">
-      <button class="genre" type="button" data-genre="Fantasy">
-        <div class="name">Fantasy</div>
-        <div class="meta"><span class="count">Try it</span> →</div>
-      </button>
-      <button class="genre" type="button" data-genre="Romance">
-        <div class="name">Romance</div>
-        <div class="meta"><span class="count">Try it</span> →</div>
-      </button>
-      <button class="genre" type="button" data-genre="Science Fiction">
-        <div class="name">Science Fiction</div>
-        <div class="meta"><span class="count">Try it</span> →</div>
-      </button>
-      <button class="genre" type="button" data-genre="Mystery / Thriller">
-        <div class="name">Mystery / Thriller</div>
-        <div class="meta"><span class="count">Try it</span> →</div>
-      </button>
-      <button class="genre" type="button" data-genre="Horror">
-        <div class="name">Horror</div>
-        <div class="meta"><span class="count">Try it</span> →</div>
-      </button>
-      <button class="genre" type="button" data-genre="Young Adult">
-        <div class="name">Young Adult</div>
-        <div class="meta"><span class="count">Try it</span> →</div>
-      </button>
-      <button class="genre" type="button" data-genre="Historical">
-        <div class="name">Historical</div>
-        <div class="meta"><span class="count">Try it</span> →</div>
-      </button>
-      <button class="genre" type="button" data-genre="Non-fiction">
-        <div class="name">Non-fiction</div>
-        <div class="meta"><span class="count">Try it</span> →</div>
-      </button>
-    </div>
-  </section>
-
-  <section id="featured" aria-label="Featured today">
-    <div class="section-head">
+    <a class="author-card" href="#surprise">
+      <div class="cover"></div>
       <div>
-        <h2>Featured today</h2>
-        <p class="sub">A small shelf you can browse in under a minute.</p>
+        <h3>Let fate choose</h3>
+        <p class="by">Any genre</p>
+        <p>Pick a vibe and we’ll send you somewhere new.</p>
+        <span class="badge">🎲 Surprise</span>
       </div>
-    </div>
+    </a>
 
-    <div class="row" id="featuredRow">
-      <a class="book card soft" href="/MarieMcKenzie/">
-        <div class="cover" aria-hidden="true"></div>
-        <div>
-          <h3>Marie McKenzie</h3>
-          <p class="by">Featured author</p>
-          <p class="tagline">Trauma-informed books about healing, care, and being human.</p>
-          <span class="badge">★ Featured</span>
-        </div>
-      </a>
+  </div>
+</section>
 
-      <a class="book card soft" href="/ToryHunt/">
-        <div class="cover" aria-hidden="true"></div>
-        <div>
-          <h3>Tory Hunt</h3>
-          <p class="by">Featured author</p>
-          <p class="tagline">A cosy browse and a clear shelf — no endless scrolling.</p>
-          <span class="badge">★ Featured</span>
-        </div>
-      </a>
+<footer>
+  <div>© <span id="year"></span> Authors Book Club</div>
+  <div>
+    <a class="pill" href="#browse">Browse</a>
+    <a class="pill" href="#featured">Featured</a>
+    <a class="pill" href="/for-authors/">For Authors</a>
+  </div>
+</footer>
 
-      <a class="book card soft" href="#surprise">
-        <div class="cover" aria-hidden="true"></div>
-        <div>
-          <h3>Let fate choose</h3>
-          <p class="by">Any genre</p>
-          <p class="tagline">Pick a vibe and we’ll send you straight to a new author page.</p>
-          <span class="badge">🎲 Surprise</span>
-        </div>
-      </a>
-    </div>
-  </section>
-
-  <section id="join" aria-label="Newsletter and author sign-up">
-    <div class="split">
-      <div class="block card">
-        <h2>Get 3 cosy discoveries each week</h2>
-        <p>One short email. No spam. Just indie authors you’ll want to try.</p>
-
-        <form class="signup" id="newsletterForm">
-          <label class="sr-only" for="email">Email address</label>
-          <input id="email" name="email" type="email" placeholder="you@example.com" autocomplete="email" required />
-          <button class="btn primary" type="submit">Subscribe</button>
-        </form>
-
-        <p class="hint" id="newsletterHint">Placeholder form (safe). When ready, connect to MailerLite / ConvertKit, etc.</p>
-      </div>
-
-      <div class="block card soft">
-        <h2>Are you an indie author?</h2>
-        <p>Create a simple author page and get discovered by readers looking for new voices.</p>
-        <div class="cta-row">
-          <a class="btn green" href="/for-authors/">Create your author page</a>
-        </div>
-        <p class="hint">This button should go to the page that looks like your current homepage.</p>
-      </div>
-    </div>
-  </section>
-
-  <footer>
-    <div>© <span id="year"></span> Authors Book Club</div>
-    <div style="display:flex; gap:10px; flex-wrap:wrap;">
-      <a class="pill" href="#browse">Browse</a>
-      <a class="pill" href="#featured">Featured</a>
-      <a class="pill author" href="/for-authors/">For Authors</a>
-    </div>
-  </footer>
 </main>
 
 <script>
-  // Active authors (update this list as you add more author folders)
-  const AUTHORS = [
-    {
-      name: "Marie McKenzie",
-      url: "/MarieMcKenzie/",
-      genres: ["Non-fiction"],
-      format: "standalone",
-      tone: ["cosy"],
-      pace: "steady"
-    },
-    {
-      name: "Tory Hunt",
-      url: "/ToryHunt/",
-      genres: ["Romance"],
-      format: "series",
-      tone: ["cosy"],
-      pace: "character"
-    }
-  ];
-
-  function normalise(s){ return String(s || "").trim().toLowerCase(); }
-
-  function matchesFilters(author, filters){
-    const { genre, format, tone, pace } = filters;
-
-    if(genre){
-      const want = normalise(genre);
-      const has = (author.genres || []).some(g => normalise(g) === want);
-      if(!has) return false;
-    }
-    if(format && author.format && author.format !== format) return false;
-
-    if(tone){
-      const t = String(tone);
-      const tones = author.tone || [];
-      if(tones.length && !tones.includes(t)) return false;
-    }
-
-    if(pace && author.pace && author.pace !== pace) return false;
-
-    return true;
-  }
-
-  function pickRandom(arr){
-    return arr[Math.floor(Math.random() * arr.length)];
-  }
-
-  function goToRandomAuthor(overrides = {}){
-    const genre = overrides.genre ?? document.getElementById("genre").value;
-    const format = overrides.format ?? document.getElementById("format").value;
-    const tone = overrides.tone ?? document.getElementById("tone").value;
-    const pace = overrides.pace ?? document.getElementById("pace").value;
-
-    const filters = { genre, format, tone, pace };
-    const pool = AUTHORS.filter(a => matchesFilters(a, filters));
-
-    if(!pool.length){
-      alert("No matches yet for those filters. Try 'Any genre' (or add more authors).");
-      return;
-    }
-    const chosen = pickRandom(pool);
-    window.location.href = chosen.url;
-  }
-
-  function resetFilters(){
-    document.getElementById("genre").value = "";
-    document.getElementById("format").value = "";
-    document.getElementById("tone").value = "";
-    document.getElementById("pace").value = "";
-  }
-
-  document.getElementById("findBtn").addEventListener("click", () => goToRandomAuthor());
-  document.getElementById("heroSurpriseBtn").addEventListener("click", () => {
-    document.getElementById("surprise").scrollIntoView({ behavior: "smooth", block: "start" });
-  });
-  document.getElementById("resetBtn").addEventListener("click", resetFilters);
-
-  // Genre buttons -> set genre then go
-  document.querySelectorAll("#genreGrid .genre").forEach(btn => {
-    btn.addEventListener("click", () => {
-      const g = btn.getAttribute("data-genre");
-      document.getElementById("genre").value = g || "";
-      goToRandomAuthor({ genre: g });
-    });
-  });
-
-  // Newsletter placeholder
-  document.getElementById("newsletterForm").addEventListener("submit", (e) => {
-    e.preventDefault();
-    const email = document.getElementById("email").value.trim();
-    if(!email) return;
-    document.getElementById("newsletterHint").textContent =
-      "Cheers — you’re on the list (placeholder). Next step: connect this form to your email provider.";
-    try{ localStorage.setItem("abc_newsletter_email", email); }catch(_){}
-    e.target.reset();
-  });
-
-  document.getElementById("year").textContent = new Date().getFullYear();
+document.getElementById("year").textContent = new Date().getFullYear();
 </script>
+
 </body>
 </html>
