@@ -3,787 +3,708 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>AuthorsBookClub | Landing Pages for Indie Authors</title>
-  <meta name="description" content="Professional author landing pages built and maintained for you. Showcase your books, link to retailers, and grow your readership — £10/$10 per month." />
+  <title>Authors Book Club | Discover Indie Authors</title>
+  <meta name="description" content="A cosy indie-bookstore corner of the internet. Discover new indie authors by genre, vibe, and surprise picks." />
   <link rel="canonical" href="https://www.authorsbookclub.com/" />
   <link rel="stylesheet" href="./styles.css" />
 
   <style>
     :root{
-      --ink:#15110e;
-      --ink-soft:#3b332c;
-      --paper:#f6f0e6;
-      --paper-2:#efe6d7;
-      --line: rgba(21,17,14,.14);
-      --panel: rgba(255,255,255,.72);
-      --shadow: 0 18px 40px rgba(0,0,0,.12);
+      --ink:#1f1a16;
+      --ink-soft:#3b332d;
+      --muted:#6a5f57;
+      --paper:#fbf4e6;
+      --paper-2:#f4ead7;
+      --paper-3:#efe2c9;
+      --gold:#c7a44c;
+      --wine:#7a3a2a;
+      --forest:#2d6a57;
+      --shadow: 0 14px 40px rgba(31,26,22,.12);
+      --shadow-soft: 0 10px 26px rgba(31,26,22,.10);
       --radius: 18px;
-      --accent-1:#c7a44c;
-      --accent-2:#2d7a66;
+      --radius-2: 24px;
+      --max: 1100px;
     }
 
-    body.home{
+    /* Base */
+    html,body{ height:100%; }
+    body{
+      margin:0;
+      color:var(--ink);
       background:
-        radial-gradient(900px 520px at 18% 12%, rgba(199,164,76,.16), transparent 60%),
-        radial-gradient(900px 520px at 82% 20%, rgba(45,122,102,.13), transparent 60%),
-        linear-gradient(180deg, var(--paper) 0%, var(--paper-2) 100%);
-      color: var(--ink);
+        radial-gradient(1200px 700px at 15% 0%, rgba(199,164,76,.14), transparent 55%),
+        radial-gradient(900px 600px at 90% 10%, rgba(45,106,87,.10), transparent 55%),
+        linear-gradient(180deg, var(--paper), var(--paper-2));
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji";
+      line-height:1.5;
     }
 
-    /* Layout helpers (won't clash with your global styles) */
-    .wrap{ padding: 4rem 0; }
-    .wrap-tight{ padding: 2.75rem 0; }
-    .container{ max-width: 1100px; margin: 0 auto; padding: 0 1.25rem; }
+    a{ color:inherit; text-decoration:none; }
+    a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible{
+      outline: 3px solid rgba(199,164,76,.55);
+      outline-offset: 2px;
+      border-radius: 10px;
+    }
 
-    .topbar{
+    .wrap{ max-width: var(--max); margin:0 auto; padding: 18px 16px 64px; }
+    .card{
+      background: rgba(255,255,255,.70);
+      border: 1px solid rgba(31,26,22,.10);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow-soft);
+      backdrop-filter: blur(6px);
+    }
+    .soft{
+      background: rgba(255,255,255,.52);
+      border: 1px solid rgba(31,26,22,.08);
+    }
+
+    /* Header */
+    header{
       position: sticky;
-      top: 0;
-      z-index: 50;
-      background: rgba(246,240,230,.92);
-      border-bottom: 1px solid rgba(0,0,0,.08);
+      top:0;
+      z-index:10;
       backdrop-filter: blur(10px);
+      background: rgba(251,244,230,.75);
+      border-bottom: 1px solid rgba(31,26,22,.08);
     }
-
-    .topbar-inner{
+    .nav{
+      max-width: var(--max);
+      margin:0 auto;
+      padding: 12px 16px;
       display:flex;
       align-items:center;
       justify-content:space-between;
-      gap: 1rem;
-      padding: .9rem 0;
+      gap: 12px;
     }
-
     .brand{
       display:flex;
       align-items:center;
-      gap:.75rem;
-      text-decoration:none;
-      color: var(--ink);
-      font-weight: 900;
-    }
-
-    .brand-mark{
-      width: 40px;
-      height: 40px;
-      border-radius: 14px;
-      display:grid;
-      place-items:center;
-      background: linear-gradient(135deg, var(--accent-1), var(--accent-2));
-      border: 1px solid rgba(0,0,0,.08);
-      box-shadow: var(--shadow);
-      font-weight: 900;
-    }
-
-    nav.site-nav{
-      display:flex;
-      align-items:center;
-      gap: .6rem;
-      flex-wrap: wrap;
-    }
-    nav.site-nav a{
-      color: var(--ink-soft);
-      text-decoration:none;
+      gap:10px;
       font-weight: 800;
-      padding: .55rem .75rem;
+      letter-spacing:.2px;
+    }
+    .mark{
+      width:34px; height:34px;
       border-radius: 12px;
+      background: linear-gradient(135deg, rgba(199,164,76,.95), rgba(122,58,42,.95));
+      box-shadow: 0 10px 18px rgba(31,26,22,.18);
+      position: relative;
+      overflow:hidden;
     }
-    nav.site-nav a:hover{
-      background: rgba(199,164,76,.12);
+    .mark:after{
+      content:"";
+      position:absolute; inset:-30%;
+      background: radial-gradient(circle at 35% 35%, rgba(255,255,255,.55), transparent 55%);
+      transform: rotate(18deg);
     }
-
-    .btn{
-      display:inline-flex;
-      align-items:center;
-      justify-content:center;
-      gap:.55rem;
-      padding: .8rem 1.15rem;
-      border-radius: 12px;
-      border: 1px solid rgba(0,0,0,.18);
-      font-weight: 900;
-      text-decoration:none;
-      color: var(--ink);
-      transition: transform .18s ease, box-shadow .18s ease, filter .18s ease;
-      cursor: pointer;
-      background: rgba(255,255,255,.78);
-    }
-    .btn-primary{
-      border: none;
-      background: linear-gradient(135deg, var(--accent-1), var(--accent-2));
-      color: var(--ink);
-      box-shadow: var(--shadow);
-    }
-    .btn-ghost{
-      background: rgba(255,255,255,.78);
-      color: var(--ink);
-    }
-    @media (hover:hover){
-      .btn:hover{
-        transform: translateY(-2px);
-        box-shadow: 0 14px 30px rgba(0,0,0,.14);
-        filter: brightness(1.02);
-      }
-    }
-    @media (prefers-reduced-motion: reduce){
-      .btn{ transition:none; }
-    }
-
-    .hero{
-      padding: 4.25rem 0 3rem;
-    }
-    .hero-grid{
-      display:grid;
-      grid-template-columns: 1.05fr .95fr;
-      gap: 2rem;
-      align-items: start;
-    }
-    h1{
-      margin: 0;
-      font-size: clamp(2.2rem, 3.8vw, 3.3rem);
-      line-height: 1.05;
-      letter-spacing: -0.02em;
-      font-family: Georgia, "Times New Roman", serif;
-    }
-    .subhead{
-      margin: 1rem 0 1.4rem;
-      color: var(--ink-soft);
-      font-size: 1.1rem;
-      line-height: 1.5;
-      max-width: 52ch;
-    }
-
-    .hero-actions{
-      display:flex;
-      gap: .85rem;
-      flex-wrap: wrap;
-      align-items:center;
-      margin-top: .25rem;
-    }
-    .micro{
-      color: rgba(21,17,14,.70);
-      margin: .85rem 0 0;
-      font-size: .98rem;
-    }
-
-    .panel{
-      background: var(--panel);
-      border: 1px solid var(--line);
-      border-radius: var(--radius);
-      box-shadow: var(--shadow);
-      padding: 1.2rem;
-    }
-    .panel h3{
-      margin: 0 0 .8rem;
-      font-family: Georgia, "Times New Roman", serif;
-    }
-
-    .value-list{
-      list-style: none;
-      padding: 0;
-      margin: 0;
-      display:grid;
-      gap: .65rem;
-    }
-    .value-list li{
-      display:flex;
-      gap:.7rem;
-      align-items:flex-start;
-      color: var(--ink-soft);
-      font-weight: 700;
-      line-height: 1.35;
-    }
-    .tick{
-      width: 26px;
-      height: 26px;
-      border-radius: 10px;
-      display:grid;
-      place-items:center;
-      background: rgba(45,122,102,.12);
-      border: 1px solid rgba(45,122,102,.22);
-      flex: 0 0 auto;
-      font-weight: 900;
-      color: var(--ink);
-    }
-
-    .trust-row{
-      display:flex;
-      gap: .6rem;
-      flex-wrap: wrap;
-      margin-top: 1.2rem;
-    }
+    .navlinks{ display:flex; gap: 10px; align-items:center; flex-wrap:wrap; justify-content:flex-end; }
     .pill{
       display:inline-flex;
       align-items:center;
-      gap:.45rem;
-      padding: .45rem .7rem;
+      gap:8px;
+      padding: 10px 12px;
       border-radius: 999px;
-      border: 1px solid rgba(0,0,0,.12);
-      background: rgba(255,255,255,.55);
-      font-weight: 900;
-      color: rgba(21,17,14,.75);
-      font-size: .9rem;
-    }
-
-    .section-title{
-      margin: 0 0 .5rem;
-      font-family: Georgia, "Times New Roman", serif;
-      font-size: 1.9rem;
-    }
-    .section-lead{
-      margin: 0 0 1.25rem;
+      border: 1px solid rgba(31,26,22,.12);
+      background: rgba(255,255,255,.50);
+      transition: transform .14s ease, background .14s ease, border-color .14s ease;
+      font-weight: 650;
       color: var(--ink-soft);
-      font-size: 1.05rem;
-      max-width: 70ch;
+    }
+    .pill:hover{ transform: translateY(-1px); background: rgba(255,255,255,.70); border-color: rgba(31,26,22,.18); }
+    .pill.primary{
+      background: linear-gradient(180deg, rgba(199,164,76,.22), rgba(199,164,76,.12));
+      border-color: rgba(199,164,76,.45);
+      color: var(--ink);
+    }
+    .pill.author{
+      background: linear-gradient(180deg, rgba(45,106,87,.18), rgba(45,106,87,.10));
+      border-color: rgba(45,106,87,.35);
     }
 
-    .grid-3{
+    /* Hero */
+    .hero{
+      margin-top: 18px;
+      padding: 26px 18px;
+      border-radius: var(--radius-2);
+      overflow:hidden;
+      position:relative;
+    }
+    .hero:before{
+      content:"";
+      position:absolute; inset:-2px;
+      background:
+        radial-gradient(700px 500px at 20% 30%, rgba(199,164,76,.20), transparent 58%),
+        radial-gradient(600px 420px at 90% 25%, rgba(122,58,42,.14), transparent 60%),
+        linear-gradient(135deg, rgba(255,255,255,.65), rgba(255,255,255,.30));
+      z-index:0;
+    }
+    .hero > *{ position:relative; z-index:1; }
+    .hero-grid{
       display:grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 1.25rem;
+      grid-template-columns: 1.2fr .8fr;
+      gap: 16px;
+      align-items:stretch;
     }
-    .card{
-      background: var(--panel);
-      border: 1px solid var(--line);
-      border-radius: var(--radius);
-      box-shadow: var(--shadow);
-      padding: 1.1rem;
-      transition: transform .18s ease, box-shadow .18s ease;
+    @media (max-width: 900px){
+      .hero-grid{ grid-template-columns: 1fr; }
     }
-    @media (hover:hover){
-      .card:hover{
-        transform: translateY(-3px);
-        box-shadow: 0 20px 44px rgba(0,0,0,.14);
-      }
+    h1{
+      margin: 0 0 10px;
+      font-size: clamp(28px, 3.2vw, 44px);
+      line-height: 1.1;
+      letter-spacing: -.3px;
     }
-    .card h3{
-      margin: 0 0 .5rem;
-      font-family: Georgia, "Times New Roman", serif;
-      font-size: 1.2rem;
+    .lede{
+      margin: 0 0 18px;
+      color: var(--muted);
+      font-size: 1.05rem;
+      max-width: 52ch;
     }
-    .card p{
-      margin: 0;
-      color: var(--ink-soft);
-      line-height: 1.5;
+    .cta-row{
+      display:flex;
+      gap:10px;
+      flex-wrap:wrap;
+      align-items:center;
+      margin-top: 12px;
+    }
+    .btn{
+      appearance:none;
+      border:1px solid rgba(31,26,22,.14);
+      background: rgba(255,255,255,.70);
+      border-radius: 999px;
+      padding: 12px 14px;
+      font-weight: 800;
+      cursor:pointer;
+      transition: transform .14s ease, box-shadow .14s ease, border-color .14s ease, background .14s ease;
+      box-shadow: 0 12px 24px rgba(31,26,22,.10);
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+    }
+    .btn:hover{ transform: translateY(-1px); border-color: rgba(31,26,22,.20); background: rgba(255,255,255,.80); }
+    .btn.primary{
+      background: linear-gradient(180deg, rgba(199,164,76,.35), rgba(199,164,76,.18));
+      border-color: rgba(199,164,76,.55);
+    }
+    .btn.forest{
+      background: linear-gradient(180deg, rgba(45,106,87,.28), rgba(45,106,87,.12));
+      border-color: rgba(45,106,87,.45);
     }
 
-    .split{
+    /* Surprise box */
+    .surprise{
+      padding: 16px;
+      border-radius: var(--radius);
+      display:flex;
+      flex-direction:column;
+      gap: 12px;
+    }
+    .surprise h2{
+      margin:0;
+      font-size: 1.1rem;
+      letter-spacing: -.2px;
+    }
+    .surprise p{
+      margin:0;
+      color: var(--muted);
+      font-size: .95rem;
+    }
+    .form{
       display:grid;
       grid-template-columns: 1fr 1fr;
-      gap: 1.25rem;
-      align-items: start;
+      gap: 10px;
     }
-
-    .steps{
-      display:grid;
-      gap: .75rem;
-      margin-top: .25rem;
+    @media (max-width: 520px){
+      .form{ grid-template-columns: 1fr; }
     }
-    .step{
-      display:flex;
-      gap: .9rem;
-      align-items:flex-start;
-      background: rgba(255,255,255,.55);
-      border: 1px solid rgba(0,0,0,.10);
-      border-radius: 16px;
-      padding: .9rem;
-    }
-    .step-num{
-      width: 34px;
-      height: 34px;
-      border-radius: 14px;
-      display:grid;
-      place-items:center;
-      background: rgba(199,164,76,.16);
-      border: 1px solid rgba(199,164,76,.28);
-      font-weight: 900;
-    }
-    .step strong{ display:block; margin-bottom:.1rem; }
-    .step span{ color: var(--ink-soft); line-height: 1.4; }
-
-    .pricing{
-      display:grid;
-      grid-template-columns: 1.05fr .95fr;
-      gap: 1.25rem;
-      align-items: start;
-    }
-    .price-box{
-      padding: 1.25rem;
-      border-radius: var(--radius);
-      border: 1px solid rgba(0,0,0,.12);
-      background: rgba(255,255,255,.70);
-      box-shadow: var(--shadow);
-    }
-    .price{
-      display:flex;
-      align-items: baseline;
-      gap:.4rem;
-      margin: .25rem 0 .6rem;
-    }
-    .price .amount{
-      font-size: 2.3rem;
-      font-weight: 1000;
-      letter-spacing: -0.02em;
-    }
-    .price .per{
-      color: rgba(21,17,14,.70);
-      font-weight: 900;
-    }
-    .fine{
-      color: rgba(21,17,14,.72);
-      font-size: .95rem;
-      margin: .75rem 0 0;
-      line-height: 1.4;
-    }
-
-    details.faq{
-      background: rgba(255,255,255,.60);
-      border: 1px solid rgba(0,0,0,.10);
-      border-radius: 16px;
-      padding: .85rem 1rem;
-    }
-    details.faq summary{
-      cursor: pointer;
-      font-weight: 900;
-      color: var(--ink);
-    }
-    details.faq p{
-      margin: .6rem 0 0;
+    .field label{
+      display:block;
+      font-size:.85rem;
       color: var(--ink-soft);
-      line-height: 1.5;
+      margin: 0 0 6px;
+      font-weight:700;
     }
-
-    .footer{
-      border-top: 1px solid rgba(0,0,0,.08);
-      background: rgba(246,240,230,.88);
-      padding: 2rem 0;
-      color: rgba(21,17,14,.72);
-    }
-    .footer-inner{
-      display:flex;
-      align-items:center;
-      justify-content:space-between;
-      gap: 1rem;
-      flex-wrap: wrap;
-    }
-    .footer a{
-      color: rgba(21,17,14,.72);
-      text-decoration:none;
-      font-weight: 800;
-    }
-    .footer a:hover{ text-decoration: underline; }
-
-    /* Sticky CTA (optional but conversion-friendly) */
-    .sticky-cta{
-      position: fixed;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      z-index: 60;
-      background: rgba(246,240,230,.92);
-      border-top: 1px solid rgba(0,0,0,.12);
-      backdrop-filter: blur(10px);
-      transform: translateY(110%);
-      transition: transform .25s ease;
-      padding: .75rem 0;
-    }
-    .sticky-cta.is-visible{ transform: translateY(0); }
-    .sticky-inner{
-      display:flex;
-      align-items:center;
-      justify-content:space-between;
-      gap: 1rem;
-      flex-wrap: wrap;
-    }
-    .sticky-left{
-      display:flex;
-      align-items:center;
-      gap: .75rem;
-      min-width: 0;
-    }
-    .sticky-text{
-      font-weight: 1000;
-      color: var(--ink);
-      white-space: nowrap;
-      overflow: hidden;
-      text-overflow: ellipsis;
-      max-width: 55vw;
-    }
-    .sticky-actions{
-      display:flex;
-      align-items:center;
-      gap: .6rem;
-      flex-wrap: wrap;
-    }
-    .close{
+    .field select{
+      width:100%;
+      padding: 11px 12px;
       border-radius: 12px;
-      border: 1px solid rgba(0,0,0,.14);
-      background: rgba(255,255,255,.72);
-      padding: .65rem .8rem;
-      font-weight: 900;
-      cursor: pointer;
+      border:1px solid rgba(31,26,22,.14);
+      background: rgba(255,255,255,.75);
       color: var(--ink);
-      transition: transform .18s ease, box-shadow .18s ease;
     }
-    @media (hover:hover){
-      .close:hover{ transform: translateY(-2px); box-shadow: 0 10px 22px rgba(0,0,0,.12); }
+    .hint{
+      font-size: .82rem;
+      color: var(--muted);
     }
 
-    @media (max-width: 980px){
-      .hero-grid{ grid-template-columns: 1fr; }
-      .grid-3{ grid-template-columns: 1fr; }
-      .split{ grid-template-columns: 1fr; }
-      .pricing{ grid-template-columns: 1fr; }
+    /* Sections */
+    section{ margin-top: 20px; }
+    .section-head{
+      display:flex;
+      align-items:flex-end;
+      justify-content:space-between;
+      gap:10px;
+      margin: 0 0 10px;
+    }
+    .section-head h2{
+      margin:0;
+      font-size: 1.25rem;
+      letter-spacing: -.2px;
+    }
+    .section-head .sub{
+      margin:0;
+      color: var(--muted);
+      font-size: .95rem;
+    }
+
+    /* Genre grid */
+    .genres{
+      display:grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 10px;
+    }
+    @media (max-width: 920px){ .genres{ grid-template-columns: repeat(2, 1fr); } }
+    @media (max-width: 520px){ .genres{ grid-template-columns: 1fr; } }
+
+    .genre{
+      padding: 14px;
+      border-radius: var(--radius);
+      position:relative;
+      overflow:hidden;
+      min-height: 92px;
+      display:flex;
+      flex-direction:column;
+      justify-content:space-between;
+      transition: transform .14s ease, box-shadow .14s ease, border-color .14s ease;
+      border: 1px solid rgba(31,26,22,.10);
+      background:
+        radial-gradient(240px 160px at 20% 10%, rgba(199,164,76,.22), transparent 60%),
+        radial-gradient(240px 160px at 90% 30%, rgba(45,106,87,.14), transparent 60%),
+        rgba(255,255,255,.55);
+    }
+    .genre:hover{ transform: translateY(-2px); box-shadow: var(--shadow); border-color: rgba(31,26,22,.18); }
+    .genre .name{ font-weight: 900; letter-spacing: -.2px; }
+    .genre .meta{ color: var(--muted); font-size: .9rem; }
+
+    /* Featured + New rows */
+    .row{
+      display:grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 10px;
+    }
+    @media (max-width: 920px){ .row{ grid-template-columns: 1fr; } }
+
+    .book{
+      padding: 14px;
+      border-radius: var(--radius);
+      display:flex;
+      gap: 12px;
+      align-items:flex-start;
+      border: 1px solid rgba(31,26,22,.10);
+      background: rgba(255,255,255,.62);
+      transition: transform .14s ease, box-shadow .14s ease, border-color .14s ease;
+    }
+    .book:hover{ transform: translateY(-2px); box-shadow: var(--shadow); border-color: rgba(31,26,22,.18); }
+    .cover{
+      width: 54px; height: 80px;
+      border-radius: 10px;
+      background:
+        linear-gradient(135deg, rgba(122,58,42,.30), rgba(199,164,76,.25)),
+        radial-gradient(circle at 30% 30%, rgba(255,255,255,.50), transparent 55%);
+      border: 1px solid rgba(31,26,22,.14);
+      box-shadow: 0 10px 16px rgba(31,26,22,.12);
+      flex: 0 0 auto;
+    }
+    .book h3{
+      margin:0 0 4px;
+      font-size: 1.05rem;
+      letter-spacing: -.15px;
+    }
+    .book .by{ margin:0 0 6px; color: var(--muted); font-size: .92rem; }
+    .tagline{ margin:0; color: var(--ink-soft); font-size: .92rem; }
+    .badge{
+      display:inline-flex;
+      align-items:center;
+      gap:6px;
+      font-size:.82rem;
+      padding: 6px 10px;
+      border-radius: 999px;
+      border: 1px solid rgba(199,164,76,.45);
+      background: rgba(199,164,76,.16);
+      color: var(--ink);
+      font-weight: 800;
+      margin-top: 8px;
+    }
+
+    /* Newsletter + Author CTA */
+    .split{
+      display:grid;
+      grid-template-columns: 1.1fr .9fr;
+      gap: 10px;
+    }
+    @media (max-width: 900px){ .split{ grid-template-columns: 1fr; } }
+    .block{ padding: 16px; border-radius: var(--radius); }
+    .block h2{ margin:0 0 6px; font-size: 1.2rem; }
+    .block p{ margin:0 0 12px; color: var(--muted); }
+    .signup{
+      display:flex;
+      gap: 8px;
+      flex-wrap:wrap;
+    }
+    .signup input{
+      flex: 1 1 220px;
+      padding: 12px 12px;
+      border-radius: 12px;
+      border:1px solid rgba(31,26,22,.14);
+      background: rgba(255,255,255,.80);
+    }
+
+    /* Footer */
+    footer{
+      margin-top: 28px;
+      color: var(--muted);
+      font-size: .9rem;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      flex-wrap:wrap;
+      gap: 10px;
+      padding: 10px 4px;
+    }
+
+    /* Tiny utility */
+    .sr-only{
+      position:absolute; width:1px; height:1px; padding:0; margin:-1px;
+      overflow:hidden; clip:rect(0,0,0,0); white-space:nowrap; border:0;
     }
   </style>
 </head>
 
-<body class="home">
-  <a class="skip-link" href="#main">Skip to content</a>
+<body>
+<header>
+  <nav class="nav" aria-label="Primary">
+    <a class="brand" href="/" aria-label="Authors Book Club home">
+      <span class="mark" aria-hidden="true"></span>
+      <span>Authors Book Club</span>
+    </a>
 
-  <!-- Top bar -->
-  <header class="topbar">
-    <div class="container topbar-inner">
-      <a class="brand" href="/" aria-label="AuthorsBookClub home">
-        <span class="brand-mark" aria-hidden="true">ABC</span>
-        <span>AuthorsBookClub</span>
+    <div class="navlinks">
+      <a class="pill" href="#browse">Browse</a>
+      <a class="pill" href="#featured">Featured</a>
+      <a class="pill primary" href="#surprise">Surprise me</a>
+      <a class="pill author" href="/for-authors/">For Authors</a>
+    </div>
+  </nav>
+</header>
+
+<main class="wrap">
+  <section class="hero card">
+    <div class="hero-grid">
+      <div>
+        <h1>Discover your next favourite indie author.</h1>
+        <p class="lede">
+          A cosy indie-bookstore corner of the internet — curated genres, quick browsing, and a “surprise me” button for when you want something new.
+        </p>
+
+        <div class="cta-row">
+          <button class="btn primary" id="heroSurpriseBtn" type="button">🎲 Surprise me</button>
+          <a class="btn" href="#browse">Browse by genre</a>
+          <a class="btn forest" href="#featured">See featured picks</a>
+        </div>
+
+        <p class="hint" style="margin-top:10px;">
+          Authors: use the <strong>For Authors</strong> button in the top-right.
+        </p>
+      </div>
+
+      <aside id="surprise" class="surprise card soft" aria-label="Surprise me picker">
+        <h2>🎲 Find a bookish match</h2>
+        <p>Pick a genre (and optionally a vibe). We’ll send you to a random author page already on the site.</p>
+
+        <div class="form" role="form" aria-label="Surprise picker form">
+          <div class="field">
+            <label for="genre">Genre</label>
+            <select id="genre">
+              <option value="">Any genre</option>
+              <option>Fantasy</option>
+              <option>Romance</option>
+              <option>Science Fiction</option>
+              <option>Mystery / Thriller</option>
+              <option>Horror</option>
+              <option>Young Adult</option>
+              <option>Historical</option>
+              <option>Non-fiction</option>
+            </select>
+          </div>
+
+          <div class="field">
+            <label for="format">Format</label>
+            <select id="format">
+              <option value="">Anything</option>
+              <option value="series">Series</option>
+              <option value="standalone">Standalone</option>
+            </select>
+          </div>
+
+          <div class="field">
+            <label for="tone">Tone</label>
+            <select id="tone">
+              <option value="">Any vibe</option>
+              <option value="cosy">Cosy / uplifting</option>
+              <option value="dark">Dark / intense</option>
+              <option value="fun">Fun / witty</option>
+              <option value="epic">Epic / sweeping</option>
+            </select>
+          </div>
+
+          <div class="field">
+            <label for="pace">Pace</label>
+            <select id="pace">
+              <option value="">Any pace</option>
+              <option value="fast">Fast-paced</option>
+              <option value="steady">Steady</option>
+              <option value="character">Character-driven</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="cta-row" style="margin-top: 2px;">
+          <button class="btn primary" id="findBtn" type="button">Find my author</button>
+          <button class="btn" id="resetBtn" type="button">Reset</button>
+        </div>
+
+        <p class="hint" id="surpriseHint">Currently using the 2 active authors on the site.</p>
+      </aside>
+    </div>
+  </section>
+
+  <section id="browse" aria-label="Browse by genre">
+    <div class="section-head">
+      <div>
+        <h2>Browse by genre</h2>
+        <p class="sub">Start with what you love — then wander.</p>
+      </div>
+      <a class="pill primary" href="#surprise">Try “Surprise me”</a>
+    </div>
+
+    <div class="genres" id="genreGrid">
+      <button class="genre" type="button" data-genre="Fantasy">
+        <div class="name">Fantasy</div>
+        <div class="meta"><span class="count">Try it</span> →</div>
+      </button>
+      <button class="genre" type="button" data-genre="Romance">
+        <div class="name">Romance</div>
+        <div class="meta"><span class="count">Try it</span> →</div>
+      </button>
+      <button class="genre" type="button" data-genre="Science Fiction">
+        <div class="name">Science Fiction</div>
+        <div class="meta"><span class="count">Try it</span> →</div>
+      </button>
+      <button class="genre" type="button" data-genre="Mystery / Thriller">
+        <div class="name">Mystery / Thriller</div>
+        <div class="meta"><span class="count">Try it</span> →</div>
+      </button>
+      <button class="genre" type="button" data-genre="Horror">
+        <div class="name">Horror</div>
+        <div class="meta"><span class="count">Try it</span> →</div>
+      </button>
+      <button class="genre" type="button" data-genre="Young Adult">
+        <div class="name">Young Adult</div>
+        <div class="meta"><span class="count">Try it</span> →</div>
+      </button>
+      <button class="genre" type="button" data-genre="Historical">
+        <div class="name">Historical</div>
+        <div class="meta"><span class="count">Try it</span> →</div>
+      </button>
+      <button class="genre" type="button" data-genre="Non-fiction">
+        <div class="name">Non-fiction</div>
+        <div class="meta"><span class="count">Try it</span> →</div>
+      </button>
+    </div>
+  </section>
+
+  <section id="featured" aria-label="Featured this week">
+    <div class="section-head">
+      <div>
+        <h2>Featured today</h2>
+        <p class="sub">A small shelf you can browse in under a minute.</p>
+      </div>
+    </div>
+
+    <div class="row" id="featuredRow">
+      <a class="book card soft" href="/MarieMcKenzie/">
+        <div class="cover" aria-hidden="true"></div>
+        <div>
+          <h3>Marie McKenzie</h3>
+          <p class="by">Featured author</p>
+          <p class="tagline">Trauma-informed books about healing, care, and being human.</p>
+          <span class="badge">★ Featured</span>
+        </div>
       </a>
 
-      <nav class="site-nav" aria-label="Primary">
-        <a href="#how">How it works</a>
-        <a href="#examples">Examples</a>
-        <a href="#pricing">Pricing</a>
-        <a class="btn btn-ghost" href="#contact">Contact</a>
-        <a class="btn btn-primary" href="#get-started">Get started</a>
-      </nav>
+      <a class="book card soft" href="/ToryHunt/">
+        <div class="cover" aria-hidden="true"></div>
+        <div>
+          <h3>Tory Hunt</h3>
+          <p class="by">Featured author</p>
+          <p class="tagline">Discover a new voice — and see what’s next on their shelf.</p>
+          <span class="badge">★ Featured</span>
+        </div>
+      </a>
+
+      <a class="book card soft" href="#surprise">
+        <div class="cover" aria-hidden="true"></div>
+        <div>
+          <h3>Let fate choose</h3>
+          <p class="by">Any genre</p>
+          <p class="tagline">Pick a vibe and we’ll send you straight to a new author page.</p>
+          <span class="badge">🎲 Surprise</span>
+        </div>
+      </a>
     </div>
-  </header>
+  </section>
 
-  <main id="main">
+  <section aria-label="Newsletter and author sign-up">
+    <div class="split">
+      <div class="block card">
+        <h2>Get 3 cosy discoveries each week</h2>
+        <p>One short email. No spam. Just indie authors you’ll want to try.</p>
 
-    <!-- Hero -->
-    <section class="hero">
-      <div class="container hero-grid">
-        <div>
-          <h1>A professional author page, built and updated for you.</h1>
-          <p class="subhead">
-            Stop losing readers to scattered links and outdated profiles. Get a clean, fast landing page that
-            showcases your books, links to retailers, and points new readers to the right place to start.
-          </p>
+        <!-- Placeholder; wire it up later -->
+        <form class="signup" id="newsletterForm">
+          <label class="sr-only" for="email">Email address</label>
+          <input id="email" name="email" type="email" placeholder="you@example.com" autocomplete="email" required />
+          <button class="btn primary" type="submit">Subscribe</button>
+        </form>
 
-          <div class="hero-actions" id="get-started">
-            <a class="btn btn-primary" href="#pricing">See pricing</a>
-            <a class="btn btn-ghost" href="#examples">View examples</a>
-          </div>
-
-          <p class="micro">
-            Simple monthly fee. We build it. We maintain it. You send updates, we handle the rest.
-          </p>
-
-          <div class="trust-row" aria-label="Highlights">
-            <span class="pill">Fast, mobile-first</span>
-            <span class="pill">Built for clicks</span>
-            <span class="pill">No tech skills needed</span>
-            <span class="pill">Ongoing updates included</span>
-          </div>
-        </div>
-
-        <aside class="panel" aria-label="What you get">
-          <h3>What you get</h3>
-          <ul class="value-list">
-            <li><span class="tick">✓</span><span>One “official” landing page for you and your books</span></li>
-            <li><span class="tick">✓</span><span>Retail links that are easy to update (Amazon, Kobo, Apple, etc.)</span></li>
-            <li><span class="tick">✓</span><span>“Start here” section to guide new readers into a series</span></li>
-            <li><span class="tick">✓</span><span>Cover images + author photo + newsletter sign-up block</span></li>
-            <li><span class="tick">✓</span><span>We make changes for you (new releases, blurbs, links, layout)</span></li>
-          </ul>
-          <div style="margin-top:1.1rem;">
-            <a class="btn btn-primary" href="#pricing">Get your page</a>
-          </div>
-          <p class="fine">
-            Want something more bespoke later? Fine — start simple, prove it works, then upgrade.
-          </p>
-        </aside>
+        <p class="hint" id="newsletterHint">Placeholder form (safe). When ready, connect to MailerLite / ConvertKit, etc.</p>
       </div>
-    </section>
 
-    <!-- Benefits -->
-    <section class="wrap-tight" id="benefits">
-      <div class="container">
-        <h2 class="section-title">Built for reader decisions</h2>
-        <p class="section-lead">
-          Readers don’t want to think. They want to click. Your page should guide them, not overwhelm them.
-        </p>
-
-        <div class="grid-3">
-          <div class="card">
-            <h3>Clear next step</h3>
-            <p>“Start here”, “Latest release”, and retailer buttons designed to reduce hesitation and increase clicks.</p>
-          </div>
-          <div class="card">
-            <h3>Looks legit</h3>
-            <p>A clean, professional page instantly improves trust compared to a messy link tree or scattered profiles.</p>
-          </div>
-          <div class="card">
-            <h3>Always current</h3>
-            <p>New book out? Price changed? Blurb updated? You message us — we update it.</p>
-          </div>
+      <div class="block card soft">
+        <h2>Are you an indie author?</h2>
+        <p>Create a simple author page and get discovered by readers looking for new voices.</p>
+        <div class="cta-row">
+          <a class="btn forest" href="/for-authors/">Create your author page</a>
         </div>
+        <p class="hint">This button should go to the page that looks like your current homepage.</p>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <!-- How it works -->
-    <section class="wrap section-alt" id="how">
-      <div class="container split">
-        <div>
-          <h2 class="section-title">How it works</h2>
-          <p class="section-lead">
-            You don’t need to learn web design. You just need a page that sells your books properly.
-          </p>
-          <div class="steps">
-            <div class="step">
-              <div class="step-num">1</div>
-              <div>
-                <strong>Send your info</strong>
-                <span>Author photo, short bio, books, retailer links, and any “start here” guidance.</span>
-              </div>
-            </div>
-            <div class="step">
-              <div class="step-num">2</div>
-              <div>
-                <strong>We build your page</strong>
-                <span>Professional layout, mobile-first, fast load times, and a clear click path.</span>
-              </div>
-            </div>
-            <div class="step">
-              <div class="step-num">3</div>
-              <div>
-                <strong>We keep it updated</strong>
-                <span>New release? Series order change? Newsletter link? We handle ongoing edits for you.</span>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="panel">
-          <h3>Best for</h3>
-          <ul class="value-list">
-            <li><span class="tick">✓</span><span>Indie authors who want a polished “official” page</span></li>
-            <li><span class="tick">✓</span><span>Series authors who need “start here” clarity</span></li>
-            <li><span class="tick">✓</span><span>Authors running ads who want a focused landing page</span></li>
-            <li><span class="tick">✓</span><span>Anyone tired of updating multiple platforms</span></li>
-          </ul>
-          <div style="margin-top:1.1rem;">
-            <a class="btn btn-primary" href="#examples">See examples</a>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Examples -->
-    <section class="wrap-tight" id="examples">
-      <div class="container">
-        <h2 class="section-title">Example author pages</h2>
-        <p class="section-lead">
-          These are sample layouts showing how we guide readers to “Start here”, “Latest”, and retailer links.
-        </p>
-
-        <div class="grid-3">
-          <div class="card">
-            <h3>Fantasy author page</h3>
-            <p>Strong “Start here”, cover-led design, series guidance, and a sticky CTA for readers on mobile.</p>
-            <div style="margin-top:1rem;">
-              <a class="btn btn-ghost" href="/authors/lindsay-buroker/" aria-label="View example: Lindsay Buroker">View example</a>
-            </div>
-          </div>
-
-          <div class="card">
-            <h3>Romance author page</h3>
-            <p>Clean, warm style with fast retailer links and a focus on the latest release.</p>
-            <div style="margin-top:1rem;">
-              <a class="btn btn-ghost" href="#" aria-disabled="true">Example coming soon</a>
-            </div>
-          </div>
-
-          <div class="card">
-            <h3>Thriller author page</h3>
-            <p>Bold, minimal layout with sharp CTAs and a streamlined “book shelf” section.</p>
-            <div style="margin-top:1rem;">
-              <a class="btn btn-ghost" href="#" aria-disabled="true">Example coming soon</a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Pricing -->
-    <section class="wrap section-alt" id="pricing">
-      <div class="container pricing">
-        <div>
-          <h2 class="section-title">Simple pricing</h2>
-          <p class="section-lead">
-            One price. No surprises. You get a professional page and ongoing updates.
-          </p>
-
-          <div class="steps">
-            <details class="faq">
-              <summary>What does “updates included” mean?</summary>
-              <p>Send your changes (new release, links, cover swaps, bio tweaks). We apply them. No messing about with editors.</p>
-            </details>
-            <details class="faq">
-              <summary>Can I cancel?</summary>
-              <p>Yes. Cancel any time. If you stop paying, we remove/disable the page.</p>
-            </details>
-            <details class="faq">
-              <summary>Can you customise the look to match my genre?</summary>
-              <p>Yes. We start with a clean base and tune it to your brand (fonts, colours, layout). You’ve already seen a themed fantasy example.</p>
-            </details>
-          </div>
-        </div>
-
-        <aside class="price-box">
-          <h3 style="margin:0 0 .3rem; font-family: Georgia, 'Times New Roman', serif;">Author Page Plan</h3>
-          <div class="price">
-            <div class="amount">$10</div>
-            <div class="per">/ month</div>
-          </div>
-          <ul class="value-list" style="margin-top:.8rem;">
-            <li><span class="tick">✓</span><span>Custom author landing page</span></li>
-            <li><span class="tick">✓</span><span>Books + retailer links</span></li>
-            <li><span class="tick">✓</span><span>“Start here” guidance</span></li>
-            <li><span class="tick">✓</span><span>Latest release section</span></li>
-            <li><span class="tick">✓</span><span>Updates handled by our team</span></li>
-          </ul>
-
-          <div style="margin-top:1.1rem; display:flex; gap:.7rem; flex-wrap:wrap;">
-            <a class="btn btn-primary" href="#contact">Request a page</a>
-            <a class="btn btn-ghost" href="#examples">See examples</a>
-          </div>
-
-          <p class="fine">
-            This is built to convert: clear CTAs, fast loading, mobile-first, and a layout that guides readers to click.
-          </p>
-        </aside>
-      </div>
-    </section>
-
-    <!-- Contact / Lead capture -->
-    <section class="wrap-tight" id="contact">
-      <div class="container split">
-        <div>
-          <h2 class="section-title">Get your page set up</h2>
-          <p class="section-lead">
-            Send your details and we’ll build your author landing page. If you’ve already got covers and links, you’re halfway done.
-          </p>
-
-          <div class="panel">
-            <h3>What to send</h3>
-            <ul class="value-list">
-              <li><span class="tick">✓</span><span>Author name + photo</span></li>
-              <li><span class="tick">✓</span><span>Short bio (100–200 words)</span></li>
-              <li><span class="tick">✓</span><span>Book titles + series order</span></li>
-              <li><span class="tick">✓</span><span>Retailer links (Amazon, Kobo, Apple, etc.)</span></li>
-              <li><span class="tick">✓</span><span>Newsletter / social links (optional)</span></li>
-            </ul>
-          </div>
-        </div>
-
-        <div class="panel">
-          <h3>Enquiry form</h3>
-          <form onsubmit="return false;" aria-label="Enquiry form">
-            <div style="display:grid; gap:.75rem;">
-              <div>
-                <label for="name" style="font-weight:900; display:block; margin-bottom:.35rem;">Name</label>
-                <input id="name" type="text" placeholder="Your name" required
-                       style="width:100%; padding:.75rem; border-radius:10px; border:1px solid rgba(0,0,0,.22); background:rgba(255,255,255,.82); color:var(--ink);" />
-              </div>
-              <div>
-                <label for="email" style="font-weight:900; display:block; margin-bottom:.35rem;">Email</label>
-                <input id="email" type="email" placeholder="you@example.com" required
-                       style="width:100%; padding:.75rem; border-radius:10px; border:1px solid rgba(0,0,0,.22); background:rgba(255,255,255,.82); color:var(--ink);" />
-              </div>
-              <div>
-                <label for="msg" style="font-weight:900; display:block; margin-bottom:.35rem;">Message</label>
-                <textarea id="msg" rows="5" placeholder="Tell us your genre, your books, and what you want the page to do."
-                          style="width:100%; padding:.75rem; border-radius:10px; border:1px solid rgba(0,0,0,.22); background:rgba(255,255,255,.82); color:var(--ink);"></textarea>
-              </div>
-
-              <button class="btn btn-primary" type="submit" id="sendBtn">Send enquiry</button>
-              <p class="fine" style="margin:0;">
-                This is a placeholder form for now. Hook it up to your preferred method later (email service, form handler, or Stripe onboarding).
-              </p>
-            </div>
-          </form>
-        </div>
-      </div>
-    </section>
-
-  </main>
-
-  <footer class="footer">
-    <div class="container footer-inner">
-      <div>© <span id="year"></span> AuthorsBookClub</div>
-      <div style="display:flex; gap:.9rem; flex-wrap:wrap;">
-        <a href="#how">How it works</a>
-        <a href="#examples">Examples</a>
-        <a href="#pricing">Pricing</a>
-        <a href="#contact">Contact</a>
-      </div>
+  <footer>
+    <div>© <span id="year"></span> Authors Book Club</div>
+    <div style="display:flex; gap:10px; flex-wrap:wrap;">
+      <a class="pill" href="#browse">Browse</a>
+      <a class="pill" href="#featured">Featured</a>
+      <a class="pill author" href="/for-authors/">For Authors</a>
     </div>
   </footer>
+</main>
 
-  <!-- Sticky CTA -->
-  <div class="sticky-cta" id="stickyCta" aria-label="Get started bar">
-    <div class="container sticky-inner">
-      <div class="sticky-left">
-        <div class="sticky-text">Ready for a professional author page?</div>
-      </div>
-      <div class="sticky-actions">
-        <a class="btn btn-primary" href="#pricing">Get the $10 plan</a>
-        <a class="btn btn-ghost" href="#examples">See examples</a>
-        <button class="close" type="button" id="stickyClose" aria-label="Close">✕</button>
-      </div>
-    </div>
-  </div>
+<script>
+  // Active authors (update this list as you add more author folders)
+  const AUTHORS = [
+    {
+      name: "Marie McKenzie",
+      url: "/MarieMcKenzie/",
+      genres: ["Non-fiction"],
+      format: "standalone",
+      tone: ["cosy"],
+      pace: "steady"
+    },
+    {
+      name: "Tory Hunt",
+      url: "/ToryHunt/",
+      genres: ["Romance"],
+      format: "series",
+      tone: ["cosy"],
+      pace: "character"
+    }
+  ];
 
-  <script>
-    document.getElementById("year").textContent = new Date().getFullYear();
+  function normalise(s){ return String(s || "").trim().toLowerCase(); }
 
-    // Sticky CTA behaviour
-    (function(){
-      const bar = document.getElementById("stickyCta");
-      const closeBtn = document.getElementById("stickyClose");
-      const key = "abc_sticky_home_dismissed";
+  function matchesFilters(author, filters){
+    const { genre, format, tone, pace } = filters;
 
-      if (!bar) return;
+    if(genre){
+      const want = normalise(genre);
+      const has = (author.genres || []).some(g => normalise(g) === want);
+      if(!has) return false;
+    }
+    if(format && author.format && author.format !== format) return false;
 
-      if (sessionStorage.getItem(key) === "1") return;
+    if(tone){
+      const t = String(tone);
+      const tones = author.tone || [];
+      if(tones.length && !tones.includes(t)) return false;
+    }
 
-      const showAfter = 340;
-      const onScroll = () => {
-        if (window.scrollY > showAfter) bar.classList.add("is-visible");
-        else bar.classList.remove("is-visible");
-      };
+    if(pace && author.pace && author.pace !== pace) return false;
 
-      window.addEventListener("scroll", onScroll, { passive: true });
-      onScroll();
+    return true;
+  }
 
-      closeBtn?.addEventListener("click", () => {
-        bar.classList.remove("is-visible");
-        sessionStorage.setItem(key, "1");
-      });
-    })();
+  function pickRandom(arr){
+    return arr[Math.floor(Math.random() * arr.length)];
+  }
 
-    // Placeholder form behaviour
-    (function(){
-      const btn = document.getElementById("sendBtn");
-      btn?.addEventListener("click", () => {
-        const name = (document.getElementById("name")?.value || "").trim();
-        const email = (document.getElementById("email")?.value || "").trim();
-        if (!name || !email) {
-          alert("Please add your name and email.");
-          return;
-        }
-        alert("Enquiry sent (placeholder). Connect this form to your preferred handler when ready.");
-      });
-    })();
-  </script>
+  function goToRandomAuthor(overrides = {}){
+    const genre = overrides.genre ?? document.getElementById("genre").value;
+    const format = overrides.format ?? document.getElementById("format").value;
+    const tone = overrides.tone ?? document.getElementById("tone").value;
+    const pace = overrides.pace ?? document.getElementById("pace").value;
+
+    const filters = { genre, format, tone, pace };
+    const pool = AUTHORS.filter(a => matchesFilters(a, filters));
+
+    if(!pool.length){
+      alert("No matches yet for those filters. Try 'Any genre' (or add more authors).");
+      return;
+    }
+    const chosen = pickRandom(pool);
+    window.location.href = chosen.url;
+  }
+
+  function resetFilters(){
+    document.getElementById("genre").value = "";
+    document.getElementById("format").value = "";
+    document.getElementById("tone").value = "";
+    document.getElementById("pace").value = "";
+  }
+
+  // Hook up buttons
+  document.getElementById("findBtn").addEventListener("click", () => goToRandomAuthor());
+  document.getElementById("heroSurpriseBtn").addEventListener("click", () => {
+    document.getElementById("surprise").scrollIntoView({ behavior: "smooth", block: "start" });
+  });
+  document.getElementById("resetBtn").addEventListener("click", resetFilters);
+
+  // Genre grid buttons -> set genre then go
+  document.querySelectorAll("#genreGrid .genre").forEach(btn => {
+    btn.addEventListener("click", () => {
+      const g = btn.getAttribute("data-genre");
+      // sync UI select too (nice touch)
+      const genreSelect = document.getElementById("genre");
+      genreSelect.value = g || "";
+      goToRandomAuthor({ genre: g });
+    });
+  });
+
+  // Newsletter placeholder
+  document.getElementById("newsletterForm").addEventListener("submit", (e) => {
+    e.preventDefault();
+    const email = document.getElementById("email").value.trim();
+    if(!email) return;
+    document.getElementById("newsletterHint").textContent =
+      "Cheers — you’re on the list (placeholder). Next step: connect this form to your email provider.";
+    try{ localStorage.setItem("abc_newsletter_email", email); }catch(_){}
+    e.target.reset();
+  });
+
+  // Year
+  document.getElementById("year").textContent = new Date().getFullYear();
+</script>
 </body>
 </html>
