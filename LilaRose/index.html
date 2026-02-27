@@ -7,9 +7,6 @@
   <title>Lila Rose | Sweet Small-Town Romance</title>
   <meta name="description" content="Sweet, wholesome small-town romance with heart, humour, pets, and happily-ever-afters. Start here and read on Kindle Unlimited." />
 
-  <!-- Optional: canonical -->
-  <!-- <link rel="canonical" href="https://www.yoursite.com/authors/lila-rose/" /> -->
-
   <style>
     :root{
       --ink:#1f1a16;
@@ -18,7 +15,6 @@
 
       --paper:#fbf7f1;
       --paper-2:#fffdf9;
-      --card:#ffffff;
 
       --blush:#f3d6d6;
       --sage:#c8d5c2;
@@ -52,7 +48,6 @@
 
     .wrap{ max-width:var(--max); margin:0 auto; padding:28px 18px 64px; }
 
-    /* Soft top band */
     .topline{
       height:4px;
       background: linear-gradient(90deg, transparent, var(--gold), transparent);
@@ -208,7 +203,45 @@
       .mini-grid{ grid-template-columns: 1fr; }
     }
 
-    /* Sections */
+    /* Author mini profile */
+    .author-mini{
+      display:flex;
+      gap: 14px;
+      align-items:center;
+      padding: 14px;
+      border-radius: var(--radius);
+      border: 1px solid rgba(31,26,22,.08);
+      background: rgba(255,255,255,.78);
+      box-shadow: var(--shadow-soft);
+      margin-top: 14px;
+    }
+    .author-photo{
+      width: 78px;
+      height: 78px;
+      border-radius: 999px;
+      overflow:hidden;
+      border: 1px solid rgba(31,26,22,.10);
+      box-shadow: 0 14px 26px rgba(31,26,22,.14);
+      flex: 0 0 auto;
+      background: #fff;
+    }
+    .author-photo img{
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    .author-mini .name{
+      font-weight: 900;
+      letter-spacing: -0.2px;
+      margin: 0 0 4px;
+    }
+    .author-mini .blurb{
+      margin: 0;
+      color: var(--muted);
+      line-height: 1.45;
+      font-size: 13px;
+    }
+
     section{
       margin-top: 22px;
       border-radius: var(--radius);
@@ -218,7 +251,6 @@
       overflow:hidden;
     }
 
-    /* Thin gold top border on white sections */
     .section-topline{
       height: 3px;
       background: linear-gradient(90deg, transparent, var(--gold), transparent);
@@ -247,14 +279,12 @@
       font-weight: 650;
     }
 
-    /* Subtle gold divider lines between chunks */
     .gold-divider{
       height:1px;
       background: linear-gradient(90deg, transparent, var(--gold-soft), transparent);
       margin: 18px 0;
     }
 
-    /* Start Here grid */
     .start-grid{
       display:grid;
       grid-template-columns: repeat(4, 1fr);
@@ -279,7 +309,6 @@
       overflow:hidden;
     }
 
-    /* Animated hover glow */
     .start-card::before,
     .book-card::before{
       content:"";
@@ -293,9 +322,7 @@
       pointer-events:none;
     }
     .start-card:hover::before,
-    .book-card:hover::before{
-      opacity:1;
-    }
+    .book-card:hover::before{ opacity:1; }
 
     .start-card:hover{
       transform: translateY(-3px);
@@ -307,7 +334,6 @@
     .start-card h3{ margin: 8px 0 6px; font-size: 16px; }
     .start-card p{ margin:0; color: var(--muted); font-size: 13px; line-height: 1.45; }
 
-    /* Book grid */
     .books{
       display:grid;
       grid-template-columns: repeat(2, 1fr);
@@ -427,7 +453,6 @@
       color: #1a140f;
     }
 
-    /* About */
     .about{
       display:grid;
       grid-template-columns: 1fr 1fr;
@@ -489,6 +514,17 @@
             <a class="btn" href="#ku">📖 Kindle Unlimited</a>
           </div>
 
+          <div class="author-mini" aria-label="Author profile">
+            <!-- Replace filename if your photo is named differently -->
+            <div class="author-photo">
+              <img src="./assets/lila-rose.webp" alt="Lila Rose author photo" loading="lazy" />
+            </div>
+            <div>
+              <p class="name">Wholesome romance, always</p>
+              <p class="blurb">Sweet small-town love stories with cosy vibes, kind characters, and happily-ever-afters.</p>
+            </div>
+          </div>
+
           <p class="small" style="margin-top:12px;">
             Prefer reading on Kindle Unlimited? Use the <strong>“Read on KU”</strong> buttons below — they go straight to Amazon UK.
           </p>
@@ -497,7 +533,7 @@
         <aside class="hero-card">
           <h3>Fastest way to pick your next read</h3>
           <p>
-            Choose a vibe below: festive mystery, pet-filled small-town warmth, engagement-themed romance, or a sweet holiday rivalry.
+            Choose a vibe below: festive magic, pet-filled small-town warmth, engagement-themed romance, or a sweet holiday rivalry.
           </p>
           <div class="mini-grid">
             <a class="btn btn-primary" href="#start-here">Start in 10 seconds →</a>
@@ -519,7 +555,7 @@
         <div class="start-grid">
           <a class="start-card" href="#book-santa">
             <div class="emoji">🎄</div>
-            <h3>Festive, cosy mystery-romance</h3>
+            <h3>Festive, cosy romance</h3>
             <p>Start with <strong>The Mysterious Santa</strong>.</p>
           </a>
 
@@ -545,8 +581,7 @@
         <div class="gold-divider" aria-hidden="true"></div>
 
         <div id="ku" class="small">
-          <strong>Kindle Unlimited tip:</strong> readers on KU convert best when you clearly promise a safe experience.
-          Keep phrasing consistent: <em>sweet romance</em>, <em>wholesome</em>, <em>comfort read</em>, <em>HEA guaranteed</em>.
+          <strong>Kindle Unlimited:</strong> every “Read on KU” button below links directly to the Amazon UK listing so KU readers can start immediately.
         </div>
       </div>
     </section>
@@ -557,20 +592,19 @@
       <div class="section-inner">
         <div class="section-head">
           <h2>Books</h2>
-          <div class="note">Maximise KU click-through with one clear primary CTA per book</div>
+          <div class="note">Primary KU button first = higher click-through</div>
         </div>
 
         <div class="books">
 
-          <!-- BOOK 1 -->
+          <!-- Mysterious Santa -->
           <article class="book-card" id="book-santa">
             <div class="cover">
-              <!-- Replace with your actual cover in ./assets/ -->
-              <img src="./assets/the-mysterious-santa.jpg" alt="The Mysterious Santa book cover" loading="lazy" />
+              <img src="./assets/the-mysterious-santa.webp" alt="The Mysterious Santa book cover" loading="lazy" />
             </div>
             <div class="book-meta">
               <h3>The Mysterious Santa</h3>
-              <div class="sub">Cosy festive romance • secrets • comfort-read vibes</div>
+              <div class="sub">Cosy festive romance • comfort-read vibes • happily-ever-after</div>
 
               <div class="badges">
                 <span class="badge badge-ku">Kindle Unlimited</span>
@@ -579,26 +613,24 @@
               </div>
 
               <p>
-                A warm, festive escape with gentle intrigue, community charm, and a love story that leaves you smiling.
+                A warm festive escape full of charm, gentle surprises, and the kind of romance that leaves you smiling.
               </p>
 
               <div class="book-actions">
-                <!-- Replace href with the exact Amazon UK book URL.
-                     Optional affiliate example: https://www.amazon.co.uk/dp/ASIN?tag=YOURTAG-21 -->
-                <a class="link link-primary" href="AMAZON_BOOK_URL_THE_MYSTERIOUS_SANTA" target="_blank" rel="noopener noreferrer">
+                <a class="link link-primary" href="https://www.amazon.co.uk/Mysterious-Santa-Lila-Rose-ebook/dp/B0DQJR1PZY" target="_blank" rel="noopener noreferrer">
                   📖 Read on KU (Amazon UK)
                 </a>
-                <a class="link" href="AMAZON_BOOK_URL_THE_MYSTERIOUS_SANTA" target="_blank" rel="noopener noreferrer">
+                <a class="link" href="https://www.amazon.co.uk/Mysterious-Santa-Lila-Rose-ebook/dp/B0DQJR1PZY" target="_blank" rel="noopener noreferrer">
                   🛒 View on Amazon
                 </a>
               </div>
             </div>
           </article>
 
-          <!-- BOOK 2 -->
+          <!-- Pawprints -->
           <article class="book-card" id="book-pawprints">
             <div class="cover">
-              <img src="./assets/pawprints-of-the-heart.jpg" alt="Pawprints of the Heart book cover" loading="lazy" />
+              <img src="./assets/pawprints-of-the-heart.webp" alt="Pawprints of the Heart book cover" loading="lazy" />
             </div>
             <div class="book-meta">
               <h3>Pawprints of the Heart</h3>
@@ -611,24 +643,24 @@
               </div>
 
               <p>
-                A heart-lifting small-town romance where wagging tails, kind people, and second chances help two guarded hearts open up.
+                A heart-lifting small-town romance where wagging tails, kind people, and second chances help two hearts open up.
               </p>
 
               <div class="book-actions">
-                <a class="link link-primary" href="AMAZON_BOOK_URL_PAWPRINTS_OF_THE_HEART" target="_blank" rel="noopener noreferrer">
+                <a class="link link-primary" href="https://www.amazon.co.uk/Pawprints-heart-Small-Town-Romance-Together-ebook/dp/B0FLYP82KX" target="_blank" rel="noopener noreferrer">
                   📖 Read on KU (Amazon UK)
                 </a>
-                <a class="link" href="AMAZON_BOOK_URL_PAWPRINTS_OF_THE_HEART" target="_blank" rel="noopener noreferrer">
+                <a class="link" href="https://www.amazon.co.uk/Pawprints-heart-Small-Town-Romance-Together-ebook/dp/B0FLYP82KX" target="_blank" rel="noopener noreferrer">
                   🛒 View on Amazon
                 </a>
               </div>
             </div>
           </article>
 
-          <!-- BOOK 3 -->
+          <!-- Terms of Engagement -->
           <article class="book-card" id="book-terms">
             <div class="cover">
-              <img src="./assets/terms-of-engagement.jpg" alt="Terms of Engagement book cover" loading="lazy" />
+              <img src="./assets/terms-of-engagement.webp" alt="Terms of Engagement book cover" loading="lazy" />
             </div>
             <div class="book-meta">
               <h3>Terms of Engagement</h3>
@@ -641,24 +673,24 @@
               </div>
 
               <p>
-                A charming love story built on misread signals, meaningful choices, and the kind of connection that sneaks up on you.
+                A charming love story built on meaningful choices, gentle humour, and a connection that sneaks up on you.
               </p>
 
               <div class="book-actions">
-                <a class="link link-primary" href="AMAZON_BOOK_URL_TERMS_OF_ENGAGEMENT" target="_blank" rel="noopener noreferrer">
+                <a class="link link-primary" href="https://www.amazon.co.uk/Terms-Engagement-Lila-Rose-ebook/dp/B0F24QG1XM" target="_blank" rel="noopener noreferrer">
                   📖 Read on KU (Amazon UK)
                 </a>
-                <a class="link" href="AMAZON_BOOK_URL_TERMS_OF_ENGAGEMENT" target="_blank" rel="noopener noreferrer">
+                <a class="link" href="https://www.amazon.co.uk/Terms-Engagement-Lila-Rose-ebook/dp/B0F24QG1XM" target="_blank" rel="noopener noreferrer">
                   🛒 View on Amazon
                 </a>
               </div>
             </div>
           </article>
 
-          <!-- BOOK 4 -->
+          <!-- Gingerbread War -->
           <article class="book-card" id="book-gingerbread">
             <div class="cover">
-              <img src="./assets/the-gingerbread-war.jpg" alt="The Gingerbread War book cover" loading="lazy" />
+              <img src="./assets/the-gingerbread-war.webp" alt="The Gingerbread War book cover" loading="lazy" />
             </div>
             <div class="book-meta">
               <h3>The Gingerbread War</h3>
@@ -667,7 +699,7 @@
               <div class="badges">
                 <span class="badge badge-ku">Kindle Unlimited</span>
                 <span class="badge">Holiday</span>
-                <span class="badge">Enemies-ish to lovers</span>
+                <span class="badge">Rivals</span>
               </div>
 
               <p>
@@ -675,10 +707,10 @@
               </p>
 
               <div class="book-actions">
-                <a class="link link-primary" href="AMAZON_BOOK_URL_THE_GINGERBREAD_WAR" target="_blank" rel="noopener noreferrer">
+                <a class="link link-primary" href="https://www.amazon.co.uk/Gingerbread-War-Lila-Rose-ebook/dp/B0DPTBKHTS" target="_blank" rel="noopener noreferrer">
                   📖 Read on KU (Amazon UK)
                 </a>
-                <a class="link" href="AMAZON_BOOK_URL_THE_GINGERBREAD_WAR" target="_blank" rel="noopener noreferrer">
+                <a class="link" href="https://www.amazon.co.uk/Gingerbread-War-Lila-Rose-ebook/dp/B0DPTBKHTS" target="_blank" rel="noopener noreferrer">
                   🛒 View on Amazon
                 </a>
               </div>
@@ -690,8 +722,8 @@
         <div class="gold-divider" aria-hidden="true"></div>
 
         <p class="small">
-          <strong>Why KU-first buttons work:</strong> KU readers want the quickest path to “Read now”.
-          Keep the primary button wording consistent across all books (done above).
+          <strong>KU-first structure:</strong> the primary button is always “Read on KU” to reduce friction for KU subscribers.
+          If you use affiliate tracking, append your tag to each Amazon URL.
         </p>
       </div>
     </section>
@@ -702,12 +734,11 @@
       <div class="section-inner">
         <div class="section-head">
           <h2>About Lila Rose</h2>
-          <div class="note">Polished bio (wholesome romance positioning)</div>
+          <div class="note">Wholesome romance positioning</div>
         </div>
 
         <div class="about">
           <div>
-            <!-- COMPLETE POLISHED BIO -->
             <p>
               Lila Rose writes sweet, wholesome romance for readers who want a genuine escape: charming communities, tender moments,
               light humour, and happily-ever-afters you can trust.
@@ -727,13 +758,13 @@
           </div>
 
           <div class="hero-card">
-            <h3>Tagline options (hierarchy)</h3>
+            <h3>Tagline hierarchy</h3>
             <p class="small"><strong>Primary (headline):</strong> Sweet Small-Town Romance with Heart</p>
             <p class="small"><strong>Secondary (support line):</strong> Wholesome love stories filled with charm, humour, and happily-ever-afters.</p>
-            <p class="small"><strong>Tertiary (pills/keywords):</strong> Sweet • Low-spice • Cosy seasonal • Pets • Found family</p>
+            <p class="small"><strong>Tertiary (trust cues):</strong> Sweet • Low-spice • Cosy seasonal • Pets • Found family</p>
             <div class="gold-divider" aria-hidden="true"></div>
             <p class="small">
-              Use the primary + secondary together above the fold. The tertiary works best as quick “trust cues”.
+              Keep these consistent across her covers, socials, and Amazon bio to avoid “wrong-genre” reader confusion.
             </p>
           </div>
         </div>
@@ -744,7 +775,7 @@
       <div class="topline" aria-hidden="true" style="max-width:720px; margin:22px auto 14px;"></div>
       <div>© <span id="y"></span> Lila Rose • Links open on Amazon UK</div>
       <div class="small" style="margin-top:6px;">
-        Tip: If you’re tracking clicks, add your analytics event handlers to the “Read on KU” links.
+        If you track clicks, attach analytics events to the “Read on KU” links for clean conversion reporting.
       </div>
     </footer>
 
