@@ -9,37 +9,57 @@
 
 <style>
 :root{
+  --purple-dark:#2a0d44;
   --purple:#3f1366;
-  --purple-dark:#2d0d4a;
+  --purple-soft:#2d0d4a;
   --gold:#caa84c;
-  --light:#ffffff;
+  --white:#ffffff;
+  --light:#f4f4f4;
   --dark:#111;
-  --grey:#f4f4f4;
-  --max:1100px;
+  --max:1150px;
 }
 
 body{
   margin:0;
   font-family: Arial, Helvetica, sans-serif;
-  background:#ffffff;
-  color:var(--dark);
+  background: linear-gradient(180deg, var(--purple-dark), var(--purple), var(--purple-soft));
+  color:#f5f5f5;
 }
 
+/* SECTION WRAPPER */
+.white-section{
+  background:#ffffff;
+  color:#111;
+  border-top:3px solid var(--gold); /* thin gold top border */
+}
+
+/* subtle gold divider line between sections */
+.divider{
+  height:1px;
+  background: linear-gradient(90deg, rgba(0,0,0,0), rgba(202,168,76,.9), rgba(0,0,0,0));
+}
+
+/* container as a floating card */
 .container{
   max-width:var(--max);
-  margin:auto;
+  margin:0 auto;
   padding:70px 20px;
 }
 
+.card{
+  background:#fff;
+  border-radius:10px;
+  padding:55px 20px;
+  box-shadow: 0 18px 45px rgba(0,0,0,.18); /* soft drop shadow */
+}
+
 .hero{
-  background:linear-gradient(180deg, var(--purple), var(--purple-dark));
-  color:#fff;
   text-align:center;
-  padding:110px 20px;
+  padding:120px 20px;
 }
 
 .hero h1{
-  font-size:44px;
+  font-size:46px;
   margin-bottom:20px;
   letter-spacing:1px;
 }
@@ -56,7 +76,7 @@ body{
   text-decoration:none;
   font-weight:bold;
   border-radius:4px;
-  transition:0.3s ease;
+  transition:0.25s ease;
 }
 
 .btn-gold{
@@ -65,7 +85,8 @@ body{
 }
 
 .btn-gold:hover{
-  opacity:0.85;
+  opacity:0.88;
+  transform: translateY(-1px);
 }
 
 .btn-outline{
@@ -76,12 +97,13 @@ body{
 .btn-outline:hover{
   background:var(--gold);
   color:#000;
+  transform: translateY(-1px);
 }
 
 .section-title{
   text-align:center;
-  font-size:30px;
-  margin-bottom:40px;
+  font-size:32px;
+  margin:0 0 50px;
   color:var(--purple);
 }
 
@@ -98,18 +120,13 @@ body{
 }
 
 .review-box{
-  background:var(--grey);
+  background:#f4f4f4;
   padding:25px;
-  margin:20px auto;
-  max-width:750px;
+  margin:18px auto;
+  max-width:760px;
   border-left:5px solid var(--gold);
   font-size:16px;
-}
-
-.about-author{
-  text-align:center;
-  max-width:800px;
-  margin:auto;
+  border-radius:6px;
 }
 
 .author-image{
@@ -119,19 +136,50 @@ body{
   margin:20px auto;
 }
 
-.footer-cta{
-  background:var(--purple);
-  color:#fff;
+.series-grid{
+  display:grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap:40px;
+  margin-top:40px;
+}
+
+.series-card{
   text-align:center;
-  padding:70px 20px;
+}
+
+.series-card a{
+  display:block;
+  border-radius:10px;
+  overflow:hidden;
+}
+
+.series-card img{
+  width:100%;
+  border-radius:10px;
+  transition: transform .28s ease, box-shadow .28s ease, filter .28s ease;
+}
+
+/* animated hover glow for series banners */
+.series-card img:hover{
+  transform: scale(1.03);
+  box-shadow: 0 0 0 2px rgba(202,168,76,.75), 0 18px 50px rgba(63,19,102,.25);
+  filter: brightness(1.05) contrast(1.03);
+}
+
+.footer-cta{
+  text-align:center;
+  padding:90px 20px;
+}
+
+.footer-cta h2{
+  margin:0 0 25px;
 }
 </style>
 </head>
 
 <body>
 
-<!-- HERO SECTION -->
-
+<!-- HERO -->
 <section class="hero">
   <h1>SCANDALOUS AFFAIRS</h1>
   <p>Power. Infidelity. Betrayal. Nothing stays hidden forever.</p>
@@ -139,79 +187,119 @@ body{
   <a href="https://www.facebook.com/groups/472575272506906" class="btn btn-outline">Join the Reader Circle</a>
 </section>
 
-<!-- BOOK 1 SECTION -->
+<!-- DIVIDER -->
+<div class="divider"></div>
 
-<section class="container">
-  <h2 class="section-title">Start Here</h2>
+<!-- PRIMARY BOOK SECTION -->
+<section class="white-section">
+  <div class="container">
+    <div class="card">
+      <h2 class="section-title">Start Here</h2>
 
-  <img src="/LadyLegacy/assets/scandalous-affairs-book-1.webp" 
-       alt="Scandalous Affairs Book 1 by Lady Legacy" 
-       class="book-cover">
+      <img src="LadyLegacy/assets/scandalous-affairs-book-1.webp"
+           alt="Scandalous Affairs Book 1 by Lady Legacy"
+           class="book-cover">
 
-  <img src="LadyLegacy/assets/amazon-1-bestseller-badge.png" 
-       alt="#1 Amazon Bestseller Badge" 
-       class="badge">
+      <img src="LadyLegacy/assets/amazon-1-bestseller-badge.png"
+           alt="#1 Amazon Bestseller Badge"
+           class="badge">
 
-  <p style="text-align:center; max-width:700px; margin:auto;">
-  Award-winning and recognised as a #1 Amazon bestseller, <strong>SCANDALOUS AFFAIRS</strong> delivers unapologetic urban fiction packed with ambition, jealousy and explosive secrets.
-  </p>
+      <p style="text-align:center; max-width:720px; margin:0 auto;">
+        Award-winning and recognised as a #1 Amazon bestseller, <strong>SCANDALOUS AFFAIRS</strong> delivers unapologetic urban fiction packed with ambition, jealousy and explosive secrets.
+      </p>
 
-  <div style="text-align:center; margin-top:30px;">
-    <a href="https://www.amazon.com/gp/product/B08WR9W9WV" class="btn btn-gold">
-      Buy on Amazon
-    </a>
+      <div style="text-align:center; margin-top:30px;">
+        <a href="https://www.amazon.com/gp/product/B08WR9W9WV" class="btn btn-gold">Buy on Amazon</a>
+      </div>
+    </div>
   </div>
 </section>
+
+<!-- DIVIDER -->
+<div class="divider"></div>
 
 <!-- REVIEWS -->
+<section class="white-section">
+  <div class="container">
+    <div class="card">
+      <h2 class="section-title">What Readers Are Saying</h2>
 
-<section class="container">
-  <h2 class="section-title">What Readers Are Saying</h2>
+      <div class="review-box">
+        ★★★★★ “Each chapter was filled with juicy drama and kept me entertained and wanting to read more.” — Jaleesa
+      </div>
 
-  <div class="review-box">
-  ★★★★★ “Each chapter was filled with juicy drama and kept me entertained and wanting more.” — Jaleesa
-  </div>
+      <div class="review-box">
+        ★★★★★ “First time reading this author. I finished it in a couple of hours. I just didn’t want to put it down.” — Kindle Customer
+      </div>
 
-  <div class="review-box">
-  ★★★★★ “First time reading this author. I finished it in a couple of hours. I just didn’t want to put it down.” — Kindle Customer
-  </div>
-
-  <div class="review-box">
-  ★★★★★ “This book gained another fan. The secrets and envy are crazy. Absolutely gripping.” — Reader’s Oasis
+      <div class="review-box">
+        ★★★★★ “This is my first time reading a book by this author and she has gained another fan. The secrets and envy are crazy. Absolutely gripping.” — Reader’s Oasis
+      </div>
+    </div>
   </div>
 </section>
 
-<!-- ABOUT AUTHOR -->
+<!-- DIVIDER -->
+<div class="divider"></div>
 
-<section class="container">
-  <h2 class="section-title">About LADY LEGACY</h2>
+<!-- EXPLORE MORE SERIES -->
+<section class="white-section">
+  <div class="container">
+    <div class="card">
+      <h2 class="section-title">Explore More Series</h2>
 
-  <img src="/LadyLegacy/assets/lady-legacy-author.webp" 
-       alt="Lady Legacy Author Photo" 
-       class="author-image">
+      <div class="series-grid">
 
-  <div class="about-author">
-    <p>
-    Award-winning and recognised as a #1 Amazon bestselling author, LADY LEGACY writes powerful urban fiction centred on ambition, betrayal and high-stakes relationships.
-    </p>
+        <div class="series-card">
+          <a href="https://www.amazon.com/gp/product/B0FRYG9BZD" aria-label="The Cheaters Book 1 on Amazon">
+            <img src="LadyLegacy/assets/the-cheaters-series-banner.webp"
+                 alt="The Cheaters Series by Lady Legacy">
+          </a>
+        </div>
 
-    <p>
-    Her stories explore loyalty tested under pressure, the consequences of infidelity and the dangerous cost of desire. Readers don’t just read her books — they feel the intensity on every page.
-    </p>
+        <div class="series-card">
+          <a href="https://www.amazon.com/gp/product/B09699P5PR" aria-label="Chase A Check Never Chase A Chick Book 1 on Amazon">
+            <img src="LadyLegacy/assets/chase-a-check-series-banner.webp"
+                 alt="Chase A Check Never Chase A Chick Series by Lady Legacy">
+          </a>
+        </div>
 
-    <p>
-    This is drama without limits. This is legacy-level storytelling.
-    </p>
+        <div class="series-card">
+          <a href="https://www.amazon.com/gp/product/B08LMVGRQW" aria-label="Kandy Kane Addickion Book 1 on Amazon">
+            <img src="LadyLegacy/assets/kandy-kane-addickion-series-banner.webp"
+                 alt="Kandy Kane Addickion Series by Lady Legacy">
+          </a>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- DIVIDER -->
+<div class="divider"></div>
+
+<!-- ABOUT -->
+<section class="white-section">
+  <div class="container">
+    <div class="card">
+      <h2 class="section-title">About LADY LEGACY</h2>
+
+      <img src="LadyLegacy/assets/lady-legacy-author.webp"
+           alt="Lady Legacy Author Photo"
+           class="author-image">
+
+      <p style="max-width:860px; margin:0 auto; text-align:center;">
+        Award-winning and recognised as a #1 Amazon bestselling author, LADY LEGACY writes powerful urban fiction centred on ambition, betrayal and high-stakes relationships. Her stories explore loyalty tested under pressure, the consequences of infidelity and the dangerous cost of desire.
+      </p>
+    </div>
   </div>
 </section>
 
 <!-- FINAL CTA -->
-
 <section class="footer-cta">
   <h2>The drama begins with one click.</h2>
-  <a href="https://www.amazon.com/gp/product/B08WR9W9WV" class="btn btn-gold">
-    Start Reading Today
-  </a>
+  <a href="https://www.amazon.com/gp/product/B08WR9W9WV" class="btn btn-gold">Start Reading Today</a>
 </section>
 
 </body>
