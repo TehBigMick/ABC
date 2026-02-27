@@ -7,6 +7,15 @@
   <title>Lila Rose | Sweet Small-Town Romance</title>
   <meta name="description" content="Sweet, wholesome small-town romance with heart, humour, pets, and happily-ever-afters. Start here and read on Kindle Unlimited." />
 
+  <!-- GA4 -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-0DYQYNMX6T"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){ dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'G-0DYQYNMX6T');
+  </script>
+
   <style>
     :root{
       --ink:#1f1a16;
@@ -158,20 +167,28 @@
       box-shadow: var(--shadow-soft);
       font-weight: 800;
       font-size: 14px;
-      transition: transform .18s ease, box-shadow .18s ease, border-color .18s ease;
+      transition: transform .18s ease, box-shadow .18s ease, border-colour .18s ease;
       cursor:pointer;
       will-change: transform;
     }
     .btn:hover{
       transform: translateY(-2px);
-      border-color: rgba(199,164,76,.55);
+      border-colour: rgba(199,164,76,.55);
       box-shadow: 0 18px 40px rgba(31,26,22,.14);
     }
     .btn-primary{
       background: linear-gradient(180deg, rgba(199,164,76,.95), rgba(199,164,76,.78));
-      border-color: rgba(199,164,76,.55);
-      color: #1a140f;
+      border-colour: rgba(199,164,76,.55);
+      colour: #1a140f;
     }
+
+    /* NOTE: CSS uses American property names (color/border-color) in many places above.
+       Browsers ignore 'colour'/'border-colour'. We'll keep the working ones below. */
+    .btn{
+      transition: transform .18s ease, box-shadow .18s ease, border-color .18s ease;
+    }
+    .btn:hover{ border-color: rgba(199,164,76,.55); }
+    .btn-primary{ border-color: rgba(199,164,76,.55); color:#1a140f; }
 
     .hero-card{
       border-radius: var(--radius);
@@ -515,7 +532,7 @@
           </div>
 
           <div class="author-mini" aria-label="Author profile">
-            <!-- Replace filename if your photo is named differently -->
+            <!-- Update this filename if yours is different -->
             <div class="author-photo">
               <img src="./assets/lila-rose.webp" alt="Lila Rose author photo" loading="lazy" />
             </div>
@@ -592,7 +609,7 @@
       <div class="section-inner">
         <div class="section-head">
           <h2>Books</h2>
-          <div class="note"></div>
+          <div class="note">Primary KU button first = higher click-through</div>
         </div>
 
         <div class="books">
@@ -612,15 +629,19 @@
                 <span class="badge">Cosy</span>
               </div>
 
-              <p>
-                A warm festive escape full of charm, gentle surprises, and the kind of romance that leaves you smiling.
-              </p>
+              <p>A warm festive escape full of charm, gentle surprises, and the kind of romance that leaves you smiling.</p>
 
               <div class="book-actions">
-                <a class="link link-primary" href="https://www.amazon.co.uk/Mysterious-Santa-Lila-Rose-ebook/dp/B0DQJR1PZY" target="_blank" rel="noopener noreferrer">
+                <a class="link link-primary amazon-link"
+                   href="https://www.amazon.co.uk/Mysterious-Santa-Lila-Rose-ebook/dp/B0DQJR1PZY"
+                   target="_blank" rel="noopener noreferrer"
+                   data-platform="amazon_uk" data-destination="ku" data-book="The Mysterious Santa" data-asin="B0DQJR1PZY">
                   📖 Read on KU (Amazon UK)
                 </a>
-                <a class="link" href="https://www.amazon.co.uk/Mysterious-Santa-Lila-Rose-ebook/dp/B0DQJR1PZY" target="_blank" rel="noopener noreferrer">
+                <a class="link amazon-link"
+                   href="https://www.amazon.co.uk/Mysterious-Santa-Lila-Rose-ebook/dp/B0DQJR1PZY"
+                   target="_blank" rel="noopener noreferrer"
+                   data-platform="amazon_uk" data-destination="product" data-book="The Mysterious Santa" data-asin="B0DQJR1PZY">
                   🛒 View on Amazon
                 </a>
               </div>
@@ -642,15 +663,19 @@
                 <span class="badge">Pets</span>
               </div>
 
-              <p>
-                A heart-lifting small-town romance where wagging tails, kind people, and second chances help two hearts open up.
-              </p>
+              <p>A heart-lifting small-town romance where wagging tails, kind people, and second chances help two hearts open up.</p>
 
               <div class="book-actions">
-                <a class="link link-primary" href="https://www.amazon.co.uk/Pawprints-heart-Small-Town-Romance-Together-ebook/dp/B0FLYP82KX" target="_blank" rel="noopener noreferrer">
+                <a class="link link-primary amazon-link"
+                   href="https://www.amazon.co.uk/Pawprints-heart-Small-Town-Romance-Together-ebook/dp/B0FLYP82KX"
+                   target="_blank" rel="noopener noreferrer"
+                   data-platform="amazon_uk" data-destination="ku" data-book="Pawprints of the Heart" data-asin="B0FLYP82KX">
                   📖 Read on KU (Amazon UK)
                 </a>
-                <a class="link" href="https://www.amazon.co.uk/Pawprints-heart-Small-Town-Romance-Together-ebook/dp/B0FLYP82KX" target="_blank" rel="noopener noreferrer">
+                <a class="link amazon-link"
+                   href="https://www.amazon.co.uk/Pawprints-heart-Small-Town-Romance-Together-ebook/dp/B0FLYP82KX"
+                   target="_blank" rel="noopener noreferrer"
+                   data-platform="amazon_uk" data-destination="product" data-book="Pawprints of the Heart" data-asin="B0FLYP82KX">
                   🛒 View on Amazon
                 </a>
               </div>
@@ -672,15 +697,19 @@
                 <span class="badge">Low drama</span>
               </div>
 
-              <p>
-                A charming love story built on meaningful choices, gentle humour, and a connection that sneaks up on you.
-              </p>
+              <p>A charming love story built on meaningful choices, gentle humour, and a connection that sneaks up on you.</p>
 
               <div class="book-actions">
-                <a class="link link-primary" href="https://www.amazon.co.uk/Terms-Engagement-Lila-Rose-ebook/dp/B0F24QG1XM" target="_blank" rel="noopener noreferrer">
+                <a class="link link-primary amazon-link"
+                   href="https://www.amazon.co.uk/Terms-Engagement-Lila-Rose-ebook/dp/B0F24QG1XM"
+                   target="_blank" rel="noopener noreferrer"
+                   data-platform="amazon_uk" data-destination="ku" data-book="Terms of Engagement" data-asin="B0F24QG1XM">
                   📖 Read on KU (Amazon UK)
                 </a>
-                <a class="link" href="https://www.amazon.co.uk/Terms-Engagement-Lila-Rose-ebook/dp/B0F24QG1XM" target="_blank" rel="noopener noreferrer">
+                <a class="link amazon-link"
+                   href="https://www.amazon.co.uk/Terms-Engagement-Lila-Rose-ebook/dp/B0F24QG1XM"
+                   target="_blank" rel="noopener noreferrer"
+                   data-platform="amazon_uk" data-destination="product" data-book="Terms of Engagement" data-asin="B0F24QG1XM">
                   🛒 View on Amazon
                 </a>
               </div>
@@ -702,15 +731,19 @@
                 <span class="badge">Rivals</span>
               </div>
 
-              <p>
-                A playful seasonal clash with warm chemistry, festive chaos, and a happily-ever-after that tastes like comfort.
-              </p>
+              <p>A playful seasonal clash with warm chemistry, festive chaos, and a happily-ever-after that tastes like comfort.</p>
 
               <div class="book-actions">
-                <a class="link link-primary" href="https://www.amazon.co.uk/Gingerbread-War-Lila-Rose-ebook/dp/B0DPTBKHTS" target="_blank" rel="noopener noreferrer">
+                <a class="link link-primary amazon-link"
+                   href="https://www.amazon.co.uk/Gingerbread-War-Lila-Rose-ebook/dp/B0DPTBKHTS"
+                   target="_blank" rel="noopener noreferrer"
+                   data-platform="amazon_uk" data-destination="ku" data-book="The Gingerbread War" data-asin="B0DPTBKHTS">
                   📖 Read on KU (Amazon UK)
                 </a>
-                <a class="link" href="https://www.amazon.co.uk/Gingerbread-War-Lila-Rose-ebook/dp/B0DPTBKHTS" target="_blank" rel="noopener noreferrer">
+                <a class="link amazon-link"
+                   href="https://www.amazon.co.uk/Gingerbread-War-Lila-Rose-ebook/dp/B0DPTBKHTS"
+                   target="_blank" rel="noopener noreferrer"
+                   data-platform="amazon_uk" data-destination="product" data-book="The Gingerbread War" data-asin="B0DPTBKHTS">
                   🛒 View on Amazon
                 </a>
               </div>
@@ -722,8 +755,7 @@
         <div class="gold-divider" aria-hidden="true"></div>
 
         <p class="small">
-          <strong></strong> 
-         
+          <strong>Tracking:</strong> Amazon clicks are tracked as a GA4 event named <code>amazon_click</code> with book + ASIN + button type.
         </p>
       </div>
     </section>
@@ -734,7 +766,7 @@
       <div class="section-inner">
         <div class="section-head">
           <h2>About Lila Rose</h2>
-          <div class="note"></div>
+          <div class="note">Wholesome romance positioning</div>
         </div>
 
         <div class="about">
@@ -758,13 +790,13 @@
           </div>
 
           <div class="hero-card">
-            <h3></h3>
-            <p class="small"><strong>Sweet Small-Town Romance with Heart</strong> </p>
-            <p class="small"><strong>Wholesome love stories filled with charm, humour, and happily-ever-afters.</strong> </p>
-            <p class="small"><strong>Sweet • Low-spice • Cosy seasonal • Pets • Found family</strong> </p>
+            <h3>Tagline hierarchy</h3>
+            <p class="small"><strong>Primary:</strong> Sweet Small-Town Romance with Heart</p>
+            <p class="small"><strong>Secondary:</strong> Wholesome love stories filled with charm, humour, and happily-ever-afters.</p>
+            <p class="small"><strong>Tertiary:</strong> Sweet • Low-spice • Cosy seasonal • Pets • Found family</p>
             <div class="gold-divider" aria-hidden="true"></div>
             <p class="small">
-              
+              Keep these consistent across her covers, socials, and Amazon bio to prevent “wrong-genre” clicks.
             </p>
           </div>
         </div>
@@ -775,14 +807,45 @@
       <div class="topline" aria-hidden="true" style="max-width:720px; margin:22px auto 14px;"></div>
       <div>© <span id="y"></span> Lila Rose • Links open on Amazon UK</div>
       <div class="small" style="margin-top:6px;">
-        
+        Tip: In GA4, look under <em>Engagement → Events</em> for <strong>amazon_click</strong>, then break down by <code>book</code> and <code>destination</code>.
       </div>
     </footer>
 
   </div>
 
   <script>
+    // Footer year
     document.getElementById("y").textContent = new Date().getFullYear();
+
+    // Amazon click-through tracking (GA4)
+    (function(){
+      function safeText(v){ return (v || "").toString().trim(); }
+
+      document.addEventListener("click", function(e){
+        const a = e.target.closest && e.target.closest("a.amazon-link");
+        if(!a) return;
+
+        const book = safeText(a.getAttribute("data-book"));
+        const asin = safeText(a.getAttribute("data-asin"));
+        const destination = safeText(a.getAttribute("data-destination")); // ku | product
+        const platform = safeText(a.getAttribute("data-platform")) || "amazon_uk";
+        const href = a.href;
+
+        // Send GA4 event
+        if(typeof gtag === "function"){
+          gtag("event", "amazon_click", {
+            book: book || "Unknown",
+            asin: asin || "Unknown",
+            destination: destination || "unknown",
+            platform: platform,
+            link_url: href
+          });
+        }
+
+        // If the link opens in a new tab, we don't need to delay navigation.
+        // If you ever change to same-tab links, use `navigator.sendBeacon` or a short delay.
+      }, { passive: true });
+    })();
   </script>
 </body>
 </html>
