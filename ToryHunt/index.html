@@ -28,7 +28,6 @@ gtag('config', 'G-0DYQYNMX6T', { anonymize_ip: true });
   --brand-soft:#1f6f82;
   --paper:#f7f7f5;
   --white:#ffffff;
-  --shadow:0 12px 30px rgba(0,0,0,0.12);
 }
 
 body{
@@ -70,7 +69,6 @@ body{
   box-shadow:0 8px 20px rgba(0,0,0,0.05);
   text-align:center;
   transition:transform .25s ease, box-shadow .25s ease;
-  position:relative;
 }
 
 .book-card:hover{
@@ -85,8 +83,6 @@ body{
   margin-bottom:14px;
 }
 
-.book-card a{display:block;}
-
 .book-title{
   margin:0 0 8px;
   color:var(--brand);
@@ -94,112 +90,82 @@ body{
   line-height:1.35;
 }
 
-/* Review hover popover */
-.review-trigger{
-  display:inline-block;
-  position:relative;
-  outline:none;
-  cursor:help;
+.book-desc{
+  margin:10px 0 0;
+  color:var(--ink-soft);
+  font-size:15.5px;
 }
 
-.review-trigger:focus-visible{
-  outline:3px solid rgba(15,76,92,0.25);
-  outline-offset:4px;
-  border-radius:8px;
-}
-
-.review-pop{
-  position:absolute;
-  left:50%;
-  transform:translateX(-50%);
-  top:115%;
-  width:min(320px, 80vw);
-  background:var(--white);
-  color:var(--ink);
-  border-radius:12px;
-  padding:14px 14px 12px;
-  box-shadow:var(--shadow);
-  border:1px solid rgba(0,0,0,0.06);
+/* Reviews block (inline, reliable) */
+.reviews{
+  margin:12px auto 0;
   text-align:left;
-  z-index:20;
-  opacity:0;
-  pointer-events:none;
-  transition:opacity .15s ease, transform .15s ease;
+  max-width:340px;
+  padding:12px 12px 10px;
+  border-radius:12px;
+  background:rgba(15,76,92,0.06);
+  border:1px solid rgba(15,76,92,0.10);
 }
 
-.review-pop::before{
-  content:"";
-  position:absolute;
-  top:-8px;
-  left:50%;
-  transform:translateX(-50%);
-  border-width:0 9px 9px 9px;
-  border-style:solid;
-  border-color:transparent transparent var(--white) transparent;
-  filter:drop-shadow(0 -1px 0 rgba(0,0,0,0.06));
-}
-
-.review-trigger:hover .review-pop,
-.review-trigger:focus .review-pop{
-  opacity:1;
-  pointer-events:auto;
-  transform:translateX(-50%) translateY(2px);
-}
-
-.review-head{
+.reviews-head{
   display:flex;
   align-items:center;
   justify-content:space-between;
   gap:10px;
-  margin-bottom:10px;
+  margin-bottom:8px;
 }
 
-.stars{
+.reviews-head strong{
+  font-size:13px;
+  letter-spacing:0.2px;
+  color:var(--ink);
+}
+
+.rating-badge{
   display:inline-flex;
   align-items:center;
   gap:8px;
-  padding:6px 10px;
+  padding:5px 10px;
   border-radius:999px;
-  background:rgba(15,76,92,0.08);
+  background:rgba(255,255,255,0.75);
+  border:1px solid rgba(0,0,0,0.06);
   color:var(--brand);
-  font-weight:700;
-  font-size:13px;
-  letter-spacing:0.2px;
+  font-weight:800;
+  font-size:12px;
+  white-space:nowrap;
 }
 
-.star-glyph{
-  font-size:14px;
+.rating-badge .stars{
   letter-spacing:1px;
+  font-size:13px;
 }
 
-.review-list{
+.quote-list{
   margin:0;
   padding:0;
   list-style:none;
   display:grid;
-  gap:10px;
+  gap:8px;
 }
 
-.review{
-  border-top:1px solid rgba(0,0,0,0.06);
-  padding-top:10px;
+.quote{
+  background:rgba(255,255,255,0.7);
+  border:1px solid rgba(0,0,0,0.06);
+  border-radius:10px;
+  padding:8px 10px;
 }
 
-.review:first-child{
-  border-top:0;
-  padding-top:0;
-}
-
-.r-name{
-  font-weight:700;
-  font-size:13px;
+.quote .name{
+  font-weight:800;
+  font-size:12.5px;
   margin-bottom:2px;
+  color:var(--ink);
 }
 
-.r-quote{
-  font-size:13px;
-  color:var(--ink-soft);
+.quote p{
   margin:0;
+  font-size:12.8px;
+  color:var(--ink-soft);
 }
 
 .manifesto{
@@ -254,35 +220,30 @@ footer{text-align:center;padding:40px 20px;font-size:14px;color:#777;}
              alt="110 Life Skills for Teenage Boys by Tory Hunt">
       </a>
 
-      <h3 class="book-title">
-        <span class="review-trigger" tabindex="0" aria-label="Reviews for 110 Life Skills for Teenage Boys">
-          110 Life Skills for Teenage Boys
-          <span class="review-pop" role="tooltip">
-            <div class="review-head">
-              <strong>Top reviews</strong>
-              <span class="stars" aria-hidden="true">
-                <span class="star-glyph">★★★★★</span> 5.0
-              </span>
-            </div>
-            <ul class="review-list">
-              <li class="review">
-                <div class="r-name">Evelyn M</div>
-                <p class="r-quote">“Practical, Empowering, and Genuinely Useful.”</p>
-              </li>
-              <li class="review">
-                <div class="r-name">Lisa</div>
-                <p class="r-quote">“Toolbox For Teenager Life Skills and Confidence.”</p>
-              </li>
-              <li class="review">
-                <div class="r-name">Lori</div>
-                <p class="r-quote">“Teenage Boys skills for life.”</p>
-              </li>
-            </ul>
-          </span>
-        </span>
-      </h3>
+      <h3 class="book-title">110 Life Skills for Teenage Boys</h3>
 
-      <p>A practical guide helping teenage boys build responsibility and confidence.</p>
+      <div class="reviews" aria-label="Top reviews for 110 Life Skills for Teenage Boys">
+        <div class="reviews-head">
+          <strong>Top reviews</strong>
+          <span class="rating-badge" aria-hidden="true"><span class="stars">★★★★★</span> 5.0</span>
+        </div>
+        <ul class="quote-list">
+          <li class="quote">
+            <div class="name">Evelyn M</div>
+            <p>“Practical, Empowering, and Genuinely Useful.”</p>
+          </li>
+          <li class="quote">
+            <div class="name">Lisa</div>
+            <p>“Toolbox For Teenager Life Skills and Confidence.”</p>
+          </li>
+          <li class="quote">
+            <div class="name">Lori</div>
+            <p>“Teenage Boys skills for life.”</p>
+          </li>
+        </ul>
+      </div>
+
+      <p class="book-desc">A practical guide helping teenage boys build responsibility and confidence.</p>
     </div>
 
     <!-- Adulting -->
@@ -296,35 +257,30 @@ footer{text-align:center;padding:40px 20px;font-size:14px;color:#777;}
              alt="Adulting Life Skills for Teens Everything You Need to Know by Tory Hunt">
       </a>
 
-      <h3 class="book-title">
-        <span class="review-trigger" tabindex="0" aria-label="Reviews for Adulting Life Skills for Teens">
-          Adulting Life Skills for Teens: Everything You Need to Know
-          <span class="review-pop" role="tooltip">
-            <div class="review-head">
-              <strong>Top reviews</strong>
-              <span class="stars" aria-hidden="true">
-                <span class="star-glyph">★★★★★</span> 5.0
-              </span>
-            </div>
-            <ul class="review-list">
-              <li class="review">
-                <div class="r-name">Monika S</div>
-                <p class="r-quote">“Super practical.”</p>
-              </li>
-              <li class="review">
-                <div class="r-name">Shanskan</div>
-                <p class="r-quote">“Essential Skills For Life.”</p>
-              </li>
-              <li class="review">
-                <div class="r-name">Martin Ross</div>
-                <p class="r-quote">“One of the best money books for young people I’ve seen.”</p>
-              </li>
-            </ul>
-          </span>
-        </span>
-      </h3>
+      <h3 class="book-title">Adulting Life Skills for Teens: Everything You Need to Know</h3>
 
-      <p>A modern guide covering everyday life skills teens need for independence.</p>
+      <div class="reviews" aria-label="Top reviews for Adulting Life Skills for Teens">
+        <div class="reviews-head">
+          <strong>Top reviews</strong>
+          <span class="rating-badge" aria-hidden="true"><span class="stars">★★★★★</span> 5.0</span>
+        </div>
+        <ul class="quote-list">
+          <li class="quote">
+            <div class="name">Monika S</div>
+            <p>“Super practical.”</p>
+          </li>
+          <li class="quote">
+            <div class="name">Shanskan</div>
+            <p>“Essential Skills For Life.”</p>
+          </li>
+          <li class="quote">
+            <div class="name">Martin Ross</div>
+            <p>“One of the best money books for young people I’ve seen.”</p>
+          </li>
+        </ul>
+      </div>
+
+      <p class="book-desc">A modern guide covering everyday life skills teens need for independence.</p>
     </div>
 
     <!-- Tweens -->
@@ -338,35 +294,30 @@ footer{text-align:center;padding:40px 20px;font-size:14px;color:#777;}
              alt="Life Skills for Tweens Responsibility and Independence by Tory Hunt">
       </a>
 
-      <h3 class="book-title">
-        <span class="review-trigger" tabindex="0" aria-label="Reviews for Life Skills for Tweens">
-          Life Skills for Tweens: Responsibility and Independence
-          <span class="review-pop" role="tooltip">
-            <div class="review-head">
-              <strong>Top reviews</strong>
-              <span class="stars" aria-hidden="true">
-                <span class="star-glyph">★★★★★</span> 5.0
-              </span>
-            </div>
-            <ul class="review-list">
-              <li class="review">
-                <div class="r-name">Lizzy</div>
-                <p class="r-quote">“Must-read for children in their developmental stages.”</p>
-              </li>
-              <li class="review">
-                <div class="r-name">Angela Carroll</div>
-                <p class="r-quote">“How to be a capable adult.”</p>
-              </li>
-              <li class="review">
-                <div class="r-name">Alesi Nivres</div>
-                <p class="r-quote">“A Practical Guide for Tweens Growing Up.”</p>
-              </li>
-            </ul>
-          </span>
-        </span>
-      </h3>
+      <h3 class="book-title">Life Skills for Tweens: Responsibility and Independence</h3>
 
-      <p>A practical guide for tweens focused on responsibility and confidence-building habits.</p>
+      <div class="reviews" aria-label="Top reviews for Life Skills for Tweens">
+        <div class="reviews-head">
+          <strong>Top reviews</strong>
+          <span class="rating-badge" aria-hidden="true"><span class="stars">★★★★★</span> 5.0</span>
+        </div>
+        <ul class="quote-list">
+          <li class="quote">
+            <div class="name">Lizzy</div>
+            <p>“Must-read for children in their developmental stages.”</p>
+          </li>
+          <li class="quote">
+            <div class="name">Angela Carroll</div>
+            <p>“How to be a capable adult.”</p>
+          </li>
+          <li class="quote">
+            <div class="name">Alesi Nivres</div>
+            <p>“A Practical Guide for Tweens Growing Up.”</p>
+          </li>
+        </ul>
+      </div>
+
+      <p class="book-desc">A practical guide for tweens focused on responsibility and confidence-building habits.</p>
     </div>
 
   </div>
