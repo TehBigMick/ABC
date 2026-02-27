@@ -4,366 +4,644 @@
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Authors Book Club | Discover Indie Authors</title>
-<meta name="description" content="A cosy indie-bookstore corner of the internet. Discover new indie authors and explore something new." />
+<meta name="description" content="Discover indie authors by genre, vibe, and surprise picks. A cosy indie-bookstore corner of the internet." />
+<link rel="canonical" href="https://www.authorsbookclub.com/" />
 
+<!-- Keep your global stylesheet (nav/etc). This homepage is self-contained and avoids class collisions. -->
 <link rel="stylesheet" href="./styles.css" />
 
 <style>
-:root{
-  --ink:#2b1e16;
-  --muted:#6e5a4d;
-  --cream:#fbf3e8;
-  --latte:#e8d6c3;
-  --caramel:#c28b4f;
-  --rust:#8b3f24;
-  --evergreen:#3d5a4c;
-  --radius:18px;
-  --max:1100px;
-}
+  :root{
+    --ink:#2b1e16;
+    --muted:#6e5a4d;
+    --cream:#fbf3e8;
+    --cream-2:#f3e4d3;
+    --latte:#e7d2bc;
+    --caramel:#c28b4f;
+    --rust:#8b3f24;
+    --evergreen:#3d5a4c;
 
-/* ===== Background ===== */
-body{
-  margin:0;
-  font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
-  background:var(--cream);
-  color:var(--ink);
-  position:relative;
-}
+    --radius:18px;
+    --radius2:24px;
+    --max:1100px;
 
-body::before{
-  content:"";
-  position:fixed;
-  inset:0;
-  background:url("./assets/bg-autumn-coffee.webp") center/cover no-repeat;
-  z-index:-2;
-}
+    --shadow: 0 18px 50px rgba(0,0,0,.16);
+    --shadow2: 0 12px 30px rgba(0,0,0,.14);
+  }
 
-body::after{
-  content:"";
-  position:fixed;
-  inset:0;
-  background:linear-gradient(rgba(251,243,232,.88), rgba(245,232,218,.92));
-  z-index:-1;
-}
+  html, body{ height:100%; }
+  body{
+    margin:0;
+    font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
+    background:var(--cream);
+    color:var(--ink);
+    overflow-x:hidden;
+  }
 
-/* ===== Layout ===== */
-.wrap{
-  max-width:var(--max);
-  margin:auto;
-  padding:20px 16px 80px;
-}
+  /* Fixed background image (add this file to /assets or change the filename) */
+  body::before{
+    content:"";
+    position:fixed;
+    inset:0;
+    background:url("./assets/bg-autumn-coffee.webp") center/cover no-repeat;
+    z-index:-2;
+  }
 
-/* ===== Header ===== */
-header{
-  position:sticky;
-  top:0;
-  backdrop-filter:blur(12px);
-  background:rgba(251,243,232,.75);
-  border-bottom:1px solid rgba(0,0,0,.08);
-  z-index:20;
-}
+  /* Warm overlay for readability */
+  body::after{
+    content:"";
+    position:fixed;
+    inset:0;
+    background:
+      radial-gradient(1200px 650px at 18% 0%, rgba(194,139,79,.20), transparent 55%),
+      radial-gradient(900px 560px at 90% 10%, rgba(61,90,76,.14), transparent 55%),
+      linear-gradient(rgba(251,243,232,.86), rgba(245,232,218,.92));
+    z-index:-1;
+    pointer-events:none;
+  }
 
-.nav{
-  max-width:var(--max);
-  margin:auto;
-  padding:14px 16px;
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-}
+  /* --- Header (simple + safe) --- */
+  header{
+    position:sticky;
+    top:0;
+    z-index:50;
+    backdrop-filter: blur(12px);
+    background: rgba(251,243,232,.76);
+    border-bottom: 1px solid rgba(0,0,0,.08);
+  }
+  .nav{
+    max-width:var(--max);
+    margin:auto;
+    padding:14px 16px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    gap:12px;
+  }
+  .brand{
+    display:flex;
+    align-items:center;
+    gap:10px;
+    font-weight:900;
+    letter-spacing:.2px;
+    text-decoration:none;
+    color:var(--ink);
+    white-space:nowrap;
+  }
+  .mark{
+    width:34px;height:34px;border-radius:12px;
+    background: linear-gradient(135deg, rgba(194,139,79,.95), rgba(139,63,36,.95));
+    box-shadow: 0 10px 18px rgba(0,0,0,.18);
+  }
+  .navlinks{ display:flex; gap:10px; flex-wrap:wrap; justify-content:flex-end; }
+  .pill{
+    padding:8px 14px;
+    border-radius:999px;
+    background: rgba(255,255,255,.70);
+    border:1px solid rgba(0,0,0,.08);
+    font-weight:700;
+    text-decoration:none;
+    color:var(--ink);
+    transition:.14s ease;
+  }
+  .pill:hover{ background:#fff; transform: translateY(-1px); }
+  .pill.cta{
+    background: linear-gradient(135deg, rgba(61,90,76,.22), rgba(61,90,76,.12));
+    border-color: rgba(61,90,76,.30);
+  }
 
-.brand{
-  font-weight:800;
-  font-size:1.1rem;
-}
+  /* --- Layout --- */
+  main{ isolation:isolate; }
+  .wrap{
+    max-width:var(--max);
+    margin:auto;
+    padding:20px 16px 90px;
+  }
+  section{
+    margin-top:58px;
+    position:relative;
+    z-index:1;
+    scroll-margin-top: 90px;
+  }
 
-.nav-links{
-  display:flex;
-  gap:10px;
-}
+  /* --- Hero --- */
+  .hero{
+    margin-top:22px;
+    border-radius: var(--radius2);
+    background: rgba(255,255,255,.72);
+    border: 1px solid rgba(0,0,0,.08);
+    box-shadow: var(--shadow2);
+    overflow:hidden;
+  }
+  .hero-inner{
+    padding: 26px 18px;
+    display:grid;
+    grid-template-columns: 1.15fr .85fr;
+    gap: 14px;
+    align-items:stretch;
+  }
+  @media (max-width: 900px){
+    .hero-inner{ grid-template-columns: 1fr; }
+  }
+  h1{
+    margin:0 0 10px;
+    font-size: clamp(28px, 3.2vw, 44px);
+    line-height:1.1;
+    letter-spacing:-.3px;
+  }
+  .lede{
+    margin:0 0 16px;
+    color:var(--muted);
+    font-size: 1.06rem;
+    max-width: 62ch;
+  }
+  .hero-actions{
+    display:flex;
+    gap:10px;
+    flex-wrap:wrap;
+    align-items:center;
+    margin-top: 12px;
+  }
+  .btn{
+    border:none;
+    padding: 12px 16px;
+    border-radius: 14px;
+    font-weight: 900;
+    cursor:pointer;
+    transition:.14s ease;
+    box-shadow: 0 14px 28px rgba(0,0,0,.14);
+  }
+  .btn:hover{ transform: translateY(-2px); }
+  .btn.primary{
+    color:#fff;
+    background: linear-gradient(135deg, var(--caramel), var(--rust));
+  }
+  .btn.secondary{
+    color:#fff;
+    background: linear-gradient(135deg, var(--evergreen), #2f4a3f);
+  }
+  .btn.ghost{
+    background: rgba(255,255,255,.75);
+    border:1px solid rgba(0,0,0,.10);
+    box-shadow:none;
+  }
 
-.pill{
-  padding:8px 14px;
-  border-radius:999px;
-  background:rgba(255,255,255,.7);
-  border:1px solid rgba(0,0,0,.08);
-  font-weight:600;
-  text-decoration:none;
-  color:var(--ink);
-}
+  /* --- Surprise box --- */
+  .surprise{
+    border-radius: var(--radius);
+    background: rgba(255,255,255,.62);
+    border: 1px solid rgba(0,0,0,.08);
+    padding: 16px;
+    box-shadow: var(--shadow2);
+  }
+  .surprise h2{
+    margin:0 0 6px;
+    font-size: 1.12rem;
+    letter-spacing:-.2px;
+  }
+  .surprise p{
+    margin:0 0 12px;
+    color: var(--muted);
+    font-size: .96rem;
+  }
+  .grid2{
+    display:grid;
+    grid-template-columns: 1fr 1fr;
+    gap:10px;
+  }
+  @media (max-width: 520px){
+    .grid2{ grid-template-columns: 1fr; }
+  }
+  label{
+    display:block;
+    font-weight:900;
+    font-size:.86rem;
+    margin: 0 0 6px;
+    color: var(--ink);
+  }
+  select{
+    width:100%;
+    padding: 11px 12px;
+    border-radius: 12px;
+    border:1px solid rgba(0,0,0,.12);
+    background: rgba(255,255,255,.82);
+    color: var(--ink);
+  }
+  .hint{
+    margin:10px 0 0;
+    font-size:.86rem;
+    color: var(--muted);
+  }
 
-.pill:hover{
-  background:white;
-}
+  /* --- Section headings --- */
+  .section-head{
+    display:flex;
+    align-items:flex-end;
+    justify-content:space-between;
+    gap:12px;
+    margin-bottom: 14px;
+  }
+  .section-head h2{
+    margin:0;
+    font-size: 1.35rem;
+  }
+  .section-head .sub{
+    margin: 6px 0 0;
+    color: var(--muted);
+  }
 
-/* ===== Hero ===== */
-.hero{
-  margin-top:40px;
-  text-align:center;
-}
+  /* --- Genre grid --- */
+  .genre-grid{
+    display:grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 12px;
+  }
+  @media (max-width: 920px){ .genre-grid{ grid-template-columns: repeat(2, 1fr); } }
+  @media (max-width: 520px){ .genre-grid{ grid-template-columns: 1fr; } }
 
-.hero h1{
-  font-size:clamp(2rem,3vw,3rem);
-  margin-bottom:12px;
-}
+  .genre-card{
+    padding: 16px;
+    border-radius: var(--radius);
+    background: rgba(255,255,255,.66);
+    border:1px solid rgba(0,0,0,.08);
+    cursor:pointer;
+    transition:.14s ease;
+    box-shadow: var(--shadow2);
+  }
+  .genre-card:hover{ transform: translateY(-3px); box-shadow: var(--shadow); }
+  .genre-name{ font-weight: 950; letter-spacing:-.2px; }
+  .genre-meta{ margin-top:6px; color: var(--muted); font-weight: 700; font-size:.92rem; }
 
-.hero p{
-  color:var(--muted);
-  font-size:1.1rem;
-  max-width:650px;
-  margin:0 auto 24px;
-}
+  /* --- Featured author cards (RENAMED so we don't collide with your global .book) --- */
+  .feature-grid{
+    display:grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 14px;
+  }
+  @media (max-width: 920px){ .feature-grid{ grid-template-columns: 1fr; } }
 
-.hero-buttons{
-  display:flex;
-  justify-content:center;
-  gap:12px;
-  flex-wrap:wrap;
-}
+  .author-card{
+    padding: 16px;
+    border-radius: var(--radius);
+    background: rgba(255,255,255,.72);
+    border:1px solid rgba(0,0,0,.08);
+    display:flex;
+    gap: 14px;
+    align-items:flex-start;
+    text-decoration:none;
+    color: inherit;
+    transition:.14s ease;
+    box-shadow: var(--shadow2);
+    min-height: 128px;
+  }
+  .author-card:hover{ transform: translateY(-3px); box-shadow: var(--shadow); }
+  .cover{
+    width: 58px;
+    height: 86px;
+    border-radius: 12px;
+    background: linear-gradient(135deg, var(--rust), var(--caramel));
+    box-shadow: 0 10px 18px rgba(0,0,0,.14);
+    flex: 0 0 auto;
+  }
+  .author-card h3{ margin:0 0 6px; font-size: 1.08rem; letter-spacing:-.2px; }
+  .by{ margin:0 0 8px; color: var(--muted); font-weight: 800; font-size:.92rem; }
+  .tagline{ margin:0; color: #3a2a21; }
+  .badge{
+    display:inline-block;
+    margin-top: 10px;
+    padding: 4px 10px;
+    border-radius:999px;
+    background: rgba(194,139,79,.18);
+    border:1px solid rgba(194,139,79,.35);
+    font-weight: 950;
+    font-size:.8rem;
+  }
 
-.btn{
-  padding:12px 18px;
-  border-radius:14px;
-  border:none;
-  font-weight:700;
-  cursor:pointer;
-  background:linear-gradient(135deg,var(--caramel),var(--rust));
-  color:white;
-}
+  /* --- Newsletter block --- */
+  .newsletter{
+    padding: 22px;
+    border-radius: var(--radius);
+    background: rgba(255,255,255,.72);
+    border:1px solid rgba(0,0,0,.08);
+    box-shadow: var(--shadow2);
+  }
+  .newsletter h2{ margin:0 0 8px; }
+  .newsletter p{ margin:0 0 12px; color: var(--muted); }
+  .newsletter form{ display:flex; gap:10px; flex-wrap:wrap; }
+  .newsletter input{
+    flex: 1 1 240px;
+    padding: 12px 12px;
+    border-radius: 12px;
+    border:1px solid rgba(0,0,0,.12);
+    background: rgba(255,255,255,.86);
+  }
 
-.btn-secondary{
-  background:var(--evergreen);
-}
-
-/* ===== Sections ===== */
-section{
-  margin-top:60px;
-}
-
-section h2{
-  margin-bottom:8px;
-}
-
-.subtext{
-  color:var(--muted);
-  margin-bottom:20px;
-}
-
-/* ===== Genre Grid ===== */
-.genre-grid{
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(160px,1fr));
-  gap:14px;
-}
-
-.genre-card{
-  padding:18px;
-  border-radius:var(--radius);
-  background:rgba(255,255,255,.65);
-  border:1px solid rgba(0,0,0,.08);
-  text-align:center;
-  cursor:pointer;
-  transition:.15s ease;
-}
-
-.genre-card:hover{
-  transform:translateY(-3px);
-  box-shadow:0 12px 30px rgba(0,0,0,.15);
-}
-
-/* ===== Featured Cards (RENAMED) ===== */
-.feature-grid{
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
-  gap:18px;
-}
-
-.author-card{
-  padding:18px;
-  border-radius:var(--radius);
-  background:rgba(255,255,255,.75);
-  border:1px solid rgba(0,0,0,.08);
-  display:flex;
-  gap:14px;
-  align-items:flex-start;
-  transition:.15s ease;
-}
-
-.author-card:hover{
-  transform:translateY(-4px);
-  box-shadow:0 16px 35px rgba(0,0,0,.18);
-}
-
-.cover{
-  width:60px;
-  height:90px;
-  border-radius:12px;
-  background:linear-gradient(135deg,var(--rust),var(--caramel));
-}
-
-.author-card h3{
-  margin:0 0 6px;
-}
-
-.by{
-  margin:0 0 6px;
-  color:var(--muted);
-}
-
-.badge{
-  display:inline-block;
-  margin-top:8px;
-  padding:4px 10px;
-  border-radius:999px;
-  background:rgba(194,139,79,.2);
-  border:1px solid rgba(194,139,79,.4);
-  font-weight:700;
-  font-size:.8rem;
-}
-
-/* ===== Newsletter ===== */
-.newsletter{
-  padding:28px;
-  border-radius:var(--radius);
-  background:rgba(255,255,255,.75);
-  border:1px solid rgba(0,0,0,.08);
-}
-
-.newsletter input{
-  width:100%;
-  padding:12px;
-  border-radius:12px;
-  border:1px solid rgba(0,0,0,.15);
-  margin-top:10px;
-}
-
-.newsletter button{
-  margin-top:12px;
-}
-
-/* ===== Footer ===== */
-footer{
-  margin-top:60px;
-  padding:24px 0;
-  display:flex;
-  justify-content:space-between;
-  flex-wrap:wrap;
-  gap:10px;
-  font-size:.9rem;
-  color:var(--muted);
-}
+  /* --- Footer --- */
+  footer{
+    margin-top: 60px;
+    padding: 18px 0;
+    display:flex;
+    justify-content:space-between;
+    gap:12px;
+    flex-wrap:wrap;
+    color: var(--muted);
+    font-size:.92rem;
+  }
 </style>
 </head>
 
 <body>
 
 <header>
-  <div class="nav">
-    <div class="brand">Authors Book Club</div>
-    <div class="nav-links">
+  <nav class="nav" aria-label="Primary">
+    <a class="brand" href="/" aria-label="Authors Book Club home">
+      <span class="mark" aria-hidden="true"></span>
+      <span>Authors Book Club</span>
+    </a>
+
+    <div class="navlinks">
       <a class="pill" href="#browse">Browse</a>
       <a class="pill" href="#featured">Featured</a>
-      <a class="pill" href="/for-authors/">For Authors</a>
+      <a class="pill cta" href="/for-authors/">For Authors</a>
     </div>
-  </div>
+  </nav>
 </header>
 
 <main class="wrap">
 
-<section class="hero">
-  <h1>Discover your next favourite indie author</h1>
-  <p>A cosy corner of the internet where you can browse shelves, explore genres, or let fate choose for you.</p>
-  <div class="hero-buttons">
-    <button class="btn" onclick="surprise()">🎲 Surprise Me</button>
-    <a href="#browse"><button class="btn btn-secondary">Browse Genres</button></a>
-  </div>
-</section>
-
-<section id="browse">
-  <h2>Browse by genre</h2>
-  <p class="subtext">Start with what you love.</p>
-
-  <div class="genre-grid">
-    <div class="genre-card" onclick="filterGenre('Fantasy')">Fantasy</div>
-    <div class="genre-card" onclick="filterGenre('Romance')">Romance</div>
-    <div class="genre-card" onclick="filterGenre('Thriller')">Thriller</div>
-    <div class="genre-card" onclick="filterGenre('Non-fiction')">Non-fiction</div>
-  </div>
-</section>
-
-<section id="featured">
-  <h2>Featured today</h2>
-  <p class="subtext">A small shelf you can browse in under a minute.</p>
-
-  <div class="feature-grid">
-
-    <a class="author-card" href="/MarieMcKenzie/">
-      <div class="cover"></div>
+  <!-- HERO -->
+  <section class="hero" aria-label="Homepage introduction">
+    <div class="hero-inner">
       <div>
-        <h3>Marie McKenzie</h3>
-        <p class="by">Featured author</p>
-        <p>Trauma-informed books about healing, care, and being human.</p>
-        <span class="badge">★ Featured</span>
+        <h1>Discover your next favourite indie author.</h1>
+        <p class="lede">
+          Browse by genre, or hit “Surprise me” and we’ll drop you straight onto an author page already on the site.
+        </p>
+
+        <div class="hero-actions">
+          <button class="btn primary" id="heroSurprise" type="button">🎲 Surprise me</button>
+          <a class="btn ghost" href="#browse" style="display:inline-flex;align-items:center;justify-content:center;text-decoration:none;color:inherit;">Browse genres</a>
+          <a class="btn secondary" href="/for-authors/" style="display:inline-flex;align-items:center;justify-content:center;text-decoration:none;color:#fff;">I’m an author</a>
+        </div>
+
+        <p class="hint" id="authorCountHint">Loading authors…</p>
       </div>
-    </a>
 
-    <a class="author-card" href="/ToryHunt/">
-      <div class="cover"></div>
-      <div>
-        <h3>Tory Hunt</h3>
-        <p class="by">Featured author</p>
-        <p>A cosy browse and a clear shelf — no endless scrolling.</p>
-        <span class="badge">★ Featured</span>
-      </div>
-    </a>
+      <aside class="surprise" aria-label="Surprise picker">
+        <h2>🎲 Quick pick</h2>
+        <p>Select a genre and we’ll send you to a random author.</p>
 
-    <div class="author-card" onclick="surprise()" style="cursor:pointer;">
-      <div class="cover"></div>
+        <div class="grid2" role="form" aria-label="Surprise form">
+          <div>
+            <label for="genreSelect">Genre</label>
+            <select id="genreSelect">
+              <option value="">Any genre</option>
+            </select>
+          </div>
+          <div>
+            <label for="toneSelect">Vibe</label>
+            <select id="toneSelect">
+              <option value="">Any vibe</option>
+              <option value="cosy">Cosy / comforting</option>
+              <option value="bold">Bold / dramatic</option>
+              <option value="practical">Practical / helpful</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="hero-actions" style="margin-top:12px;">
+          <button class="btn primary" id="findBtn" type="button">Find my author</button>
+          <button class="btn ghost" id="resetBtn" type="button">Reset</button>
+        </div>
+
+        <p class="hint" id="matchHint"></p>
+      </aside>
+    </div>
+  </section>
+
+  <!-- BROWSE -->
+  <section id="browse" aria-label="Browse by genre">
+    <div class="section-head">
       <div>
-        <h3>Let fate choose</h3>
-        <p class="by">Any genre</p>
-        <p>Pick a vibe and we’ll send you somewhere new.</p>
-        <span class="badge">🎲 Surprise</span>
+        <h2>Browse by genre</h2>
+        <p class="sub">Start with what you love.</p>
       </div>
     </div>
 
-  </div>
-</section>
+    <div class="genre-grid" id="genreGrid"></div>
+  </section>
 
-<section class="newsletter">
-  <h2>Get 3 cosy discoveries each week</h2>
-  <p class="subtext">One short email. No spam.</p>
-  <input type="email" placeholder="you@example.com">
-  <button class="btn">Subscribe</button>
-</section>
+  <!-- FEATURED -->
+  <section id="featured" aria-label="Featured authors">
+    <div class="section-head">
+      <div>
+        <h2>Featured today</h2>
+        <p class="sub">A quick shelf. No endless scrolling.</p>
+      </div>
+    </div>
 
-<footer>
-  <div>© <span id="year"></span> Authors Book Club</div>
-  <div>
-    <a class="pill" href="#browse">Browse</a>
-    <a class="pill" href="#featured">Featured</a>
-    <a class="pill" href="/for-authors/">For Authors</a>
-  </div>
-</footer>
+    <div class="feature-grid" id="featuredGrid"></div>
+  </section>
+
+  <!-- NEWSLETTER -->
+  <section class="newsletter" aria-label="Newsletter">
+    <h2>Get 3 cosy discoveries each week</h2>
+    <p>One short email. No spam. Just new authors to try.</p>
+    <form id="newsletterForm">
+      <input type="email" id="email" name="email" placeholder="you@example.com" autocomplete="email" required />
+      <button class="btn primary" type="submit">Subscribe</button>
+    </form>
+    <p class="hint" id="newsletterHint">Placeholder form for now (connect it later to your email provider).</p>
+  </section>
+
+  <footer>
+    <div>© <span id="year"></span> Authors Book Club</div>
+    <div style="display:flex; gap:10px; flex-wrap:wrap;">
+      <a class="pill" href="#browse">Browse</a>
+      <a class="pill" href="#featured">Featured</a>
+      <a class="pill cta" href="/for-authors/">For Authors</a>
+    </div>
+  </footer>
 
 </main>
 
 <script>
-const authors = [
-  {name:"Marie McKenzie", url:"/MarieMcKenzie/"},
-  {name:"Tory Hunt", url:"/ToryHunt/"}
-];
+  // --- Authors on the site (from your repo folders) ---
+  // Keep this list updated as you add more folders.
+  const AUTHORS = [
+    {
+      name: "Lila Rose",
+      url: "/LilaRose/",
+      genres: ["Romance"],
+      tone: ["cosy"],
+      tagline: "Sweet, wholesome small-town romance with heart."
+    },
+    {
+      name: "LADY LEGACY",
+      url: "/LadyLegacy/",
+      genres: ["Urban Fiction"],
+      tone: ["bold"],
+      tagline: "High-stakes drama: power, betrayal, and explosive secrets."
+    },
+    {
+      name: "Marie McKenzie",
+      url: "/MarieMcKenzie/",
+      genres: ["Non-fiction"],
+      tone: ["practical","cosy"],
+      tagline: "Trauma-informed writing about healing, care, and being human."
+    },
+    {
+      name: "Tory Hunt",
+      url: "/ToryHunt/",
+      genres: ["Non-fiction", "Self-Help"],
+      tone: ["practical"],
+      tagline: "Practical life-skills books to build confidence for teens and tweens."
+    }
+  ];
 
-function surprise(){
-  const pick = authors[Math.floor(Math.random()*authors.length)];
-  window.location.href = pick.url;
-}
+  const FEATURED = ["Lila Rose", "LADY LEGACY", "Marie McKenzie", "Tory Hunt"]; // rotate/order as you like
 
-function filterGenre(){
-  surprise(); // placeholder until you add more authors
-}
+  function $(id){ return document.getElementById(id); }
 
-document.getElementById("year").textContent = new Date().getFullYear();
+  function uniq(arr){ return [...new Set(arr)]; }
+  function pickRandom(arr){ return arr[Math.floor(Math.random() * arr.length)]; }
+
+  function buildGenreStats(){
+    const stats = {};
+    AUTHORS.forEach(a => (a.genres || []).forEach(g => {
+      stats[g] = (stats[g] || 0) + 1;
+    }));
+    return stats;
+  }
+
+  function populateGenreSelect(){
+    const stats = buildGenreStats();
+    const genres = Object.keys(stats).sort((a,b) => a.localeCompare(b, "en-GB"));
+    const sel = $("genreSelect");
+
+    // Clear existing except "Any genre"
+    sel.querySelectorAll("option:not([value=''])").forEach(o => o.remove());
+
+    genres.forEach(g => {
+      const opt = document.createElement("option");
+      opt.value = g;
+      opt.textContent = `${g} (${stats[g]})`;
+      sel.appendChild(opt);
+    });
+  }
+
+  function renderGenreGrid(){
+    const stats = buildGenreStats();
+    const genres = Object.keys(stats).sort((a,b) => a.localeCompare(b, "en-GB"));
+    const grid = $("genreGrid");
+    grid.innerHTML = "";
+
+    genres.forEach(g => {
+      const btn = document.createElement("button");
+      btn.type = "button";
+      btn.className = "genre-card";
+      btn.innerHTML = `
+        <div class="genre-name">${g}</div>
+        <div class="genre-meta">${stats[g]} author${stats[g] === 1 ? "" : "s"} →</div>
+      `;
+      btn.addEventListener("click", () => goToRandomAuthor({ genre: g }));
+      grid.appendChild(btn);
+    });
+  }
+
+  function renderFeatured(){
+    const grid = $("featuredGrid");
+    grid.innerHTML = "";
+
+    // If you list 4 featured, show 3 cards + a “surprise” card; keeps layout tidy on desktop.
+    const featuredAuthors = FEATURED
+      .map(name => AUTHORS.find(a => a.name === name))
+      .filter(Boolean);
+
+    const cards = featuredAuthors.slice(0, 2); // two fixed featured cards
+    cards.push({ name: "Let fate choose", url: null, tagline: "Pick a genre and we’ll send you somewhere new.", genres:["Any"], tone:[""] });
+
+    cards.forEach(a => {
+      const el = document.createElement(a.url ? "a" : "div");
+      el.className = "author-card";
+      if(a.url){
+        el.href = a.url;
+      }else{
+        el.style.cursor = "pointer";
+        el.addEventListener("click", () => goToRandomAuthor({}));
+      }
+
+      const by = a.url ? "Featured author" : "Any genre";
+      const badge = a.url ? "★ Featured" : "🎲 Surprise";
+
+      el.innerHTML = `
+        <div class="cover" aria-hidden="true"></div>
+        <div>
+          <h3>${a.name}</h3>
+          <p class="by">${by}</p>
+          <p class="tagline">${a.tagline || ""}</p>
+          <span class="badge">${badge}</span>
+        </div>
+      `;
+      grid.appendChild(el);
+    });
+  }
+
+  function matchesFilters(author, filters){
+    const { genre, tone } = filters;
+
+    if(genre){
+      const ok = (author.genres || []).includes(genre);
+      if(!ok) return false;
+    }
+    if(tone){
+      const ok = (author.tone || []).includes(tone);
+      if(!ok) return false;
+    }
+    return true;
+  }
+
+  function goToRandomAuthor(overrides){
+    const genre = overrides.genre ?? $("genreSelect").value;
+    const tone  = overrides.tone  ?? $("toneSelect").value;
+
+    const pool = AUTHORS.filter(a => matchesFilters(a, { genre, tone }));
+
+    if(!pool.length){
+      $("matchHint").textContent = "No matches for those filters yet. Try Any genre (or add more authors).";
+      return;
+    }
+
+    const chosen = pickRandom(pool);
+    window.location.href = chosen.url;
+  }
+
+  function resetFilters(){
+    $("genreSelect").value = "";
+    $("toneSelect").value = "";
+    $("matchHint").textContent = "";
+  }
+
+  // Newsletter placeholder
+  $("newsletterForm").addEventListener("submit", (e) => {
+    e.preventDefault();
+    const email = $("email").value.trim();
+    if(!email) return;
+    $("newsletterHint").textContent = "Cheers — you’re on the list (placeholder). Connect this to your email provider when ready.";
+    try{ localStorage.setItem("abc_newsletter_email", email); }catch(_){}
+    e.target.reset();
+  });
+
+  // Init
+  $("year").textContent = new Date().getFullYear();
+  $("authorCountHint").textContent = `Currently featuring ${AUTHORS.length} author pages — more coming soon.`;
+  populateGenreSelect();
+  renderGenreGrid();
+  renderFeatured();
+
+  $("findBtn").addEventListener("click", () => goToRandomAuthor({}));
+  $("heroSurprise").addEventListener("click", () => goToRandomAuthor({}));
+  $("resetBtn").addEventListener("click", resetFilters);
 </script>
 
 </body>
