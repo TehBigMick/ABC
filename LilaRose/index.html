@@ -1,1 +1,757 @@
-LilaRose
+<!doctype html>
+<html lang="en-GB">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <title>Lila Rose | Sweet Small-Town Romance</title>
+  <meta name="description" content="Sweet, wholesome small-town romance with heart, humour, pets, and happily-ever-afters. Start here and read on Kindle Unlimited." />
+
+  <!-- Optional: canonical -->
+  <!-- <link rel="canonical" href="https://www.yoursite.com/authors/lila-rose/" /> -->
+
+  <style>
+    :root{
+      --ink:#1f1a16;
+      --ink-2:#3a312c;
+      --muted:#6b5f58;
+
+      --paper:#fbf7f1;
+      --paper-2:#fffdf9;
+      --card:#ffffff;
+
+      --blush:#f3d6d6;
+      --sage:#c8d5c2;
+      --gold:#c7a44c;
+      --gold-soft:rgba(199,164,76,.45);
+
+      --line:rgba(31,26,22,.10);
+      --shadow: 0 18px 45px rgba(31,26,22,.12);
+      --shadow-soft: 0 10px 25px rgba(31,26,22,.10);
+
+      --radius:18px;
+      --radius-sm:14px;
+      --max:1120px;
+    }
+
+    *{ box-sizing:border-box; }
+    html, body { height:100%; }
+    body{
+      margin:0;
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      color:var(--ink);
+      background:
+        radial-gradient(900px 450px at 18% 14%, rgba(243,214,214,.65), transparent 55%),
+        radial-gradient(900px 450px at 82% 12%, rgba(200,213,194,.55), transparent 58%),
+        radial-gradient(1000px 600px at 50% 92%, rgba(199,164,76,.14), transparent 60%),
+        linear-gradient(180deg, var(--paper), var(--paper-2));
+    }
+
+    a{ color:inherit; text-decoration:none; }
+    img{ max-width:100%; display:block; }
+
+    .wrap{ max-width:var(--max); margin:0 auto; padding:28px 18px 64px; }
+
+    /* Soft top band */
+    .topline{
+      height:4px;
+      background: linear-gradient(90deg, transparent, var(--gold), transparent);
+      opacity:.9;
+      border-radius:999px;
+      margin:10px auto 18px;
+      max-width: 980px;
+    }
+
+    header.hero{
+      border-radius: calc(var(--radius) + 4px);
+      background:
+        radial-gradient(800px 380px at 18% 25%, rgba(255,255,255,.9), transparent 55%),
+        radial-gradient(800px 380px at 85% 25%, rgba(255,255,255,.85), transparent 55%),
+        linear-gradient(180deg, rgba(255,255,255,.75), rgba(255,255,255,.55));
+      box-shadow: var(--shadow);
+      border: 1px solid rgba(31,26,22,.08);
+      overflow:hidden;
+      position:relative;
+    }
+
+    .hero-inner{
+      padding: 34px 28px;
+      display:grid;
+      grid-template-columns: 1.2fr .8fr;
+      gap: 24px;
+      align-items:center;
+    }
+
+    @media (max-width: 860px){
+      .hero-inner{ grid-template-columns: 1fr; }
+    }
+
+    .kicker{
+      display:inline-flex;
+      gap:10px;
+      align-items:center;
+      padding: 8px 12px;
+      border-radius:999px;
+      border:1px solid rgba(199,164,76,.35);
+      background: rgba(255,255,255,.75);
+      color: var(--ink-2);
+      font-weight: 600;
+      font-size: 13px;
+      letter-spacing: .2px;
+    }
+
+    .kdot{
+      width:10px; height:10px; border-radius:50%;
+      background: var(--gold);
+      box-shadow: 0 0 0 5px rgba(199,164,76,.18);
+    }
+
+    h1{
+      margin: 12px 0 10px;
+      font-size: 44px;
+      line-height: 1.05;
+      letter-spacing: -0.6px;
+    }
+
+    @media (max-width: 520px){
+      h1{ font-size: 36px; }
+    }
+
+    .tagline-1{
+      font-size: 18px;
+      line-height: 1.45;
+      color: var(--ink-2);
+      margin: 0 0 14px;
+      max-width: 64ch;
+    }
+
+    .tagline-2{
+      display:flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin: 12px 0 0;
+      padding: 0;
+      list-style:none;
+    }
+
+    .pill{
+      padding: 8px 12px;
+      border-radius:999px;
+      border: 1px solid rgba(31,26,22,.10);
+      background: rgba(255,255,255,.75);
+      color: var(--muted);
+      font-size: 13px;
+      font-weight: 650;
+    }
+
+    .cta-row{
+      display:flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 18px;
+    }
+
+    .btn{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      gap:10px;
+      padding: 12px 16px;
+      border-radius: 14px;
+      border: 1px solid rgba(31,26,22,.10);
+      background: rgba(255,255,255,.85);
+      box-shadow: var(--shadow-soft);
+      font-weight: 800;
+      font-size: 14px;
+      transition: transform .18s ease, box-shadow .18s ease, border-color .18s ease;
+      cursor:pointer;
+      will-change: transform;
+    }
+    .btn:hover{
+      transform: translateY(-2px);
+      border-color: rgba(199,164,76,.55);
+      box-shadow: 0 18px 40px rgba(31,26,22,.14);
+    }
+    .btn-primary{
+      background: linear-gradient(180deg, rgba(199,164,76,.95), rgba(199,164,76,.78));
+      border-color: rgba(199,164,76,.55);
+      color: #1a140f;
+    }
+
+    .hero-card{
+      border-radius: var(--radius);
+      background: rgba(255,255,255,.75);
+      border: 1px solid rgba(31,26,22,.08);
+      box-shadow: var(--shadow-soft);
+      padding: 18px;
+    }
+
+    .hero-card h3{
+      margin: 0 0 10px;
+      font-size: 16px;
+      letter-spacing: -0.2px;
+    }
+
+    .hero-card p{
+      margin: 0 0 12px;
+      color: var(--muted);
+      line-height: 1.55;
+      font-size: 14px;
+    }
+
+    .mini-grid{
+      display:grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+    }
+    @media (max-width: 860px){
+      .mini-grid{ grid-template-columns: 1fr; }
+    }
+
+    /* Sections */
+    section{
+      margin-top: 22px;
+      border-radius: var(--radius);
+      background: rgba(255,255,255,.82);
+      border: 1px solid rgba(31,26,22,.08);
+      box-shadow: var(--shadow);
+      overflow:hidden;
+    }
+
+    /* Thin gold top border on white sections */
+    .section-topline{
+      height: 3px;
+      background: linear-gradient(90deg, transparent, var(--gold), transparent);
+      opacity: .9;
+    }
+
+    .section-inner{ padding: 26px 22px; }
+
+    .section-head{
+      display:flex;
+      align-items:flex-end;
+      justify-content: space-between;
+      gap: 12px;
+      margin-bottom: 14px;
+    }
+
+    .section-head h2{
+      margin:0;
+      font-size: 24px;
+      letter-spacing: -0.3px;
+    }
+
+    .section-head .note{
+      color: var(--muted);
+      font-size: 13px;
+      font-weight: 650;
+    }
+
+    /* Subtle gold divider lines between chunks */
+    .gold-divider{
+      height:1px;
+      background: linear-gradient(90deg, transparent, var(--gold-soft), transparent);
+      margin: 18px 0;
+    }
+
+    /* Start Here grid */
+    .start-grid{
+      display:grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 14px;
+      margin-top: 14px;
+    }
+    @media (max-width: 980px){
+      .start-grid{ grid-template-columns: repeat(2, 1fr); }
+    }
+    @media (max-width: 520px){
+      .start-grid{ grid-template-columns: 1fr; }
+    }
+
+    .start-card{
+      border-radius: var(--radius-sm);
+      border: 1px solid rgba(31,26,22,.10);
+      background: rgba(255,255,255,.86);
+      padding: 14px;
+      box-shadow: var(--shadow-soft);
+      transition: transform .18s ease, box-shadow .18s ease, border-color .18s ease;
+      position:relative;
+      overflow:hidden;
+    }
+
+    /* Animated hover glow */
+    .start-card::before,
+    .book-card::before{
+      content:"";
+      position:absolute;
+      inset:-2px;
+      background: radial-gradient(220px 120px at 25% 20%, rgba(199,164,76,.30), transparent 55%),
+                  radial-gradient(260px 140px at 80% 30%, rgba(243,214,214,.28), transparent 60%),
+                  radial-gradient(260px 140px at 70% 90%, rgba(200,213,194,.22), transparent 60%);
+      opacity:0;
+      transition: opacity .18s ease;
+      pointer-events:none;
+    }
+    .start-card:hover::before,
+    .book-card:hover::before{
+      opacity:1;
+    }
+
+    .start-card:hover{
+      transform: translateY(-3px);
+      border-color: rgba(199,164,76,.55);
+      box-shadow: 0 22px 50px rgba(31,26,22,.16);
+    }
+
+    .start-card .emoji{ font-size: 20px; }
+    .start-card h3{ margin: 8px 0 6px; font-size: 16px; }
+    .start-card p{ margin:0; color: var(--muted); font-size: 13px; line-height: 1.45; }
+
+    /* Book grid */
+    .books{
+      display:grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 16px;
+      margin-top: 14px;
+    }
+    @media (max-width: 860px){
+      .books{ grid-template-columns: 1fr; }
+    }
+
+    .book-card{
+      border-radius: var(--radius);
+      border: 1px solid rgba(31,26,22,.10);
+      background: rgba(255,255,255,.88);
+      box-shadow: var(--shadow-soft);
+      overflow:hidden;
+      display:grid;
+      grid-template-columns: 150px 1fr;
+      gap: 14px;
+      position:relative;
+      transition: transform .18s ease, box-shadow .18s ease, border-color .18s ease;
+    }
+    .book-card:hover{
+      transform: translateY(-3px);
+      border-color: rgba(199,164,76,.55);
+      box-shadow: 0 22px 50px rgba(31,26,22,.16);
+    }
+    @media (max-width: 520px){
+      .book-card{ grid-template-columns: 120px 1fr; }
+    }
+
+    .cover{
+      padding: 12px;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+    }
+    .cover img{
+      border-radius: 12px;
+      box-shadow: 0 14px 30px rgba(31,26,22,.16);
+      border: 1px solid rgba(31,26,22,.10);
+      background: #fff;
+    }
+
+    .book-meta{
+      padding: 14px 14px 14px 0;
+    }
+
+    .book-meta h3{
+      margin: 2px 0 6px;
+      font-size: 18px;
+      letter-spacing: -0.2px;
+    }
+
+    .book-meta .sub{
+      margin: 0 0 10px;
+      color: var(--muted);
+      font-size: 13px;
+      font-weight: 700;
+    }
+
+    .book-meta p{
+      margin: 0 0 12px;
+      color: var(--ink-2);
+      line-height: 1.55;
+      font-size: 14px;
+    }
+
+    .badges{
+      display:flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-bottom: 12px;
+    }
+    .badge{
+      font-size: 12px;
+      font-weight: 800;
+      padding: 6px 10px;
+      border-radius: 999px;
+      border: 1px solid rgba(31,26,22,.10);
+      background: rgba(255,255,255,.80);
+      color: var(--muted);
+    }
+    .badge-ku{
+      border-color: rgba(199,164,76,.45);
+      background: rgba(199,164,76,.12);
+      color: #2a211b;
+    }
+
+    .book-actions{
+      display:flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      align-items:center;
+    }
+
+    .link{
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      font-weight: 900;
+      font-size: 13px;
+      padding: 10px 12px;
+      border-radius: 12px;
+      border: 1px solid rgba(31,26,22,.10);
+      background: rgba(255,255,255,.82);
+      transition: transform .18s ease, box-shadow .18s ease, border-color .18s ease;
+    }
+    .link:hover{
+      transform: translateY(-2px);
+      border-color: rgba(199,164,76,.55);
+      box-shadow: 0 16px 36px rgba(31,26,22,.14);
+    }
+    .link-primary{
+      background: linear-gradient(180deg, rgba(199,164,76,.95), rgba(199,164,76,.78));
+      border-color: rgba(199,164,76,.55);
+      color: #1a140f;
+    }
+
+    /* About */
+    .about{
+      display:grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 18px;
+      align-items:start;
+    }
+    @media (max-width: 860px){
+      .about{ grid-template-columns: 1fr; }
+    }
+    .about p{
+      margin: 0 0 12px;
+      line-height: 1.7;
+      color: var(--ink-2);
+    }
+
+    footer{
+      margin-top: 26px;
+      text-align:center;
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    .small{
+      font-size: 12px;
+      color: var(--muted);
+      line-height: 1.5;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="wrap">
+
+    <div class="topline" aria-hidden="true"></div>
+
+    <!-- HERO -->
+    <header class="hero">
+      <div class="hero-inner">
+        <div>
+          <div class="kicker"><span class="kdot" aria-hidden="true"></span> Sweet • Wholesome • Feel-Good Romance</div>
+
+          <h1>Lila Rose</h1>
+
+          <!-- TAGLINE HIERARCHY -->
+          <p class="tagline-1">
+            Comfort-read romance set in charming communities — with heart, humour, and happily-ever-afters you can trust.
+          </p>
+
+          <ul class="tagline-2" aria-label="Quick tags">
+            <li class="pill">Sweet / Low-spice</li>
+            <li class="pill">Small-town charm</li>
+            <li class="pill">Cosy seasonal stories</li>
+            <li class="pill">Pets & found family</li>
+          </ul>
+
+          <div class="cta-row">
+            <a class="btn btn-primary" href="#start-here">📚 Start here</a>
+            <a class="btn" href="#books">✨ Browse books</a>
+            <a class="btn" href="#ku">📖 Kindle Unlimited</a>
+          </div>
+
+          <p class="small" style="margin-top:12px;">
+            Prefer reading on Kindle Unlimited? Use the <strong>“Read on KU”</strong> buttons below — they go straight to Amazon UK.
+          </p>
+        </div>
+
+        <aside class="hero-card">
+          <h3>Fastest way to pick your next read</h3>
+          <p>
+            Choose a vibe below: festive mystery, pet-filled small-town warmth, engagement-themed romance, or a sweet holiday rivalry.
+          </p>
+          <div class="mini-grid">
+            <a class="btn btn-primary" href="#start-here">Start in 10 seconds →</a>
+            <a class="btn" href="#about">Meet the author →</a>
+          </div>
+        </aside>
+      </div>
+    </header>
+
+    <!-- START HERE -->
+    <section id="start-here">
+      <div class="section-topline" aria-hidden="true"></div>
+      <div class="section-inner">
+        <div class="section-head">
+          <h2>Start here</h2>
+          <div class="note">Pick your mood — click through to Amazon</div>
+        </div>
+
+        <div class="start-grid">
+          <a class="start-card" href="#book-santa">
+            <div class="emoji">🎄</div>
+            <h3>Festive, cosy mystery-romance</h3>
+            <p>Start with <strong>The Mysterious Santa</strong>.</p>
+          </a>
+
+          <a class="start-card" href="#book-pawprints">
+            <div class="emoji">🐾</div>
+            <h3>Small-town + pets + heart</h3>
+            <p>Start with <strong>Pawprints of the Heart</strong>.</p>
+          </a>
+
+          <a class="start-card" href="#book-terms">
+            <div class="emoji">💍</div>
+            <h3>Engagement-themed romance</h3>
+            <p>Start with <strong>Terms of Engagement</strong>.</p>
+          </a>
+
+          <a class="start-card" href="#book-gingerbread">
+            <div class="emoji">🍪</div>
+            <h3>Holiday rivalry with sparks</h3>
+            <p>Start with <strong>The Gingerbread War</strong>.</p>
+          </a>
+        </div>
+
+        <div class="gold-divider" aria-hidden="true"></div>
+
+        <div id="ku" class="small">
+          <strong>Kindle Unlimited tip:</strong> readers on KU convert best when you clearly promise a safe experience.
+          Keep phrasing consistent: <em>sweet romance</em>, <em>wholesome</em>, <em>comfort read</em>, <em>HEA guaranteed</em>.
+        </div>
+      </div>
+    </section>
+
+    <!-- BOOKS -->
+    <section id="books">
+      <div class="section-topline" aria-hidden="true"></div>
+      <div class="section-inner">
+        <div class="section-head">
+          <h2>Books</h2>
+          <div class="note">Maximise KU click-through with one clear primary CTA per book</div>
+        </div>
+
+        <div class="books">
+
+          <!-- BOOK 1 -->
+          <article class="book-card" id="book-santa">
+            <div class="cover">
+              <!-- Replace with your actual cover in ./assets/ -->
+              <img src="./assets/the-mysterious-santa.jpg" alt="The Mysterious Santa book cover" loading="lazy" />
+            </div>
+            <div class="book-meta">
+              <h3>The Mysterious Santa</h3>
+              <div class="sub">Cosy festive romance • secrets • comfort-read vibes</div>
+
+              <div class="badges">
+                <span class="badge badge-ku">Kindle Unlimited</span>
+                <span class="badge">Holiday</span>
+                <span class="badge">Cosy</span>
+              </div>
+
+              <p>
+                A warm, festive escape with gentle intrigue, community charm, and a love story that leaves you smiling.
+              </p>
+
+              <div class="book-actions">
+                <!-- Replace href with the exact Amazon UK book URL.
+                     Optional affiliate example: https://www.amazon.co.uk/dp/ASIN?tag=YOURTAG-21 -->
+                <a class="link link-primary" href="AMAZON_BOOK_URL_THE_MYSTERIOUS_SANTA" target="_blank" rel="noopener noreferrer">
+                  📖 Read on KU (Amazon UK)
+                </a>
+                <a class="link" href="AMAZON_BOOK_URL_THE_MYSTERIOUS_SANTA" target="_blank" rel="noopener noreferrer">
+                  🛒 View on Amazon
+                </a>
+              </div>
+            </div>
+          </article>
+
+          <!-- BOOK 2 -->
+          <article class="book-card" id="book-pawprints">
+            <div class="cover">
+              <img src="./assets/pawprints-of-the-heart.jpg" alt="Pawprints of the Heart book cover" loading="lazy" />
+            </div>
+            <div class="book-meta">
+              <h3>Pawprints of the Heart</h3>
+              <div class="sub">Small-town pet romance • found family • wholesome love</div>
+
+              <div class="badges">
+                <span class="badge badge-ku">Kindle Unlimited</span>
+                <span class="badge">Small town</span>
+                <span class="badge">Pets</span>
+              </div>
+
+              <p>
+                A heart-lifting small-town romance where wagging tails, kind people, and second chances help two guarded hearts open up.
+              </p>
+
+              <div class="book-actions">
+                <a class="link link-primary" href="AMAZON_BOOK_URL_PAWPRINTS_OF_THE_HEART" target="_blank" rel="noopener noreferrer">
+                  📖 Read on KU (Amazon UK)
+                </a>
+                <a class="link" href="AMAZON_BOOK_URL_PAWPRINTS_OF_THE_HEART" target="_blank" rel="noopener noreferrer">
+                  🛒 View on Amazon
+                </a>
+              </div>
+            </div>
+          </article>
+
+          <!-- BOOK 3 -->
+          <article class="book-card" id="book-terms">
+            <div class="cover">
+              <img src="./assets/terms-of-engagement.jpg" alt="Terms of Engagement book cover" loading="lazy" />
+            </div>
+            <div class="book-meta">
+              <h3>Terms of Engagement</h3>
+              <div class="sub">Sweet romance • engagement tropes • feel-good banter</div>
+
+              <div class="badges">
+                <span class="badge badge-ku">Kindle Unlimited</span>
+                <span class="badge">Rom-com</span>
+                <span class="badge">Low drama</span>
+              </div>
+
+              <p>
+                A charming love story built on misread signals, meaningful choices, and the kind of connection that sneaks up on you.
+              </p>
+
+              <div class="book-actions">
+                <a class="link link-primary" href="AMAZON_BOOK_URL_TERMS_OF_ENGAGEMENT" target="_blank" rel="noopener noreferrer">
+                  📖 Read on KU (Amazon UK)
+                </a>
+                <a class="link" href="AMAZON_BOOK_URL_TERMS_OF_ENGAGEMENT" target="_blank" rel="noopener noreferrer">
+                  🛒 View on Amazon
+                </a>
+              </div>
+            </div>
+          </article>
+
+          <!-- BOOK 4 -->
+          <article class="book-card" id="book-gingerbread">
+            <div class="cover">
+              <img src="./assets/the-gingerbread-war.jpg" alt="The Gingerbread War book cover" loading="lazy" />
+            </div>
+            <div class="book-meta">
+              <h3>The Gingerbread War</h3>
+              <div class="sub">Holiday rivalry • cosy humour • sweet romantic sparks</div>
+
+              <div class="badges">
+                <span class="badge badge-ku">Kindle Unlimited</span>
+                <span class="badge">Holiday</span>
+                <span class="badge">Enemies-ish to lovers</span>
+              </div>
+
+              <p>
+                A playful seasonal clash with warm chemistry, festive chaos, and a happily-ever-after that tastes like comfort.
+              </p>
+
+              <div class="book-actions">
+                <a class="link link-primary" href="AMAZON_BOOK_URL_THE_GINGERBREAD_WAR" target="_blank" rel="noopener noreferrer">
+                  📖 Read on KU (Amazon UK)
+                </a>
+                <a class="link" href="AMAZON_BOOK_URL_THE_GINGERBREAD_WAR" target="_blank" rel="noopener noreferrer">
+                  🛒 View on Amazon
+                </a>
+              </div>
+            </div>
+          </article>
+
+        </div>
+
+        <div class="gold-divider" aria-hidden="true"></div>
+
+        <p class="small">
+          <strong>Why KU-first buttons work:</strong> KU readers want the quickest path to “Read now”.
+          Keep the primary button wording consistent across all books (done above).
+        </p>
+      </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section id="about">
+      <div class="section-topline" aria-hidden="true"></div>
+      <div class="section-inner">
+        <div class="section-head">
+          <h2>About Lila Rose</h2>
+          <div class="note">Polished bio (wholesome romance positioning)</div>
+        </div>
+
+        <div class="about">
+          <div>
+            <!-- COMPLETE POLISHED BIO -->
+            <p>
+              Lila Rose writes sweet, wholesome romance for readers who want a genuine escape: charming communities, tender moments,
+              light humour, and happily-ever-afters you can trust.
+            </p>
+            <p>
+              Her stories lean into cosy, feel-good warmth — from festive favourites to small-town love stories where kindness matters,
+              friendships run deep, and even the pets have a part to play.
+            </p>
+            <p>
+              If you love comfort reads with heart, clean romance energy, and characters who feel like home, you’re in the right place.
+            </p>
+
+            <div class="cta-row">
+              <a class="btn btn-primary" href="#start-here">📚 Choose a starting point</a>
+              <a class="btn" href="#books">✨ Browse all books</a>
+            </div>
+          </div>
+
+          <div class="hero-card">
+            <h3>Tagline options (hierarchy)</h3>
+            <p class="small"><strong>Primary (headline):</strong> Sweet Small-Town Romance with Heart</p>
+            <p class="small"><strong>Secondary (support line):</strong> Wholesome love stories filled with charm, humour, and happily-ever-afters.</p>
+            <p class="small"><strong>Tertiary (pills/keywords):</strong> Sweet • Low-spice • Cosy seasonal • Pets • Found family</p>
+            <div class="gold-divider" aria-hidden="true"></div>
+            <p class="small">
+              Use the primary + secondary together above the fold. The tertiary works best as quick “trust cues”.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      <div class="topline" aria-hidden="true" style="max-width:720px; margin:22px auto 14px;"></div>
+      <div>© <span id="y"></span> Lila Rose • Links open on Amazon UK</div>
+      <div class="small" style="margin-top:6px;">
+        Tip: If you’re tracking clicks, add your analytics event handlers to the “Read on KU” links.
+      </div>
+    </footer>
+
+  </div>
+
+  <script>
+    document.getElementById("y").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
