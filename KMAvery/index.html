@@ -23,8 +23,9 @@ body{
   margin:0;
   font-family: Arial, Helvetica, sans-serif;
   color:var(--ink);
-  background:
-    linear-gradient(180deg, rgba(253,246,255,.92) 0%, rgba(248,234,255,.92) 100%),
+  /* Lighter overlay so the background image is visible */
+  background-image:
+    linear-gradient(180deg, rgba(253,246,255,.68) 0%, rgba(248,234,255,.68) 100%),
     url("/KMAvery/assets/pastel-hearts-bg.webp");
   background-size: cover;
   background-position: center;
@@ -42,6 +43,19 @@ body{
   border-radius:22px;
   padding:44px 22px;
   box-shadow:var(--shadow);
+  position:relative;
+}
+
+/* Overlap control */
+.hero-card{
+  z-index:2;
+}
+
+.review-card{
+  margin-top:-26px;     /* overlap amount */
+  padding-top:34px;     /* keeps spacing nice */
+  z-index:1;
+  border:1px solid rgba(59,47,82,.06);
 }
 
 .hero{
@@ -119,34 +133,6 @@ h1{
   margin-left:auto;
 }
 
-/* REVIEW */
-.review-box{
-  text-align:center;
-}
-
-.stars{
-  font-size:22px;
-  color:#ffb400;
-  margin-bottom:6px;
-}
-
-.chillis{
-  font-size:18px;
-  margin-bottom:10px;
-}
-
-.review-text{
-  font-size:18px;
-  font-style:italic;
-  margin-bottom:10px;
-}
-
-.reviewer{
-  font-weight:bold;
-  opacity:.8;
-}
-
-/* Other Sections */
 .section{
   margin-top:26px;
 }
@@ -254,6 +240,33 @@ h1{
   margin-top:14px;
 }
 
+/* Review styles */
+.review-box{
+  text-align:center;
+}
+
+.stars{
+  font-size:22px;
+  color:#ffb400;
+  margin-bottom:6px;
+}
+
+.chillis{
+  font-size:18px;
+  margin-bottom:10px;
+}
+
+.review-text{
+  font-size:18px;
+  font-style:italic;
+  margin-bottom:10px;
+}
+
+.reviewer{
+  font-weight:bold;
+  opacity:.8;
+}
+
 /* Mobile */
 @media (max-width: 900px){
   .hero{ grid-template-columns:1fr; text-align:center; }
@@ -264,6 +277,11 @@ h1{
   .book-card{ grid-template-columns: 110px 1fr; }
   .book-card img{ width:110px; height:150px; }
   h1{ font-size:38px; }
+
+  /* reduce overlap on mobile */
+  .review-card{
+    margin-top:-14px;
+  }
 }
 </style>
 </head>
@@ -273,7 +291,7 @@ h1{
 <section class="container">
 
   <!-- HERO -->
-  <div class="card hero">
+  <div class="card hero hero-card">
     <div>
       <span class="kicker">Start here before Book 2 drops 💖</span>
       <h1>Book Daddy</h1>
@@ -306,8 +324,8 @@ h1{
     </div>
   </div>
 
-  <!-- REVIEW SECTION -->
-  <div class="card review-box">
+  <!-- REVIEW (OVERLAPS HERO) -->
+  <div class="card review-box review-card">
     <div class="stars">★★★★★</div>
     <div class="chillis">🌶🌶🌶🌶</div>
     <div class="review-text">
@@ -341,7 +359,7 @@ h1{
     </div>
   </div>
 
-  <!-- BOOK GRID -->
+  <!-- BOOKS -->
   <div class="section">
     <div class="card">
       <h2 class="section-title">The Books</h2>
@@ -360,7 +378,7 @@ h1{
         </div>
 
         <div class="book-card">
-          <img src="/KMAvery/assets/the-good-girls.webp" alt="The Good Girls cover" loading="lazy">
+          <img src="/KMAvery/assets/the-good-girls-cover.webp" alt="The Good Girls cover" loading="lazy">
           <div>
             <div class="badge">Book 2 • Coming After Book 1</div>
             <h3>The Good Girls</h3>
