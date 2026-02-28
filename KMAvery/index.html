@@ -54,7 +54,6 @@ body{
 .kicker{
   display:inline-block;
   background:rgba(255,121,198,.12);
-  color:var(--ink);
   padding:8px 14px;
   border-radius:999px;
   font-weight:700;
@@ -93,21 +92,15 @@ h1{
 .btn-primary{
   background:var(--pink);
   color:#fff;
-  box-shadow: 0 12px 28px rgba(255,121,198,.25);
 }
 
 .btn-primary:hover{
   transform: translateY(-2px);
-  box-shadow: 0 16px 36px rgba(255,121,198,.32);
 }
 
 .btn-ghost{
   background:rgba(232,217,255,.55);
   color:var(--ink);
-}
-
-.btn-ghost:hover{
-  transform: translateY(-2px);
 }
 
 .cover{
@@ -119,69 +112,81 @@ h1{
   margin-left:auto;
 }
 
+/* Review Section */
+.review-section{
+  margin-top:30px;
+}
+
+.review-box{
+  background:#fff;
+  border-radius:20px;
+  padding:30px;
+  box-shadow:var(--shadow);
+  text-align:center;
+  max-width:800px;
+  margin:0 auto;
+}
+
+.stars{
+  font-size:22px;
+  color:#ffb400;
+  margin-bottom:10px;
+}
+
+.chillis{
+  font-size:18px;
+  margin-bottom:12px;
+}
+
+.review-text{
+  font-size:18px;
+  font-style:italic;
+  margin-bottom:15px;
+}
+
+.reviewer{
+  font-weight:bold;
+  opacity:.8;
+}
+
 .section{
-  margin-top:26px;
+  margin-top:40px;
 }
 
 .section-title{
   text-align:center;
   font-size:30px;
-  margin:0 0 18px;
+  margin-bottom:20px;
 }
 
 .reading-order{
   display:grid;
   grid-template-columns: 1fr 1fr;
   gap:18px;
-  margin-top:18px;
 }
 
 .order-item{
   background:#faf7ff;
-  border:1px solid rgba(59,47,82,.08);
   border-radius:18px;
   padding:18px;
-}
-
-.order-num{
-  font-weight:900;
-  color:var(--pink);
-  margin-bottom:8px;
-}
-
-.tropes{
-  display:flex;
-  flex-wrap:wrap;
-  gap:10px;
-  justify-content:center;
-  margin-top:12px;
-}
-
-.trope{
-  background:var(--lav);
-  padding:10px 14px;
-  border-radius:999px;
-  font-size:13px;
-  font-weight:700;
 }
 
 .two-books{
   display:grid;
   grid-template-columns: 1fr 1fr;
   gap:24px;
-  margin-top:18px;
+  margin-top:20px;
 }
 
 .book-card{
-  border-radius:18px;
   background:#fff;
-  border:1px solid rgba(59,47,82,.08);
+  border-radius:18px;
   padding:18px;
-  box-shadow: 0 10px 28px rgba(0,0,0,.06);
   display:grid;
   grid-template-columns: 120px 1fr;
   gap:16px;
   align-items:center;
+  box-shadow:var(--shadow);
 }
 
 .book-card img{
@@ -189,19 +194,6 @@ h1{
   height:160px;
   object-fit:cover;
   border-radius:12px;
-  box-shadow: 0 10px 25px rgba(0,0,0,.14);
-}
-
-.book-card h3{
-  margin:0 0 8px;
-  font-size:18px;
-}
-
-.book-card p{
-  margin:0 0 12px;
-  font-size:14px;
-  line-height:1.45;
-  opacity:.9;
 }
 
 .badge{
@@ -214,28 +206,12 @@ h1{
   margin-bottom:10px;
 }
 
-.footer-cta{
-  text-align:center;
-  margin-top:26px;
-}
-
-.small{
-  text-align:center;
-  font-size:13px;
-  opacity:.75;
-  margin-top:14px;
-}
-
 /* Mobile */
 @media (max-width: 900px){
   .hero{ grid-template-columns:1fr; text-align:center; }
-  .cover{ margin:18px auto 0; }
-  .cta-row{ justify-content:center; }
+  .cover{ margin:20px auto 0; }
   .reading-order{ grid-template-columns:1fr; }
   .two-books{ grid-template-columns:1fr; }
-  .book-card{ grid-template-columns: 110px 1fr; }
-  .book-card img{ width:110px; height:150px; }
-  h1{ font-size:38px; }
 }
 </style>
 </head>
@@ -247,90 +223,29 @@ h1{
     <div>
       <span class="kicker">Start here before Book 2 drops 💖</span>
       <h1>Book Daddy</h1>
-      <p>
-        If you want the best experience, read <strong>Book Daddy</strong> first —
-        then you’ll be ready for <strong>The Good Girls</strong> when it launches.
-      </p>
-
-      <div class="tropes" aria-label="Tropes">
-        <span class="trope">Small-town vibes</span>
-        <span class="trope">Single dad romance</span>
-        <span class="trope">Sweet &amp; bingeable</span>
-        <span class="trope">Maple Brook Falls</span>
-      </div>
+      <p>If you want the best experience, read <strong>Book Daddy</strong> first — then you’ll be ready for <strong>The Good Girls</strong>.</p>
 
       <div class="cta-row">
-        <a class="btn btn-primary" href="https://www.amazon.co.uk/Book-Daddy-Maple-Brook-Falls-ebook/dp/B0FRXKHJ6S" rel="noopener noreferrer">
+        <a class="btn btn-primary" href="https://www.amazon.co.uk/Book-Daddy-Maple-Brook-Falls-ebook/dp/B0FRXKHJ6S">
           Read Book 1 on Amazon
         </a>
-        <a class="btn btn-ghost" href="#reading-order">
-          See the reading order
-        </a>
       </div>
-
-      <p class="small">Tip: If you’re new, start with Book Daddy. Book 2 hits harder when you know the characters.</p>
     </div>
 
     <div>
-      <img class="cover" src="/KMAvery/assets/book-daddy-cover.webp" alt="Book Daddy cover by K.M. Avery" loading="lazy">
+      <img class="cover" src="/KMAvery/assets/book-daddy-cover.webp" alt="Book Daddy cover">
     </div>
   </div>
 
-  <div class="section" id="reading-order">
-    <div class="card">
-      <h2 class="section-title">Reading Order</h2>
-
-      <div class="reading-order">
-        <div class="order-item">
-          <div class="order-num">1) Book Daddy</div>
-          <div>Start here. Meet the world, the tone, and the characters.</div>
-        </div>
-
-        <div class="order-item">
-          <div class="order-num">2) The Good Girls</div>
-          <div>Next up. Read this after Book Daddy for the full impact.</div>
-        </div>
+  <!-- Review Section -->
+  <div class="review-section">
+    <div class="review-box">
+      <div class="stars">★★★★★</div>
+      <div class="chillis">🌶🌶🌶🌶</div>
+      <div class="review-text">
+        “I was hooked on this book from the beginning until the very end, it was amazing.”
       </div>
-
-      <div class="footer-cta" style="margin-top:22px;">
-        <a class="btn btn-primary" href="https://www.amazon.co.uk/Book-Daddy-Maple-Brook-Falls-ebook/dp/B0FRXKHJ6S" rel="noopener noreferrer">
-          Start Book 1 Now
-        </a>
-      </div>
-    </div>
-  </div>
-
-  <div class="section">
-    <div class="card">
-      <h2 class="section-title">The Books</h2>
-
-      <div class="two-books">
-        <div class="book-card">
-          <img src="/KMAvery/assets/book-daddy-cover.webp" alt="Book Daddy cover" loading="lazy">
-          <div>
-            <div class="badge">Book 1 • Start Here</div>
-            <h3>Book Daddy</h3>
-            <p>Begin your Maple Brook Falls read here — quick, sweet, and perfect for a binge.</p>
-            <a class="btn btn-primary" href="https://www.amazon.co.uk/Book-Daddy-Maple-Brook-Falls-ebook/dp/B0FRXKHJ6S" rel="noopener noreferrer">
-              Read Book 1
-            </a>
-          </div>
-        </div>
-
-        <div class="book-card">
-          <img src="/KMAvery/assets/the-good-girls.webp" alt="The Good Girls cover" loading="lazy">
-          <div>
-            <div class="badge">Book 2 • Coming After Book 1</div>
-            <h3>The Good Girls</h3>
-            <p>Next in the journey. Best read after you’ve finished Book Daddy.</p>
-            <a class="btn btn-ghost" href="https://www.amazon.com/gp/product/B0GPD8V4KW" rel="noopener noreferrer">
-              View Book 2
-            </a>
-          </div>
-        </div>
-      </div>
-
-      <div class="small">Want the story to hit properly? Start with Book Daddy, then move to The Good Girls.</div>
+      <div class="reviewer">— Hayley Edwards</div>
     </div>
   </div>
 
