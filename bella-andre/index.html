@@ -1,126 +1,992 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Penny Reid | ABC</title>
-    <!-- Pull in the shared stylesheet from the site root -->
-    <link rel="stylesheet" href="../../style.css" />
-    <!-- Custom colour palette for Penny Reid's page -->
-    <style>
-      :root {
-        /* A teal inspired palette to evoke Penny’s quirky, science‑minded romances */
-        --brand: #00796b;
-        --brand-2: #004d40;
-        --surface: #e0f2f1;
-        --surface-2: #b2dfdb;
-        --card: #b2dfdb;
-        --accent: #009688;
-        --text: #00332f;
+<!doctype html>
+<html lang="en-GB">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Bella Andre | Bestselling Contemporary Romance</title>
+  <meta
+    name="description"
+    content="Discover Bella Andre's bestselling contemporary romance, including Married in Malibu and The Maverick Billionaires. Beach weddings, billionaire heroes, and bingeable romance series."
+  />
+  <link rel="canonical" href="https://www.authorsbookclub.com/authors/bella-andre/" />
+
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-0DYQYNMX6T"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-0DYQYNMX6T');
+  </script>
+
+  <style>
+    :root{
+      --bg:#fffaf6;
+      --paper:#fffdfb;
+      --paper-2:#f7eee8;
+      --ink:#2e2529;
+      --ink-soft:#65575e;
+      --rose:#d76f8f;
+      --rose-deep:#b84d72;
+      --peach:#f3b691;
+      --gold:#d4ab63;
+      --ocean:#6f9eb1;
+      --line:rgba(46,37,41,.10);
+      --shadow:0 20px 50px rgba(46,37,41,.10);
+      --shadow-soft:0 10px 30px rgba(46,37,41,.08);
+      --max:1180px;
+    }
+
+    *{box-sizing:border-box}
+    html{scroll-behaviour:smooth}
+    body{
+      margin:0;
+      font-family:Inter,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+      color:var(--ink);
+      background:
+        radial-gradient(circle at top left, rgba(215,111,143,.11), transparent 32%),
+        radial-gradient(circle at top right, rgba(111,158,177,.10), transparent 28%),
+        linear-gradient(180deg, #fffaf6 0%, #fff7f2 100%);
+      line-height:1.6;
+    }
+
+    img{max-width:100%;display:block}
+    a{text-decoration:none;color:inherit}
+
+    .wrap{
+      width:min(var(--max), calc(100% - 32px));
+      margin:0 auto;
+    }
+
+    .topbar{
+      position:sticky;
+      top:0;
+      z-index:50;
+      backdrop-filter:blur(12px);
+      background:rgba(255,250,246,.82);
+      border-bottom:1px solid var(--line);
+    }
+
+    .topbar-inner{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:20px;
+      min-height:72px;
+    }
+
+    .brand{
+      display:flex;
+      align-items:center;
+      gap:12px;
+      font-weight:800;
+      letter-spacing:.02em;
+    }
+
+    .brand-mark{
+      width:40px;
+      height:40px;
+      border-radius:50%;
+      display:grid;
+      place-items:center;
+      background:linear-gradient(135deg,var(--rose),var(--ocean));
+      color:#fff;
+      font-weight:900;
+      box-shadow:var(--shadow-soft);
+    }
+
+    .nav{
+      display:flex;
+      gap:20px;
+      flex-wrap:wrap;
+    }
+
+    .nav a{
+      color:var(--ink-soft);
+      font-weight:600;
+      transition:.25s ease;
+    }
+
+    .nav a:hover{color:var(--rose-deep)}
+
+    .hero{
+      padding:72px 0 42px;
+    }
+
+    .hero-grid{
+      display:grid;
+      grid-template-columns:1.12fr .88fr;
+      gap:34px;
+      align-items:center;
+    }
+
+    .eyebrow{
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      font-size:.85rem;
+      text-transform:uppercase;
+      letter-spacing:.16em;
+      color:var(--ocean);
+      font-weight:800;
+      margin-bottom:18px;
+    }
+
+    .eyebrow::before{
+      content:"";
+      width:34px;
+      height:2px;
+      background:linear-gradient(90deg,var(--rose),var(--peach));
+      border-radius:999px;
+    }
+
+    h1{
+      font-size:clamp(2.4rem,5vw,4.6rem);
+      line-height:.96;
+      margin:0 0 18px;
+      letter-spacing:-.04em;
+    }
+
+    .hero p{
+      font-size:1.08rem;
+      color:var(--ink-soft);
+      max-width:64ch;
+      margin:0 0 22px;
+    }
+
+    .tagline{
+      font-size:1.14rem;
+      font-weight:700;
+      color:var(--rose-deep);
+      margin-bottom:20px;
+    }
+
+    .pill-row{
+      display:flex;
+      flex-wrap:wrap;
+      gap:10px;
+      margin:0 0 28px;
+      padding:0;
+      list-style:none;
+    }
+
+    .pill{
+      padding:10px 14px;
+      border-radius:999px;
+      border:1px solid rgba(46,37,41,.08);
+      background:rgba(255,255,255,.78);
+      color:var(--ink);
+      font-size:.92rem;
+      font-weight:700;
+      box-shadow:var(--shadow-soft);
+    }
+
+    .cta-row{
+      display:flex;
+      gap:14px;
+      flex-wrap:wrap;
+    }
+
+    .btn{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      gap:10px;
+      min-height:52px;
+      padding:0 20px;
+      border-radius:999px;
+      font-weight:800;
+      letter-spacing:.01em;
+      transition:transform .2s ease, box-shadow .2s ease, background .2s ease;
+    }
+
+    .btn:hover{
+      transform:translateY(-2px);
+      box-shadow:0 16px 28px rgba(46,37,41,.12);
+    }
+
+    .btn-primary{
+      background:linear-gradient(135deg,var(--rose),var(--rose-deep));
+      color:#fff;
+    }
+
+    .btn-secondary{
+      background:#fff;
+      color:var(--ink);
+      border:1px solid var(--line);
+    }
+
+    .hero-card{
+      background:linear-gradient(180deg, rgba(255,255,255,.95), rgba(247,238,232,.90));
+      border:1px solid rgba(46,37,41,.08);
+      border-radius:32px;
+      padding:28px;
+      box-shadow:var(--shadow);
+    }
+
+    .hero-stack{
+      display:grid;
+      grid-template-columns:repeat(2,1fr);
+      gap:14px;
+    }
+
+    .hero-book{
+      background:#fff;
+      border:1px solid var(--line);
+      border-radius:20px;
+      overflow:hidden;
+      box-shadow:var(--shadow-soft);
+      transition:transform .25s ease, box-shadow .25s ease;
+    }
+
+    .hero-book:hover{
+      transform:translateY(-6px);
+      box-shadow:0 18px 36px rgba(46,37,41,.14);
+    }
+
+    .hero-book img{
+      aspect-ratio:2 / 3;
+      object-fit:cover;
+      background:#efe4dd;
+    }
+
+    .hero-book .meta{
+      padding:12px;
+    }
+
+    .hero-book small{
+      display:block;
+      color:var(--ink-soft);
+      font-weight:700;
+      text-transform:uppercase;
+      letter-spacing:.08em;
+      margin-bottom:4px;
+    }
+
+    .hero-book strong{
+      display:block;
+      font-size:.98rem;
+      line-height:1.2;
+    }
+
+    section{
+      padding:28px 0 30px;
+    }
+
+    .section-head{
+      display:flex;
+      align-items:end;
+      justify-content:space-between;
+      gap:20px;
+      margin-bottom:22px;
+      flex-wrap:wrap;
+    }
+
+    h2{
+      font-size:clamp(1.6rem,3vw,2.4rem);
+      line-height:1.05;
+      margin:0;
+      letter-spacing:-.03em;
+    }
+
+    .section-sub{
+      color:var(--ink-soft);
+      max-width:66ch;
+      margin:8px 0 0;
+    }
+
+    .spotlight{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:20px;
+    }
+
+    .panel{
+      background:rgba(255,255,255,.92);
+      border:1px solid var(--line);
+      border-radius:28px;
+      padding:26px;
+      box-shadow:var(--shadow-soft);
+    }
+
+    .panel h3{
+      margin:0 0 12px;
+      font-size:1.35rem;
+      letter-spacing:-.02em;
+    }
+
+    .panel p{
+      margin:0;
+      color:var(--ink-soft);
+    }
+
+    .series-grid{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:22px;
+    }
+
+    .series-card{
+      background:rgba(255,255,255,.94);
+      border:1px solid var(--line);
+      border-radius:30px;
+      overflow:hidden;
+      box-shadow:var(--shadow-soft);
+    }
+
+    .series-head{
+      padding:24px 24px 6px;
+    }
+
+    .series-kicker{
+      display:inline-block;
+      margin-bottom:10px;
+      color:var(--rose-deep);
+      font-weight:800;
+      letter-spacing:.09em;
+      text-transform:uppercase;
+      font-size:.8rem;
+    }
+
+    .series-card h3{
+      margin:0 0 10px;
+      font-size:1.65rem;
+      line-height:1.06;
+      letter-spacing:-.02em;
+    }
+
+    .series-card p{
+      margin:0 0 14px;
+      color:var(--ink-soft);
+    }
+
+    .mini-pills{
+      display:flex;
+      flex-wrap:wrap;
+      gap:8px;
+      margin:0 0 18px;
+    }
+
+    .mini-pills span{
+      padding:7px 10px;
+      border-radius:999px;
+      background:var(--paper-2);
+      border:1px solid rgba(46,37,41,.06);
+      font-size:.82rem;
+      font-weight:700;
+      color:var(--ink);
+    }
+
+    .series-books{
+      padding:0 24px 24px;
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:14px;
+    }
+
+    .book-tile{
+      background:#fff;
+      border:1px solid var(--line);
+      border-radius:20px;
+      overflow:hidden;
+      box-shadow:var(--shadow-soft);
+      transition:transform .25s ease, box-shadow .25s ease;
+    }
+
+    .book-tile:hover{
+      transform:translateY(-5px);
+      box-shadow:0 16px 30px rgba(46,37,41,.12);
+    }
+
+    .book-tile img{
+      width:100%;
+      aspect-ratio:2 / 3;
+      object-fit:cover;
+      background:#eee2da;
+    }
+
+    .book-tile .meta{
+      padding:12px;
+    }
+
+    .book-tile small{
+      display:block;
+      color:var(--ink-soft);
+      font-weight:700;
+      text-transform:uppercase;
+      letter-spacing:.08em;
+      margin-bottom:4px;
+      font-size:.72rem;
+    }
+
+    .book-tile strong{
+      display:block;
+      font-size:.96rem;
+      line-height:1.18;
+    }
+
+    .series-actions{
+      padding:0 24px 24px;
+      display:flex;
+      gap:10px;
+      flex-wrap:wrap;
+    }
+
+    .author{
+      display:grid;
+      grid-template-columns:.85fr 1.15fr;
+      gap:24px;
+      align-items:center;
+    }
+
+    .author-photo{
+      background:linear-gradient(180deg,#fff,#f6eee8);
+      border:1px solid var(--line);
+      border-radius:30px;
+      padding:18px;
+      box-shadow:var(--shadow-soft);
+    }
+
+    .author-photo img{
+      aspect-ratio:1 / 1;
+      object-fit:cover;
+      border-radius:22px;
+      background:#ece1d9;
+    }
+
+    .author-copy{
+      background:rgba(255,255,255,.92);
+      border:1px solid var(--line);
+      border-radius:30px;
+      padding:30px;
+      box-shadow:var(--shadow-soft);
+    }
+
+    .author-copy p{
+      color:var(--ink-soft);
+      margin:0 0 14px;
+    }
+
+    .quote-box{
+      margin-top:20px;
+      padding:18px 18px 18px 20px;
+      border-left:4px solid var(--gold);
+      background:var(--paper-2);
+      border-radius:16px;
+      color:var(--ink);
+      font-weight:600;
+    }
+
+    .footer-cta{
+      background:linear-gradient(135deg, rgba(215,111,143,.96), rgba(111,158,177,.94));
+      color:#fff;
+      border-radius:34px;
+      padding:34px;
+      box-shadow:var(--shadow);
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:24px;
+      flex-wrap:wrap;
+      margin:16px 0 30px;
+    }
+
+    .footer-cta h3{
+      margin:0 0 8px;
+      font-size:clamp(1.4rem,2.8vw,2.2rem);
+      letter-spacing:-.03em;
+    }
+
+    .footer-cta p{
+      margin:0;
+      color:rgba(255,255,255,.88);
+      max-width:60ch;
+    }
+
+    footer{
+      padding:0 0 50px;
+      color:var(--ink-soft);
+      font-size:.95rem;
+    }
+
+    .fineprint{
+      border-top:1px solid var(--line);
+      padding-top:18px;
+    }
+
+    .affiliate-note{
+      font-size:.88rem;
+      color:var(--ink-soft);
+      margin-top:10px;
+    }
+
+    @media (max-width: 980px){
+      .hero-grid,
+      .author,
+      .spotlight,
+      .series-grid{
+        grid-template-columns:1fr;
       }
-    </style>
-  </head>
-  <body>
-    <a href="#content" class="skip-link">Skip to content</a>
-    <header class="site-header">
-      <div class="container">
-        <a href="../../index.html" class="site-title">ABC</a>
-        <nav class="site-nav">
-          <a href="../../for-authors/index.html">For authors</a>
-        </nav>
+
+      .series-books{
+        grid-template-columns:1fr 1fr 1fr;
+      }
+    }
+
+    @media (max-width: 760px){
+      .topbar-inner{
+        min-height:auto;
+        padding:14px 0;
+        align-items:flex-start;
+        flex-direction:column;
+      }
+
+      .hero{
+        padding-top:42px;
+      }
+
+      .hero-card{
+        padding:20px;
+      }
+
+      .hero-stack,
+      .series-books{
+        grid-template-columns:1fr 1fr;
+        gap:10px;
+      }
+
+      .footer-cta{
+        padding:24px;
+        border-radius:26px;
+      }
+    }
+
+    @media (max-width: 520px){
+      .hero-stack,
+      .series-books{
+        grid-template-columns:1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header class="topbar">
+    <div class="wrap topbar-inner">
+      <a class="brand" href="#top">
+        <span class="brand-mark">BA</span>
+        <span>Bella Andre</span>
+      </a>
+
+      <nav class="nav" aria-label="Primary">
+        <a href="#series">Series</a>
+        <a href="#author">About</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="top">
+    <section class="hero">
+      <div class="wrap hero-grid">
+        <div>
+          <div class="eyebrow">Bestselling Romance</div>
+          <h1>Beach weddings, billionaire heroes, and contemporary romance built for binge reading.</h1>
+          <div class="tagline">Start with Bella Andre’s most addictive series: <em>Married in Malibu</em> and <em>The Maverick Billionaires</em>.</div>
+          <p>
+            Bella Andre writes warm, emotionally satisfying contemporary romance with glamorous settings,
+            irresistible chemistry, and the kind of series momentum that keeps readers clicking through.
+            Start with a Malibu wedding romance or dive into billionaire love stories with bigger alpha energy.
+          </p>
+
+          <ul class="pill-row" aria-label="Themes and hooks">
+            <li class="pill">Beach romance</li>
+            <li class="pill">Wedding settings</li>
+            <li class="pill">Billionaire romance</li>
+            <li class="pill">Friends to lovers</li>
+            <li class="pill">Second chances</li>
+            <li class="pill">Feel-good escapism</li>
+          </ul>
+
+          <div class="cta-row">
+            <a class="btn btn-primary amazon-link"
+               href="https://amzn.to/40iubXW"
+               target="_blank"
+               rel="noopener sponsored"
+               data-book="Bella Andre Author Page"
+               data-location="hero-cta">
+              Browse on Amazon
+            </a>
+            <a class="btn btn-secondary" href="#series">Browse the series</a>
+          </div>
+        </div>
+
+        <aside class="hero-card" aria-label="Featured Bella Andre books">
+          <div class="hero-stack">
+            <article class="hero-book">
+              <a class="amazon-link"
+                 href="https://amzn.to/4rZJgtJ"
+                 target="_blank"
+                 rel="noopener sponsored"
+                 data-book="The Beach Wedding"
+                 data-location="hero-cover">
+                <img src="assets/bella-andre-beach-wedding.webp" alt="Cover of The Beach Wedding by Bella Andre" loading="lazy" />
+              </a>
+              <div class="meta">
+                <small>Married in Malibu</small>
+                <strong>The Beach Wedding</strong>
+              </div>
+            </article>
+
+            <article class="hero-book">
+              <a class="amazon-link"
+                 href="https://amzn.to/4b6TDWF"
+                 target="_blank"
+                 rel="noopener sponsored"
+                 data-book="The Surprise Wedding"
+                 data-location="hero-cover">
+                <img src="assets/bella-andre-surprise-wedding.webp" alt="Cover of The Surprise Wedding by Bella Andre" loading="lazy" />
+              </a>
+              <div class="meta">
+                <small>Married in Malibu</small>
+                <strong>The Surprise Wedding</strong>
+              </div>
+            </article>
+
+            <article class="hero-book">
+              <a class="amazon-link"
+                 href="https://amzn.to/4dajzBT"
+                 target="_blank"
+                 rel="noopener sponsored"
+                 data-book="Breathless in Love"
+                 data-location="hero-cover">
+                <img src="assets/bella-andre-breathless-in-love.webp" alt="Cover of Breathless in Love by Bella Andre" loading="lazy" />
+              </a>
+              <div class="meta">
+                <small>Maverick Billionaires</small>
+                <strong>Breathless in Love</strong>
+              </div>
+            </article>
+
+            <article class="hero-book">
+              <a class="amazon-link"
+                 href="https://amzn.to/3Ng7v7w"
+                 target="_blank"
+                 rel="noopener sponsored"
+                 data-book="Painted in Love"
+                 data-location="hero-cover">
+                <img src="assets/bella-andre-painted-in-love.webp" alt="Cover of Painted in Love by Bella Andre" loading="lazy" />
+              </a>
+              <div class="meta">
+                <small>Maverick Billionaires</small>
+                <strong>Painted in Love</strong>
+              </div>
+            </article>
+          </div>
+        </aside>
       </div>
-    </header>
-    <main id="content">
-      <!-- Hero section introducing Penny Reid -->
-      <section class="hero author-page">
-        <div class="hero-grid">
+    </section>
+
+    <section>
+      <div class="wrap spotlight">
+        <div class="panel">
+          <h3>Why this author page works</h3>
+          <p>
+            Bella Andre has a large catalogue, so the strongest conversion play is to lead readers into two clean entry points:
+            a lighter, wedding-centred series and a billionaire series with stronger high-gloss romance appeal.
+          </p>
+        </div>
+
+        <div class="panel">
+          <h3>Best fit for readers who love</h3>
+          <p>
+            Contemporary romance, glamorous California settings, emotional comfort reads, warm friend-and-family worlds,
+            and series that make it very easy to keep reading.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section id="series">
+      <div class="wrap">
+        <div class="section-head">
           <div>
-            <h1>Penny Reid</h1>
-            <p>Smart, witty romance from a self‑published trailblazer</p>
-            <div class="hero-actions">
-              <a class="button" href="#start-reading">Start here</a>
-              <a class="button button-outlined" href="https://www.amazon.com/stores/author/B00BP5XL48" target="_blank" rel="noopener">Amazon author page</a>
-            </div>
-          </div>
-          <div class="hero-image">
-            <!-- Author portrait placeholder – replace src with actual image -->
-            <img src="../../images/penny-reid-portrait.jpg" alt="Penny Reid portrait" />
+            <h2>Featured series</h2>
+            <p class="section-sub">
+              Two strong ways in: <strong>Married in Malibu</strong> for sunshine, weddings, and polished romantic escapism,
+              or <strong>The Maverick Billionaires</strong> for bigger money, bigger emotion, and stronger billionaire-romance energy.
+            </p>
           </div>
         </div>
-      </section>
-      <!-- Biography and latest release section -->
-      <section class="section">
-        <h2>About Penny</h2>
-        <p>Penny Reid is a <strong>New York Times</strong>, <strong>Wall Street Journal</strong> and <strong>USA Today</strong> bestselling author. She previously wrote federal grant proposals as a biomedical researcher before turning to romance fiction. Today she writes self‑published “kissing books”, manages the Smartypants Romance imprint and lives in Seattle with her husband, three children and a dog【206033809642826†L53-L59】. Reid is widely recognised as a self‑published success; she was the first self‑published author invited on the Professional Book Nerds podcast【906918119404983†L51-L62】.</p>
-        <h3>Latest release</h3>
-        <p><strong>Evolution</strong> (Fundamentals of Biology #3) – released on <time datetime="2025-11-06">6 November 2025</time> – concludes the trilogy with Sam confronting difficult revelations, fake dating, morally grey characters and plenty of twists【698011829083944†L52-L98】. It’s available now from major retailers.</p>
-      </section>
-      <!-- Start reading suggestions -->
-      <section id="start-reading" class="section">
-        <h2>Start reading</h2>
-        <p>If you’re new to Penny Reid, these three novels showcase her humour, heart and unique voice.</p>
-        <div class="book-list">
-          <div class="book-card">
-            <img src="../../images/neanderthal-seeks-human.jpg" alt="Neanderthal Seeks Human cover" />
-            <div class="book-card-content">
-              <h3>Neanderthal Seeks Human</h3>
-              <p>Penny Reid’s debut novel. Released on <time datetime="2013-03-14">14 March 2013</time>, this full‑length romantic comedy follows Janie after she loses her boyfriend, apartment and job in one day and stumbles into the path of security expert Quinn. It’s the first book in the <em>Knitting in the City</em> series【699604385743313†L70-L90】.</p>
-              <a class="button button-sm" href="https://www.amazon.com/dp/B00BXQGQ6G" target="_blank" rel="noopener">Amazon</a>
+
+        <div class="series-grid">
+          <article class="series-card">
+            <div class="series-head">
+              <span class="series-kicker">Sweet-meets-glamorous romance</span>
+              <h3>Married in Malibu</h3>
+              <p>
+                Wedding professionals, Malibu settings, romance under pressure, and a polished California fantasy feel.
+                This is the easier entry point for readers who want warmth, weddings, and escapist charm.
+              </p>
+
+              <div class="mini-pills">
+                <span>Beach weddings</span>
+                <span>California romance</span>
+                <span>Romantic escapism</span>
+                <span>Feel-good binge</span>
+              </div>
             </div>
-          </div>
-          <div class="book-card">
-            <img src="../../images/beard-science.jpg" alt="Beard Science cover" />
-            <div class="book-card-content">
-              <h3>Beard Science</h3>
-              <p>The third instalment of the bestselling <em>Winston Brothers</em> series. Published on <time datetime="2016-10-11">11 October 2016</time>, it pairs banana‑cake queen Jennifer Sylvester with scheming Cletus Winston in a story of blackmail, freedom and unexpected love【453077736938641†L56-L77】.</p>
-              <a class="button button-sm" href="https://www.amazon.com/dp/B01KB8UPKE" target="_blank" rel="noopener">Amazon</a>
+
+            <div class="series-books">
+              <article class="book-tile">
+                <a class="amazon-link"
+                   href="https://amzn.to/4rZJgtJ"
+                   target="_blank"
+                   rel="noopener sponsored"
+                   data-book="The Beach Wedding"
+                   data-location="series-tile">
+                  <img src="assets/bella-andre-beach-wedding.webp" alt="Cover of The Beach Wedding by Bella Andre" loading="lazy" />
+                </a>
+                <div class="meta">
+                  <small>Book 1</small>
+                  <strong>The Beach Wedding</strong>
+                </div>
+              </article>
+
+              <article class="book-tile">
+                <a class="amazon-link"
+                   href="https://amzn.to/4ldFoT8"
+                   target="_blank"
+                   rel="noopener sponsored"
+                   data-book="The Summer Wedding"
+                   data-location="series-tile">
+                  <img src="assets/bella-andre-summer-wedding.webp" alt="Cover of The Summer Wedding by Bella Andre" loading="lazy" />
+                </a>
+                <div class="meta">
+                  <small>Book 2</small>
+                  <strong>The Summer Wedding</strong>
+                </div>
+              </article>
+
+              <article class="book-tile">
+                <a class="amazon-link"
+                   href="https://amzn.to/4b6TDWF"
+                   target="_blank"
+                   rel="noopener sponsored"
+                   data-book="The Surprise Wedding"
+                   data-location="series-tile">
+                  <img src="assets/bella-andre-surprise-wedding.webp" alt="Cover of The Surprise Wedding by Bella Andre" loading="lazy" />
+                </a>
+                <div class="meta">
+                  <small>Book 5</small>
+                  <strong>The Surprise Wedding</strong>
+                </div>
+              </article>
             </div>
+
+            <div class="series-actions">
+              <a class="btn btn-primary amazon-link"
+                 href="https://amzn.to/4rZJgtJ"
+                 target="_blank"
+                 rel="noopener sponsored"
+                 data-book="The Beach Wedding"
+                 data-location="series-button">
+                Start the series
+              </a>
+              <a class="btn btn-secondary amazon-link"
+                 href="https://amzn.to/40iubXW"
+                 target="_blank"
+                 rel="noopener sponsored"
+                 data-book="Bella Andre Author Page"
+                 data-location="series-button">
+                More Bella Andre
+              </a>
+            </div>
+          </article>
+
+          <article class="series-card">
+            <div class="series-head">
+              <span class="series-kicker">Sexy billionaire romance</span>
+              <h3>The Maverick Billionaires</h3>
+              <p>
+                Glossy billionaire romance with stronger alpha energy, emotional payoff, and a bingeable series feel.
+                This is the better hook for readers who want bigger drama and richer fantasy.
+              </p>
+
+              <div class="mini-pills">
+                <span>Billionaire romance</span>
+                <span>Alpha heroes</span>
+                <span>Big-series binge</span>
+                <span>Escapist drama</span>
+              </div>
+            </div>
+
+            <div class="series-books">
+              <article class="book-tile">
+                <a class="amazon-link"
+                   href="https://amzn.to/4dajzBT"
+                   target="_blank"
+                   rel="noopener sponsored"
+                   data-book="Breathless in Love"
+                   data-location="series-tile">
+                  <img src="assets/bella-andre-breathless-in-love.webp" alt="Cover of Breathless in Love by Bella Andre" loading="lazy" />
+                </a>
+                <div class="meta">
+                  <small>Book 1</small>
+                  <strong>Breathless in Love</strong>
+                </div>
+              </article>
+
+              <article class="book-tile">
+                <a class="amazon-link"
+                   href="https://amzn.to/40RAge0"
+                   target="_blank"
+                   rel="noopener sponsored"
+                   data-book="Captivating in Love"
+                   data-location="series-tile">
+                  <img src="assets/bella-andre-captivating-in-love.webp" alt="Cover of Captivating in Love by Bella Andre" loading="lazy" />
+                </a>
+                <div class="meta">
+                  <small>Book 6</small>
+                  <strong>Captivating in Love</strong>
+                </div>
+              </article>
+
+              <article class="book-tile">
+                <a class="amazon-link"
+                   href="https://amzn.to/3Ng7v7w"
+                   target="_blank"
+                   rel="noopener sponsored"
+                   data-book="Painted in Love"
+                   data-location="series-tile">
+                  <img src="assets/bella-andre-painted-in-love.webp" alt="Cover of Painted in Love by Bella Andre" loading="lazy" />
+                </a>
+                <div class="meta">
+                  <small>Book 10</small>
+                  <strong>Painted in Love</strong>
+                </div>
+              </article>
+            </div>
+
+            <div class="series-actions">
+              <a class="btn btn-primary amazon-link"
+                 href="https://amzn.to/4dajzBT"
+                 target="_blank"
+                 rel="noopener sponsored"
+                 data-book="Breathless in Love"
+                 data-location="series-button">
+                Start the series
+              </a>
+              <a class="btn btn-secondary amazon-link"
+                 href="https://amzn.to/40iubXW"
+                 target="_blank"
+                 rel="noopener sponsored"
+                 data-book="Bella Andre Author Page"
+                 data-location="series-button">
+                More Bella Andre
+              </a>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="author">
+      <div class="wrap">
+        <div class="section-head">
+          <div>
+            <h2>About Bella Andre</h2>
+            <p class="section-sub">
+              A romance author with broad reader appeal, strong series branding, and very easy entry points for new readers.
+            </p>
           </div>
-          <div class="book-card">
-            <img src="../../images/attraction.jpg" alt="Attraction cover" />
-            <div class="book-card-content">
-              <h3>Attraction</h3>
-              <p>Part one of the <em>Elements of Chemistry</em> trilogy. Released on <time datetime="2015-04-09">9 April 2015</time>, it follows reserved science student Kaitlyn Parker and billionaire surfer Martin Sandeke as they discover irresistible chemistry【954016738175286†L62-L96】.</p>
-              <a class="button button-sm" href="https://www.amazon.com/dp/B00U7DU5IS" target="_blank" rel="noopener">Amazon</a>
+        </div>
+
+        <div class="author">
+          <div class="author-photo">
+            <img src="assets/bella-andre-author.webp" alt="Author photo of Bella Andre" loading="lazy" />
+          </div>
+
+          <div class="author-copy">
+            <p>
+              Bella Andre writes bestselling contemporary romance with warmth, glamour, chemistry, and emotional payoff.
+              Her books are built for readers who want to settle into a romantic world and keep going.
+            </p>
+            <p>
+              For new readers, <em>Married in Malibu</em> is a smooth starting point if weddings and California romance appeal more.
+              <em>The Maverick Billionaires</em> is the stronger hook if you want richer fantasy, bigger stakes, and billionaire heroes.
+            </p>
+            <p>
+              Either way, this is the kind of catalogue that rewards series reading rather than one-and-done browsing.
+            </p>
+
+            <div class="quote-box">
+              Best starting choice: <strong>The Beach Wedding</strong> for lighter romance, or <strong>Breathless in Love</strong> for billionaire romance with more edge.
             </div>
           </div>
         </div>
-      </section>
-      <!-- Other books section with reading order lists -->
-      <section class="section">
-        <h2>Other books &amp; series</h2>
-        <details>
-          <summary><strong>Knitting in the City</strong></summary>
-          <ul>
-            <li>1. Neanderthal Seeks Human (2013)</li>
-            <li>2. Friends Without Benefits (2013)</li>
-            <li>3. Love Hacked (2014)</li>
-            <li>4. Beauty and the Mustache (2014)</li>
-            <li>5. Happily Ever Ninja (2016)</li>
-            <li>6. Dating‑ish (2017)</li>
-            <li>7. Marriage of Inconvenience (2018)</li>
-          </ul>
-        </details>
-        <details>
-          <summary><strong>Winston Brothers</strong></summary>
-          <ul>
-            <li>1. Truth or Beard (2015)</li>
-            <li>2. Grin and Beard It (2016)</li>
-            <li>3. Beard Science (2016)</li>
-            <li>4. Beard in Mind (2017)</li>
-            <li>5. Dr. Strange Beard (2018)</li>
-            <li>6. Beard Necessities (2019)</li>
-          </ul>
-        </details>
-        <details>
-          <summary><strong>Elements of Chemistry</strong></summary>
-          <ul>
-            <li>1. Attraction (2015)</li>
-            <li>2. Heat (2015)</li>
-            <li>3. Capture (2015)</li>
-          </ul>
-        </details>
-      </section>
-    </main>
-  </body>
+      </div>
+    </section>
+
+    <section>
+      <div class="wrap">
+        <div class="footer-cta">
+          <div>
+            <h3>Not sure where to start?</h3>
+            <p>
+              Choose <strong>The Beach Wedding</strong> for sunshine and romance, or go straight to
+              <strong>Breathless in Love</strong> if billionaire romance is more your speed.
+            </p>
+          </div>
+
+          <div class="cta-row">
+            <a class="btn btn-secondary amazon-link"
+               href="https://amzn.to/4rZJgtJ"
+               target="_blank"
+               rel="noopener sponsored"
+               data-book="The Beach Wedding"
+               data-location="footer-cta">
+              Try Married in Malibu
+            </a>
+            <a class="btn btn-secondary amazon-link"
+               href="https://amzn.to/4dajzBT"
+               target="_blank"
+               rel="noopener sponsored"
+               data-book="Breathless in Love"
+               data-location="footer-cta">
+              Try the Mavericks
+            </a>
+          </div>
+        </div>
+
+        <p class="affiliate-note">
+          As an Amazon Associate, Authors Book Club may earn from qualifying purchases.
+        </p>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap fineprint">
+      <p>
+        This page is an independent reader guide created to help readers discover Bella Andre’s romance series.
+      </p>
+    </div>
+  </footer>
+
+  <script>
+    document.querySelectorAll('.amazon-link').forEach(function(link) {
+      link.addEventListener('click', function() {
+        if (typeof gtag === 'function') {
+          gtag('event', 'amazon_click', {
+            event_category: 'affiliate',
+            event_label: this.dataset.book || 'unknown',
+            book_title: this.dataset.book || 'unknown',
+            click_location: this.dataset.location || 'unknown',
+            transport_type: 'beacon'
+          });
+        }
+      });
+    });
+  </script>
+
+</body>
 </html>
