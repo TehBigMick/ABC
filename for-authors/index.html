@@ -9,6 +9,16 @@
   <link rel="stylesheet" href="./styles.css" />
 
   <style>
+    /* Ensure inputs and textareas don’t overflow their container */
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+#contact input,
+#contact textarea,
+#contact button {
+  max-width: 100%;
+}
     :root{
       --ink:#15110e;
       --ink-soft:#3b332c;
