@@ -9,16 +9,10 @@
   <link rel="stylesheet" href="./styles.css" />
 
   <style>
-    /* Ensure inputs and textareas don’t overflow their container */
-*, *::before, *::after {
-  box-sizing: border-box;
-}
+    *, *::before, *::after {
+      box-sizing: border-box;
+    }
 
-#contact input,
-#contact textarea,
-#contact button {
-  max-width: 100%;
-}
     :root{
       --ink:#15110e;
       --ink-soft:#3b332c;
@@ -31,6 +25,10 @@
       --accent-1:#c7a44c;
       --accent-2:#2d7a66;
       --accent-3:#8a5a2b;
+      --success-bg: rgba(45,122,102,.10);
+      --success-border: rgba(45,122,102,.22);
+      --error-bg: rgba(139,63,36,.10);
+      --error-border: rgba(139,63,36,.22);
     }
 
     html{ scroll-behaviour:smooth; }
@@ -451,6 +449,68 @@
       line-height: 1.55;
     }
 
+    .form-grid{
+      display:grid;
+      gap:.75rem;
+    }
+
+    .field{
+      display:grid;
+      gap:.35rem;
+    }
+
+    .field-label{
+      font-weight:900;
+      display:block;
+    }
+
+    .field-input,
+    .field-textarea{
+      width:100%;
+      max-width:100%;
+      padding:.8rem .85rem;
+      border-radius:10px;
+      border:1px solid rgba(0,0,0,.22);
+      background:rgba(255,255,255,.82);
+      color:var(--ink);
+      font:inherit;
+    }
+
+    .field-textarea{
+      resize:vertical;
+      min-height:130px;
+    }
+
+    .form-status{
+      display:none;
+      margin-top:.9rem;
+      padding:.85rem 1rem;
+      border-radius:12px;
+      font-weight:700;
+      line-height:1.45;
+    }
+
+    .form-status.is-success{
+      display:block;
+      background:var(--success-bg);
+      border:1px solid var(--success-border);
+      color:var(--ink);
+    }
+
+    .form-status.is-error{
+      display:block;
+      background:var(--error-bg);
+      border:1px solid var(--error-border);
+      color:var(--ink);
+    }
+
+    .btn[disabled]{
+      opacity:.7;
+      cursor:not-allowed;
+      transform:none !important;
+      box-shadow: var(--shadow);
+    }
+
     .footer{
       border-top: 1px solid rgba(0,0,0,.08);
       background: rgba(246,240,230,.88);
@@ -564,7 +624,7 @@
 </head>
 
 <body class="home">
-  
+  <a class="skip-link" href="#main">Skip to content</a>
 
   <header class="topbar">
     <div class="container topbar-inner">
@@ -855,31 +915,42 @@
 
         <div class="panel">
           <h3>Enquiry form</h3>
-          <form onsubmit="return false;" aria-label="Enquiry form">
-            <div style="display:grid; gap:.75rem;">
-              <div>
-                <label for="name" style="font-weight:900; display:block; margin-bottom:.35rem;">Name</label>
-                <input id="name" type="text" placeholder="Your name" required
-                       style="width:100%; padding:.75rem; border-radius:10px; border:1px solid rgba(0,0,0,.22); background:rgba(255,255,255,.82); color:var(--ink);" />
+          <form id="authorForm" action="https://formspree.io/f/xdaweazp" method="POST" aria-label="Enquiry form">
+            <input type="hidden" name="source" value="AuthorsBookClub Author Page" />
+
+            <div class="form-grid">
+              <div class="field">
+                <label class="field-label" for="name">Name</label>
+                <input class="field-input" id="name" name="name" type="text" placeholder="Your name" required />
               </div>
 
-              <div>
-                <label for="email" style="font-weight:900; display:block; margin-bottom:.35rem;">Email</label>
-                <input id="email" type="email" placeholder="you@example.com" required
-                       style="width:100%; padding:.75rem; border-radius:10px; border:1px solid rgba(0,0,0,.22); background:rgba(255,255,255,.82); color:var(--ink);" />
+              <div class="field">
+                <label class="field-label" for="email">Email</label>
+                <input class="field-input" id="email" name="email" type="email" placeholder="you@example.com" required />
               </div>
 
-              <div>
-                <label for="msg" style="font-weight:900; display:block; margin-bottom:.35rem;">Message</label>
-                <textarea id="msg" rows="5" placeholder="Tell us your genre, your books, and what you want the page to do."
-                          style="width:100%; padding:.75rem; border-radius:10px; border:1px solid rgba(0,0,0,.22); background:rgba(255,255,255,.82); color:var(--ink);"></textarea>
+              <div class="field">
+                <label class="field-label" for="author_name">Author / Pen Name</label>
+                <input class="field-input" id="author_name" name="author_name" type="text" placeholder="Your author name" />
+              </div>
+
+              <div class="field">
+                <label class="field-label" for="genre">Genre</label>
+                <input class="field-input" id="genre" name="genre" type="text" placeholder="Romance, fantasy, thriller, non-fiction..." />
+              </div>
+
+              <div class="field">
+                <label class="field-label" for="message">Message</label>
+                <textarea class="field-textarea" id="message" name="message" rows="5" placeholder="Tell us your genre, your books, and what you want the page to do." required></textarea>
               </div>
 
               <button class="btn btn-primary" type="submit" id="sendBtn">Send enquiry</button>
 
               <p class="fine" style="margin:0;">
-                This is still a placeholder form for now. Hook it up later to your preferred email service, form handler, or checkout flow.
+                Fill this in and your message will come straight through to us. We’ll reply by email.
               </p>
+
+              <div id="form-status" class="form-status" role="status" aria-live="polite"></div>
             </div>
           </form>
         </div>
@@ -941,17 +1012,46 @@
     })();
 
     (function(){
-      const btn = document.getElementById("sendBtn");
-      btn?.addEventListener("click", () => {
-        const name = (document.getElementById("name")?.value || "").trim();
-        const email = (document.getElementById("email")?.value || "").trim();
+      const form = document.getElementById("authorForm");
+      const button = document.getElementById("sendBtn");
+      const status = document.getElementById("form-status");
 
-        if (!name || !email) {
-          alert("Please add your name and email.");
-          return;
+      if (!form || !button || !status) return;
+
+      form.addEventListener("submit", async (event) => {
+        event.preventDefault();
+
+        status.className = "form-status";
+        status.textContent = "";
+        button.disabled = true;
+        button.textContent = "Sending...";
+
+        const data = new FormData(form);
+
+        try {
+          const response = await fetch(form.action, {
+            method: form.method,
+            body: data,
+            headers: {
+              "Accept": "application/json"
+            }
+          });
+
+          if (response.ok) {
+            form.reset();
+            status.className = "form-status is-success";
+            status.textContent = "Thanks — your enquiry has been sent. We’ll get back to you by email soon.";
+          } else {
+            status.className = "form-status is-error";
+            status.textContent = "Sorry — there was a problem sending your enquiry. Please try again.";
+          }
+        } catch (error) {
+          status.className = "form-status is-error";
+          status.textContent = "Network error. Please try again in a moment.";
+        } finally {
+          button.disabled = false;
+          button.textContent = "Send enquiry";
         }
-
-        alert("Enquiry sent (placeholder). Connect this form to your preferred handler when ready.");
       });
     })();
   </script>
