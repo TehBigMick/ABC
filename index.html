@@ -530,7 +530,7 @@
       <input type="email" id="email" name="email" placeholder="you@example.com" autocomplete="email" required />
       <button class="btn primary" type="submit">Subscribe</button>
     </form>
-    <p class="hint" id="newsletterHint">Placeholder form for now (connect it later to your email provider).</p>
+    <p class="hint" id="newsletterHint"></p>
   </section>
 
   <footer>
@@ -770,7 +770,7 @@
     const email = $("email").value.trim();
     if(!email) return;
 
-    $("newsletterHint").textContent = "Cheers — you’re on the list (placeholder). Connect this to your email provider when ready.";
+    $("newsletterHint").textContent = "";
     trackEvent("newsletter_submit", {
       location: "homepage_placeholder"
     });
@@ -780,7 +780,7 @@
   });
 
   $("year").textContent = new Date().getFullYear();
-  $("authorCountHint").textContent = `Currently featuring ${AUTHORS.length} author pages — more coming soon.`;
+  $("authorCountHint").textContent = ;
 
   populateGenreSelect();
   renderGenreGrid();
