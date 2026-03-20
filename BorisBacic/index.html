@@ -1,0 +1,890 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Boris Bacic | Indie Horror Author</title>
+  <meta name="description" content="Discover Boris Bacic's indie horror books. Haunted places, cursed towns, and dark supernatural suspense. Start reading now." />
+  <link rel="canonical" href="https://www.authorsbookclub.com/authors/boris-bacic/" />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Boris Bacic | Indie Horror Author" />
+  <meta property="og:description" content="Haunted places. Small-town dread. Dark supernatural horror. Start reading Boris Bacic today." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://www.authorsbookclub.com/authors/boris-bacic/" />
+  <meta property="og:image" content="https://www.authorsbookclub.com/authors/boris-bacic/assets/og-image.webp" />
+
+  <!-- GA4 - replace if needed -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-0DYQYNMX6T"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-0DYQYNMX6T');
+  </script>
+
+  <style>
+    :root{
+      --bg:#08090b;
+      --bg-2:#101216;
+      --panel:#13161b;
+      --panel-2:#181c22;
+      --text:#f2efe8;
+      --muted:#b2b5bc;
+      --line:rgba(255,255,255,.10);
+      --accent:#9bb2b8;
+      --accent-2:#d4b575;
+      --shadow:0 18px 60px rgba(0,0,0,.45);
+      --radius:24px;
+      --radius-sm:18px;
+      --max:1180px;
+    }
+
+    *{box-sizing:border-box}
+    html{scroll-behaviour:smooth}
+    body{
+      margin:0;
+      font-family:Georgia, "Times New Roman", serif;
+      background:
+        radial-gradient(circle at top, rgba(155,178,184,.10), transparent 30%),
+        linear-gradient(180deg, #090a0d 0%, #0c0f13 38%, #07080a 100%);
+      color:var(--text);
+      line-height:1.6;
+    }
+
+    img{max-width:100%;display:block}
+    a{color:inherit;text-decoration:none}
+
+    .container{
+      width:min(var(--max), calc(100% - 32px));
+      margin:0 auto;
+    }
+
+    .site-header{
+      position:sticky;
+      top:0;
+      z-index:50;
+      backdrop-filter:blur(12px);
+      background:rgba(7,8,10,.72);
+      border-bottom:1px solid var(--line);
+    }
+
+    .nav{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:20px;
+      padding:14px 0;
+    }
+
+    .brand{
+      display:flex;
+      align-items:center;
+      gap:12px;
+      font-size:.95rem;
+      letter-spacing:.06em;
+      text-transform:uppercase;
+      color:var(--muted);
+    }
+
+    .brand-mark{
+      width:34px;
+      height:34px;
+      border:1px solid var(--line);
+      border-radius:50%;
+      display:grid;
+      place-items:center;
+      background:linear-gradient(180deg, rgba(255,255,255,.05), rgba(255,255,255,.01));
+      box-shadow:var(--shadow);
+      font-size:1rem;
+    }
+
+    .nav-links{
+      display:flex;
+      align-items:center;
+      gap:18px;
+      flex-wrap:wrap;
+    }
+
+    .nav-links a{
+      color:var(--muted);
+      font-size:.95rem;
+    }
+
+    .nav-links a:hover{color:var(--text)}
+
+    .btn{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      gap:10px;
+      border-radius:999px;
+      padding:14px 22px;
+      font-weight:700;
+      font-size:.96rem;
+      transition:.25s ease;
+      border:1px solid transparent;
+      cursor:pointer;
+    }
+
+    .btn-primary{
+      background:linear-gradient(180deg, #dbc089, #b99759);
+      color:#111;
+      box-shadow:0 8px 24px rgba(212,181,117,.24);
+    }
+
+    .btn-primary:hover{
+      transform:translateY(-2px);
+      box-shadow:0 14px 32px rgba(212,181,117,.28);
+    }
+
+    .btn-secondary{
+      background:rgba(255,255,255,.03);
+      border-color:var(--line);
+      color:var(--text);
+    }
+
+    .btn-secondary:hover{
+      transform:translateY(-2px);
+      background:rgba(255,255,255,.06);
+    }
+
+    .hero{
+      position:relative;
+      overflow:hidden;
+    }
+
+    .hero::before{
+      content:"";
+      position:absolute;
+      inset:0;
+      background:
+        linear-gradient(90deg, rgba(6,7,9,.88) 0%, rgba(6,7,9,.68) 42%, rgba(6,7,9,.28) 68%, rgba(6,7,9,.85) 100%),
+        url("assets/hero-bg.webp") center/cover no-repeat;
+      opacity:.92;
+      z-index:-2;
+    }
+
+    .hero::after{
+      content:"";
+      position:absolute;
+      inset:0;
+      background:
+        radial-gradient(circle at 20% 30%, rgba(212,181,117,.10), transparent 20%),
+        radial-gradient(circle at 78% 26%, rgba(155,178,184,.16), transparent 18%),
+        linear-gradient(180deg, rgba(0,0,0,.10), rgba(0,0,0,.45));
+      z-index:-1;
+    }
+
+    .hero-grid{
+      display:grid;
+      grid-template-columns:1.2fr .9fr;
+      gap:40px;
+      align-items:center;
+      min-height:760px;
+      padding:72px 0 60px;
+    }
+
+    .eyebrow{
+      display:inline-flex;
+      align-items:center;
+      gap:10px;
+      font-size:.82rem;
+      text-transform:uppercase;
+      letter-spacing:.16em;
+      color:var(--accent-2);
+      margin-bottom:16px;
+    }
+
+    .eyebrow::before{
+      content:"";
+      width:42px;
+      height:1px;
+      background:rgba(212,181,117,.65);
+    }
+
+    h1{
+      margin:0 0 18px;
+      font-size:clamp(2.5rem, 5vw, 5.2rem);
+      line-height:.96;
+      letter-spacing:-.02em;
+      max-width:10ch;
+    }
+
+    .hero-copy p{
+      max-width:58ch;
+      color:#d7d9de;
+      font-size:1.08rem;
+      margin:0 0 18px;
+    }
+
+    .hero-tagline{
+      color:#e9dcc0;
+      font-size:1.18rem;
+      margin-bottom:18px;
+    }
+
+    .hero-actions{
+      display:flex;
+      gap:14px;
+      flex-wrap:wrap;
+      margin:28px 0 18px;
+    }
+
+    .micro-proof{
+      display:flex;
+      gap:14px;
+      flex-wrap:wrap;
+      color:var(--muted);
+      font-size:.94rem;
+      margin-top:18px;
+    }
+
+    .micro-proof span{
+      padding:8px 12px;
+      border:1px solid var(--line);
+      border-radius:999px;
+      background:rgba(255,255,255,.03);
+    }
+
+    .hero-books{
+      display:grid;
+      grid-template-columns:repeat(3, 1fr);
+      gap:14px;
+      align-items:end;
+    }
+
+    .cover-card{
+      position:relative;
+      border-radius:20px;
+      overflow:hidden;
+      background:var(--panel);
+      border:1px solid rgba(255,255,255,.08);
+      box-shadow:var(--shadow);
+      transition:.28s ease;
+    }
+
+    .cover-card:hover{
+      transform:translateY(-6px);
+      border-color:rgba(255,255,255,.16);
+    }
+
+    .cover-card.featured{
+      transform:translateY(-18px);
+    }
+
+    .cover-card img{
+      width:100%;
+      aspect-ratio: 2 / 3;
+      object-fit:cover;
+    }
+
+    .cover-label{
+      position:absolute;
+      left:12px;
+      right:12px;
+      bottom:12px;
+      background:rgba(0,0,0,.66);
+      backdrop-filter:blur(10px);
+      border:1px solid rgba(255,255,255,.08);
+      border-radius:14px;
+      padding:10px 12px;
+    }
+
+    .cover-label strong{
+      display:block;
+      font-size:.95rem;
+      margin-bottom:3px;
+    }
+
+    .cover-label span{
+      font-size:.82rem;
+      color:#d4d7dc;
+    }
+
+    section{
+      padding:72px 0;
+    }
+
+    .section-head{
+      max-width:760px;
+      margin:0 0 28px;
+    }
+
+    .section-head h2{
+      margin:0 0 12px;
+      font-size:clamp(1.9rem, 3vw, 3rem);
+      line-height:1.05;
+    }
+
+    .section-head p{
+      margin:0;
+      color:var(--muted);
+      font-size:1.04rem;
+    }
+
+    .start-grid{
+      display:grid;
+      grid-template-columns:repeat(3, 1fr);
+      gap:22px;
+    }
+
+    .start-card,
+    .series-card,
+    .quote-card,
+    .vibe-card,
+    .bio-card,
+    .cta-panel{
+      background:linear-gradient(180deg, rgba(255,255,255,.03), rgba(255,255,255,.015));
+      border:1px solid var(--line);
+      border-radius:var(--radius);
+      box-shadow:var(--shadow);
+    }
+
+    .start-card{
+      overflow:hidden;
+    }
+
+    .start-card img{
+      width:100%;
+      aspect-ratio:16 / 11;
+      object-fit:cover;
+    }
+
+    .start-content{
+      padding:22px;
+    }
+
+    .pill{
+      display:inline-block;
+      margin-bottom:10px;
+      padding:6px 10px;
+      border-radius:999px;
+      font-size:.75rem;
+      text-transform:uppercase;
+      letter-spacing:.12em;
+      border:1px solid var(--line);
+      color:var(--accent-2);
+      background:rgba(255,255,255,.03);
+    }
+
+    .start-content h3{
+      margin:0 0 10px;
+      font-size:1.4rem;
+    }
+
+    .start-content p{
+      margin:0 0 16px;
+      color:var(--muted);
+    }
+
+    .start-content .btn{
+      width:100%;
+    }
+
+    .series-grid{
+      display:grid;
+      grid-template-columns:repeat(3, 1fr);
+      gap:22px;
+    }
+
+    .series-card{
+      padding:24px;
+    }
+
+    .series-card h3{
+      margin:0 0 10px;
+      font-size:1.3rem;
+    }
+
+    .series-type{
+      color:var(--accent-2);
+      text-transform:uppercase;
+      letter-spacing:.12em;
+      font-size:.78rem;
+      margin-bottom:10px;
+    }
+
+    .series-card p{
+      color:var(--muted);
+      margin:0 0 12px;
+    }
+
+    .series-card ul{
+      margin:0;
+      padding-left:18px;
+      color:#d9dde2;
+    }
+
+    .series-card li{margin:0 0 8px}
+
+    .proof-grid{
+      display:grid;
+      grid-template-columns:repeat(3, 1fr);
+      gap:18px;
+    }
+
+    .quote-card{
+      padding:22px;
+    }
+
+    .quote-card p{
+      margin:0 0 14px;
+      font-size:1.04rem;
+    }
+
+    .quote-card strong{
+      color:var(--accent-2);
+      font-size:.9rem;
+      letter-spacing:.08em;
+      text-transform:uppercase;
+    }
+
+    .two-col{
+      display:grid;
+      grid-template-columns:1.05fr .95fr;
+      gap:22px;
+      align-items:stretch;
+    }
+
+    .vibe-card,
+    .bio-card{
+      padding:28px;
+    }
+
+    .vibe-list{
+      display:grid;
+      grid-template-columns:repeat(2, 1fr);
+      gap:12px;
+      margin-top:18px;
+    }
+
+    .vibe-item{
+      padding:14px 16px;
+      border:1px solid var(--line);
+      border-radius:16px;
+      background:rgba(255,255,255,.025);
+      color:#e4e7eb;
+    }
+
+    .bio-card p{
+      color:var(--muted);
+      margin:0 0 14px;
+    }
+
+    .cta-wrap{
+      padding-top:24px;
+    }
+
+    .cta-panel{
+      position:relative;
+      overflow:hidden;
+      padding:34px;
+      display:grid;
+      grid-template-columns:1.1fr .9fr;
+      gap:22px;
+      align-items:center;
+    }
+
+    .cta-panel::before{
+      content:"";
+      position:absolute;
+      inset:0;
+      background:
+        linear-gradient(120deg, rgba(212,181,117,.10), transparent 35%),
+        radial-gradient(circle at 88% 18%, rgba(155,178,184,.16), transparent 16%);
+      pointer-events:none;
+    }
+
+    .cta-panel h2{
+      margin:0 0 10px;
+      font-size:clamp(1.8rem, 3vw, 2.8rem);
+      line-height:1.02;
+    }
+
+    .cta-panel p{
+      margin:0;
+      color:var(--muted);
+      max-width:52ch;
+    }
+
+    .cta-books{
+      display:grid;
+      grid-template-columns:repeat(3, 1fr);
+      gap:12px;
+    }
+
+    .cta-books img{
+      border-radius:16px;
+      aspect-ratio:2 / 3;
+      object-fit:cover;
+      border:1px solid rgba(255,255,255,.09);
+      box-shadow:var(--shadow);
+    }
+
+    .site-footer{
+      padding:28px 0 42px;
+      color:var(--muted);
+      border-top:1px solid var(--line);
+      text-align:center;
+      font-size:.92rem;
+    }
+
+    @media (max-width: 980px){
+      .hero-grid,
+      .two-col,
+      .cta-panel{
+        grid-template-columns:1fr;
+      }
+
+      .hero-books,
+      .start-grid,
+      .series-grid,
+      .proof-grid{
+        grid-template-columns:1fr;
+      }
+
+      .cover-card.featured{
+        transform:none;
+      }
+
+      .hero-grid{
+        min-height:auto;
+        padding:56px 0 48px;
+      }
+
+      h1{
+        max-width:none;
+      }
+    }
+
+    @media (max-width: 640px){
+      .nav{
+        flex-direction:column;
+        align-items:flex-start;
+      }
+
+      .nav-links{
+        width:100%;
+        justify-content:flex-start;
+      }
+
+      .hero-actions{
+        flex-direction:column;
+      }
+
+      .hero-actions .btn{
+        width:100%;
+      }
+
+      .vibe-list{
+        grid-template-columns:1fr;
+      }
+
+      .cta-books{
+        grid-template-columns:repeat(3, 1fr);
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="container nav">
+      <a class="brand" href="https://www.authorsbookclub.com/">
+        <span class="brand-mark">☾</span>
+        <span>Authors Book Club</span>
+      </a>
+
+      <nav class="nav-links">
+        <a href="#start-here">Start Here</a>
+        <a href="#series">Series</a>
+        <a href="#reviews">Reader Appeal</a>
+        <a href="#about">About</a>
+        <a href="https://www.amazon.co.uk/s?k=boris+bacic" class="btn btn-secondary" target="_blank" rel="noopener" onclick="trackAmazonClick('Header Amazon Button','General Amazon Search')">View on Amazon</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="container hero-grid">
+        <div class="hero-copy">
+          <div class="eyebrow">Indie Horror Author</div>
+          <h1>Boris Bacic</h1>
+          <p class="hero-tagline">Small towns. Haunted places. Nightmarish secrets.</p>
+          <p>
+            Discover bingeable supernatural horror for readers who love cursed locations, creeping dread,
+            and the sense that something is deeply wrong just beneath the surface.
+          </p>
+          <p>
+            If you want eerie atmospheres, sinister mysteries, and page-turning terror that keeps escalating,
+            this is where to start.
+          </p>
+
+          <div class="hero-actions">
+            <a href="https://www.amazon.co.uk/dp/REPLACE_WITH_START_HERE_BOOK" class="btn btn-primary" target="_blank" rel="noopener" onclick="trackAmazonClick('Hero Primary CTA','Start With Radio Tower')">Start with Radio Tower</a>
+            <a href="https://www.amazon.co.uk/s?k=boris+bacic" class="btn btn-secondary" target="_blank" rel="noopener" onclick="trackAmazonClick('Hero Secondary CTA','Browse All Books')">Browse All Books</a>
+          </div>
+
+          <div class="micro-proof">
+            <span>Indie horror</span>
+            <span>Supernatural suspense</span>
+            <span>Series-ready reads</span>
+          </div>
+        </div>
+
+        <div class="hero-books">
+          <div class="cover-card">
+            <img src="assets/book-small-town.webp" alt="Book cover for a Boris Bacic horror novel set in a small town" />
+            <div class="cover-label">
+              <strong>Small-Town Dread</strong>
+              <span>Isolation. Secrets. Something waiting in the dark.</span>
+            </div>
+          </div>
+
+          <div class="cover-card featured">
+            <img src="assets/book-start-here.webp" alt="Featured book cover for Boris Bacic start-here title" />
+            <div class="cover-label">
+              <strong>Start Here</strong>
+              <span>Your best first entry point into the horror.</span>
+            </div>
+          </div>
+
+          <div class="cover-card">
+            <img src="assets/book-haunted.webp" alt="Book cover for a haunted place horror novel by Boris Bacic" />
+            <div class="cover-label">
+              <strong>Haunted Places</strong>
+              <span>Wrong buildings. Wrong histories. Very wrong endings.</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="start-here">
+      <div class="container">
+        <div class="section-head">
+          <h2>Where to Start Reading</h2>
+          <p>
+            A large horror catalogue is great for binge readers, but only if the first click feels easy.
+            These entry points help readers choose the version of fear they want most.
+          </p>
+        </div>
+
+        <div class="start-grid">
+          <article class="start-card">
+            <img src="assets/start-1.webp" alt="Start here recommendation for small-town horror by Boris Bacic" />
+            <div class="start-content">
+              <span class="pill">For small-town horror</span>
+              <h3>Radio Tower</h3>
+              <p>
+                Start here if you like eerie rural settings, ominous mysteries, and the slow realisation
+                that a place is hiding something terrible.
+              </p>
+              <a href="https://www.amazon.co.uk/dp/REPLACE_WITH_RADIO_TOWER" class="btn btn-primary" target="_blank" rel="noopener" onclick="trackAmazonClick('Start Here Card','Radio Tower')">Read on Amazon</a>
+            </div>
+          </article>
+
+          <article class="start-card">
+            <img src="assets/start-2.webp" alt="Start here recommendation for haunted building horror by Boris Bacic" />
+            <div class="start-content">
+              <span class="pill">For haunted-place readers</span>
+              <h3>Apartment 401</h3>
+              <p>
+                The right choice for readers who love claustrophobic settings, unnerving buildings,
+                and the feeling that every wall is holding onto something dead.
+              </p>
+              <a href="https://www.amazon.co.uk/dp/REPLACE_WITH_APARTMENT_401" class="btn btn-primary" target="_blank" rel="noopener" onclick="trackAmazonClick('Start Here Card','Apartment 401')">Read on Amazon</a>
+            </div>
+          </article>
+
+          <article class="start-card">
+            <img src="assets/start-3.webp" alt="Start here recommendation for apocalyptic horror by Boris Bacic" />
+            <div class="start-content">
+              <span class="pill">For survival horror</span>
+              <h3>Apocalyptic Pick</h3>
+              <p>
+                Best for readers who want panic, collapse, and the terrifying sense that once things start
+                going wrong, they will never stop.
+              </p>
+              <a href="https://www.amazon.co.uk/dp/REPLACE_WITH_APOCALYPTIC_TITLE" class="btn btn-primary" target="_blank" rel="noopener" onclick="trackAmazonClick('Start Here Card','Apocalyptic Pick')">Read on Amazon</a>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="series">
+      <div class="container">
+        <div class="section-head">
+          <h2>Pick Your Kind of Nightmare</h2>
+          <p>
+            Horror readers often know exactly what mood they want. This section helps them jump straight
+            into the corner of the catalogue that suits them best.
+          </p>
+        </div>
+
+        <div class="series-grid">
+          <article class="series-card">
+            <div class="series-type">Series lane</div>
+            <h3>Horror in Small Towns</h3>
+            <p>
+              Quiet roads, local secrets, missing histories, and the creeping sense that nobody in town
+              is telling the truth.
+            </p>
+            <ul>
+              <li>Atmospheric dread</li>
+              <li>Isolated settings</li>
+              <li>Slow-burn supernatural menace</li>
+            </ul>
+          </article>
+
+          <article class="series-card">
+            <div class="series-type">Series lane</div>
+            <h3>Haunted Places</h3>
+            <p>
+              Buildings that remember. Rooms that should not exist. Addresses you should never have entered.
+            </p>
+            <ul>
+              <li>Haunted houses and flats</li>
+              <li>Claustrophobic tension</li>
+              <li>Dark paranormal suspense</li>
+            </ul>
+          </article>
+
+          <article class="series-card">
+            <div class="series-type">Series lane</div>
+            <h3>The Town That Shouldn’t Exist</h3>
+            <p>
+              For readers who like reality slipping sideways, impossible locations, and horror that feels wrong
+              before it feels deadly.
+            </p>
+            <ul>
+              <li>Reality-bending unease</li>
+              <li>Mystery-driven horror</li>
+              <li>Compulsive binge-read potential</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="reviews">
+      <div class="container">
+        <div class="section-head">
+          <h2>Why Horror Readers Click</h2>
+          <p>
+            This is not a literary monument page. It is a conversion page. The aim is to tell the right reader,
+            very quickly, that they are in the right dark place.
+          </p>
+        </div>
+
+        <div class="proof-grid">
+          <article class="quote-card">
+            <p>Fast, eerie horror that makes ordinary places feel deeply unsafe.</p>
+            <strong>Reader appeal</strong>
+          </article>
+
+          <article class="quote-card">
+            <p>Ideal for Kindle Unlimited readers who want one more chapter, then one more, then no sleep.</p>
+            <strong>Binge factor</strong>
+          </article>
+
+          <article class="quote-card">
+            <p>Perfect for fans of haunted settings, supernatural danger, and dark secrets under the surface.</p>
+            <strong>Genre fit</strong>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="about">
+      <div class="container two-col">
+        <article class="vibe-card">
+          <div class="section-head" style="margin-bottom:0">
+            <h2>The Vibe</h2>
+            <p>
+              This page should sell atmosphere as much as books. Horror readers do not only buy plots.
+              They buy a feeling.
+            </p>
+          </div>
+
+          <div class="vibe-list">
+            <div class="vibe-item">abandoned roads</div>
+            <div class="vibe-item">empty buildings</div>
+            <div class="vibe-item">wrong turns at night</div>
+            <div class="vibe-item">small-town secrets</div>
+            <div class="vibe-item">haunted thresholds</div>
+            <div class="vibe-item">things watching back</div>
+          </div>
+        </article>
+
+        <article class="bio-card">
+          <div class="section-head" style="margin-bottom:18px">
+            <h2>About the Author</h2>
+          </div>
+
+          <p>
+            Boris Bacic writes indie horror built around haunting atmospheres, unnerving premises,
+            and supernatural threats that keep escalating. His books are a strong fit for readers who
+            want accessible, bingeable horror with memorable settings and sharp hooks.
+          </p>
+
+          <p>
+            Rather than overloading the page with biography, this design keeps the focus on what matters most:
+            what the books feel like, where a new reader should begin, and why they should click now.
+          </p>
+
+          <a href="https://www.amazon.co.uk/s?k=boris+bacic" class="btn btn-secondary" target="_blank" rel="noopener" onclick="trackAmazonClick('About Section CTA','Amazon Author Search')">See Boris Bacic on Amazon</a>
+        </article>
+      </div>
+    </section>
+
+    <section class="cta-wrap">
+      <div class="container">
+        <div class="cta-panel">
+          <div>
+            <h2>Pick Your Nightmare. Start Reading Tonight.</h2>
+            <p>
+              Whether you want haunted places, cursed towns, or supernatural dread that keeps tightening,
+              Boris Bacic has a corner of horror waiting for you.
+            </p>
+
+            <div class="hero-actions" style="margin-top:22px">
+              <a href="https://www.amazon.co.uk/dp/REPLACE_WITH_START_HERE_BOOK" class="btn btn-primary" target="_blank" rel="noopener" onclick="trackAmazonClick('Footer Primary CTA','Start Reading Tonight')">Start Reading</a>
+              <a href="https://www.amazon.co.uk/s?k=boris+bacic" class="btn btn-secondary" target="_blank" rel="noopener" onclick="trackAmazonClick('Footer Secondary CTA','Browse Amazon Catalogue')">Browse More Books</a>
+            </div>
+          </div>
+
+          <div class="cta-books">
+            <img src="assets/footer-book-1.webp" alt="Boris Bacic horror book cover 1" />
+            <img src="assets/footer-book-2.webp" alt="Boris Bacic horror book cover 2" />
+            <img src="assets/footer-book-3.webp" alt="Boris Bacic horror book cover 3" />
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      This page is an independent reader guide created by Authors Book Club to help readers discover indie authors and books.
+    </div>
+  </footer>
+
+  <script>
+    function trackAmazonClick(location, bookTitle) {
+      if (typeof gtag === 'function') {
+        gtag('event', 'amazon_click', {
+          event_category: 'Outbound Click',
+          event_label: location + ' | ' + bookTitle,
+          book_title: bookTitle,
+          click_location: location,
+          destination: 'Amazon'
+        });
+      }
+    }
+  </script>
+</body>
+</html>
