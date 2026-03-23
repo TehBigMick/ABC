@@ -21,18 +21,12 @@
       --ink:#2b1e16;
       --muted:#6e5a4d;
       --cream:#fbf3e8;
-      --cream-2:#f3e4d3;
-      --latte:#e7d2bc;
       --caramel:#c28b4f;
       --rust:#8b3f24;
       --evergreen:#3d5a4c;
-      --plum:#5c3551;
-      --night:#1f2533;
-
       --radius:18px;
       --radius2:24px;
       --max:1160px;
-
       --shadow:0 18px 50px rgba(0,0,0,.16);
       --shadow2:0 12px 30px rgba(0,0,0,.14);
     }
@@ -134,8 +128,6 @@
       border-color:rgba(61,90,76,.30);
     }
 
-    main{ isolation:isolate; }
-
     .wrap{
       max-width:var(--max);
       margin:auto;
@@ -144,8 +136,6 @@
 
     section{
       margin-top:58px;
-      position:relative;
-      z-index:1;
       scroll-margin-top:90px;
     }
 
@@ -355,7 +345,7 @@
       color:inherit;
       transition:.14s ease;
       box-shadow:var(--shadow2);
-      min-height:140px;
+      min-height:150px;
     }
 
     .author-card:hover{
@@ -364,18 +354,14 @@
     }
 
     .cover{
-      width:60px;
-      height:88px;
+      width:64px;
+      height:92px;
       border-radius:12px;
       flex:0 0 auto;
       box-shadow:0 10px 18px rgba(0,0,0,.14);
-      background:linear-gradient(135deg, var(--rust), var(--caramel));
+      object-fit:cover;
+      background:#ddd;
     }
-
-    .cover.romance{ background:linear-gradient(135deg, #cc6f9e, #8d4b6f); }
-    .cover.horror{ background:linear-gradient(135deg, #1e222d, #6d2633); }
-    .cover.urban{ background:linear-gradient(135deg, #5c3551, #261722); }
-    .cover.nonfiction{ background:linear-gradient(135deg, #567c6b, #345548); }
 
     .author-card h3{
       margin:0 0 6px;
@@ -477,13 +463,11 @@
           <a class="btn ghost" href="#browse">Browse genres</a>
           <a class="btn secondary" href="/for-authors/">I’m an author</a>
         </div>
-
-        <p class="hint" id="authorCountHint">Loading authors…</p>
       </div>
 
       <aside class="surprise" aria-label="Surprise picker">
         <h2>🎲 Quick pick</h2>
-        <p>Select a genre and a vibe, and I’ll send you to the best-matching author page.</p>
+        <p>Select a genre and a vibe, and we’ll send you to a matching author page.</p>
 
         <div class="grid2" role="form" aria-label="Surprise form">
           <div>
@@ -576,7 +560,7 @@
       url: "/LilaRose/",
       genres: ["Romance"],
       tone: ["cosy"],
-      style: "romance",
+      image: "/LilaRose/assets/lila-rose-profile.webp",
       tagline: "Sweet small-town romance with heart, warmth, and a proper comfort-read feel.",
       isFeatured: true,
       isNew: true
@@ -586,7 +570,7 @@
       url: "/KMAvery/",
       genres: ["Romance"],
       tone: ["cosy", "bold"],
-      style: "romance",
+      image: "/KMAvery/assets/book-daddy-cover.webp",
       tagline: "Bingeable contemporary romance with small-town energy and a stronger emotional pull.",
       isFeatured: true,
       isNew: true
@@ -596,7 +580,7 @@
       url: "/AmyCross/",
       genres: ["Horror"],
       tone: ["dark"],
-      style: "horror",
+      image: "/AmyCross/assets/amy-cross-asylum-cover.webp",
       tagline: "Haunted houses, eerie towns, and bingeable supernatural horror for readers who want atmosphere first.",
       isFeatured: true,
       isNew: true
@@ -606,7 +590,7 @@
       url: "/LadyLegacy/",
       genres: ["Urban Fiction"],
       tone: ["bold"],
-      style: "urban",
+      image: "/LadyLegacy/assets/queen-v-cover.webp",
       tagline: "Power, betrayal, infidelity, and explosive urban fiction drama.",
       isFeatured: false,
       isNew: false
@@ -616,7 +600,7 @@
       url: "/MarieMcKenzie/",
       genres: ["Non-fiction"],
       tone: ["practical", "cosy"],
-      style: "nonfiction",
+      image: "/MarieMcKenzie/assets/book-healing-cover.webp",
       tagline: "Trauma-informed writing about healing, care, and being human.",
       isFeatured: true,
       isNew: false
@@ -626,7 +610,7 @@
       url: "/ToryHunt/",
       genres: ["Non-fiction", "Self-Help"],
       tone: ["practical"],
-      style: "nonfiction",
+      image: "/ToryHunt/assets/life-skills-for-tweens-cover.webp",
       tagline: "Practical life-skills books that help teens and tweens build confidence and independence.",
       isFeatured: false,
       isNew: false
@@ -705,7 +689,7 @@
     });
 
     anchor.innerHTML = `
-      <div class="cover ${author.style || ""}" aria-hidden="true"></div>
+      <img class="cover" src="${author.image}" alt="${author.name} cover image" loading="lazy">
       <div>
         <h3>${author.name}</h3>
         <p class="by">${metaText}</p>
@@ -743,13 +727,8 @@
   function matchesFilters(author, filters){
     const { genre, tone } = filters;
 
-    if (genre) {
-      if (!(author.genres || []).includes(genre)) return false;
-    }
-
-    if (tone) {
-      if (!(author.tone || []).includes(tone)) return false;
-    }
+    if (genre && !(author.genres || []).includes(genre)) return false;
+    if (tone && !(author.tone || []).includes(tone)) return false;
 
     return true;
   }
@@ -808,7 +787,6 @@
   });
 
   $("year").textContent = new Date().getFullYear();
-  $("authorCountHint").textContent = `${AUTHORS.length} authors currently live on the site.`;
 
   populateGenreSelect();
   renderGenreGrid();
