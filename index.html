@@ -4,9 +4,8 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Authors Book Club | Discover Indie Authors</title>
-  <meta name="description" content="Discover indie authors by genre, vibe, and surprise picks. A cosy indie-bookshop corner of the internet." />
+  <meta name="description" content="Discover indie authors across romance, horror, urban fiction and non-fiction. Browse by genre or let fate choose your next author." />
   <link rel="canonical" href="https://www.authorsbookclub.com/" />
-  <link rel="stylesheet" href="./styles.css" />
 
   <!-- Google Analytics -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-0DYQYNMX6T"></script>
@@ -27,16 +26,20 @@
       --caramel:#c28b4f;
       --rust:#8b3f24;
       --evergreen:#3d5a4c;
+      --plum:#5c3551;
+      --night:#1f2533;
 
       --radius:18px;
       --radius2:24px;
-      --max:1100px;
+      --max:1160px;
 
-      --shadow: 0 18px 50px rgba(0,0,0,.16);
-      --shadow2: 0 12px 30px rgba(0,0,0,.14);
+      --shadow:0 18px 50px rgba(0,0,0,.16);
+      --shadow2:0 12px 30px rgba(0,0,0,.14);
     }
 
-    html, body{ height:100%; }
+    *{ box-sizing:border-box; }
+    html, body{ height:100%; scroll-behaviour:smooth; }
+
     body{
       margin:0;
       font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
@@ -69,9 +72,9 @@
       position:sticky;
       top:0;
       z-index:50;
-      backdrop-filter: blur(12px);
-      background: rgba(251,243,232,.76);
-      border-bottom: 1px solid rgba(0,0,0,.08);
+      backdrop-filter:blur(12px);
+      background:rgba(251,243,232,.76);
+      border-bottom:1px solid rgba(0,0,0,.08);
     }
 
     .nav{
@@ -99,8 +102,8 @@
       width:34px;
       height:34px;
       border-radius:12px;
-      background: linear-gradient(135deg, rgba(194,139,79,.95), rgba(139,63,36,.95));
-      box-shadow: 0 10px 18px rgba(0,0,0,.18);
+      background:linear-gradient(135deg, rgba(194,139,79,.95), rgba(139,63,36,.95));
+      box-shadow:0 10px 18px rgba(0,0,0,.18);
     }
 
     .navlinks{
@@ -113,7 +116,7 @@
     .pill{
       padding:8px 14px;
       border-radius:999px;
-      background: rgba(255,255,255,.70);
+      background:rgba(255,255,255,.70);
       border:1px solid rgba(0,0,0,.08);
       font-weight:700;
       text-decoration:none;
@@ -123,12 +126,12 @@
 
     .pill:hover{
       background:#fff;
-      transform: translateY(-1px);
+      transform:translateY(-1px);
     }
 
     .pill.cta{
-      background: linear-gradient(135deg, rgba(61,90,76,.22), rgba(61,90,76,.12));
-      border-color: rgba(61,90,76,.30);
+      background:linear-gradient(135deg, rgba(61,90,76,.22), rgba(61,90,76,.12));
+      border-color:rgba(61,90,76,.30);
     }
 
     main{ isolation:isolate; }
@@ -143,42 +146,42 @@
       margin-top:58px;
       position:relative;
       z-index:1;
-      scroll-margin-top: 90px;
+      scroll-margin-top:90px;
     }
 
     .hero{
       margin-top:22px;
-      border-radius: var(--radius2);
-      background: rgba(255,255,255,.72);
-      border: 1px solid rgba(0,0,0,.08);
-      box-shadow: var(--shadow2);
+      border-radius:var(--radius2);
+      background:rgba(255,255,255,.72);
+      border:1px solid rgba(0,0,0,.08);
+      box-shadow:var(--shadow2);
       overflow:hidden;
     }
 
     .hero-inner{
-      padding: 26px 18px;
+      padding:28px 20px;
       display:grid;
-      grid-template-columns: 1.15fr .85fr;
-      gap: 14px;
+      grid-template-columns:1.1fr .9fr;
+      gap:16px;
       align-items:stretch;
     }
 
-    @media (max-width: 900px){
-      .hero-inner{ grid-template-columns: 1fr; }
+    @media (max-width:920px){
+      .hero-inner{ grid-template-columns:1fr; }
     }
 
     h1{
       margin:0 0 10px;
-      font-size: clamp(28px, 3.2vw, 44px);
-      line-height:1.1;
-      letter-spacing:-.3px;
+      font-size:clamp(30px, 3.3vw, 46px);
+      line-height:1.08;
+      letter-spacing:-.4px;
     }
 
     .lede{
       margin:0 0 16px;
       color:var(--muted);
-      font-size: 1.06rem;
-      max-width: 62ch;
+      font-size:1.06rem;
+      max-width:64ch;
     }
 
     .hero-actions{
@@ -186,93 +189,93 @@
       gap:10px;
       flex-wrap:wrap;
       align-items:center;
-      margin-top: 12px;
+      margin-top:12px;
     }
 
     .btn{
       border:none;
-      padding: 12px 16px;
-      border-radius: 14px;
-      font-weight: 900;
+      padding:12px 16px;
+      border-radius:14px;
+      font-weight:900;
       cursor:pointer;
       transition:.14s ease;
-      box-shadow: 0 14px 28px rgba(0,0,0,.14);
+      box-shadow:0 14px 28px rgba(0,0,0,.14);
       text-decoration:none;
       display:inline-flex;
       align-items:center;
       justify-content:center;
     }
 
-    .btn:hover{ transform: translateY(-2px); }
+    .btn:hover{ transform:translateY(-2px); }
 
     .btn.primary{
       color:#fff;
-      background: linear-gradient(135deg, var(--caramel), var(--rust));
+      background:linear-gradient(135deg, var(--caramel), var(--rust));
     }
 
     .btn.secondary{
       color:#fff;
-      background: linear-gradient(135deg, var(--evergreen), #2f4a3f);
+      background:linear-gradient(135deg, var(--evergreen), #2f4a3f);
     }
 
     .btn.ghost{
-      background: rgba(255,255,255,.75);
+      background:rgba(255,255,255,.75);
       border:1px solid rgba(0,0,0,.10);
       box-shadow:none;
       color:inherit;
     }
 
     .surprise{
-      border-radius: var(--radius);
-      background: rgba(255,255,255,.62);
-      border: 1px solid rgba(0,0,0,.08);
-      padding: 16px;
-      box-shadow: var(--shadow2);
+      border-radius:var(--radius);
+      background:rgba(255,255,255,.62);
+      border:1px solid rgba(0,0,0,.08);
+      padding:16px;
+      box-shadow:var(--shadow2);
     }
 
     .surprise h2{
       margin:0 0 6px;
-      font-size: 1.12rem;
+      font-size:1.12rem;
       letter-spacing:-.2px;
     }
 
     .surprise p{
       margin:0 0 12px;
-      color: var(--muted);
-      font-size: .96rem;
+      color:var(--muted);
+      font-size:.96rem;
     }
 
     .grid2{
       display:grid;
-      grid-template-columns: 1fr 1fr;
+      grid-template-columns:1fr 1fr;
       gap:10px;
     }
 
-    @media (max-width: 520px){
-      .grid2{ grid-template-columns: 1fr; }
+    @media (max-width:520px){
+      .grid2{ grid-template-columns:1fr; }
     }
 
     label{
       display:block;
       font-weight:900;
       font-size:.86rem;
-      margin: 0 0 6px;
-      color: var(--ink);
+      margin:0 0 6px;
+      color:var(--ink);
     }
 
     select{
       width:100%;
-      padding: 11px 12px;
-      border-radius: 12px;
+      padding:11px 12px;
+      border-radius:12px;
       border:1px solid rgba(0,0,0,.12);
-      background: rgba(255,255,255,.82);
-      color: var(--ink);
+      background:rgba(255,255,255,.82);
+      color:var(--ink);
     }
 
     .hint{
       margin:10px 0 0;
       font-size:.86rem;
-      color: var(--muted);
+      color:var(--muted);
     }
 
     .section-head{
@@ -280,131 +283,139 @@
       align-items:flex-end;
       justify-content:space-between;
       gap:12px;
-      margin-bottom: 14px;
+      margin-bottom:14px;
     }
 
     .section-head h2{
       margin:0;
-      font-size: 1.35rem;
+      font-size:1.4rem;
     }
 
     .section-head .sub{
-      margin: 6px 0 0;
-      color: var(--muted);
+      margin:6px 0 0;
+      color:var(--muted);
     }
 
     .genre-grid{
       display:grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 12px;
+      grid-template-columns:repeat(4, 1fr);
+      gap:12px;
     }
 
-    @media (max-width: 920px){ .genre-grid{ grid-template-columns: repeat(2, 1fr); } }
-    @media (max-width: 520px){ .genre-grid{ grid-template-columns: 1fr; } }
+    @media (max-width:940px){ .genre-grid{ grid-template-columns:repeat(2, 1fr); } }
+    @media (max-width:520px){ .genre-grid{ grid-template-columns:1fr; } }
 
     .genre-card{
-      padding: 16px;
-      border-radius: var(--radius);
-      background: rgba(255,255,255,.66);
+      padding:16px;
+      border-radius:var(--radius);
+      background:rgba(255,255,255,.66);
       border:1px solid rgba(0,0,0,.08);
       cursor:pointer;
       transition:.14s ease;
-      box-shadow: var(--shadow2);
+      box-shadow:var(--shadow2);
+      text-align:left;
     }
 
     .genre-card:hover{
-      transform: translateY(-3px);
-      box-shadow: var(--shadow);
+      transform:translateY(-3px);
+      box-shadow:var(--shadow);
     }
 
     .genre-name{
-      font-weight: 950;
+      font-weight:950;
       letter-spacing:-.2px;
     }
 
     .genre-meta{
       margin-top:6px;
-      color: var(--muted);
-      font-weight: 700;
+      color:var(--muted);
+      font-weight:700;
       font-size:.92rem;
     }
 
-    .feature-grid{
+    .shelf-grid{
       display:grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 14px;
+      grid-template-columns:repeat(3, 1fr);
+      gap:14px;
     }
 
-    @media (max-width: 920px){ .feature-grid{ grid-template-columns: 1fr; } }
+    @media (max-width:920px){
+      .shelf-grid{ grid-template-columns:1fr; }
+    }
 
     .author-card{
-      padding: 16px;
-      border-radius: var(--radius);
-      background: rgba(255,255,255,.72);
+      padding:16px;
+      border-radius:var(--radius);
+      background:rgba(255,255,255,.72);
       border:1px solid rgba(0,0,0,.08);
       display:flex;
-      gap: 14px;
+      gap:14px;
       align-items:flex-start;
       text-decoration:none;
-      color: inherit;
+      color:inherit;
       transition:.14s ease;
-      box-shadow: var(--shadow2);
-      min-height: 128px;
+      box-shadow:var(--shadow2);
+      min-height:140px;
     }
 
     .author-card:hover{
-      transform: translateY(-3px);
-      box-shadow: var(--shadow);
+      transform:translateY(-3px);
+      box-shadow:var(--shadow);
     }
 
     .cover{
-      width: 58px;
-      height: 86px;
-      border-radius: 12px;
-      background: linear-gradient(135deg, var(--rust), var(--caramel));
-      box-shadow: 0 10px 18px rgba(0,0,0,.14);
-      flex: 0 0 auto;
+      width:60px;
+      height:88px;
+      border-radius:12px;
+      flex:0 0 auto;
+      box-shadow:0 10px 18px rgba(0,0,0,.14);
+      background:linear-gradient(135deg, var(--rust), var(--caramel));
     }
+
+    .cover.romance{ background:linear-gradient(135deg, #cc6f9e, #8d4b6f); }
+    .cover.horror{ background:linear-gradient(135deg, #1e222d, #6d2633); }
+    .cover.urban{ background:linear-gradient(135deg, #5c3551, #261722); }
+    .cover.nonfiction{ background:linear-gradient(135deg, #567c6b, #345548); }
 
     .author-card h3{
       margin:0 0 6px;
-      font-size: 1.08rem;
+      font-size:1.08rem;
       letter-spacing:-.2px;
     }
 
     .by{
       margin:0 0 8px;
-      color: var(--muted);
-      font-weight: 800;
+      color:var(--muted);
+      font-weight:800;
       font-size:.92rem;
     }
 
     .tagline{
       margin:0;
-      color: #3a2a21;
+      color:#3a2a21;
     }
 
     .badge{
       display:inline-block;
-      margin-top: 10px;
-      padding: 4px 10px;
+      margin-top:10px;
+      padding:4px 10px;
       border-radius:999px;
-      background: rgba(194,139,79,.18);
+      background:rgba(194,139,79,.18);
       border:1px solid rgba(194,139,79,.35);
-      font-weight: 950;
+      font-weight:950;
       font-size:.8rem;
     }
 
     .newsletter{
-      padding: 22px;
-      border-radius: var(--radius);
-      background: rgba(255,255,255,.72);
+      padding:22px;
+      border-radius:var(--radius);
+      background:rgba(255,255,255,.72);
       border:1px solid rgba(0,0,0,.08);
-      box-shadow: var(--shadow2);
+      box-shadow:var(--shadow2);
     }
 
     .newsletter h2{ margin:0 0 8px; }
-    .newsletter p{ margin:0 0 12px; color: var(--muted); }
+    .newsletter p{ margin:0 0 12px; color:var(--muted); }
 
     .newsletter form{
       display:flex;
@@ -413,21 +424,21 @@
     }
 
     .newsletter input{
-      flex: 1 1 240px;
-      padding: 12px 12px;
-      border-radius: 12px;
+      flex:1 1 240px;
+      padding:12px 12px;
+      border-radius:12px;
       border:1px solid rgba(0,0,0,.12);
-      background: rgba(255,255,255,.86);
+      background:rgba(255,255,255,.86);
     }
 
     footer{
-      margin-top: 60px;
-      padding: 18px 0;
+      margin-top:60px;
+      padding:18px 0;
       display:flex;
       justify-content:space-between;
       gap:12px;
       flex-wrap:wrap;
-      color: var(--muted);
+      color:var(--muted);
       font-size:.92rem;
     }
   </style>
@@ -445,6 +456,7 @@
     <div class="navlinks">
       <a class="pill" href="#browse">Browse</a>
       <a class="pill" href="#featured">Featured</a>
+      <a class="pill" href="#newest">Newest additions</a>
       <a class="pill cta" href="/for-authors/">For Authors</a>
     </div>
   </nav>
@@ -455,9 +467,9 @@
   <section class="hero" aria-label="Homepage introduction">
     <div class="hero-inner">
       <div>
-        <h1>Discover your next favourite indie author.</h1>
+        <h1>Discover indie authors worth clicking into.</h1>
         <p class="lede">
-          Browse by genre, or hit “Surprise me” and we’ll drop you straight onto an author page already on the site.
+          Romance, horror, urban fiction, and practical non-fiction — picked to feel more like a curated shelf than a cluttered marketplace.
         </p>
 
         <div class="hero-actions">
@@ -471,7 +483,7 @@
 
       <aside class="surprise" aria-label="Surprise picker">
         <h2>🎲 Quick pick</h2>
-        <p>Select a genre and we’ll send you to a random author.</p>
+        <p>Select a genre and a vibe, and I’ll send you to the best-matching author page.</p>
 
         <div class="grid2" role="form" aria-label="Surprise form">
           <div>
@@ -485,6 +497,7 @@
             <select id="toneSelect">
               <option value="">Any vibe</option>
               <option value="cosy">Cosy / comforting</option>
+              <option value="dark">Dark / eerie</option>
               <option value="bold">Bold / dramatic</option>
               <option value="practical">Practical / helpful</option>
             </select>
@@ -505,7 +518,7 @@
     <div class="section-head">
       <div>
         <h2>Browse by genre</h2>
-        <p class="sub">Start with what you love.</p>
+        <p class="sub">Start with the shelf that fits your mood.</p>
       </div>
     </div>
 
@@ -515,17 +528,28 @@
   <section id="featured" aria-label="Featured authors">
     <div class="section-head">
       <div>
-        <h2>Featured today</h2>
-        <p class="sub">A quick shelf. No endless scrolling.</p>
+        <h2>Featured shelf</h2>
+        <p class="sub">The strongest starting points on the site right now.</p>
       </div>
     </div>
 
-    <div class="feature-grid" id="featuredGrid"></div>
+    <div class="shelf-grid" id="featuredGrid"></div>
+  </section>
+
+  <section id="newest" aria-label="Newest additions">
+    <div class="section-head">
+      <div>
+        <h2>Newest additions</h2>
+        <p class="sub">Fresh pages added to the club.</p>
+      </div>
+    </div>
+
+    <div class="shelf-grid" id="newestGrid"></div>
   </section>
 
   <section class="newsletter" aria-label="Newsletter">
     <h2>Get 3 cosy discoveries each week</h2>
-    <p>One short email. No spam. Just new authors to try.</p>
+    <p>One short email. No spam. Just authors worth trying.</p>
     <form id="newsletterForm">
       <input type="email" id="email" name="email" placeholder="you@example.com" autocomplete="email" required />
       <button class="btn primary" type="submit">Subscribe</button>
@@ -538,6 +562,7 @@
     <div style="display:flex; gap:10px; flex-wrap:wrap;">
       <a class="pill" href="#browse">Browse</a>
       <a class="pill" href="#featured">Featured</a>
+      <a class="pill" href="#newest">Newest</a>
       <a class="pill cta" href="/for-authors/">For Authors</a>
     </div>
   </footer>
@@ -551,57 +576,61 @@
       url: "/LilaRose/",
       genres: ["Romance"],
       tone: ["cosy"],
-      tagline: "Sweet, wholesome small-town romance with heart."
+      style: "romance",
+      tagline: "Sweet small-town romance with heart, warmth, and a proper comfort-read feel.",
+      isFeatured: true,
+      isNew: true
     },
     {
-      name: "Penny Reid",
-      url: "/penny-reid/",
+      name: "K.M. Avery",
+      url: "/KMAvery/",
       genres: ["Romance"],
       tone: ["cosy", "bold"],
-      tagline: "Smart, addictive romance with fake dating, STEM heroines, and bingeable chemistry."
+      style: "romance",
+      tagline: "Bingeable contemporary romance with small-town energy and a stronger emotional pull.",
+      isFeatured: true,
+      isNew: true
     },
     {
-      name: "Bella Andre",
-      url: "/bella-andre/",
-      genres: ["Romance"],
-      tone: ["cosy", "bold"],
-      tagline: "Beach weddings, billionaire heroes, and contemporary romance built for binge reading."
-    },
-    {
-      name: "Devney Perry",
-      url: "/DevneyPerry/",
-      genres: ["Romance", "Romantasy"],
-      tone: ["cosy", "bold"],
-      tagline: "Small-town romance, emotional contemporary love stories, and high-stakes romantasy."
+      name: "Amy Cross",
+      url: "/AmyCross/",
+      genres: ["Horror"],
+      tone: ["dark"],
+      style: "horror",
+      tagline: "Haunted houses, eerie towns, and bingeable supernatural horror for readers who want atmosphere first.",
+      isFeatured: true,
+      isNew: true
     },
     {
       name: "LADY LEGACY",
       url: "/LadyLegacy/",
       genres: ["Urban Fiction"],
       tone: ["bold"],
-      tagline: "High-stakes drama: power, betrayal, and explosive secrets."
+      style: "urban",
+      tagline: "Power, betrayal, infidelity, and explosive urban fiction drama.",
+      isFeatured: false,
+      isNew: false
     },
     {
       name: "Marie McKenzie",
       url: "/MarieMcKenzie/",
       genres: ["Non-fiction"],
       tone: ["practical", "cosy"],
-      tagline: "Trauma-informed writing about healing, care, and being human."
+      style: "nonfiction",
+      tagline: "Trauma-informed writing about healing, care, and being human.",
+      isFeatured: true,
+      isNew: false
     },
     {
       name: "Tory Hunt",
       url: "/ToryHunt/",
       genres: ["Non-fiction", "Self-Help"],
       tone: ["practical"],
-      tagline: "Practical life-skills books to build confidence for teens and tweens."
+      style: "nonfiction",
+      tagline: "Practical life-skills books that help teens and tweens build confidence and independence.",
+      isFeatured: false,
+      isNew: false
     }
-  ];
-
-  const FEATURED = [
-    "Devney Perry",
-    "Penny Reid",
-    "Bella Andre",
-    "Marie McKenzie"
   ];
 
   function $(id){ return document.getElementById(id); }
@@ -615,129 +644,124 @@
 
   function buildGenreStats(){
     const stats = {};
-    AUTHORS.forEach(a => (a.genres || []).forEach(g => {
-      stats[g] = (stats[g] || 0) + 1;
-    }));
+    AUTHORS.forEach(author => {
+      (author.genres || []).forEach(genre => {
+        stats[genre] = (stats[genre] || 0) + 1;
+      });
+    });
     return stats;
   }
 
   function populateGenreSelect(){
     const stats = buildGenreStats();
-    const genres = Object.keys(stats).sort((a,b) => a.localeCompare(b, "en-GB"));
-    const sel = $("genreSelect");
+    const genres = Object.keys(stats).sort((a, b) => a.localeCompare(b, "en-GB"));
+    const select = $("genreSelect");
 
-    sel.querySelectorAll("option:not([value=''])").forEach(o => o.remove());
+    select.querySelectorAll("option:not([value=''])").forEach(option => option.remove());
 
-    genres.forEach(g => {
-      const opt = document.createElement("option");
-      opt.value = g;
-      opt.textContent = `${g} (${stats[g]})`;
-      sel.appendChild(opt);
+    genres.forEach(genre => {
+      const option = document.createElement("option");
+      option.value = genre;
+      option.textContent = `${genre} (${stats[genre]})`;
+      select.appendChild(option);
     });
   }
 
   function renderGenreGrid(){
     const stats = buildGenreStats();
-    const genres = Object.keys(stats).sort((a,b) => a.localeCompare(b, "en-GB"));
+    const genres = Object.keys(stats).sort((a, b) => a.localeCompare(b, "en-GB"));
     const grid = $("genreGrid");
     grid.innerHTML = "";
 
-    genres.forEach(g => {
-      const btn = document.createElement("button");
-      btn.type = "button";
-      btn.className = "genre-card";
-      btn.innerHTML = `
-        <div class="genre-name">${g}</div>
-        <div class="genre-meta">${stats[g]} author${stats[g] === 1 ? "" : "s"} →</div>
+    genres.forEach(genre => {
+      const button = document.createElement("button");
+      button.type = "button";
+      button.className = "genre-card";
+      button.innerHTML = `
+        <div class="genre-name">${genre}</div>
+        <div class="genre-meta">${stats[genre]} author${stats[genre] === 1 ? "" : "s"} →</div>
       `;
-      btn.addEventListener("click", () => {
+      button.addEventListener("click", () => {
         trackEvent("genre_click", {
-          genre: g,
+          genre,
           location: "genre_grid"
         });
-        goToRandomAuthor({ genre: g });
+        goToRandomAuthor({ genre });
       });
-      grid.appendChild(btn);
+      grid.appendChild(button);
     });
+  }
+
+  function createAuthorCard(author, metaText, badgeText, location){
+    const anchor = document.createElement("a");
+    anchor.className = "author-card";
+    anchor.href = author.url;
+
+    anchor.addEventListener("click", () => {
+      trackEvent("homepage_author_click", {
+        author_name: author.name,
+        location
+      });
+    });
+
+    anchor.innerHTML = `
+      <div class="cover ${author.style || ""}" aria-hidden="true"></div>
+      <div>
+        <h3>${author.name}</h3>
+        <p class="by">${metaText}</p>
+        <p class="tagline">${author.tagline}</p>
+        <span class="badge">${badgeText}</span>
+      </div>
+    `;
+    return anchor;
   }
 
   function renderFeatured(){
     const grid = $("featuredGrid");
     grid.innerHTML = "";
 
-    const featuredAuthors = FEATURED
-      .map(name => AUTHORS.find(a => a.name === name))
-      .filter(Boolean);
-
-    const cards = featuredAuthors.slice(0, 2);
-    cards.push({
-      name: "Let fate choose",
-      url: null,
-      tagline: "Pick a genre and we’ll send you somewhere new.",
-      genres:["Any"],
-      tone:[""]
+    const featuredAuthors = AUTHORS.filter(author => author.isFeatured).slice(0, 3);
+    featuredAuthors.forEach(author => {
+      grid.appendChild(
+        createAuthorCard(author, "Featured author", "Start here", "featured")
+      );
     });
+  }
 
-    cards.forEach(a => {
-      const el = document.createElement(a.url ? "a" : "div");
-      el.className = "author-card";
+  function renderNewest(){
+    const grid = $("newestGrid");
+    grid.innerHTML = "";
 
-      if(a.url){
-        el.href = a.url;
-        el.addEventListener("click", () => {
-          trackEvent("homepage_author_click", {
-            author_name: a.name,
-            location: "featured"
-          });
-        });
-      }else{
-        el.style.cursor = "pointer";
-        el.addEventListener("click", () => {
-          trackEvent("surprise_click", {
-            location: "featured_card"
-          });
-          goToRandomAuthor({});
-        });
-      }
-
-      const by = a.url ? "Featured author" : "Any genre";
-      const badge = a.url ? "★ Featured" : "🎲 Surprise";
-
-      el.innerHTML = `
-        <div class="cover" aria-hidden="true"></div>
-        <div>
-          <h3>${a.name}</h3>
-          <p class="by">${by}</p>
-          <p class="tagline">${a.tagline || ""}</p>
-          <span class="badge">${badge}</span>
-        </div>
-      `;
-      grid.appendChild(el);
+    const newestAuthors = AUTHORS.filter(author => author.isNew).slice(0, 3);
+    newestAuthors.forEach(author => {
+      grid.appendChild(
+        createAuthorCard(author, "New on the site", "New addition", "newest")
+      );
     });
   }
 
   function matchesFilters(author, filters){
     const { genre, tone } = filters;
 
-    if(genre){
-      const ok = (author.genres || []).includes(genre);
-      if(!ok) return false;
+    if (genre) {
+      if (!(author.genres || []).includes(genre)) return false;
     }
-    if(tone){
-      const ok = (author.tone || []).includes(tone);
-      if(!ok) return false;
+
+    if (tone) {
+      if (!(author.tone || []).includes(tone)) return false;
     }
+
     return true;
   }
 
-  function goToRandomAuthor(overrides){
+  function goToRandomAuthor(overrides = {}){
     const genre = overrides.genre ?? $("genreSelect").value;
     const tone = overrides.tone ?? $("toneSelect").value;
 
-    const pool = AUTHORS.filter(a => matchesFilters(a, { genre, tone }));
+    const pool = AUTHORS.filter(author => matchesFilters(author, { genre, tone }));
 
-    if(!pool.length){
-      $("matchHint").textContent = "No matches for those filters yet. Try Any genre instead.";
+    if (!pool.length) {
+      $("matchHint").textContent = "No exact matches for that combination yet. Try Any vibe or Any genre.";
       trackEvent("no_match", {
         genre: genre || "any",
         tone: tone || "any"
@@ -760,44 +784,49 @@
     $("genreSelect").value = "";
     $("toneSelect").value = "";
     $("matchHint").textContent = "";
+
     trackEvent("filters_reset", {
       location: "quick_pick"
     });
   }
 
-  $("newsletterForm").addEventListener("submit", (e) => {
-    e.preventDefault();
+  $("newsletterForm").addEventListener("submit", event => {
+    event.preventDefault();
     const email = $("email").value.trim();
-    if(!email) return;
+    if (!email) return;
 
-    $("newsletterHint").textContent = "";
     trackEvent("newsletter_submit", {
       location: "homepage_placeholder"
     });
 
-    try{ localStorage.setItem("abc_newsletter_email", email); }catch(_){}
-    e.target.reset();
+    try {
+      localStorage.setItem("abc_newsletter_email", email);
+    } catch (_) {}
+
+    $("newsletterHint").textContent = "Thanks — you’re on the list.";
+    event.target.reset();
   });
 
   $("year").textContent = new Date().getFullYear();
-  $("authorCountHint").textContent = ;
+  $("authorCountHint").textContent = `${AUTHORS.length} authors currently live on the site.`;
 
   populateGenreSelect();
   renderGenreGrid();
   renderFeatured();
+  renderNewest();
 
   $("findBtn").addEventListener("click", () => {
     trackEvent("find_author_click", {
       location: "quick_pick"
     });
-    goToRandomAuthor({});
+    goToRandomAuthor();
   });
 
   $("heroSurprise").addEventListener("click", () => {
     trackEvent("surprise_click", {
       location: "hero"
     });
-    goToRandomAuthor({});
+    goToRandomAuthor();
   });
 
   $("resetBtn").addEventListener("click", resetFilters);
