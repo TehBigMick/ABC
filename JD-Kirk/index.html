@@ -1,0 +1,797 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>JD Kirk | Authors Book Club</title>
+  <meta name="description" content="Discover JD Kirk, award-winning Scottish crime and thriller author. Start with A Litter of Bones, then explore his gripping psychological thrillers." />
+  <link rel="canonical" href="https://www.authorsbookclub.com/authors/jd-kirk/" />
+  <meta name="robots" content="index,follow" />
+
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="JD Kirk | Authors Book Club" />
+  <meta property="og:description" content="Award-winning Scottish crime and thriller fiction. Start with A Litter of Bones and discover JD Kirk." />
+  <meta property="og:url" content="https://www.authorsbookclub.com/authors/jd-kirk/" />
+  <meta property="og:image" content="https://www.authorsbookclub.com/assets/jd-kirk-brand.webp" />
+
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="JD Kirk | Authors Book Club" />
+  <meta name="twitter:description" content="Award-winning Scottish crime and thriller fiction. Start with A Litter of Bones and discover JD Kirk." />
+  <meta name="twitter:image" content="https://www.authorsbookclub.com/assets/jd-kirk-brand.webp" />
+
+  <style>
+    :root{
+      --bg:#08111c;
+      --bg-2:#0d1826;
+      --panel:#101c2b;
+      --panel-2:#132235;
+      --card:#122033;
+      --card-2:#16273c;
+      --text:#edf2f7;
+      --muted:#a9b7c8;
+      --line:rgba(255,255,255,.10);
+      --line-strong:rgba(255,255,255,.18);
+      --brand:#7cc6ff;
+      --brand-2:#c9e9ff;
+      --accent:#89a8c7;
+      --shadow:0 20px 60px rgba(0,0,0,.35);
+      --radius:24px;
+      --radius-sm:16px;
+      --max:1180px;
+    }
+
+    *{box-sizing:border-box}
+    html{scroll-behaviour:smooth}
+    body{
+      margin:0;
+      font-family:Inter,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif;
+      color:var(--text);
+      background:
+        radial-gradient(circle at top left, rgba(124,198,255,.12), transparent 35%),
+        radial-gradient(circle at top right, rgba(201,233,255,.08), transparent 28%),
+        linear-gradient(180deg, #071019 0%, #09131f 100%);
+      line-height:1.6;
+    }
+
+    img{max-width:100%;display:block}
+    a{color:inherit;text-decoration:none}
+    .wrap{width:min(var(--max), calc(100% - 32px)); margin:0 auto}
+
+    .topbar{
+      position:sticky;
+      top:0;
+      z-index:50;
+      backdrop-filter:blur(14px);
+      background:rgba(7,16,25,.78);
+      border-bottom:1px solid var(--line);
+    }
+
+    .topbar-inner{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:16px;
+      padding:14px 0;
+    }
+
+    .brand{
+      font-weight:800;
+      letter-spacing:.02em;
+      font-size:1rem;
+    }
+
+    .nav{
+      display:flex;
+      align-items:center;
+      gap:18px;
+      flex-wrap:wrap;
+    }
+
+    .nav a{
+      color:var(--muted);
+      font-size:.95rem;
+    }
+
+    .nav a:hover{color:var(--text)}
+
+    .btn{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      gap:10px;
+      min-height:48px;
+      padding:0 20px;
+      border-radius:999px;
+      border:1px solid transparent;
+      font-weight:700;
+      transition:.22s ease;
+      cursor:pointer;
+    }
+
+    .btn-primary{
+      background:linear-gradient(135deg, var(--brand), #9fd8ff);
+      color:#07111b;
+      box-shadow:0 12px 30px rgba(124,198,255,.24);
+    }
+
+    .btn-primary:hover{
+      transform:translateY(-2px);
+      box-shadow:0 16px 34px rgba(124,198,255,.28);
+    }
+
+    .btn-secondary{
+      background:rgba(255,255,255,.04);
+      border-color:var(--line-strong);
+      color:var(--text);
+    }
+
+    .btn-secondary:hover{
+      background:rgba(255,255,255,.07);
+      transform:translateY(-2px);
+    }
+
+    .hero{
+      padding:54px 0 28px;
+    }
+
+    .hero-grid{
+      display:grid;
+      grid-template-columns:1.1fr .9fr;
+      gap:28px;
+      align-items:stretch;
+    }
+
+    .hero-copy,
+    .hero-media{
+      background:linear-gradient(180deg, rgba(19,34,53,.92), rgba(10,20,31,.96));
+      border:1px solid var(--line);
+      border-radius:32px;
+      box-shadow:var(--shadow);
+      overflow:hidden;
+    }
+
+    .hero-copy{
+      padding:42px;
+      position:relative;
+    }
+
+    .eyebrow{
+      display:inline-flex;
+      align-items:center;
+      gap:10px;
+      font-size:.82rem;
+      letter-spacing:.12em;
+      text-transform:uppercase;
+      color:var(--brand-2);
+      margin-bottom:18px;
+    }
+
+    .eyebrow::before{
+      content:"";
+      width:36px;
+      height:1px;
+      background:rgba(201,233,255,.6);
+      display:block;
+    }
+
+    h1{
+      margin:0 0 16px;
+      font-size:clamp(2.4rem, 5vw, 4.5rem);
+      line-height:1.02;
+      letter-spacing:-.03em;
+    }
+
+    .subhead{
+      margin:0;
+      font-size:1.12rem;
+      color:var(--muted);
+      max-width:56ch;
+    }
+
+    .cta-row{
+      display:flex;
+      gap:12px;
+      flex-wrap:wrap;
+      margin-top:28px;
+    }
+
+    .hero-note{
+      display:flex;
+      flex-wrap:wrap;
+      gap:10px;
+      margin-top:26px;
+    }
+
+    .pill{
+      display:inline-flex;
+      align-items:center;
+      min-height:36px;
+      padding:0 14px;
+      border-radius:999px;
+      background:rgba(255,255,255,.05);
+      border:1px solid var(--line);
+      color:#dbe6f1;
+      font-size:.92rem;
+    }
+
+    .hero-media{
+      position:relative;
+      min-height:520px;
+      background:
+        linear-gradient(180deg, rgba(4,10,16,.18), rgba(4,10,16,.62)),
+        url("../../assets/jd-kirk-brand.webp") center/cover no-repeat;
+    }
+
+    .hero-overlay{
+      position:absolute;
+      inset:auto 20px 20px 20px;
+      padding:18px 18px 16px;
+      background:rgba(8,17,28,.72);
+      border:1px solid rgba(255,255,255,.14);
+      border-radius:22px;
+      backdrop-filter:blur(8px);
+    }
+
+    .hero-overlay strong{
+      display:block;
+      font-size:1.05rem;
+      margin-bottom:4px;
+    }
+
+    .hero-overlay span{
+      color:var(--muted);
+      font-size:.95rem;
+    }
+
+    section{
+      padding:28px 0;
+    }
+
+    .section-head{
+      display:flex;
+      justify-content:space-between;
+      gap:18px;
+      align-items:end;
+      margin-bottom:18px;
+    }
+
+    .section-head h2{
+      margin:0;
+      font-size:clamp(1.6rem, 3vw, 2.5rem);
+      line-height:1.08;
+      letter-spacing:-.02em;
+    }
+
+    .section-head p{
+      margin:0;
+      max-width:58ch;
+      color:var(--muted);
+    }
+
+    .trust-grid{
+      display:grid;
+      grid-template-columns:repeat(3, 1fr);
+      gap:16px;
+    }
+
+    .trust-card{
+      background:linear-gradient(180deg, rgba(18,32,51,.94), rgba(14,24,38,.98));
+      border:1px solid var(--line);
+      border-radius:24px;
+      padding:22px;
+      box-shadow:var(--shadow);
+    }
+
+    .trust-card strong{
+      display:block;
+      font-size:1.05rem;
+      margin-bottom:8px;
+    }
+
+    .trust-card p{
+      margin:0;
+      color:var(--muted);
+      font-size:.98rem;
+    }
+
+    .books{
+      padding-top:20px;
+    }
+
+    .book-grid{
+      display:grid;
+      grid-template-columns:repeat(3, 1fr);
+      gap:20px;
+    }
+
+    .book-card{
+      background:linear-gradient(180deg, rgba(18,32,51,.96), rgba(12,22,34,.98));
+      border:1px solid var(--line);
+      border-radius:26px;
+      overflow:hidden;
+      box-shadow:var(--shadow);
+      display:flex;
+      flex-direction:column;
+      min-height:100%;
+    }
+
+    .book-cover{
+      aspect-ratio: 3 / 4.2;
+      background:#0a1320;
+      overflow:hidden;
+    }
+
+    .book-cover img{
+      width:100%;
+      height:100%;
+      object-fit:cover;
+    }
+
+    .book-body{
+      padding:22px;
+      display:flex;
+      flex-direction:column;
+      flex:1;
+    }
+
+    .kicker{
+      color:var(--brand-2);
+      text-transform:uppercase;
+      letter-spacing:.1em;
+      font-size:.78rem;
+      margin-bottom:10px;
+    }
+
+    .book-title{
+      margin:0 0 10px;
+      font-size:1.42rem;
+      line-height:1.12;
+      letter-spacing:-.02em;
+    }
+
+    .book-hook{
+      margin:0 0 16px;
+      color:var(--muted);
+      font-size:1rem;
+    }
+
+    .book-copy{
+      margin:0 0 22px;
+      color:#dfe8f1;
+      font-size:.98rem;
+    }
+
+    .book-actions{
+      margin-top:auto;
+      display:flex;
+      gap:10px;
+      flex-wrap:wrap;
+    }
+
+    .why-grid{
+      display:grid;
+      grid-template-columns:repeat(3, 1fr);
+      gap:18px;
+    }
+
+    .why-card{
+      border-radius:24px;
+      padding:24px;
+      background:linear-gradient(180deg, rgba(20,35,54,.95), rgba(12,21,33,.98));
+      border:1px solid var(--line);
+      box-shadow:var(--shadow);
+    }
+
+    .why-card h3{
+      margin:0 0 10px;
+      font-size:1.18rem;
+    }
+
+    .why-card p{
+      margin:0;
+      color:var(--muted);
+    }
+
+    .bio-panel{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:20px;
+      align-items:stretch;
+    }
+
+    .bio-card{
+      border-radius:28px;
+      border:1px solid var(--line);
+      background:linear-gradient(180deg, rgba(18,31,49,.97), rgba(10,18,29,.98));
+      padding:28px;
+      box-shadow:var(--shadow);
+    }
+
+    .bio-card h2{
+      margin:0 0 14px;
+      font-size:2rem;
+      line-height:1.08;
+      letter-spacing:-.02em;
+    }
+
+    .bio-card p{
+      margin:0 0 14px;
+      color:var(--muted);
+    }
+
+    .stat-stack{
+      display:grid;
+      gap:14px;
+    }
+
+    .stat{
+      border:1px solid var(--line);
+      border-radius:18px;
+      padding:16px 18px;
+      background:rgba(255,255,255,.03);
+    }
+
+    .stat strong{
+      display:block;
+      margin-bottom:6px;
+      font-size:1.05rem;
+    }
+
+    .stat span{
+      color:var(--muted);
+      font-size:.96rem;
+    }
+
+    .cta-panel{
+      border:1px solid var(--line);
+      border-radius:30px;
+      padding:34px;
+      background:
+        linear-gradient(180deg, rgba(17,29,45,.92), rgba(8,16,25,.98)),
+        url("../../assets/jd-kirk-brand.webp") center/cover no-repeat;
+      box-shadow:var(--shadow);
+      overflow:hidden;
+      position:relative;
+      isolation:isolate;
+    }
+
+    .cta-panel::before{
+      content:"";
+      position:absolute;
+      inset:0;
+      background:linear-gradient(135deg, rgba(8,17,28,.88), rgba(8,17,28,.55));
+      z-index:-1;
+    }
+
+    .cta-panel h2{
+      margin:0 0 10px;
+      font-size:clamp(1.8rem, 3vw, 3rem);
+      line-height:1.05;
+      letter-spacing:-.03em;
+    }
+
+    .cta-panel p{
+      margin:0 0 22px;
+      color:#d6e2ee;
+      max-width:56ch;
+    }
+
+    footer{
+      padding:28px 0 56px;
+      color:var(--muted);
+      font-size:.95rem;
+    }
+
+    .footer-line{
+      border-top:1px solid var(--line);
+      padding-top:22px;
+      display:flex;
+      justify-content:space-between;
+      gap:16px;
+      flex-wrap:wrap;
+    }
+
+    .small{
+      font-size:.88rem;
+      color:var(--muted);
+    }
+
+    @media (max-width: 1040px){
+      .hero-grid,
+      .bio-panel,
+      .book-grid,
+      .trust-grid,
+      .why-grid{
+        grid-template-columns:1fr;
+      }
+
+      .hero-media{min-height:420px}
+    }
+
+    @media (max-width: 680px){
+      .hero-copy{padding:28px}
+      .cta-panel{padding:28px}
+      .book-body{padding:18px}
+      .nav{gap:12px}
+      .topbar-inner{align-items:flex-start; flex-direction:column}
+    }
+  </style>
+</head>
+<body>
+
+  <header class="topbar">
+    <div class="wrap topbar-inner">
+      <a class="brand" href="../../index.html">Authors Book Club</a>
+      <nav class="nav" aria-label="Primary">
+        <a href="../../index.html#browse">Browse</a>
+        <a href="../../index.html#featured">Featured</a>
+        <a href="../../index.html#authors">For Authors</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="wrap hero-grid">
+        <div class="hero-copy">
+          <div class="eyebrow">Scottish crime & thriller</div>
+          <h1>Start the DCI Jack Logan series today.</h1>
+          <p class="subhead">
+            Dark cases, dry humour, and the kind of page-turning crime fiction that can wipe out an entire weekend.
+          </p>
+
+          <div class="cta-row">
+            <a class="btn btn-primary" href="REPLACE_WITH_AMAZON_LINK_BOOK_1" target="_blank" rel="noopener sponsored">Start with Book 1</a>
+            <a class="btn btn-secondary" href="#featured-books">See the featured books</a>
+          </div>
+
+          <div class="hero-note">
+            <span class="pill">2024 Kindle Storyteller Award winner</span>
+            <span class="pill">Scottish crime fiction</span>
+            <span class="pill">Psychological thriller crossover</span>
+          </div>
+        </div>
+
+        <div class="hero-media" aria-label="Atmospheric Scottish crime branding image">
+          <div class="hero-overlay">
+            <strong>JD Kirk</strong>
+            <span>Brutal cases. Sharp wit. Highlands atmosphere.</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section aria-label="Trust signals">
+      <div class="wrap">
+        <div class="trust-grid">
+          <article class="trust-card">
+            <strong>Award-winning indie author</strong>
+            <p>JD Kirk won the Kindle Storyteller Award in 2024, giving the page real proof rather than vague hype.</p>
+          </article>
+          <article class="trust-card">
+            <strong>Start with a proven entry point</strong>
+            <p><em>A Litter of Bones</em> is the first DCI Jack Logan novel, so new readers know exactly where to begin.</p>
+          </article>
+          <article class="trust-card">
+            <strong>More than one thriller lane</strong>
+            <p>Readers can go classic Scottish crime series or jump into newer psychological thriller hooks.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="books" id="featured-books">
+      <div class="wrap">
+        <div class="section-head">
+          <div>
+            <h2>Three strong ways in</h2>
+          </div>
+          <p>
+            One proven series starter, then two fast-hook psychological thrillers for readers who want something more immediate and twist-driven.
+          </p>
+        </div>
+
+        <div class="book-grid">
+          <article class="book-card">
+            <div class="book-cover">
+              <img src="../../assets/jd-kirk-book1.webp" alt="A Litter of Bones by JD Kirk book cover" loading="lazy" />
+            </div>
+            <div class="book-body">
+              <div class="kicker">DCI Jack Logan Book 1</div>
+              <h3 class="book-title">A Litter of Bones</h3>
+              <p class="book-hook">A missing child. A damaged detective. A case that refuses to stay buried.</p>
+              <p class="book-copy">
+                This is the cleanest entry point for new readers. It opens the Highlands crime series properly and gives you the tension, voice, and darkness the rest of the books build on.
+              </p>
+              <div class="book-actions">
+                <a class="btn btn-primary" href="REPLACE_WITH_AMAZON_LINK_BOOK_1" target="_blank" rel="noopener sponsored">Read on Amazon</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="book-card">
+            <div class="book-cover">
+              <img src="../../assets/jd-kirk-book2.webp" alt="The Woman Downstairs by JD Kirk book cover" loading="lazy" />
+            </div>
+            <div class="book-body">
+              <div class="kicker">Psychological thriller</div>
+              <h3 class="book-title">The Woman Downstairs</h3>
+              <p class="book-hook">A friendly new neighbour. An identical flat. One detail that turns everything rotten.</p>
+              <p class="book-copy">
+                This is the sharper domestic-thriller angle. Built for readers who want fast escalation, tight suspense, and a premise that hooks almost immediately.
+              </p>
+              <div class="book-actions">
+                <a class="btn btn-primary" href="REPLACE_WITH_AMAZON_LINK_BOOK_2" target="_blank" rel="noopener sponsored">Read on Amazon</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="book-card">
+            <div class="book-cover">
+              <img src="../../assets/jd-kirk-book3.webp" alt="My Daughter Is Missing by JD Kirk book cover" loading="lazy" />
+            </div>
+            <div class="book-body">
+              <div class="kicker">Psychological thriller</div>
+              <h3 class="book-title">My Daughter Is Missing</h3>
+              <p class="book-hook">Her child vanishes. She knows it was not random. She also knows the police cannot be told why.</p>
+              <p class="book-copy">
+                Pure panic-thriller energy. This one is ideal for readers who want emotional urgency, buried secrets, and a premise that screams “one more chapter”.
+              </p>
+              <div class="book-actions">
+                <a class="btn btn-primary" href="REPLACE_WITH_AMAZON_LINK_BOOK_3" target="_blank" rel="noopener sponsored">Read on Amazon</a>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="wrap">
+        <div class="section-head">
+          <div>
+            <h2>Why he works on this site</h2>
+          </div>
+          <p>
+            He gives your catalogue a proper thriller spine instead of making the whole site feel like one genre wearing different clothes.
+          </p>
+        </div>
+
+        <div class="why-grid">
+          <article class="why-card">
+            <h3>Addictive series energy</h3>
+            <p>
+              The Jack Logan books are built for binge-reading. Start at book one and there is a clear runway ahead.
+            </p>
+          </article>
+
+          <article class="why-card">
+            <h3>Dark, but not dead on the page</h3>
+            <p>
+              The tone is serious where it needs to be, but the wit stops the whole thing turning flat and joyless.
+            </p>
+          </article>
+
+          <article class="why-card">
+            <h3>Two entry styles</h3>
+            <p>
+              Readers can come in through police procedural crime or psychological thriller, which makes the page more commercially useful.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="wrap bio-panel">
+        <article class="bio-card">
+          <h2>About JD Kirk</h2>
+          <p>
+            JD Kirk is a bestselling Scottish crime and thriller author whose books span long-running police procedural series and newer high-hook psychological suspense.
+          </p>
+          <p>
+            He won the Kindle Storyteller Award in 2024, and his DCI Jack Logan novels have helped establish him as a major name in independent crime fiction.
+          </p>
+          <p class="small">
+            This page is designed as a clean starting shelf: one strong series opener, two newer thriller hooks, and no waffle.
+          </p>
+        </article>
+
+        <aside class="bio-card">
+          <div class="stat-stack">
+            <div class="stat">
+              <strong>Best place to start</strong>
+              <span><em>A Litter of Bones</em> is the first DCI Jack Logan novel.</span>
+            </div>
+            <div class="stat">
+              <strong>Best for twist-hungry readers</strong>
+              <span><em>The Woman Downstairs</em> and <em>My Daughter Is Missing</em> push the psychological thriller side harder.</span>
+            </div>
+            <div class="stat">
+              <strong>Best reader fit</strong>
+              <span>Crime readers who like atmosphere, momentum, and characters with enough bite to feel alive.</span>
+            </div>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <section>
+      <div class="wrap">
+        <div class="cta-panel">
+          <h2>Start with the one that opens the whole shelf.</h2>
+          <p>
+            If you only click one book, make it <em>A Litter of Bones</em>. It is the proper entry point into JD Kirk’s bestselling Scottish crime world.
+          </p>
+          <div class="cta-row">
+            <a class="btn btn-primary" href="REPLACE_WITH_AMAZON_LINK_BOOK_1" target="_blank" rel="noopener sponsored">Start Book 1 on Amazon</a>
+            <a class="btn btn-secondary" href="../../index.html">Back to browse</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap footer-line">
+      <span>© Authors Book Club</span>
+      <span>Discover indie authors without endless scrolling.</span>
+    </div>
+  </footer>
+
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"ProfilePage",
+    "name":"JD Kirk | Authors Book Club",
+    "url":"https://www.authorsbookclub.com/authors/jd-kirk/",
+    "mainEntity":{
+      "@type":"Person",
+      "name":"JD Kirk",
+      "jobTitle":"Author",
+      "sameAs":[
+        "https://jdkirk.com/"
+      ]
+    }
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"ItemList",
+    "name":"Featured JD Kirk books",
+    "itemListElement":[
+      {
+        "@type":"ListItem",
+        "position":1,
+        "item":{
+          "@type":"Book",
+          "name":"A Litter of Bones",
+          "author":{"@type":"Person","name":"JD Kirk"}
+        }
+      },
+      {
+        "@type":"ListItem",
+        "position":2,
+        "item":{
+          "@type":"Book",
+          "name":"The Woman Downstairs",
+          "author":{"@type":"Person","name":"JD Kirk"}
+        }
+      },
+      {
+        "@type":"ListItem",
+        "position":3,
+        "item":{
+          "@type":"Book",
+          "name":"My Daughter Is Missing",
+          "author":{"@type":"Person","name":"JD Kirk"}
+        }
+      }
+    ]
+  }
+  </script>
+
+</body>
+</html>
