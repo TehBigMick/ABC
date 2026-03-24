@@ -4,7 +4,7 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Authors Book Club | Discover Indie Authors</title>
-  <meta name="description" content="Discover indie authors across romance, horror, urban fiction and non-fiction. Browse by genre or let fate choose your next author." />
+  <meta name="description" content="Discover indie authors across romance, horror, crime, urban fiction and non-fiction. Browse by genre or let fate choose your next author." />
   <link rel="canonical" href="https://www.authorsbookclub.com/" />
 
   <!-- Google Analytics -->
@@ -442,7 +442,7 @@
     <div class="navlinks">
       <a class="pill" href="#browse">Browse</a>
       <a class="pill" href="#featured">Featured</a>
-      <a class="pill" href="#newest">Newest additions</a>
+      <a class="pill" href="#newest">Spotlight</a>
       <a class="pill cta" href="/for-authors/">For Authors</a>
     </div>
   </nav>
@@ -453,9 +453,9 @@
   <section class="hero" aria-label="Homepage introduction">
     <div class="hero-inner">
       <div>
-        <h1>Discover indie authors worth clicking into.</h1>
+        <h1>Discover indie authors worth your time.</h1>
         <p class="lede">
-          Romance, horror, urban fiction, and practical non-fiction — picked to feel more like a curated shelf than a cluttered marketplace.
+          Romance, horror, crime, urban fiction, and practical non-fiction — chosen to feel like a proper shelf, not a dumping ground of random books.
         </p>
 
         <div class="hero-actions">
@@ -467,7 +467,7 @@
 
       <aside class="surprise" aria-label="Surprise picker">
         <h2>🎲 Quick pick</h2>
-        <p>Select a genre and a vibe, and we’ll send you to a matching author page.</p>
+        <p>Select a genre and vibe, and we’ll send you to a matching author page.</p>
 
         <div class="grid2" role="form" aria-label="Surprise form">
           <div>
@@ -502,7 +502,7 @@
     <div class="section-head">
       <div>
         <h2>Browse by genre</h2>
-        <p class="sub">Start with the shelf that fits your mood.</p>
+        <p class="sub">Start with the shelf that fits what you actually want to read.</p>
       </div>
     </div>
 
@@ -513,18 +513,18 @@
     <div class="section-head">
       <div>
         <h2>Featured shelf</h2>
-        <p class="sub">The strongest starting points on the site right now.</p>
+        <p class="sub">The strongest entry points on the site right now.</p>
       </div>
     </div>
 
     <div class="shelf-grid" id="featuredGrid"></div>
   </section>
 
-  <section id="newest" aria-label="Newest additions">
+  <section id="newest" aria-label="Spotlight authors">
     <div class="section-head">
       <div>
-        <h2>Newest additions</h2>
-        <p class="sub">Fresh pages added to the club.</p>
+        <h2>Spotlight shelf</h2>
+        <p class="sub">More pages worth clicking into next.</p>
       </div>
     </div>
 
@@ -546,7 +546,7 @@
     <div style="display:flex; gap:10px; flex-wrap:wrap;">
       <a class="pill" href="#browse">Browse</a>
       <a class="pill" href="#featured">Featured</a>
-      <a class="pill" href="#newest">Newest</a>
+      <a class="pill" href="#newest">Spotlight</a>
       <a class="pill cta" href="/for-authors/">For Authors</a>
     </div>
   </footer>
@@ -556,14 +556,44 @@
 <script>
   const AUTHORS = [
     {
-      name: "Lila Rose",
-      url: "/LilaRose/",
-      genres: ["Romance"],
-      tone: ["cosy"],
-      image: "/LilaRose/assets/lila-rose-profile.webp",
-      tagline: "Sweet small-town romance with heart, warmth, and a proper comfort-read feel.",
-      isFeatured: true,
-      isNew: true
+      name: "Amy Cross",
+      url: "/AmyCross/",
+      genres: ["Horror"],
+      tone: ["dark"],
+      image: "/AmyCross/assets/amy-cross-asylum-cover.webp",
+      tagline: "Haunted houses, eerie towns, and bingeable supernatural horror.",
+      featured: true,
+      spotlight: false
+    },
+    {
+      name: "Boris Bacic",
+      url: "/BorisBacic/",
+      genres: ["Horror", "Thriller"],
+      tone: ["dark", "bold"],
+      image: "/BorisBacic/assets/boris-bacic-cover.webp",
+      tagline: "Fast, unsettling horror and thriller reads built to keep pages turning.",
+      featured: false,
+      spotlight: true
+    },
+    {
+      name: "Devney Perry",
+      url: "/DevneyPerry/",
+      genres: ["Romance", "Romantasy"],
+      tone: ["cosy", "bold"],
+      image: "/DevneyPerry/assets/devney-perry-cover.webp",
+      tagline: "Small-town romance, emotional contemporary stories, and romantasy appeal.",
+      featured: true,
+      spotlight: false
+    },
+    {
+      name: "J.D. Kirk",
+      url: "/JD-Kirk/",
+      genres: ["Crime", "Thriller"],
+      tone: ["bold"],
+      image: "/JD-Kirk/assets/jd-kirk-cover.webp",
+      tagline: "Taut crime fiction and thriller energy for readers who want real momentum.",
+      featured: false,
+      spotlight: true
     },
     {
       name: "K.M. Avery",
@@ -571,49 +601,79 @@
       genres: ["Romance"],
       tone: ["cosy", "bold"],
       image: "/KMAvery/assets/book-daddy-cover.webp",
-      tagline: "Bingeable contemporary romance with small-town energy and a stronger emotional pull.",
-      isFeatured: true,
-      isNew: true
-    },
-    {
-      name: "Amy Cross",
-      url: "/AmyCross/",
-      genres: ["Horror"],
-      tone: ["dark"],
-      image: "/AmyCross/assets/amy-cross-asylum-cover.webp",
-      tagline: "Haunted houses, eerie towns, and bingeable supernatural horror for readers who want atmosphere first.",
-      isFeatured: true,
-      isNew: true
+      tagline: "Bingeable romance with warmth, chemistry, and strong click-through appeal.",
+      featured: false,
+      spotlight: true
     },
     {
       name: "LADY LEGACY",
       url: "/LadyLegacy/",
       genres: ["Urban Fiction"],
       tone: ["bold"],
-      image: "/LadyLegacy/assets/queen-v-cover.webp",
+      image: "/LadyLegacy/assets/lady-legacy-cover.webp",
       tagline: "Power, betrayal, infidelity, and explosive urban fiction drama.",
-      isFeatured: false,
-      isNew: false
+      featured: false,
+      spotlight: false
+    },
+    {
+      name: "Lila Rose",
+      url: "/LilaRose/",
+      genres: ["Romance"],
+      tone: ["cosy"],
+      image: "/LilaRose/assets/lila-rose-cover.webp",
+      tagline: "Sweet, wholesome small-town romance with proper comfort-read energy.",
+      featured: true,
+      spotlight: false
     },
     {
       name: "Marie McKenzie",
       url: "/MarieMcKenzie/",
       genres: ["Non-fiction"],
       tone: ["practical", "cosy"],
-      image: "/MarieMcKenzie/assets/book-healing-cover.webp",
-      tagline: "Trauma-informed writing about healing, care, and being human.",
-      isFeatured: true,
-      isNew: false
+      image: "/MarieMcKenzie/assets/marie-mckenzie-cover.webp",
+      tagline: "Trauma-informed writing about healing, support, and being human.",
+      featured: false,
+      spotlight: false
     },
     {
       name: "Tory Hunt",
       url: "/ToryHunt/",
       genres: ["Non-fiction", "Self-Help"],
       tone: ["practical"],
-      image: "/ToryHunt/assets/life-skills-for-tweens-cover.webp",
-      tagline: "Practical life-skills books that help teens and tweens build confidence and independence.",
-      isFeatured: false,
-      isNew: false
+      image: "/ToryHunt/assets/tory-hunt-cover.webp",
+      tagline: "Practical life-skills books for teens and tweens that solve real problems.",
+      featured: false,
+      spotlight: false
+    },
+    {
+      name: "Bella Andre",
+      url: "/bella-andre/",
+      genres: ["Romance"],
+      tone: ["cosy", "bold"],
+      image: "/bella-andre/assets/bella-andre-cover.webp",
+      tagline: "Commercial contemporary romance built for readers who like to binge.",
+      featured: false,
+      spotlight: false
+    },
+    {
+      name: "Lucy Score",
+      url: "/lucy-score/",
+      genres: ["Romance"],
+      tone: ["cosy", "bold"],
+      image: "/lucy-score/assets/lucy-score-cover.webp",
+      tagline: "Big contemporary romance energy with humour, heat, and momentum.",
+      featured: false,
+      spotlight: false
+    },
+    {
+      name: "Penny Reid",
+      url: "/penny-reid/",
+      genres: ["Romance"],
+      tone: ["cosy", "bold"],
+      image: "/penny-reid/assets/penny-reid-cover.webp",
+      tagline: "Smart, addictive romance with a loyal binge-reading audience.",
+      featured: false,
+      spotlight: false
     }
   ];
 
@@ -704,23 +764,19 @@
     const grid = $("featuredGrid");
     grid.innerHTML = "";
 
-    const featuredAuthors = AUTHORS.filter(author => author.isFeatured).slice(0, 3);
+    const featuredAuthors = AUTHORS.filter(author => author.featured).slice(0, 3);
     featuredAuthors.forEach(author => {
-      grid.appendChild(
-        createAuthorCard(author, "Featured author", "Start here", "featured")
-      );
+      grid.appendChild(createAuthorCard(author, "Featured author", "Start here", "featured"));
     });
   }
 
-  function renderNewest(){
+  function renderSpotlight(){
     const grid = $("newestGrid");
     grid.innerHTML = "";
 
-    const newestAuthors = AUTHORS.filter(author => author.isNew).slice(0, 3);
-    newestAuthors.forEach(author => {
-      grid.appendChild(
-        createAuthorCard(author, "New on the site", "New addition", "newest")
-      );
+    const spotlightAuthors = AUTHORS.filter(author => author.spotlight).slice(0, 3);
+    spotlightAuthors.forEach(author => {
+      grid.appendChild(createAuthorCard(author, "Spotlight author", "Worth a click", "spotlight"));
     });
   }
 
@@ -791,7 +847,7 @@
   populateGenreSelect();
   renderGenreGrid();
   renderFeatured();
-  renderNewest();
+  renderSpotlight();
 
   $("findBtn").addEventListener("click", () => {
     trackEvent("find_author_click", {
