@@ -1,0 +1,1132 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Matt Dinniman | Authors Book Club</title>
+  <meta name="description" content="Discover Matt Dinniman, author of the NYT bestselling Dungeon Crawler Carl series, plus Operation Bounce House, Kaiju: Battlefield Surgeon, Dominion of Blades, The Shivered Sky, The Grinding, and Trailer Park Fairy Tales." />
+  <link rel="canonical" href="https://www.authorsbookclub.com/MattDinniman/" />
+  <meta name="theme-color" content="#11151d" />
+
+  <meta property="og:title" content="Matt Dinniman | Authors Book Club" />
+  <meta property="og:description" content="Start with Dungeon Crawler Carl and explore the wider Dinniverse." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://www.authorsbookclub.com/MattDinniman/" />
+  <meta property="og:image" content="https://www.authorsbookclub.com/MattDinniman/assets/matt-dinniman/matt-dinniman-hero-dinniverse.webp" />
+
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Matt Dinniman | Authors Book Club" />
+  <meta name="twitter:description" content="Start with Dungeon Crawler Carl and explore the wider Dinniverse." />
+  <meta name="twitter:image" content="https://www.authorsbookclub.com/MattDinniman/assets/matt-dinniman/matt-dinniman-hero-dinniverse.webp" />
+
+  <style>
+    :root{
+      --bg:#0c1016;
+      --bg-2:#11151d;
+      --panel:#151b24;
+      --panel-2:#1a2230;
+      --card:#19212d;
+      --card-2:#202a38;
+      --text:#eef3f8;
+      --muted:#aab6c4;
+      --line:rgba(255,255,255,.10);
+      --hazard:#ffb703;
+      --acid:#d7ff3f;
+      --neon:#63f5ff;
+      --ember:#ff5d3d;
+      --shadow:0 18px 50px rgba(0,0,0,.35);
+      --max:1180px;
+      --radius:26px;
+      --radius-sm:18px;
+    }
+
+    *{box-sizing:border-box}
+    html{scroll-behaviour:smooth}
+    body{
+      margin:0;
+      font-family:Inter,Segoe UI,Roboto,Helvetica,Arial,sans-serif;
+      color:var(--text);
+      background:
+        radial-gradient(circle at 15% 20%, rgba(99,245,255,.10), transparent 25%),
+        radial-gradient(circle at 80% 8%, rgba(255,183,3,.12), transparent 20%),
+        linear-gradient(180deg, #0b0f15 0%, #0f141c 100%);
+      line-height:1.6;
+    }
+
+    img{max-width:100%;display:block}
+    a{color:inherit;text-decoration:none}
+    .wrap{width:min(var(--max), calc(100% - 32px)); margin:0 auto}
+    .section{padding:64px 0}
+    .section-tight{padding:42px 0}
+    .eyebrow{
+      display:inline-flex;
+      align-items:center;
+      gap:10px;
+      padding:8px 14px;
+      border:1px solid rgba(255,183,3,.22);
+      border-radius:999px;
+      background:rgba(255,183,3,.08);
+      color:#ffe29b;
+      font-size:.82rem;
+      font-weight:800;
+      text-transform:uppercase;
+      letter-spacing:.12em;
+    }
+    .eyebrow::before{
+      content:"";
+      width:8px;
+      height:8px;
+      border-radius:50%;
+      background:var(--hazard);
+      box-shadow:0 0 12px rgba(255,183,3,.65);
+    }
+
+    h1,h2,h3,h4,p{margin:0}
+    h1{
+      font-size:clamp(2.4rem, 5vw, 4.9rem);
+      line-height:.95;
+      letter-spacing:-.04em;
+    }
+    h2{
+      font-size:clamp(1.8rem, 3vw, 3rem);
+      line-height:1.02;
+      letter-spacing:-.03em;
+      margin-bottom:12px;
+    }
+    h3{
+      font-size:1.25rem;
+      line-height:1.15;
+      letter-spacing:-.02em;
+    }
+    p.lead{
+      font-size:1.08rem;
+      color:var(--muted);
+      max-width:68ch;
+    }
+    .muted{color:var(--muted)}
+    .accent{color:var(--acid)}
+    .accent-2{color:var(--hazard)}
+
+    .site-header{
+      position:sticky;
+      top:0;
+      z-index:40;
+      backdrop-filter:blur(18px);
+      background:rgba(8,10,14,.72);
+      border-bottom:1px solid rgba(255,255,255,.06);
+    }
+    .nav{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:20px;
+      min-height:78px;
+    }
+    .brand{
+      display:flex;
+      align-items:center;
+      gap:14px;
+      min-width:0;
+    }
+    .brand-mark{
+      width:46px;
+      height:46px;
+      border-radius:14px;
+      display:grid;
+      place-items:center;
+      background:
+        linear-gradient(135deg, rgba(255,183,3,.18), rgba(99,245,255,.18)),
+        #0f1620;
+      border:1px solid rgba(255,255,255,.08);
+      box-shadow:var(--shadow);
+      font-size:1.25rem;
+      font-weight:900;
+      color:var(--hazard);
+    }
+    .brand-copy{
+      display:flex;
+      flex-direction:column;
+      line-height:1.05;
+    }
+    .brand-copy strong{
+      font-size:1rem;
+      letter-spacing:.02em;
+    }
+    .brand-copy span{
+      font-size:.78rem;
+      color:var(--muted);
+      text-transform:uppercase;
+      letter-spacing:.12em;
+    }
+    .nav-links{
+      display:flex;
+      align-items:center;
+      gap:12px;
+      flex-wrap:wrap;
+      justify-content:flex-end;
+    }
+    .nav-links a{
+      padding:10px 14px;
+      border-radius:999px;
+      color:var(--muted);
+      font-weight:700;
+      font-size:.95rem;
+      transition:.2s ease;
+    }
+    .nav-links a:hover{
+      color:var(--text);
+      background:rgba(255,255,255,.05);
+    }
+    .nav-links .cta{
+      color:#10141c;
+      background:linear-gradient(135deg, var(--hazard), #ffd166);
+      box-shadow:0 10px 24px rgba(255,183,3,.18);
+    }
+
+    .hero{
+      padding:42px 0 28px;
+    }
+    .hero-grid{
+      display:grid;
+      grid-template-columns:1.1fr .9fr;
+      gap:28px;
+      align-items:stretch;
+    }
+    .hero-copy,
+    .hero-card{
+      background:
+        linear-gradient(180deg, rgba(255,255,255,.03), rgba(255,255,255,.01)),
+        var(--panel);
+      border:1px solid var(--line);
+      border-radius:var(--radius);
+      box-shadow:var(--shadow);
+    }
+    .hero-copy{
+      padding:34px;
+      position:relative;
+      overflow:hidden;
+    }
+    .hero-copy::after{
+      content:"";
+      position:absolute;
+      inset:auto -100px -120px auto;
+      width:260px;
+      height:260px;
+      background:radial-gradient(circle, rgba(255,183,3,.14), transparent 70%);
+      pointer-events:none;
+    }
+    .hero-copy .eyebrow{margin-bottom:18px}
+    .hero-copy h1{margin-bottom:18px}
+    .hero-copy .lead{margin-bottom:22px}
+    .hero-stats{
+      display:grid;
+      grid-template-columns:repeat(3, minmax(0,1fr));
+      gap:14px;
+      margin:26px 0;
+    }
+    .stat{
+      padding:18px 16px;
+      border-radius:20px;
+      background:rgba(255,255,255,.03);
+      border:1px solid rgba(255,255,255,.06);
+    }
+    .stat strong{
+      display:block;
+      font-size:1.25rem;
+      margin-bottom:4px;
+      color:var(--text);
+    }
+    .stat span{
+      display:block;
+      color:var(--muted);
+      font-size:.88rem;
+    }
+    .button-row{
+      display:flex;
+      gap:12px;
+      flex-wrap:wrap;
+    }
+    .btn{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      gap:10px;
+      padding:14px 18px;
+      border-radius:999px;
+      font-weight:800;
+      font-size:.96rem;
+      transition:transform .18s ease, box-shadow .18s ease, background .18s ease;
+      border:1px solid transparent;
+    }
+    .btn:hover{
+      transform:translateY(-1px);
+    }
+    .btn-primary{
+      background:linear-gradient(135deg, var(--hazard), #ffd166);
+      color:#12151c;
+      box-shadow:0 12px 24px rgba(255,183,3,.16);
+    }
+    .btn-secondary{
+      background:rgba(255,255,255,.03);
+      color:var(--text);
+      border-color:rgba(255,255,255,.08);
+    }
+    .btn-ghost{
+      background:rgba(99,245,255,.08);
+      color:#dffcff;
+      border-color:rgba(99,245,255,.16);
+    }
+
+    .hero-card{
+      overflow:hidden;
+      display:grid;
+      grid-template-rows:auto 1fr;
+    }
+    .hero-visual{
+      position:relative;
+      min-height:520px;
+      background:
+        linear-gradient(180deg, rgba(10,15,22,.10), rgba(10,15,22,.72)),
+        url("assets/matt-dinniman/matt-dinniman-hero-dinniverse.webp") center/cover no-repeat;
+    }
+    .hero-visual::after{
+      content:"";
+      position:absolute;
+      inset:0;
+      background:
+        linear-gradient(180deg, rgba(10,15,22,.04), rgba(10,15,22,.54)),
+        linear-gradient(135deg, rgba(255,183,3,.08), transparent 45%, rgba(99,245,255,.06));
+    }
+    .hero-badge{
+      position:absolute;
+      top:20px;
+      left:20px;
+      z-index:2;
+      padding:10px 12px;
+      border-radius:16px;
+      background:rgba(10,15,22,.72);
+      border:1px solid rgba(255,255,255,.08);
+      font-size:.78rem;
+      font-weight:800;
+      text-transform:uppercase;
+      letter-spacing:.11em;
+      color:#ffe29b;
+    }
+    .hero-floating{
+      position:absolute;
+      right:18px;
+      bottom:18px;
+      z-index:2;
+      display:flex;
+      gap:12px;
+      align-items:flex-end;
+    }
+    .hero-floating img{
+      width:132px;
+      border-radius:16px;
+      border:1px solid rgba(255,255,255,.12);
+      box-shadow:0 18px 35px rgba(0,0,0,.4);
+    }
+    .hero-note{
+      padding:20px 22px 24px;
+      border-top:1px solid rgba(255,255,255,.06);
+      background:linear-gradient(180deg, rgba(255,255,255,.02), rgba(255,255,255,.01));
+    }
+    .hero-note strong{
+      display:block;
+      font-size:1rem;
+      margin-bottom:6px;
+    }
+    .hero-note p{
+      color:var(--muted);
+      font-size:.96rem;
+    }
+
+    .feature-grid{
+      display:grid;
+      grid-template-columns:.9fr 1.1fr;
+      gap:26px;
+      align-items:stretch;
+    }
+    .panel{
+      background:
+        linear-gradient(180deg, rgba(255,255,255,.025), rgba(255,255,255,.01)),
+        var(--panel);
+      border:1px solid var(--line);
+      border-radius:var(--radius);
+      box-shadow:var(--shadow);
+    }
+    .feature-cover{
+      overflow:hidden;
+      min-height:100%;
+      background:
+        linear-gradient(180deg, rgba(8,10,14,.12), rgba(8,10,14,.22)),
+        url("assets/matt-dinniman/dungeon-crawler-carl-01.webp") center/cover no-repeat;
+      position:relative;
+    }
+    .feature-cover::after{
+      content:"";
+      position:absolute;
+      inset:0;
+      background:linear-gradient(180deg, rgba(255,183,3,.03), rgba(0,0,0,.16));
+    }
+    .feature-content{
+      padding:34px;
+    }
+    .feature-content .eyebrow{margin-bottom:16px}
+    .feature-content h2{margin-bottom:14px}
+    .feature-content p{color:var(--muted)}
+    .feature-list{
+      display:grid;
+      grid-template-columns:repeat(2, minmax(0,1fr));
+      gap:12px;
+      margin:24px 0;
+    }
+    .feature-list div{
+      padding:14px 15px;
+      background:rgba(255,255,255,.03);
+      border:1px solid rgba(255,255,255,.06);
+      border-radius:18px;
+      color:var(--text);
+      font-weight:700;
+      font-size:.95rem;
+    }
+
+    .section-head{
+      display:flex;
+      justify-content:space-between;
+      align-items:end;
+      gap:20px;
+      margin-bottom:26px;
+    }
+    .section-head p{max-width:62ch}
+
+    .series-grid,
+    .book-grid,
+    .mini-grid{
+      display:grid;
+      gap:18px;
+    }
+    .series-grid{
+      grid-template-columns:repeat(4, minmax(0,1fr));
+    }
+    .book-grid{
+      grid-template-columns:repeat(3, minmax(0,1fr));
+    }
+    .mini-grid{
+      grid-template-columns:repeat(3, minmax(0,1fr));
+    }
+
+    .book-card{
+      display:flex;
+      flex-direction:column;
+      min-height:100%;
+      background:
+        linear-gradient(180deg, rgba(255,255,255,.025), rgba(255,255,255,.01)),
+        var(--card);
+      border:1px solid var(--line);
+      border-radius:24px;
+      overflow:hidden;
+      box-shadow:var(--shadow);
+      transition:transform .18s ease, border-color .18s ease;
+    }
+    .book-card:hover{
+      transform:translateY(-3px);
+      border-color:rgba(255,183,3,.26);
+    }
+    .book-cover{
+      aspect-ratio:0.78 / 1;
+      background:#111;
+    }
+    .book-cover img{
+      width:100%;
+      height:100%;
+      object-fit:cover;
+    }
+    .book-body{
+      padding:18px 18px 20px;
+      display:flex;
+      flex-direction:column;
+      gap:10px;
+      flex:1;
+    }
+    .book-kicker{
+      display:inline-flex;
+      align-self:flex-start;
+      padding:7px 10px;
+      border-radius:999px;
+      background:rgba(99,245,255,.08);
+      border:1px solid rgba(99,245,255,.14);
+      color:#d8fbff;
+      font-size:.75rem;
+      font-weight:800;
+      text-transform:uppercase;
+      letter-spacing:.10em;
+    }
+    .book-body h3{
+      font-size:1.12rem;
+      min-height:2.4em;
+    }
+    .book-body p{
+      color:var(--muted);
+      font-size:.95rem;
+      flex:1;
+    }
+    .book-links{
+      display:flex;
+      flex-wrap:wrap;
+      gap:10px;
+      margin-top:4px;
+    }
+    .book-links a{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      padding:10px 12px;
+      border-radius:999px;
+      font-weight:800;
+      font-size:.88rem;
+    }
+    .book-links a.primary{
+      background:linear-gradient(135deg, var(--hazard), #ffd166);
+      color:#10141c;
+    }
+    .book-links a.secondary{
+      background:rgba(255,255,255,.05);
+      border:1px solid rgba(255,255,255,.08);
+      color:var(--text);
+    }
+
+    .about-grid{
+      display:grid;
+      grid-template-columns:.8fr 1.2fr;
+      gap:26px;
+      align-items:stretch;
+    }
+    .portrait{
+      overflow:hidden;
+      min-height:100%;
+      background:
+        linear-gradient(180deg, rgba(8,10,14,.04), rgba(8,10,14,.28)),
+        url("assets/matt-dinniman/matt-dinniman-author.webp") center/cover no-repeat;
+      position:relative;
+    }
+    .portrait::after{
+      content:"";
+      position:absolute;
+      inset:0;
+      background:linear-gradient(180deg, rgba(0,0,0,.02), rgba(0,0,0,.12));
+    }
+    .about-copy{
+      padding:34px;
+    }
+    .about-copy .eyebrow{margin-bottom:16px}
+    .about-copy p{
+      color:var(--muted);
+      margin-bottom:14px;
+    }
+
+    .reasons{
+      display:grid;
+      grid-template-columns:repeat(4, minmax(0,1fr));
+      gap:18px;
+    }
+    .reason{
+      padding:24px;
+      background:
+        linear-gradient(180deg, rgba(255,255,255,.025), rgba(255,255,255,.01)),
+        var(--panel-2);
+      border:1px solid var(--line);
+      border-radius:24px;
+      box-shadow:var(--shadow);
+    }
+    .reason strong{
+      display:block;
+      font-size:1.08rem;
+      margin-bottom:8px;
+    }
+    .reason p{
+      color:var(--muted);
+      font-size:.95rem;
+    }
+
+    .dinniverse{
+      display:grid;
+      grid-template-columns:repeat(3, minmax(0,1fr));
+      gap:18px;
+    }
+    .d-card{
+      overflow:hidden;
+      border-radius:24px;
+      background:
+        linear-gradient(180deg, rgba(255,255,255,.025), rgba(255,255,255,.01)),
+        var(--card);
+      border:1px solid var(--line);
+      box-shadow:var(--shadow);
+      display:flex;
+      flex-direction:column;
+      min-height:100%;
+    }
+    .d-card img{
+      width:100%;
+      aspect-ratio:16/10;
+      object-fit:cover;
+    }
+    .d-card .copy{
+      padding:20px;
+      display:flex;
+      flex-direction:column;
+      gap:10px;
+      flex:1;
+    }
+    .d-card p{
+      color:var(--muted);
+      font-size:.95rem;
+      flex:1;
+    }
+    .d-card a{
+      display:inline-flex;
+      align-self:flex-start;
+      padding:11px 14px;
+      border-radius:999px;
+      background:rgba(255,255,255,.05);
+      border:1px solid rgba(255,255,255,.08);
+      font-weight:800;
+      font-size:.9rem;
+    }
+
+    .cta-band{
+      padding:34px;
+      display:grid;
+      grid-template-columns:1.2fr .8fr;
+      gap:20px;
+      align-items:center;
+      background:
+        radial-gradient(circle at 15% 20%, rgba(255,183,3,.12), transparent 28%),
+        linear-gradient(135deg, #171f2a, #11161f);
+      border:1px solid var(--line);
+      border-radius:var(--radius);
+      box-shadow:var(--shadow);
+    }
+    .cta-band p{
+      color:var(--muted);
+      margin-top:10px;
+      max-width:60ch;
+    }
+    .cta-actions{
+      display:flex;
+      gap:12px;
+      flex-wrap:wrap;
+      justify-content:flex-end;
+    }
+
+    footer{
+      padding:28px 0 56px;
+      color:var(--muted);
+      font-size:.92rem;
+    }
+    .footer-box{
+      display:flex;
+      justify-content:space-between;
+      gap:20px;
+      align-items:center;
+      padding-top:22px;
+      border-top:1px solid rgba(255,255,255,.08);
+    }
+    .footer-links{
+      display:flex;
+      flex-wrap:wrap;
+      gap:14px;
+    }
+    .footer-links a:hover{color:var(--text)}
+
+    @media (max-width: 1080px){
+      .hero-grid,
+      .feature-grid,
+      .about-grid,
+      .cta-band{
+        grid-template-columns:1fr;
+      }
+      .series-grid{grid-template-columns:repeat(3, minmax(0,1fr))}
+      .reasons{grid-template-columns:repeat(2, minmax(0,1fr))}
+      .dinniverse{grid-template-columns:1fr}
+      .cta-actions{justify-content:flex-start}
+    }
+
+    @media (max-width: 760px){
+      .wrap{width:min(var(--max), calc(100% - 20px))}
+      .nav{align-items:flex-start; padding:12px 0}
+      .nav,
+      .brand{
+        flex-direction:column;
+        align-items:flex-start;
+      }
+      .nav-links{justify-content:flex-start}
+      .hero-copy,
+      .feature-content,
+      .about-copy,
+      .cta-band{padding:24px}
+      .hero-visual{min-height:380px}
+      .hero-floating img{width:108px}
+      .hero-stats,
+      .feature-list,
+      .series-grid,
+      .book-grid,
+      .mini-grid,
+      .reasons{
+        grid-template-columns:1fr;
+      }
+      .section{padding:48px 0}
+      .section-head{align-items:flex-start; flex-direction:column}
+      .footer-box{
+        flex-direction:column;
+        align-items:flex-start;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <div class="wrap nav">
+      <a class="brand" href="https://www.authorsbookclub.com/">
+        <div class="brand-mark">ABC</div>
+        <div class="brand-copy">
+          <strong>Authors Book Club</strong>
+          <span>Indie Author Discovery</span>
+        </div>
+      </a>
+
+      <nav class="nav-links" aria-label="Primary">
+        <a href="#start-here">Start Here</a>
+        <a href="#series">Series</a>
+        <a href="#other-books">Other Books</a>
+        <a href="#dinniverse">Dinniverse</a>
+        <a class="cta" href="https://mattdinniman.com/books/dungeon-crawler-carl/" target="_blank" rel="noopener noreferrer">Enter the Dungeon</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="wrap hero-grid">
+        <div class="hero-copy">
+          <span class="eyebrow">NYT bestselling LitRPG chaos</span>
+          <h1>Matt Dinniman writes books that hit like a death game, a dungeon run, and a bad idea you absolutely follow anyway.</h1>
+          <p class="lead">
+            Start with <span class="accent">Dungeon Crawler Carl</span>, then keep going through one of the loudest, funniest, nastiest binge-series in modern speculative fiction. If you want apocalyptic stakes, trap-filled progression, monsters, momentum, and a cat who steals every scene, this is where to begin.
+          </p>
+
+          <div class="hero-stats">
+            <div class="stat">
+              <strong>8 books</strong>
+              <span>In the Dungeon Crawler Carl series</span>
+            </div>
+            <div class="stat">
+              <strong>Writer & artist</strong>
+              <span>From Gig Harbor, Washington</span>
+            </div>
+            <div class="stat">
+              <strong>Dinniverse</strong>
+              <span>Graphic novel, webtoon, immersive audio, and more</span>
+            </div>
+          </div>
+
+          <div class="button-row">
+            <a class="btn btn-primary" href="https://mattdinniman.com/books/dungeon-crawler-carl/" target="_blank" rel="noopener noreferrer">Start with Book 1</a>
+            <a class="btn btn-secondary" href="#series">Browse the series</a>
+            <a class="btn btn-ghost" href="https://mattdinniman.com/events/" target="_blank" rel="noopener noreferrer">See upcoming events</a>
+          </div>
+        </div>
+
+        <aside class="hero-card" aria-label="Featured Matt Dinniman books">
+          <div class="hero-visual">
+            <div class="hero-badge">Start with Carl</div>
+            <div class="hero-floating">
+              <img src="assets/matt-dinniman/dungeon-crawler-carl-01.webp" alt="Dungeon Crawler Carl by Matt Dinniman" />
+              <img src="assets/matt-dinniman/a-parade-of-horribles.webp" alt="A Parade of Horribles by Matt Dinniman" />
+            </div>
+          </div>
+          <div class="hero-note">
+            <strong>New readers should not overthink this.</strong>
+            <p>
+              Begin with <em>Dungeon Crawler Carl</em>. It is the front door to Matt Dinniman’s world, and the series now runs through <em>A Parade of Horribles</em>.
+            </p>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <section id="start-here" class="section">
+      <div class="wrap feature-grid">
+        <div class="panel feature-cover" aria-hidden="true"></div>
+
+        <div class="panel feature-content">
+          <span class="eyebrow">New to Matt Dinniman?</span>
+          <h2>Start with <span class="accent-2">Dungeon Crawler Carl</span></h2>
+          <p>
+            Carl was not ready for the end of the world. Neither was Princess Donut. One apocalypse later, they are trapped in the galaxy’s most deranged dungeon-crawl spectacle, where surviving the next level is only slightly easier than surviving the audience.
+          </p>
+
+          <div class="feature-list">
+            <div>Apocalypse turned into entertainment</div>
+            <div>Trap-filled, game-like progression</div>
+            <div>Violence, jokes, and relentless pace</div>
+            <div>A genuinely iconic Carl-and-Donut pairing</div>
+          </div>
+
+          <div class="button-row">
+            <a class="btn btn-primary" href="https://mattdinniman.com/books/dungeon-crawler-carl/" target="_blank" rel="noopener noreferrer">Read Book 1</a>
+            <a class="btn btn-secondary" href="https://mattdinniman.com/books/" target="_blank" rel="noopener noreferrer">View Matt’s full books page</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="series" class="section">
+      <div class="wrap">
+        <div class="section-head">
+          <div>
+            <span class="eyebrow">The main event</span>
+            <h2>Dungeon Crawler Carl</h2>
+          </div>
+          <p class="lead">
+            The flagship Matt Dinniman series, in reading order. Start at book one and keep going.
+          </p>
+        </div>
+
+        <div class="series-grid">
+          <article class="book-card">
+            <div class="book-cover"><img src="assets/matt-dinniman/dungeon-crawler-carl-01.webp" alt="Dungeon Crawler Carl by Matt Dinniman" /></div>
+            <div class="book-body">
+              <span class="book-kicker">Book 1</span>
+              <h3>Dungeon Crawler Carl</h3>
+              <p>The first descent. The one to start with. Apocalypse, absurdity, and the beginning of Carl and Donut’s run through the World Dungeon.</p>
+              <div class="book-links">
+                <a class="primary" href="https://mattdinniman.com/books/dungeon-crawler-carl/" target="_blank" rel="noopener noreferrer">Book page</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="book-card">
+            <div class="book-cover"><img src="assets/matt-dinniman/carls-doomsday-scenario.webp" alt="Carl's Doomsday Scenario by Matt Dinniman" /></div>
+            <div class="book-body">
+              <span class="book-kicker">Book 2</span>
+              <h3>Carl’s Doomsday Scenario</h3>
+              <p>The crawl deepens, the floor gets worse, and the show gets crueler. Carl and Donut have to hit harder and think faster.</p>
+              <div class="book-links">
+                <a class="primary" href="https://mattdinniman.com/books/carls-doomsday-scenario/" target="_blank" rel="noopener noreferrer">Book page</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="book-card">
+            <div class="book-cover"><img src="assets/matt-dinniman/the-dungeon-anarchists-cookbook.webp" alt="The Dungeon Anarchist's Cookbook by Matt Dinniman" /></div>
+            <div class="book-body">
+              <span class="book-kicker">Book 3</span>
+              <h3>The Dungeon Anarchist’s Cookbook</h3>
+              <p>Escalation, mayhem, and the kind of title that tells you exactly how tidy this series refuses to be.</p>
+              <div class="book-links">
+                <a class="primary" href="https://mattdinniman.com/books/the-dungeon-anarchists-cookbook/" target="_blank" rel="noopener noreferrer">Book page</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="book-card">
+            <div class="book-cover"><img src="assets/matt-dinniman/the-gate-of-the-feral-gods.webp" alt="The Gate of the Feral Gods by Matt Dinniman" /></div>
+            <div class="book-body">
+              <span class="book-kicker">Book 4</span>
+              <h3>The Gate of the Feral Gods</h3>
+              <p>The crawl keeps mutating into something bigger, meaner, and even harder to look away from.</p>
+              <div class="book-links">
+                <a class="primary" href="https://mattdinniman.com/books/the-gate-of-the-feral-gods/" target="_blank" rel="noopener noreferrer">Book page</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="book-card">
+            <div class="book-cover"><img src="assets/matt-dinniman/the-butchers-masquerade.webp" alt="The Butcher's Masquerade by Matt Dinniman" /></div>
+            <div class="book-body">
+              <span class="book-kicker">Book 5</span>
+              <h3>The Butcher’s Masquerade</h3>
+              <p>The title alone promises a bad time for somebody. In this series, that usually means everybody.</p>
+              <div class="book-links">
+                <a class="primary" href="https://mattdinniman.com/books/the-butchers-masquerade/" target="_blank" rel="noopener noreferrer">Book page</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="book-card">
+            <div class="book-cover"><img src="assets/matt-dinniman/the-eye-of-the-bedlam-bride.webp" alt="The Eye of the Bedlam Bride by Matt Dinniman" /></div>
+            <div class="book-body">
+              <span class="book-kicker">Book 6</span>
+              <h3>The Eye of the Bedlam Bride</h3>
+              <p>By this point you are not casually trying the series anymore. You are in it.</p>
+              <div class="book-links">
+                <a class="primary" href="https://mattdinniman.com/books/the-eye-of-the-bedlam-bride/" target="_blank" rel="noopener noreferrer">Book page</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="book-card">
+            <div class="book-cover"><img src="assets/matt-dinniman/this-inevitable-ruin.webp" alt="This Inevitable Ruin by Matt Dinniman" /></div>
+            <div class="book-body">
+              <span class="book-kicker">Book 7</span>
+              <h3>This Inevitable Ruin</h3>
+              <p>The series keeps finding fresh ways to get darker, louder, and more compulsive.</p>
+              <div class="book-links">
+                <a class="primary" href="https://mattdinniman.com/books/this-inevitable-ruin/" target="_blank" rel="noopener noreferrer">Book page</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="book-card">
+            <div class="book-cover"><img src="assets/matt-dinniman/a-parade-of-horribles.webp" alt="A Parade of Horribles by Matt Dinniman" /></div>
+            <div class="book-body">
+              <span class="book-kicker">Book 8</span>
+              <h3>A Parade of Horribles</h3>
+              <p>The eighth instalment. If you have made it this far, stopping is no longer a serious plan.</p>
+              <div class="book-links">
+                <a class="primary" href="https://mattdinniman.com/books/a-parade-of-horribles/" target="_blank" rel="noopener noreferrer">Book page</a>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section-tight">
+      <div class="wrap about-grid">
+        <div class="panel portrait" aria-hidden="true"></div>
+
+        <div class="panel about-copy">
+          <span class="eyebrow">About Matt Dinniman</span>
+          <h2>Writer, artist, and very clearly not interested in sounding tidy.</h2>
+          <p>
+            Matt Dinniman is a writer and artist from Gig Harbor, Washington, and the author of the NYT bestselling <em>Dungeon Crawler Carl</em> series.
+          </p>
+          <p>
+            He also writes across horror, fantasy, sci-fi thriller, and LitRPG, which is why his catalogue does not feel like one neat shelf. It feels like a man with too many bad ideas and the skill to make all of them work.
+          </p>
+          <p>
+            That is the appeal. The voice is punchy, strange, and fully committed. Even when the books are funny, horror is still in the bones.
+          </p>
+
+          <div class="button-row" style="margin-top:22px">
+            <a class="btn btn-secondary" href="https://mattdinniman.com/about/" target="_blank" rel="noopener noreferrer">Read Matt’s official bio</a>
+            <a class="btn btn-ghost" href="https://mattdinniman.com/news/" target="_blank" rel="noopener noreferrer">Latest news</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="wrap">
+        <div class="section-head">
+          <div>
+            <span class="eyebrow">Why readers click</span>
+            <h2>What you are really getting</h2>
+          </div>
+          <p class="lead">
+            Matt Dinniman is not selling polite, respectable genre fiction. He is selling velocity, pressure, spectacle, and the feeling that something unhinged is about to happen.
+          </p>
+        </div>
+
+        <div class="reasons">
+          <div class="reason">
+            <strong>Apocalypse with a pulse</strong>
+            <p>The premises move fast and stay dangerous. Nothing sits still for long.</p>
+          </div>
+          <div class="reason">
+            <strong>Humour that bites</strong>
+            <p>The jokes are not there to soften the blow. They are part of the blow.</p>
+          </div>
+          <div class="reason">
+            <strong>Series momentum</strong>
+            <p>Once readers lock into Carl and Donut, the read-through logic takes over.</p>
+          </div>
+          <div class="reason">
+            <strong>Wider-world obsession fuel</strong>
+            <p>Graphic novel, webtoon, immersive audio, events, and side-project energy turn the books into a whole ecosystem.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="other-books" class="section">
+      <div class="wrap">
+        <div class="section-head">
+          <div>
+            <span class="eyebrow">Beyond Carl</span>
+            <h2>More books by Matt Dinniman</h2>
+          </div>
+          <p class="lead">
+            The wider catalogue is not a side note. It is where the horror, fantasy, and LitRPG instincts spread out in different directions.
+          </p>
+        </div>
+
+        <div class="book-grid">
+          <article class="book-card">
+            <div class="book-cover"><img src="assets/matt-dinniman/operation-bounce-house.webp" alt="Operation Bounce House by Matt Dinniman" /></div>
+            <div class="book-body">
+              <span class="book-kicker">Sci-fi thriller</span>
+              <h3>Operation Bounce House</h3>
+              <p>A standalone sci-fi thriller and one of the current headline releases on Matt’s official site.</p>
+              <div class="book-links">
+                <a class="primary" href="https://mattdinniman.com/books/operation-bounce-house/" target="_blank" rel="noopener noreferrer">Book page</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="book-card">
+            <div class="book-cover"><img src="assets/matt-dinniman/kaiju-battlefield-surgeon.webp" alt="Kaiju: Battlefield Surgeon by Matt Dinniman" /></div>
+            <div class="book-body">
+              <span class="book-kicker">LitRPG horror</span>
+              <h3>Kaiju: Battlefield Surgeon</h3>
+              <p>For readers who want the darker, more brutal edge pushed further forward.</p>
+              <div class="book-links">
+                <a class="primary" href="https://mattdinniman.com/books/kaiju-battlefield-surgeon/" target="_blank" rel="noopener noreferrer">Book page</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="book-card">
+            <div class="book-cover"><img src="assets/matt-dinniman/the-grinding.webp" alt="The Grinding by Matt Dinniman" /></div>
+            <div class="book-body">
+              <span class="book-kicker">Horror</span>
+              <h3>The Grinding</h3>
+              <p>Another direct lane into the horror side of the catalogue without dressing it up as anything gentler.</p>
+              <div class="book-links">
+                <a class="primary" href="https://mattdinniman.com/books/the-grinding/" target="_blank" rel="noopener noreferrer">Book page</a>
+              </div>
+            </div>
+          </article>
+        </div>
+
+        <div class="section-head" style="margin-top:34px">
+          <div>
+            <h2 style="font-size:clamp(1.5rem,2.5vw,2.1rem); margin-bottom:0">Series and worlds worth exploring next</h2>
+          </div>
+          <p class="lead">
+            Once readers finish Carl, these are the best shelves to keep them inside the broader Dinniman orbit.
+          </p>
+        </div>
+
+        <div class="mini-grid">
+          <article class="book-card">
+            <div class="book-cover"><img src="assets/matt-dinniman/dominion-of-blades.webp" alt="Dominion of Blades by Matt Dinniman" /></div>
+            <div class="book-body">
+              <span class="book-kicker">LitRPG adventure</span>
+              <h3>Dominion of Blades</h3>
+              <p>Also includes <em>The Hobgoblin Riot</em>, with a third instalment listed on the official books page.</p>
+              <div class="book-links">
+                <a class="primary" href="https://mattdinniman.com/books/" target="_blank" rel="noopener noreferrer">See series</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="book-card">
+            <div class="book-cover"><img src="assets/matt-dinniman/every-grain-of-sand.webp" alt="Every Grain of Sand by Matt Dinniman" /></div>
+            <div class="book-body">
+              <span class="book-kicker">The Shivered Sky</span>
+              <h3>The Shivered Sky</h3>
+              <p>The fantasy horror side includes <em>Every Grain of Sand</em>, <em>In the City of Demons</em>, and <em>The Great Devouring Darkness</em>.</p>
+              <div class="book-links">
+                <a class="primary" href="https://mattdinniman.com/books/" target="_blank" rel="noopener noreferrer">See series</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="book-card">
+            <div class="book-cover"><img src="assets/matt-dinniman/trailer-park-fairy-tales.webp" alt="Trailer Park Fairy Tales by Matt Dinniman" /></div>
+            <div class="book-body">
+              <span class="book-kicker">Fantasy</span>
+              <h3>Trailer Park Fairy Tales</h3>
+              <p>A reminder that even outside the biggest series, the catalogue still refuses to stay ordinary.</p>
+              <div class="book-links">
+                <a class="primary" href="https://mattdinniman.com/books/trailer-park-fairy-tales/" target="_blank" rel="noopener noreferrer">Book page</a>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="dinniverse" class="section">
+      <div class="wrap">
+        <div class="section-head">
+          <div>
+            <span class="eyebrow">The Dinniverse</span>
+            <h2>The page should not stop at the books</h2>
+          </div>
+          <p class="lead">
+            Matt’s official site pushes the wider ecosystem hard for a reason. Readers who like the series often want more ways to stay in it.
+          </p>
+        </div>
+
+        <div class="dinniverse">
+          <article class="d-card">
+            <img src="assets/matt-dinniman/dungeon-crawler-carl-crocodile.webp" alt="Dungeon Crawler Carl: Crocodile graphic novel expansion" />
+            <div class="copy">
+              <h3>Graphic novel expansion</h3>
+              <p><em>Dungeon Crawler Carl: Crocodile</em> is presented on Matt’s official site as the first official side-story in the Dungeon Crawler Carl universe.</p>
+              <a href="https://www.backerkit.com/" target="_blank" rel="noopener noreferrer">See the graphic novel project</a>
+            </div>
+          </article>
+
+          <article class="d-card">
+            <img src="assets/matt-dinniman/dungeon-crawler-carl-webtoon.webp" alt="Dungeon Crawler Carl webtoon" />
+            <div class="copy">
+              <h3>Webtoon adaptation</h3>
+              <p>The story of Carl and Donut also exists as an action-packed webcomic adaptation, giving the page another conversion path beyond standard book clicks.</p>
+              <a href="https://www.webtoons.com/" target="_blank" rel="noopener noreferrer">Read the webtoon</a>
+            </div>
+          </article>
+
+          <article class="d-card">
+            <img src="assets/matt-dinniman/dungeon-crawler-carl-immersion-tunnel.webp" alt="Dungeon Crawler Carl immersive audiobook" />
+            <div class="copy">
+              <h3>Audio Immersion Tunnel</h3>
+              <p>The enhanced audiobook setup adds full-cast performance, music, extra scenes, and bonus content for readers who want the series in a louder format.</p>
+              <a href="https://soundbooth.app/" target="_blank" rel="noopener noreferrer">Listen now</a>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="wrap">
+        <div class="cta-band">
+          <div>
+            <span class="eyebrow">Last nudge</span>
+            <h2>Don’t browse around politely. Start the crawl.</h2>
+            <p>
+              The right conversion path here is simple: book one first, series shelf second, wider Dinniverse third. Everything about Matt Dinniman’s current public brand points back to that.
+            </p>
+          </div>
+
+          <div class="cta-actions">
+            <a class="btn btn-primary" href="https://mattdinniman.com/books/dungeon-crawler-carl/" target="_blank" rel="noopener noreferrer">Read Book 1</a>
+            <a class="btn btn-secondary" href="https://mattdinniman.com/books/" target="_blank" rel="noopener noreferrer">All books</a>
+            <a class="btn btn-ghost" href="https://mattdinniman.com/events/" target="_blank" rel="noopener noreferrer">Events</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap footer-box">
+      <div>
+        Matt Dinniman page for Authors Book Club. Built for discovery, series read-through, and cleaner click paths.
+      </div>
+      <div class="footer-links">
+        <a href="https://www.authorsbookclub.com/">Home</a>
+        <a href="https://mattdinniman.com/" target="_blank" rel="noopener noreferrer">Official site</a>
+        <a href="https://mattdinniman.com/news/" target="_blank" rel="noopener noreferrer">News</a>
+        <a href="https://mattdinniman.com/events/" target="_blank" rel="noopener noreferrer">Events</a>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
