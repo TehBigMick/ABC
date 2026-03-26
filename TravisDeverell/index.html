@@ -1,0 +1,883 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Travis Deverell | Authors Book Club</title>
+  <meta name="description" content="Discover Travis Deverell, writing as Shirtaloon, author of He Who Fights With Monsters. Start with Outworlder and dive into one of modern LitRPG’s biggest binge-reads." />
+  <link rel="canonical" href="https://www.authorsbookclub.com/TravisDeverell/" />
+  <meta name="theme-color" content="#0f1830" />
+
+  <meta property="og:title" content="Travis Deverell | Authors Book Club" />
+  <meta property="og:description" content="Start with He Who Fights With Monsters: Outworlder and explore one of LitRPG’s strongest binge-series." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://www.authorsbookclub.com/TravisDeverell/" />
+  <meta property="og:image" content="https://www.authorsbookclub.com/TravisDeverell/assets/travis-deverell-hero-hwfwm.webp" />
+
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Travis Deverell | Authors Book Club" />
+  <meta name="twitter:description" content="Start with He Who Fights With Monsters: Outworlder and explore one of LitRPG’s strongest binge-series." />
+  <meta name="twitter:image" content="https://www.authorsbookclub.com/TravisDeverell/assets/travis-deverell-hero-hwfwm.webp" />
+
+  <!-- Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-0DYQYNMX6T"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-0DYQYNMX6T');
+  </script>
+
+  <style>
+    :root{
+      --bg:#0b1222;
+      --bg-2:#101a31;
+      --panel:#131f39;
+      --panel-2:#182749;
+      --card:#16233f;
+      --card-2:#1d2e52;
+      --text:#eef4ff;
+      --muted:#afbdd8;
+      --line:rgba(255,255,255,.10);
+      --gold:#d9b25f;
+      --aqua:#63d6d9;
+      --violet:#7f7cff;
+      --glow:rgba(99,214,217,.18);
+      --shadow:0 18px 50px rgba(0,0,0,.34);
+      --max:1180px;
+      --radius:26px;
+      --radius-sm:18px;
+    }
+
+    *{box-sizing:border-box}
+    html{scroll-behaviour:smooth}
+    body{
+      margin:0;
+      font-family:Inter,Segoe UI,Roboto,Helvetica,Arial,sans-serif;
+      color:var(--text);
+      background:
+        radial-gradient(circle at 15% 18%, rgba(99,214,217,.10), transparent 24%),
+        radial-gradient(circle at 85% 8%, rgba(127,124,255,.10), transparent 22%),
+        linear-gradient(180deg, #09111f 0%, #0f1830 100%);
+      line-height:1.6;
+      overflow-x:hidden;
+    }
+
+    a{color:inherit;text-decoration:none}
+    img{max-width:100%;display:block}
+    .wrap{width:min(var(--max), calc(100% - 32px)); margin:0 auto}
+    .section{padding:64px 0}
+    .section-tight{padding:42px 0}
+    h1,h2,h3,p{margin:0}
+    h1{
+      font-size:clamp(2.45rem, 5vw, 5rem);
+      line-height:.95;
+      letter-spacing:-.04em;
+    }
+    h2{
+      font-size:clamp(1.8rem, 3vw, 3rem);
+      line-height:1.02;
+      letter-spacing:-.03em;
+      margin-bottom:12px;
+    }
+    h3{
+      font-size:1.18rem;
+      line-height:1.15;
+      letter-spacing:-.02em;
+    }
+    p.lead{
+      font-size:1.08rem;
+      color:var(--muted);
+      max-width:68ch;
+    }
+    .accent{color:var(--gold)}
+    .accent-2{color:var(--aqua)}
+
+    .eyebrow{
+      display:inline-flex;
+      align-items:center;
+      gap:10px;
+      padding:8px 14px;
+      border:1px solid rgba(217,178,95,.22);
+      border-radius:999px;
+      background:rgba(217,178,95,.08);
+      color:#f2d9a2;
+      font-size:.82rem;
+      font-weight:800;
+      text-transform:uppercase;
+      letter-spacing:.12em;
+    }
+    .eyebrow::before{
+      content:"";
+      width:8px;
+      height:8px;
+      border-radius:50%;
+      background:var(--gold);
+      box-shadow:0 0 12px rgba(217,178,95,.65);
+    }
+
+    .site-header{
+      position:sticky;
+      top:0;
+      z-index:40;
+      backdrop-filter:blur(18px);
+      background:rgba(8,14,26,.74);
+      border-bottom:1px solid rgba(255,255,255,.06);
+    }
+    .nav{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:20px;
+      min-height:78px;
+    }
+    .brand{
+      display:flex;
+      align-items:center;
+      gap:14px;
+      min-width:0;
+    }
+    .brand-mark{
+      width:48px;
+      height:48px;
+      border-radius:14px;
+      overflow:hidden;
+      display:grid;
+      place-items:center;
+      background:#0f172b;
+      border:1px solid rgba(255,255,255,.08);
+      box-shadow:var(--shadow);
+      flex:0 0 auto;
+    }
+    .brand-mark img{
+      width:100%;
+      height:100%;
+      object-fit:contain;
+      padding:7px;
+    }
+    .brand-copy{
+      display:flex;
+      flex-direction:column;
+      line-height:1.05;
+    }
+    .brand-copy strong{
+      font-size:1rem;
+      letter-spacing:.02em;
+    }
+    .brand-copy span{
+      font-size:.78rem;
+      color:var(--muted);
+      text-transform:uppercase;
+      letter-spacing:.12em;
+    }
+
+    .nav-links{
+      display:flex;
+      align-items:center;
+      gap:12px;
+      flex-wrap:wrap;
+      justify-content:flex-end;
+    }
+    .nav-links a{
+      padding:10px 14px;
+      border-radius:999px;
+      color:var(--muted);
+      font-weight:700;
+      font-size:.95rem;
+      transition:.2s ease;
+    }
+    .nav-links a:hover{
+      color:var(--text);
+      background:rgba(255,255,255,.05);
+    }
+    .nav-links .cta{
+      color:#0e1422;
+      background:linear-gradient(135deg, var(--gold), #f0cf87);
+      box-shadow:0 10px 24px rgba(217,178,95,.18);
+    }
+
+    .hero{
+      padding:42px 0 28px;
+    }
+    .hero-grid{
+      display:grid;
+      grid-template-columns:1.08fr .92fr;
+      gap:28px;
+      align-items:stretch;
+    }
+    .hero-copy,
+    .hero-card,
+    .panel{
+      background:
+        linear-gradient(180deg, rgba(255,255,255,.03), rgba(255,255,255,.01)),
+        var(--panel);
+      border:1px solid var(--line);
+      border-radius:var(--radius);
+      box-shadow:var(--shadow);
+    }
+    .hero-copy{
+      padding:34px;
+      position:relative;
+      overflow:hidden;
+    }
+    .hero-copy::after{
+      content:"";
+      position:absolute;
+      inset:auto -100px -120px auto;
+      width:280px;
+      height:280px;
+      background:radial-gradient(circle, rgba(99,214,217,.12), transparent 70%);
+      pointer-events:none;
+    }
+    .hero-copy .eyebrow{margin-bottom:18px}
+    .hero-copy h1{margin-bottom:12px}
+    .hero-copy .subname{
+      font-size:1.05rem;
+      font-weight:800;
+      color:#d2dcf4;
+      margin-bottom:16px;
+      letter-spacing:.02em;
+    }
+    .hero-copy .lead{margin-bottom:22px}
+
+    .hero-stats{
+      display:grid;
+      grid-template-columns:repeat(3, minmax(0,1fr));
+      gap:14px;
+      margin:26px 0;
+    }
+    .stat{
+      padding:18px 16px;
+      border-radius:20px;
+      background:rgba(255,255,255,.03);
+      border:1px solid rgba(255,255,255,.06);
+    }
+    .stat strong{
+      display:block;
+      font-size:1.18rem;
+      margin-bottom:4px;
+    }
+    .stat span{
+      display:block;
+      color:var(--muted);
+      font-size:.88rem;
+    }
+
+    .button-row{
+      display:flex;
+      gap:12px;
+      flex-wrap:wrap;
+    }
+    .btn{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      gap:10px;
+      padding:14px 18px;
+      border-radius:999px;
+      font-weight:800;
+      font-size:.96rem;
+      transition:transform .18s ease, box-shadow .18s ease, background .18s ease;
+      border:1px solid transparent;
+      cursor:pointer;
+    }
+    .btn:hover{transform:translateY(-1px)}
+    .btn-primary{
+      background:linear-gradient(135deg, var(--gold), #f0cf87);
+      color:#0e1422;
+      box-shadow:0 12px 24px rgba(217,178,95,.16);
+    }
+    .btn-secondary{
+      background:rgba(255,255,255,.04);
+      color:var(--text);
+      border-color:rgba(255,255,255,.08);
+    }
+    .btn-ghost{
+      background:rgba(99,214,217,.08);
+      color:#dffeff;
+      border-color:rgba(99,214,217,.16);
+    }
+
+    .hero-card{
+      overflow:hidden;
+      display:grid;
+      grid-template-rows:auto 1fr;
+    }
+    .hero-visual{
+      position:relative;
+      min-height:520px;
+      background:
+        linear-gradient(180deg, rgba(10,15,22,.12), rgba(10,15,22,.70)),
+        url("assets/travis-deverell-hero-hwfwm.webp") center/cover no-repeat;
+    }
+    .hero-visual::after{
+      content:"";
+      position:absolute;
+      inset:0;
+      background:
+        linear-gradient(180deg, rgba(10,15,22,.06), rgba(10,15,22,.56)),
+        linear-gradient(135deg, rgba(99,214,217,.08), transparent 45%, rgba(127,124,255,.08));
+    }
+    .hero-badge{
+      position:absolute;
+      top:20px;
+      left:20px;
+      z-index:2;
+      padding:10px 12px;
+      border-radius:16px;
+      background:rgba(10,15,22,.72);
+      border:1px solid rgba(255,255,255,.08);
+      font-size:.78rem;
+      font-weight:800;
+      text-transform:uppercase;
+      letter-spacing:.11em;
+      color:#f2d9a2;
+    }
+    .hero-floating{
+      position:absolute;
+      right:18px;
+      bottom:18px;
+      z-index:2;
+      display:flex;
+      gap:12px;
+      align-items:flex-end;
+    }
+    .hero-floating img{
+      width:132px;
+      border-radius:16px;
+      border:1px solid rgba(255,255,255,.12);
+      box-shadow:0 18px 35px rgba(0,0,0,.4);
+      background:#0f1523;
+    }
+    .hero-note{
+      padding:20px 22px 24px;
+      border-top:1px solid rgba(255,255,255,.06);
+      background:linear-gradient(180deg, rgba(255,255,255,.02), rgba(255,255,255,.01));
+    }
+    .hero-note strong{
+      display:block;
+      font-size:1rem;
+      margin-bottom:6px;
+    }
+    .hero-note p{
+      color:var(--muted);
+      font-size:.96rem;
+    }
+
+    .feature-grid,
+    .about-grid{
+      display:grid;
+      gap:26px;
+      align-items:stretch;
+    }
+    .feature-grid{grid-template-columns:.9fr 1.1fr}
+    .about-grid{grid-template-columns:.82fr 1.18fr}
+
+    .feature-cover{
+      overflow:hidden;
+      min-height:100%;
+      background:
+        linear-gradient(180deg, rgba(8,10,14,.12), rgba(8,10,14,.22)),
+        url("assets/he-who-fights-with-monsters-outworlder.webp") center/cover no-repeat;
+      position:relative;
+    }
+    .feature-cover::after{
+      content:"";
+      position:absolute;
+      inset:0;
+      background:linear-gradient(180deg, rgba(99,214,217,.04), rgba(0,0,0,.16));
+    }
+    .feature-content,
+    .about-copy{
+      padding:34px;
+    }
+    .feature-content .eyebrow,
+    .about-copy .eyebrow{margin-bottom:16px}
+    .feature-content p,
+    .about-copy p{
+      color:var(--muted);
+    }
+    .about-copy p{margin-bottom:14px}
+
+    .feature-list{
+      display:grid;
+      grid-template-columns:repeat(2, minmax(0,1fr));
+      gap:12px;
+      margin:24px 0;
+    }
+    .feature-list div{
+      padding:14px 15px;
+      background:rgba(255,255,255,.03);
+      border:1px solid rgba(255,255,255,.06);
+      border-radius:18px;
+      color:var(--text);
+      font-weight:700;
+      font-size:.95rem;
+    }
+
+    .portrait{
+      overflow:hidden;
+      min-height:100%;
+      background:
+        linear-gradient(180deg, rgba(8,10,14,.04), rgba(8,10,14,.28)),
+        url("assets/travis-deverell-author.webp") center/cover no-repeat;
+      position:relative;
+    }
+    .portrait::after{
+      content:"";
+      position:absolute;
+      inset:0;
+      background:linear-gradient(180deg, rgba(0,0,0,.02), rgba(0,0,0,.12));
+    }
+
+    .section-head{
+      display:flex;
+      justify-content:space-between;
+      align-items:end;
+      gap:20px;
+      margin-bottom:26px;
+    }
+    .section-head p{max-width:62ch}
+
+    .series-grid,
+    .hook-grid{
+      display:grid;
+      gap:18px;
+    }
+    .series-grid{grid-template-columns:repeat(3, minmax(0,1fr))}
+    .hook-grid{grid-template-columns:repeat(4, minmax(0,1fr))}
+
+    .book-card,
+    .reason,
+    .cta-band{
+      background:
+        linear-gradient(180deg, rgba(255,255,255,.025), rgba(255,255,255,.01)),
+        var(--card);
+      border:1px solid var(--line);
+      border-radius:24px;
+      box-shadow:var(--shadow);
+    }
+
+    .book-card{
+      display:flex;
+      flex-direction:column;
+      min-height:100%;
+      overflow:hidden;
+      transition:transform .18s ease, border-color .18s ease;
+    }
+    .book-card:hover{
+      transform:translateY(-3px);
+      border-color:rgba(217,178,95,.24);
+    }
+    .book-cover{
+      aspect-ratio:.78 / 1;
+      background:#101826;
+    }
+    .book-cover img{
+      width:100%;
+      height:100%;
+      object-fit:cover;
+    }
+    .book-body{
+      padding:18px 18px 20px;
+      display:flex;
+      flex-direction:column;
+      gap:10px;
+      flex:1;
+    }
+    .book-kicker{
+      display:inline-flex;
+      align-self:flex-start;
+      padding:7px 10px;
+      border-radius:999px;
+      background:rgba(99,214,217,.08);
+      border:1px solid rgba(99,214,217,.14);
+      color:#d8fbff;
+      font-size:.75rem;
+      font-weight:800;
+      text-transform:uppercase;
+      letter-spacing:.10em;
+    }
+    .book-body h3{min-height:2.4em}
+    .book-body p{
+      color:var(--muted);
+      font-size:.95rem;
+      flex:1;
+    }
+    .book-links{
+      display:flex;
+      flex-wrap:wrap;
+      gap:10px;
+      margin-top:4px;
+    }
+    .book-links a{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      padding:10px 12px;
+      border-radius:999px;
+      font-weight:800;
+      font-size:.88rem;
+    }
+    .book-links a.primary{
+      background:linear-gradient(135deg, var(--gold), #f0cf87);
+      color:#0e1422;
+    }
+    .book-links a.secondary{
+      background:rgba(255,255,255,.05);
+      border:1px solid rgba(255,255,255,.08);
+      color:var(--text);
+    }
+
+    .reason{
+      padding:24px;
+      background:
+        linear-gradient(180deg, rgba(255,255,255,.025), rgba(255,255,255,.01)),
+        var(--panel-2);
+    }
+    .reason strong{
+      display:block;
+      font-size:1.08rem;
+      margin-bottom:8px;
+    }
+    .reason p{
+      color:var(--muted);
+      font-size:.95rem;
+    }
+
+    .cta-band{
+      padding:34px;
+      display:grid;
+      grid-template-columns:1.2fr .8fr;
+      gap:20px;
+      align-items:center;
+      background:
+        radial-gradient(circle at 15% 20%, rgba(99,214,217,.12), transparent 28%),
+        linear-gradient(135deg, #152340, #10192f);
+    }
+    .cta-band p{
+      color:var(--muted);
+      margin-top:10px;
+      max-width:60ch;
+    }
+    .cta-actions{
+      display:flex;
+      gap:12px;
+      flex-wrap:wrap;
+      justify-content:flex-end;
+    }
+
+    footer{
+      padding:28px 0 56px;
+      color:var(--muted);
+      font-size:.92rem;
+    }
+    .footer-box{
+      display:flex;
+      justify-content:space-between;
+      gap:20px;
+      align-items:center;
+      padding-top:22px;
+      border-top:1px solid rgba(255,255,255,.08);
+    }
+    .footer-links{
+      display:flex;
+      flex-wrap:wrap;
+      gap:14px;
+    }
+    .footer-links a:hover{color:var(--text)}
+
+    @media (max-width: 1080px){
+      .hero-grid,
+      .feature-grid,
+      .about-grid,
+      .cta-band{
+        grid-template-columns:1fr;
+      }
+      .hook-grid{grid-template-columns:repeat(2, minmax(0,1fr))}
+      .cta-actions{justify-content:flex-start}
+    }
+
+    @media (max-width: 760px){
+      .wrap{width:min(var(--max), calc(100% - 20px))}
+      .nav{align-items:flex-start; padding:12px 0}
+      .nav,
+      .brand{
+        flex-direction:column;
+        align-items:flex-start;
+      }
+      .nav-links{justify-content:flex-start}
+      .hero-copy,
+      .feature-content,
+      .about-copy,
+      .cta-band{padding:24px}
+      .hero-visual{min-height:380px}
+      .hero-floating img{width:108px}
+      .hero-stats,
+      .feature-list,
+      .series-grid,
+      .hook-grid{
+        grid-template-columns:1fr;
+      }
+      .section{padding:48px 0}
+      .section-head{align-items:flex-start; flex-direction:column}
+      .footer-box{
+        flex-direction:column;
+        align-items:flex-start;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <div class="wrap nav">
+      <a class="brand" href="https://www.authorsbookclub.com/">
+        <div class="brand-mark">
+          <img src="assets/shirtaloon-brand-mark.webp" alt="Shirtaloon brand mark" />
+        </div>
+        <div class="brand-copy">
+          <strong>Authors Book Club</strong>
+          <span>Travis Deverell</span>
+        </div>
+      </a>
+
+      <nav class="nav-links" aria-label="Primary">
+        <a href="#start-here">Start Here</a>
+        <a href="#series">Series</a>
+        <a href="#why-read">Why It Works</a>
+        <a href="#about">About</a>
+        <a class="cta" href="https://www.penguin.co.uk/books/482363/he-who-fights-with-monsters-outworlder-by-shirtaloon/9780241835524" target="_blank" rel="noopener noreferrer">Start with Outworlder</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="wrap hero-grid">
+        <div class="hero-copy">
+          <span class="eyebrow">Bestselling LitRPG / Progression Fantasy</span>
+          <h1>Travis Deverell writes fantasy that turns one more chapter into half the night.</h1>
+          <div class="subname">Writing as Shirtaloon</div>
+          <p class="lead">
+            Start with <span class="accent">He Who Fights With Monsters: Outworlder</span> and dive into portal fantasy packed with monsters, magic, sharp humour, and serious binge-read momentum. If you want progression fantasy with personality instead of dead-eyed seriousness, this is the right shelf.
+          </p>
+
+          <div class="hero-stats">
+            <div class="stat">
+              <strong>3 current print books</strong>
+              <span>Outworlder, Adventurer, and Hero</span>
+            </div>
+            <div class="stat">
+              <strong>Serial-fiction roots</strong>
+              <span>Built from online readership into major print release</span>
+            </div>
+            <div class="stat">
+              <strong>Strong entry point</strong>
+              <span>One clear flagship series, one clear place to begin</span>
+            </div>
+          </div>
+
+          <div class="button-row">
+            <a class="btn btn-primary" href="https://www.penguin.co.uk/books/482363/he-who-fights-with-monsters-outworlder-by-shirtaloon/9780241835524" target="_blank" rel="noopener noreferrer">Read Outworlder</a>
+            <a class="btn btn-secondary" href="https://www.penguin.co.uk/series/HWFWM/he-who-fights-with-monsters" target="_blank" rel="noopener noreferrer">Browse the series</a>
+            <a class="btn btn-ghost" href="#why-read">Why readers get hooked</a>
+          </div>
+        </div>
+
+        <aside class="hero-card" aria-label="Featured He Who Fights With Monsters books">
+          <div class="hero-visual">
+            <div class="hero-badge">Start here</div>
+            <div class="hero-floating">
+              <img src="assets/he-who-fights-with-monsters-outworlder.webp" alt="He Who Fights With Monsters: Outworlder by Travis Deverell" />
+              <img src="assets/he-who-fights-with-monsters-hero.webp" alt="He Who Fights With Monsters: Hero by Travis Deverell" />
+            </div>
+          </div>
+          <div class="hero-note">
+            <strong>Do not make this harder than it needs to be.</strong>
+            <p>Start with <em>Outworlder</em>. If Jason Asano works for you, the rest of the series is already lined up.</p>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <section id="start-here" class="section">
+      <div class="wrap feature-grid">
+        <div class="panel feature-cover" aria-hidden="true"></div>
+
+        <div class="panel feature-content">
+          <span class="eyebrow">New to Shirtaloon?</span>
+          <h2>Begin with <span class="accent-2">Outworlder</span></h2>
+          <p>
+            Jason Asano wakes in a world of magic and monsters and tries to become the kind of hero he can live with, which is awkward when his powers look anything but heroic. The result is fantasy with movement, danger, irreverence, and enough pull to keep readers rolling straight into the next book.
+          </p>
+
+          <div class="feature-list">
+            <div>Portal fantasy with proper momentum</div>
+            <div>Progression that rewards read-through</div>
+            <div>Humour that does not kill the stakes</div>
+            <div>One of LitRPG’s clearest binge hooks</div>
+          </div>
+
+          <div class="button-row">
+            <a class="btn btn-primary" href="https://www.penguin.co.uk/books/482363/he-who-fights-with-monsters-outworlder-by-shirtaloon/9780241835524" target="_blank" rel="noopener noreferrer">Start with Book 1</a>
+            <a class="btn btn-secondary" href="https://www.penguin.co.uk/series/HWFWM/he-who-fights-with-monsters" target="_blank" rel="noopener noreferrer">See the full series</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="series" class="section">
+      <div class="wrap">
+        <div class="section-head">
+          <div>
+            <span class="eyebrow">The flagship series</span>
+            <h2>He Who Fights With Monsters</h2>
+          </div>
+          <p class="lead">
+            Started online. Now one of LitRPG’s clearest crossover success stories.
+          </p>
+        </div>
+
+        <div class="series-grid">
+          <article class="book-card">
+            <div class="book-cover">
+              <img src="assets/he-who-fights-with-monsters-outworlder.webp" alt="He Who Fights With Monsters: Outworlder by Travis Deverell" />
+            </div>
+            <div class="book-body">
+              <span class="book-kicker">Book 1</span>
+              <h3>He Who Fights With Monsters: Outworlder</h3>
+              <p>The first step into Jason Asano’s new world. Magic, monsters, cultists, mayhem, and a lead who refuses to sound like everyone else.</p>
+              <div class="book-links">
+                <a class="primary" href="https://www.penguin.co.uk/books/482363/he-who-fights-with-monsters-outworlder-by-shirtaloon/9780241835524" target="_blank" rel="noopener noreferrer">Read Book 1</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="book-card">
+            <div class="book-cover">
+              <img src="assets/he-who-fights-with-monsters-adventurer.webp" alt="He Who Fights With Monsters: Adventurer by Travis Deverell" />
+            </div>
+            <div class="book-body">
+              <span class="book-kicker">Book 2</span>
+              <h3>He Who Fights With Monsters: Adventurer</h3>
+              <p>Jason settles deeper into his new life as alliances, competition, betrayal, and larger conflict start tightening around him.</p>
+              <div class="book-links">
+                <a class="secondary" href="https://www.penguin.co.uk/books/482364/he-who-fights-with-monsters-adventurer-by-shirtaloon/9780241835487" target="_blank" rel="noopener noreferrer">Book 2 page</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="book-card">
+            <div class="book-cover">
+              <img src="assets/he-who-fights-with-monsters-hero.webp" alt="He Who Fights With Monsters: Hero by Travis Deverell" />
+            </div>
+            <div class="book-body">
+              <span class="book-kicker">Book 3</span>
+              <h3>He Who Fights With Monsters: Hero</h3>
+              <p>The power grows, the enemies close in, and the series keeps scaling up without losing its voice.</p>
+              <div class="book-links">
+                <a class="secondary" href="https://www.penguin.co.uk/books/482365/he-who-fights-with-monsters-hero-by-shirtaloon/9780241835500" target="_blank" rel="noopener noreferrer">Book 3 page</a>
+              </div>
+            </div>
+          </article>
+        </div>
+
+        <div class="button-row" style="margin-top:24px">
+          <a class="btn btn-primary" href="https://www.penguin.co.uk/series/HWFWM/he-who-fights-with-monsters" target="_blank" rel="noopener noreferrer">See all current series books</a>
+        </div>
+      </div>
+    </section>
+
+    <section id="why-read" class="section">
+      <div class="wrap">
+        <div class="section-head">
+          <div>
+            <span class="eyebrow">Why readers stay</span>
+            <h2>Why this series gets its hooks in</h2>
+          </div>
+          <p class="lead">
+            This is not just another “look, stats and magic” series page. The real appeal is the mix of voice, movement, escalation, and personality.
+          </p>
+        </div>
+
+        <div class="hook-grid">
+          <div class="reason">
+            <strong>Portal fantasy with momentum</strong>
+            <p>The story moves early and keeps moving. It does not waste its entry point.</p>
+          </div>
+          <div class="reason">
+            <strong>Progression that feels addictive</strong>
+            <p>The growth curve gives readers a reason to keep rolling straight into the next book.</p>
+          </div>
+          <div class="reason">
+            <strong>Humour without flattening the danger</strong>
+            <p>The comedy adds shape and personality instead of draining the stakes.</p>
+          </div>
+          <div class="reason">
+            <strong>A lead with an actual voice</strong>
+            <p>Jason Asano is not built like a generic fantasy placeholder, and the series is stronger for it.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="about" class="section-tight">
+      <div class="wrap about-grid">
+        <div class="panel portrait" aria-hidden="true"></div>
+
+        <div class="panel about-copy">
+          <span class="eyebrow">About Travis Deverell</span>
+          <h2>Serial-fiction roots, major-series payoff.</h2>
+          <p>
+            Travis Deverell writes as Shirtaloon. What began in online serialised fiction grew into one of the best-known names in modern LitRPG and progression fantasy.
+          </p>
+          <p>
+            The commercial appeal is easy to see: high magic, wild adventure, absurd humour, and a series built for readers who want more than one book to disappear into.
+          </p>
+          <p>
+            This page is not trying to make the brand feel more literary or more solemn than it is. That would be the wrong pitch. The strength here is that the books are fun, confident, and built to carry momentum across a series.
+          </p>
+
+          <div class="button-row" style="margin-top:22px">
+            <a class="btn btn-secondary" href="https://www.penguin.co.uk/series/HWFWM/he-who-fights-with-monsters" target="_blank" rel="noopener noreferrer">Read more about the series</a>
+            <a class="btn btn-ghost" href="https://www.penguin.co.uk/books/482363/he-who-fights-with-monsters-outworlder-by-shirtaloon/9780241835524" target="_blank" rel="noopener noreferrer">Open Outworlder</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="wrap">
+        <div class="cta-band">
+          <div>
+            <span class="eyebrow">Final nudge</span>
+            <h2>Do not start in the middle. Start with Outworlder.</h2>
+            <p>
+              The smartest click path on this page is the obvious one: book one first, then the rest of the series in order.
+            </p>
+          </div>
+
+          <div class="cta-actions">
+            <a class="btn btn-primary" href="https://www.penguin.co.uk/books/482363/he-who-fights-with-monsters-outworlder-by-shirtaloon/9780241835524" target="_blank" rel="noopener noreferrer">Read Book 1</a>
+            <a class="btn btn-secondary" href="https://www.penguin.co.uk/series/HWFWM/he-who-fights-with-monsters" target="_blank" rel="noopener noreferrer">See the series</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap footer-box">
+      <div>
+        Travis Deverell page for Authors Book Club. Built for series discovery, clean entry points, and better read-through.
+      </div>
+      <div class="footer-links">
+        <a href="https://www.authorsbookclub.com/">Home</a>
+        <a href="#series">Series</a>
+        <a href="#why-read">Why It Works</a>
+        <a href="#about">About</a>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
