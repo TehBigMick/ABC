@@ -4,7 +4,7 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Authors Book Club | Discover Indie Authors</title>
-  <meta name="description" content="Discover indie authors across romance, horror, crime, urban fiction and non-fiction. Browse by genre or let fate choose your next author." />
+  <meta name="description" content="Discover indie authors across romance, horror, crime, thriller, fantasy, LitRPG, urban fiction, romantasy, and practical non-fiction. Browse by genre or let fate choose your next author." />
   <link rel="canonical" href="https://www.authorsbookclub.com/" />
 
   <!-- Google Analytics -->
@@ -455,7 +455,7 @@
       <div>
         <h1>Discover indie authors worth your time.</h1>
         <p class="lede">
-          Romance, horror, crime, urban fiction, and practical non-fiction — chosen to feel like a proper shelf, not a dumping ground of random books.
+          Romance, horror, crime, thriller, fantasy, LitRPG, urban fiction, romantasy, and practical non-fiction — chosen to feel like a proper shelf, not a dumping ground of random books.
         </p>
 
         <div class="hero-actions">
@@ -636,6 +636,16 @@
       spotlight: false
     },
     {
+      name: "Matt Dinniman",
+      url: "/Matt-Dinniman/",
+      genres: ["Horror", "Fantasy", "Sci-Fi", "LitRPG"],
+      tone: ["dark", "bold"],
+      image: "/Matt-Dinniman/assets/dungeon-crawler-carl-01.webp",
+      tagline: "Apocalyptic chaos, savage humour, dungeon-crawl momentum, and one of the strongest binge-series hooks on the site.",
+      featured: true,
+      spotlight: false
+    },
+    {
       name: "Tory Hunt",
       url: "/ToryHunt/",
       genres: ["Non-fiction", "Self-Help"],
@@ -644,6 +654,26 @@
       tagline: "Practical life-skills books for teens and tweens that solve real problems.",
       featured: false,
       spotlight: false
+    },
+    {
+      name: "Travis Deverell",
+      url: "/TravisDeverell/",
+      genres: ["Fantasy", "LitRPG"],
+      tone: ["bold"],
+      image: "/TravisDeverell/assets/he-who-fights-with-monsters-outworlder.jpg",
+      tagline: "Magic, monsters, progression, and one of LitRPG’s strongest binge-series entry points.",
+      featured: true,
+      spotlight: false
+    },
+    {
+      name: "Zogarth",
+      url: "/Zogarth/",
+      genres: ["Fantasy", "LitRPG"],
+      tone: ["dark", "bold"],
+      image: "/Zogarth/assets/the-primal-hunter-01.jpg",
+      tagline: "System apocalypse, hunter instinct, hard progression, and a long-running series built for real read-through.",
+      featured: false,
+      spotlight: true
     },
     {
       name: "Bella Andre",
@@ -686,19 +716,16 @@
     }
   }
 
-  function buildGenreStats(){
-    const stats = {};
+  function buildGenreList(){
+    const genres = new Set();
     AUTHORS.forEach(author => {
-      (author.genres || []).forEach(genre => {
-        stats[genre] = (stats[genre] || 0) + 1;
-      });
+      (author.genres || []).forEach(genre => genres.add(genre));
     });
-    return stats;
+    return [...genres].sort((a, b) => a.localeCompare(b, "en-GB"));
   }
 
   function populateGenreSelect(){
-    const stats = buildGenreStats();
-    const genres = Object.keys(stats).sort((a, b) => a.localeCompare(b, "en-GB"));
+    const genres = buildGenreList();
     const select = $("genreSelect");
 
     select.querySelectorAll("option:not([value=''])").forEach(option => option.remove());
@@ -706,14 +733,13 @@
     genres.forEach(genre => {
       const option = document.createElement("option");
       option.value = genre;
-      option.textContent = `${genre} (${stats[genre]})`;
+      option.textContent = genre;
       select.appendChild(option);
     });
   }
 
   function renderGenreGrid(){
-    const stats = buildGenreStats();
-    const genres = Object.keys(stats).sort((a, b) => a.localeCompare(b, "en-GB"));
+    const genres = buildGenreList();
     const grid = $("genreGrid");
     grid.innerHTML = "";
 
@@ -723,7 +749,7 @@
       button.className = "genre-card";
       button.innerHTML = `
         <div class="genre-name">${genre}</div>
-        <div class="genre-meta">${stats[genre]} author${stats[genre] === 1 ? "" : "s"} →</div>
+        <div class="genre-meta">Open this shelf →</div>
       `;
       button.addEventListener("click", () => {
         trackEvent("genre_click", {
