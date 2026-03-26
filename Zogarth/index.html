@@ -1,1 +1,956 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Zogarth | Authors Book Club</title>
+  <meta name="description" content="Discover Zogarth, author of The Primal Hunter. Start with Book 1 and dive into a long-running LitRPG and progression fantasy series built on survival, escalation, combat, and hunter instinct." />
+  <link rel="canonical" href="https://www.authorsbookclub.com/Zogarth/" />
+  <meta name="theme-color" content="#10150f" />
 
+  <meta property="og:title" content="Zogarth | Authors Book Club" />
+  <meta property="og:description" content="Start with The Primal Hunter and explore one of LitRPG’s strongest long-running binge series." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://www.authorsbookclub.com/Zogarth/" />
+  <meta property="og:image" content="https://www.authorsbookclub.com/Zogarth/assets/zogarth-hero-primal-hunter.jpg" />
+
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Zogarth | Authors Book Club" />
+  <meta name="twitter:description" content="Start with The Primal Hunter and explore one of LitRPG’s strongest long-running binge series." />
+  <meta name="twitter:image" content="https://www.authorsbookclub.com/Zogarth/assets/zogarth-hero-primal-hunter.jpg" />
+
+  <!-- Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-0DYQYNMX6T"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-0DYQYNMX6T');
+  </script>
+
+  <style>
+    :root{
+      --bg:#0d120d;
+      --bg-2:#111812;
+      --panel:#171f17;
+      --panel-2:#1d281d;
+      --card:#182119;
+      --card-2:#223025;
+      --text:#edf5e8;
+      --muted:#aab8a6;
+      --line:rgba(255,255,255,.10);
+      --acid:#b7d36b;
+      --bronze:#b18442;
+      --hunter:#6aa34f;
+      --ember:#d9a35e;
+      --shadow:0 18px 50px rgba(0,0,0,.36);
+      --max:1180px;
+      --radius:26px;
+    }
+
+    *{box-sizing:border-box}
+    html{scroll-behaviour:smooth}
+    body{
+      margin:0;
+      font-family:Inter,Segoe UI,Roboto,Helvetica,Arial,sans-serif;
+      color:var(--text);
+      background:
+        radial-gradient(circle at 14% 18%, rgba(106,163,79,.10), transparent 24%),
+        radial-gradient(circle at 85% 9%, rgba(177,132,66,.10), transparent 22%),
+        linear-gradient(180deg, #0a0f0a 0%, #111712 100%);
+      line-height:1.6;
+      overflow-x:hidden;
+    }
+
+    a{color:inherit;text-decoration:none}
+    img{max-width:100%;display:block}
+    .wrap{width:min(var(--max), calc(100% - 32px)); margin:0 auto}
+    .section{padding:64px 0}
+    .section-tight{padding:42px 0}
+    h1,h2,h3,p{margin:0}
+    h1{
+      font-size:clamp(2.45rem, 5vw, 5rem);
+      line-height:.95;
+      letter-spacing:-.04em;
+    }
+    h2{
+      font-size:clamp(1.8rem, 3vw, 3rem);
+      line-height:1.02;
+      letter-spacing:-.03em;
+      margin-bottom:12px;
+    }
+    h3{
+      font-size:1.18rem;
+      line-height:1.15;
+      letter-spacing:-.02em;
+    }
+    p.lead{
+      font-size:1.08rem;
+      color:var(--muted);
+      max-width:68ch;
+    }
+    .accent{color:var(--acid)}
+    .accent-2{color:var(--ember)}
+
+    .eyebrow{
+      display:inline-flex;
+      align-items:center;
+      gap:10px;
+      padding:8px 14px;
+      border:1px solid rgba(183,211,107,.22);
+      border-radius:999px;
+      background:rgba(183,211,107,.08);
+      color:#dce9b2;
+      font-size:.82rem;
+      font-weight:800;
+      text-transform:uppercase;
+      letter-spacing:.12em;
+    }
+    .eyebrow::before{
+      content:"";
+      width:8px;
+      height:8px;
+      border-radius:50%;
+      background:var(--acid);
+      box-shadow:0 0 12px rgba(183,211,107,.6);
+    }
+
+    .site-header{
+      position:sticky;
+      top:0;
+      z-index:40;
+      backdrop-filter:blur(18px);
+      background:rgba(9,13,9,.76);
+      border-bottom:1px solid rgba(255,255,255,.06);
+    }
+    .nav{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:20px;
+      min-height:78px;
+    }
+    .brand{
+      display:flex;
+      align-items:center;
+      gap:14px;
+      min-width:0;
+    }
+    .brand-mark{
+      width:48px;
+      height:48px;
+      border-radius:14px;
+      overflow:hidden;
+      display:grid;
+      place-items:center;
+      background:#0f1510;
+      border:1px solid rgba(255,255,255,.08);
+      box-shadow:var(--shadow);
+      flex:0 0 auto;
+    }
+    .brand-mark span{
+      font-weight:900;
+      color:var(--acid);
+      letter-spacing:.04em;
+    }
+    .brand-copy{
+      display:flex;
+      flex-direction:column;
+      line-height:1.05;
+    }
+    .brand-copy strong{
+      font-size:1rem;
+      letter-spacing:.02em;
+    }
+    .brand-copy span{
+      font-size:.78rem;
+      color:var(--muted);
+      text-transform:uppercase;
+      letter-spacing:.12em;
+    }
+
+    .nav-links{
+      display:flex;
+      align-items:center;
+      gap:12px;
+      flex-wrap:wrap;
+      justify-content:flex-end;
+    }
+    .nav-links a{
+      padding:10px 14px;
+      border-radius:999px;
+      color:var(--muted);
+      font-weight:700;
+      font-size:.95rem;
+      transition:.2s ease;
+    }
+    .nav-links a:hover{
+      color:var(--text);
+      background:rgba(255,255,255,.05);
+    }
+    .nav-links .cta{
+      color:#0d130d;
+      background:linear-gradient(135deg, var(--acid), #d8e9a3);
+      box-shadow:0 10px 24px rgba(183,211,107,.18);
+    }
+
+    .hero{
+      padding:42px 0 28px;
+    }
+    .hero-grid{
+      display:grid;
+      grid-template-columns:1.08fr .92fr;
+      gap:28px;
+      align-items:stretch;
+    }
+    .hero-copy,
+    .hero-card,
+    .panel{
+      background:
+        linear-gradient(180deg, rgba(255,255,255,.03), rgba(255,255,255,.01)),
+        var(--panel);
+      border:1px solid var(--line);
+      border-radius:var(--radius);
+      box-shadow:var(--shadow);
+    }
+    .hero-copy{
+      padding:34px;
+      position:relative;
+      overflow:hidden;
+    }
+    .hero-copy::after{
+      content:"";
+      position:absolute;
+      inset:auto -100px -120px auto;
+      width:280px;
+      height:280px;
+      background:radial-gradient(circle, rgba(106,163,79,.12), transparent 70%);
+      pointer-events:none;
+    }
+    .hero-copy .eyebrow{margin-bottom:18px}
+    .hero-copy h1{margin-bottom:16px}
+    .hero-copy .lead{margin-bottom:22px}
+
+    .hero-stats{
+      display:grid;
+      grid-template-columns:repeat(3, minmax(0,1fr));
+      gap:14px;
+      margin:26px 0;
+    }
+    .stat{
+      padding:18px 16px;
+      border-radius:20px;
+      background:rgba(255,255,255,.03);
+      border:1px solid rgba(255,255,255,.06);
+    }
+    .stat strong{
+      display:block;
+      font-size:1.18rem;
+      margin-bottom:4px;
+    }
+    .stat span{
+      display:block;
+      color:var(--muted);
+      font-size:.88rem;
+    }
+
+    .button-row{
+      display:flex;
+      gap:12px;
+      flex-wrap:wrap;
+    }
+    .btn{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      gap:10px;
+      padding:14px 18px;
+      border-radius:999px;
+      font-weight:800;
+      font-size:.96rem;
+      transition:transform .18s ease, box-shadow .18s ease, background .18s ease;
+      border:1px solid transparent;
+      cursor:pointer;
+    }
+    .btn:hover{transform:translateY(-1px)}
+    .btn-primary{
+      background:linear-gradient(135deg, var(--acid), #d8e9a3);
+      color:#0d130d;
+      box-shadow:0 12px 24px rgba(183,211,107,.16);
+    }
+    .btn-secondary{
+      background:rgba(255,255,255,.04);
+      color:var(--text);
+      border-color:rgba(255,255,255,.08);
+    }
+    .btn-ghost{
+      background:rgba(177,132,66,.10);
+      color:#f0d6aa;
+      border-color:rgba(177,132,66,.18);
+    }
+
+    .hero-card{
+      overflow:hidden;
+      display:grid;
+      grid-template-rows:auto 1fr;
+    }
+    .hero-visual{
+      position:relative;
+      min-height:520px;
+      background:
+        linear-gradient(180deg, rgba(10,15,10,.16), rgba(10,15,10,.72)),
+        url("assets/zogarth-hero-primal-hunter.jpg") center/cover no-repeat;
+    }
+    .hero-visual::after{
+      content:"";
+      position:absolute;
+      inset:0;
+      background:
+        linear-gradient(180deg, rgba(10,15,10,.08), rgba(10,15,10,.56)),
+        linear-gradient(135deg, rgba(106,163,79,.08), transparent 45%, rgba(177,132,66,.08));
+    }
+    .hero-badge{
+      position:absolute;
+      top:20px;
+      left:20px;
+      z-index:2;
+      padding:10px 12px;
+      border-radius:16px;
+      background:rgba(10,15,10,.74);
+      border:1px solid rgba(255,255,255,.08);
+      font-size:.78rem;
+      font-weight:800;
+      text-transform:uppercase;
+      letter-spacing:.11em;
+      color:#dce9b2;
+    }
+    .hero-floating{
+      position:absolute;
+      right:18px;
+      bottom:18px;
+      z-index:2;
+      display:flex;
+      gap:12px;
+      align-items:flex-end;
+    }
+    .hero-floating img{
+      width:132px;
+      border-radius:16px;
+      border:1px solid rgba(255,255,255,.12);
+      box-shadow:0 18px 35px rgba(0,0,0,.4);
+      background:#101610;
+    }
+    .hero-note{
+      padding:20px 22px 24px;
+      border-top:1px solid rgba(255,255,255,.06);
+      background:linear-gradient(180deg, rgba(255,255,255,.02), rgba(255,255,255,.01));
+    }
+    .hero-note strong{
+      display:block;
+      font-size:1rem;
+      margin-bottom:6px;
+    }
+    .hero-note p{
+      color:var(--muted);
+      font-size:.96rem;
+    }
+
+    .feature-grid,
+    .about-grid{
+      display:grid;
+      gap:26px;
+      align-items:stretch;
+    }
+    .feature-grid{grid-template-columns:.9fr 1.1fr}
+    .about-grid{grid-template-columns:1fr}
+
+    .feature-cover{
+      overflow:hidden;
+      min-height:100%;
+      background:
+        linear-gradient(180deg, rgba(8,10,8,.12), rgba(8,10,8,.22)),
+        url("assets/the-primal-hunter-01.jpg") center/cover no-repeat;
+      position:relative;
+    }
+    .feature-cover::after{
+      content:"";
+      position:absolute;
+      inset:0;
+      background:linear-gradient(180deg, rgba(106,163,79,.04), rgba(0,0,0,.16));
+    }
+    .feature-content,
+    .about-copy{
+      padding:34px;
+    }
+    .feature-content .eyebrow,
+    .about-copy .eyebrow{margin-bottom:16px}
+    .feature-content p,
+    .about-copy p{
+      color:var(--muted);
+    }
+    .about-copy p{margin-bottom:14px}
+
+    .feature-list{
+      display:grid;
+      grid-template-columns:repeat(2, minmax(0,1fr));
+      gap:12px;
+      margin:24px 0;
+    }
+    .feature-list div{
+      padding:14px 15px;
+      background:rgba(255,255,255,.03);
+      border:1px solid rgba(255,255,255,.06);
+      border-radius:18px;
+      color:var(--text);
+      font-weight:700;
+      font-size:.95rem;
+    }
+
+    .section-head{
+      display:flex;
+      justify-content:space-between;
+      align-items:end;
+      gap:20px;
+      margin-bottom:26px;
+    }
+    .section-head p{max-width:62ch}
+
+    .series-grid,
+    .hook-grid{
+      display:grid;
+      gap:18px;
+    }
+    .series-grid{grid-template-columns:repeat(3, minmax(0,1fr))}
+    .hook-grid{grid-template-columns:repeat(4, minmax(0,1fr))}
+
+    .book-card,
+    .reason,
+    .cta-band,
+    .traction{
+      background:
+        linear-gradient(180deg, rgba(255,255,255,.025), rgba(255,255,255,.01)),
+        var(--card);
+      border:1px solid var(--line);
+      border-radius:24px;
+      box-shadow:var(--shadow);
+    }
+
+    .book-card{
+      display:flex;
+      flex-direction:column;
+      min-height:100%;
+      overflow:hidden;
+      transition:transform .18s ease, border-color .18s ease;
+    }
+    .book-card:hover{
+      transform:translateY(-3px);
+      border-color:rgba(183,211,107,.24);
+    }
+    .book-cover{
+      aspect-ratio:.78 / 1;
+      background:#101610;
+    }
+    .book-cover img{
+      width:100%;
+      height:100%;
+      object-fit:cover;
+    }
+    .book-body{
+      padding:18px 18px 20px;
+      display:flex;
+      flex-direction:column;
+      gap:10px;
+      flex:1;
+    }
+    .book-kicker{
+      display:inline-flex;
+      align-self:flex-start;
+      padding:7px 10px;
+      border-radius:999px;
+      background:rgba(106,163,79,.10);
+      border:1px solid rgba(106,163,79,.16);
+      color:#d9e8cf;
+      font-size:.75rem;
+      font-weight:800;
+      text-transform:uppercase;
+      letter-spacing:.10em;
+    }
+    .book-body h3{min-height:2.4em}
+    .book-body p{
+      color:var(--muted);
+      font-size:.95rem;
+      flex:1;
+    }
+    .book-links{
+      display:flex;
+      flex-wrap:wrap;
+      gap:10px;
+      margin-top:4px;
+    }
+    .book-links a{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      padding:10px 12px;
+      border-radius:999px;
+      font-weight:800;
+      font-size:.88rem;
+    }
+    .book-links a.primary{
+      background:linear-gradient(135deg, var(--acid), #d8e9a3);
+      color:#0d130d;
+    }
+    .book-links a.secondary{
+      background:rgba(255,255,255,.05);
+      border:1px solid rgba(255,255,255,.08);
+      color:var(--text);
+    }
+
+    .reason{
+      padding:24px;
+      background:
+        linear-gradient(180deg, rgba(255,255,255,.025), rgba(255,255,255,.01)),
+        var(--panel-2);
+    }
+    .reason strong{
+      display:block;
+      font-size:1.08rem;
+      margin-bottom:8px;
+    }
+    .reason p{
+      color:var(--muted);
+      font-size:.95rem;
+    }
+
+    .traction{
+      padding:26px;
+      display:grid;
+      grid-template-columns:repeat(4, minmax(0,1fr));
+      gap:14px;
+      background:
+        radial-gradient(circle at 15% 20%, rgba(106,163,79,.12), transparent 28%),
+        linear-gradient(135deg, #172117, #101610);
+    }
+    .traction .cell{
+      padding:16px;
+      border-radius:18px;
+      background:rgba(255,255,255,.03);
+      border:1px solid rgba(255,255,255,.06);
+    }
+    .traction strong{
+      display:block;
+      font-size:1.12rem;
+      margin-bottom:4px;
+      color:var(--text);
+    }
+    .traction span{
+      color:var(--muted);
+      font-size:.9rem;
+    }
+
+    .cta-band{
+      padding:34px;
+      display:grid;
+      grid-template-columns:1.2fr .8fr;
+      gap:20px;
+      align-items:center;
+      background:
+        radial-gradient(circle at 15% 20%, rgba(106,163,79,.12), transparent 28%),
+        linear-gradient(135deg, #182318, #101610);
+    }
+    .cta-band p{
+      color:var(--muted);
+      margin-top:10px;
+      max-width:60ch;
+    }
+    .cta-actions{
+      display:flex;
+      gap:12px;
+      flex-wrap:wrap;
+      justify-content:flex-end;
+    }
+
+    footer{
+      padding:28px 0 56px;
+      color:var(--muted);
+      font-size:.92rem;
+    }
+    .footer-box{
+      display:flex;
+      justify-content:space-between;
+      gap:20px;
+      align-items:center;
+      padding-top:22px;
+      border-top:1px solid rgba(255,255,255,.08);
+    }
+    .footer-links{
+      display:flex;
+      flex-wrap:wrap;
+      gap:14px;
+    }
+    .footer-links a:hover{color:var(--text)}
+
+    @media (max-width: 1080px){
+      .hero-grid,
+      .feature-grid,
+      .cta-band{
+        grid-template-columns:1fr;
+      }
+      .hook-grid,
+      .traction{
+        grid-template-columns:repeat(2, minmax(0,1fr));
+      }
+      .cta-actions{justify-content:flex-start}
+    }
+
+    @media (max-width: 760px){
+      .wrap{width:min(var(--max), calc(100% - 20px))}
+      .nav{align-items:flex-start; padding:12px 0}
+      .nav,
+      .brand{
+        flex-direction:column;
+        align-items:flex-start;
+      }
+      .nav-links{justify-content:flex-start}
+      .hero-copy,
+      .feature-content,
+      .about-copy,
+      .cta-band,
+      .traction{padding:24px}
+      .hero-visual{min-height:380px}
+      .hero-floating img{width:108px}
+      .hero-stats,
+      .feature-list,
+      .series-grid,
+      .hook-grid,
+      .traction{
+        grid-template-columns:1fr;
+      }
+      .section{padding:48px 0}
+      .section-head{align-items:flex-start; flex-direction:column}
+      .footer-box{
+        flex-direction:column;
+        align-items:flex-start;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <div class="wrap nav">
+      <a class="brand" href="https://www.authorsbookclub.com/">
+        <div class="brand-mark" aria-hidden="true">
+          <span>ABC</span>
+        </div>
+        <div class="brand-copy">
+          <strong>Authors Book Club</strong>
+          <span>Zogarth</span>
+        </div>
+      </a>
+
+      <nav class="nav-links" aria-label="Primary">
+        <a href="#start-here">Start Here</a>
+        <a href="#series">Series</a>
+        <a href="#why-read">Why It Works</a>
+        <a href="#about">About</a>
+        <a class="cta amazon-link" href="https://amzn.to/4bMHKUz" target="_blank" rel="noopener noreferrer sponsored" data-link-name="nav-start-book-1">Start with Book 1</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="wrap hero-grid">
+        <div class="hero-copy">
+          <span class="eyebrow">LitRPG / Progression Fantasy</span>
+          <h1>Zogarth writes for readers who want the world to get bigger, the monsters to get deadlier, and the main character to get better at surviving all of it.</h1>
+          <p class="lead">
+            Start with <span class="accent">The Primal Hunter</span> and dive into a long-running LitRPG series built on survival, escalation, combat, and hunter instinct. This is not cosy teamwork fantasy. It is competence, danger, and growth under pressure.
+          </p>
+
+          <div class="hero-stats">
+            <div class="stat">
+              <strong>Long-running series</strong>
+              <span>Built for readers who want real depth and read-through</span>
+            </div>
+            <div class="stat">
+              <strong>Hunter energy</strong>
+              <span>Predatory focus, survival pressure, and relentless escalation</span>
+            </div>
+            <div class="stat">
+              <strong>Clear entry point</strong>
+              <span>Book 1 first, then straight down the series</span>
+            </div>
+          </div>
+
+          <div class="button-row">
+            <a class="btn btn-primary amazon-link" href="https://amzn.to/4bMHKUz" target="_blank" rel="noopener noreferrer sponsored" data-link-name="hero-read-book-1">Read Book 1</a>
+            <a class="btn btn-secondary amazon-link" href="https://amzn.to/3NNz0FY" target="_blank" rel="noopener noreferrer sponsored" data-link-name="hero-series-page">See the series</a>
+            <a class="btn btn-ghost amazon-link" href="https://amzn.to/3NZIXjG" target="_blank" rel="noopener noreferrer sponsored" data-link-name="hero-author-page">Author page</a>
+          </div>
+        </div>
+
+        <aside class="hero-card" aria-label="Featured The Primal Hunter books">
+          <div class="hero-visual">
+            <div class="hero-badge">Start here</div>
+            <div class="hero-floating">
+              <img src="assets/the-primal-hunter-01.jpg" alt="The Primal Hunter book 1 by Zogarth" />
+              <img src="assets/the-primal-hunter-06.jpg" alt="The Primal Hunter book 6 by Zogarth" />
+            </div>
+          </div>
+          <div class="hero-note">
+            <strong>The right click path is obvious.</strong>
+            <p>Start with Book 1. The series is built for momentum, and it keeps widening from there.</p>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <section id="start-here" class="section">
+      <div class="wrap feature-grid">
+        <div class="panel feature-cover" aria-hidden="true"></div>
+
+        <div class="panel feature-content">
+          <span class="eyebrow">New to Zogarth?</span>
+          <h2>Begin with <span class="accent-2">The Primal Hunter</span></h2>
+          <p>
+            The world changes, the system arrives, and survival stops being theoretical. Jake does not react like everyone else. That is the point. The series leans into a colder, more competence-driven fantasy of adaptation, growth, and deadly efficiency.
+          </p>
+
+          <div class="feature-list">
+            <div>System apocalypse with momentum</div>
+            <div>A lead who thrives under pressure</div>
+            <div>Progression that keeps escalating</div>
+            <div>Combat, survival, and hunter instinct</div>
+          </div>
+
+          <div class="button-row">
+            <a class="btn btn-primary amazon-link" href="https://amzn.to/4bMHKUz" target="_blank" rel="noopener noreferrer sponsored" data-link-name="start-here-book-1">Start with Book 1</a>
+            <a class="btn btn-secondary amazon-link" href="https://amzn.to/3NNz0FY" target="_blank" rel="noopener noreferrer sponsored" data-link-name="start-here-series-page">Browse the series</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section-tight">
+      <div class="wrap">
+        <div class="traction">
+          <div class="cell">
+            <strong>Built for binge reading</strong>
+            <span>Exactly the kind of series readers settle into for the long haul.</span>
+          </div>
+          <div class="cell">
+            <strong>Depth without softness</strong>
+            <span>Scale and progression without trying to make the world feel safe.</span>
+          </div>
+          <div class="cell">
+            <strong>Hunter-first identity</strong>
+            <span>That tone is what separates it from lighter LitRPG pages.</span>
+          </div>
+          <div class="cell">
+            <strong>Still expanding</strong>
+            <span>Book 16 is already lined up as the next move.</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="series" class="section">
+      <div class="wrap">
+        <div class="section-head">
+          <div>
+            <span class="eyebrow">The flagship series</span>
+            <h2>The Primal Hunter</h2>
+          </div>
+          <p class="lead">
+            A long-running progression series with enough scale to reward readers who want more than a quick sample.
+          </p>
+        </div>
+
+        <div class="series-grid">
+          <article class="book-card">
+            <div class="book-cover">
+              <img src="assets/the-primal-hunter-01.jpg" alt="The Primal Hunter book 1 by Zogarth" />
+            </div>
+            <div class="book-body">
+              <span class="book-kicker">Book 1</span>
+              <h3>The Primal Hunter</h3>
+              <p>The entry point. The world shifts, the system arrives, and Jake starts proving he is built differently from the people around him.</p>
+              <div class="book-links">
+                <a class="primary amazon-link" href="https://amzn.to/4bMHKUz" target="_blank" rel="noopener noreferrer sponsored" data-link-name="series-book-1">Read Book 1</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="book-card">
+            <div class="book-cover">
+              <img src="assets/the-primal-hunter-02.jpg" alt="The Primal Hunter book 2 by Zogarth" />
+            </div>
+            <div class="book-body">
+              <span class="book-kicker">Book 2</span>
+              <h3>Book 2</h3>
+              <p>The system keeps widening and the growth curve keeps paying off. This is where the longer-series pull starts becoming obvious.</p>
+            </div>
+          </article>
+
+          <article class="book-card">
+            <div class="book-cover">
+              <img src="assets/the-primal-hunter-03.jpg" alt="The Primal Hunter book 3 by Zogarth" />
+            </div>
+            <div class="book-body">
+              <span class="book-kicker">Book 3</span>
+              <h3>Book 3</h3>
+              <p>The series keeps hardening its identity: bigger threats, sharper competence, and no interest in softening the edge.</p>
+            </div>
+          </article>
+
+          <article class="book-card">
+            <div class="book-cover">
+              <img src="assets/the-primal-hunter-04.jpg" alt="The Primal Hunter book 4 by Zogarth" />
+            </div>
+            <div class="book-body">
+              <span class="book-kicker">Book 4</span>
+              <h3>Book 4</h3>
+              <p>By here, readers are not casually trying the series. They are locked into the growth, the danger, and the scale.</p>
+            </div>
+          </article>
+
+          <article class="book-card">
+            <div class="book-cover">
+              <img src="assets/the-primal-hunter-05.jpg" alt="The Primal Hunter book 5 by Zogarth" />
+            </div>
+            <div class="book-body">
+              <span class="book-kicker">Book 5</span>
+              <h3>Book 5</h3>
+              <p>The read-through logic stays strong because the series keeps feeding the exact things its readers came for.</p>
+            </div>
+          </article>
+
+          <article class="book-card">
+            <div class="book-cover">
+              <img src="assets/the-primal-hunter-06.jpg" alt="The Primal Hunter book 6 by Zogarth" />
+            </div>
+            <div class="book-body">
+              <span class="book-kicker">Book 6</span>
+              <h3>Book 6</h3>
+              <p>More proof that this is a real long-haul binge series rather than a concept that burns out early.</p>
+              <div class="book-links">
+                <a class="secondary amazon-link" href="https://amzn.to/3NNz0FY" target="_blank" rel="noopener noreferrer sponsored" data-link-name="series-series-page">See the full series</a>
+              </div>
+            </div>
+          </article>
+        </div>
+
+        <div class="button-row" style="margin-top:24px">
+          <a class="btn btn-primary amazon-link" href="https://amzn.to/3NNz0FY" target="_blank" rel="noopener noreferrer sponsored" data-link-name="series-bottom-series-page">See all Primal Hunter books</a>
+          <a class="btn btn-secondary amazon-link" href="https://amzn.to/40RyjOT" target="_blank" rel="noopener noreferrer sponsored" data-link-name="series-latest-book-16">Book 16 coming soon</a>
+        </div>
+      </div>
+    </section>
+
+    <section id="why-read" class="section">
+      <div class="wrap">
+        <div class="section-head">
+          <div>
+            <span class="eyebrow">Why readers stay</span>
+            <h2>Why this series gets its hooks in</h2>
+          </div>
+          <p class="lead">
+            The appeal is not vague “epic worldbuilding”. It is pressure, competence, escalation, and the satisfaction of watching the system keep opening up.
+          </p>
+        </div>
+
+        <div class="hook-grid">
+          <div class="reason">
+            <strong>System apocalypse with real pace</strong>
+            <p>The series does not drift. It gets to the pressure fast and keeps building from there.</p>
+          </div>
+          <div class="reason">
+            <strong>A lead built for this world</strong>
+            <p>Jake works because the series commits to his mindset instead of smoothing him into something more ordinary.</p>
+          </div>
+          <div class="reason">
+            <strong>Progression that keeps paying off</strong>
+            <p>Growth matters here, and the series knows that is one of its strongest tools.</p>
+          </div>
+          <div class="reason">
+            <strong>Hunter energy all the way through</strong>
+            <p>The tone is focused, predatory, and survival-first. That is exactly why it stands out.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="about" class="section-tight">
+      <div class="wrap about-grid">
+        <div class="panel about-copy">
+          <span class="eyebrow">About Zogarth</span>
+          <h2>A series-first author page is the right move here.</h2>
+          <p>
+            Zogarth is best approached through The Primal Hunter. That is the honest commercial centre of the page and the clearest reason readers land here in the first place.
+          </p>
+          <p>
+            The strength of the work is not polish for its own sake. It is scale, progression, pressure, and a main character who feels right for the kind of world the series wants to build.
+          </p>
+          <p>
+            This page does not need distractions. Book 1 is the entry point, the series page is the second click, and the coming-soon latest volume gives returning readers a reason to keep an eye on it.
+          </p>
+
+          <div class="button-row" style="margin-top:22px">
+            <a class="btn btn-secondary amazon-link" href="https://amzn.to/3NZIXjG" target="_blank" rel="noopener noreferrer sponsored" data-link-name="about-author-page">Open author page</a>
+            <a class="btn btn-ghost amazon-link" href="https://amzn.to/40RyjOT" target="_blank" rel="noopener noreferrer sponsored" data-link-name="about-book-16-coming-soon">See Book 16</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="wrap">
+        <div class="cta-band">
+          <div>
+            <span class="eyebrow">Final nudge</span>
+            <h2>Do not start late. Start with Book 1.</h2>
+            <p>
+              The best version of this page is simple: the first click goes to Book 1, the second goes to the series, and the third keeps current readers watching the next release.
+            </p>
+          </div>
+
+          <div class="cta-actions">
+            <a class="btn btn-primary amazon-link" href="https://amzn.to/4bMHKUz" target="_blank" rel="noopener noreferrer sponsored" data-link-name="bottom-cta-book-1">Read Book 1</a>
+            <a class="btn btn-secondary amazon-link" href="https://amzn.to/3NNz0FY" target="_blank" rel="noopener noreferrer sponsored" data-link-name="bottom-cta-series-page">See the series</a>
+            <a class="btn btn-ghost amazon-link" href="https://amzn.to/40RyjOT" target="_blank" rel="noopener noreferrer sponsored" data-link-name="bottom-cta-book-16">Book 16 coming soon</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap footer-box">
+      <div>
+        Zogarth on Authors Book Club. Built for cleaner discovery, stronger entry points, and better series read-through.
+      </div>
+      <div class="footer-links">
+        <a href="https://www.authorsbookclub.com/">Home</a>
+        <a href="#series">Series</a>
+        <a href="#why-read">Why It Works</a>
+        <a href="#about">About</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    document.querySelectorAll('.amazon-link').forEach(function(link) {
+      link.addEventListener('click', function() {
+        if (typeof gtag === 'function') {
+          gtag('event', 'amazon_click', {
+            event_category: 'affiliate',
+            event_label: link.dataset.linkName || link.href,
+            transport_type: 'beacon'
+          });
+        }
+      });
+    });
+  </script>
+</body>
+</html>
