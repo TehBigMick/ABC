@@ -6,7 +6,7 @@
   <title>LitRPG Books & Authors | Authors Book Club</title>
   <meta
     name="description"
-    content="Discover LitRPG authors, dungeon crawls, levelling systems, monsters, survival fantasy, and progression stories. Start with Matt Dinniman and Travis Deverell."
+    content="Discover LitRPG authors, dungeon crawls, progression fantasy, levelling systems, monsters, and immersive game-world adventures."
   />
   <link rel="canonical" href="https://www.authorsbookclub.com/genres/litrpg/" />
 
@@ -36,17 +36,13 @@
   <style>
     :root{
       --bg:#08111d;
-      --bg-2:#0c1627;
       --surface:#101d31;
-      --surface-2:#16243a;
       --card:#112036;
-      --card-2:#182840;
       --text:#eef4ff;
       --muted:#aab7c9;
       --line:rgba(255,255,255,.10);
       --brand:#8b7cff;
       --brand-2:#60e3c1;
-      --brand-3:#ffc857;
       --shadow:0 18px 50px rgba(0,0,0,.34);
       --radius:24px;
       --max:1220px;
@@ -147,12 +143,6 @@
       background:rgba(255,255,255,.06);
       border:1px solid rgba(255,255,255,.10);
       color:var(--text);
-    }
-
-    .btn-ghost{
-      background:transparent;
-      border:1px solid rgba(255,255,255,.12);
-      color:var(--muted);
     }
 
     .hero{
@@ -402,7 +392,8 @@
 
     .collage-grid{
       display:grid;
-      grid-template-columns:repeat(4, minmax(0, 1fr));
+      grid-template-columns:repeat(12, 1fr);
+      grid-auto-rows:56px;
       gap:14px;
     }
 
@@ -413,7 +404,6 @@
       overflow:hidden;
       border:1px solid rgba(255,255,255,.08);
       background:#0c1627;
-      min-height:260px;
       box-shadow:var(--shadow);
       isolation:isolate;
     }
@@ -434,7 +424,7 @@
       content:"";
       position:absolute;
       inset:0;
-      background:linear-gradient(180deg, rgba(7,16,26,0) 28%, rgba(7,16,26,.82) 100%);
+      background:linear-gradient(180deg, rgba(7,16,26,0) 20%, rgba(7,16,26,.82) 100%);
       z-index:1;
     }
 
@@ -473,6 +463,15 @@
       font-size:.84rem;
       color:#d5deee;
     }
+
+    .tile-1{grid-column:span 4; grid-row:span 6;}
+    .tile-2{grid-column:span 3; grid-row:span 4;}
+    .tile-3{grid-column:span 5; grid-row:span 4;}
+    .tile-4{grid-column:span 3; grid-row:span 5;}
+    .tile-5{grid-column:span 3; grid-row:span 5;}
+    .tile-6{grid-column:span 3; grid-row:span 5;}
+    .tile-7{grid-column:span 3; grid-row:span 5;}
+    .tile-8{grid-column:span 6; grid-row:span 4;}
 
     .split{
       display:grid;
@@ -536,15 +535,25 @@
         grid-template-columns:1fr;
       }
 
-      .collage-grid{
-        grid-template-columns:repeat(2, minmax(0, 1fr));
-      }
-
       .author-feature{
         grid-template-columns:1fr;
       }
 
       .hero-panel{min-height:420px}
+
+      .collage-grid{
+        grid-template-columns:repeat(6, 1fr);
+        grid-auto-rows:50px;
+      }
+
+      .tile-1{grid-column:span 3; grid-row:span 6;}
+      .tile-2{grid-column:span 3; grid-row:span 4;}
+      .tile-3{grid-column:span 6; grid-row:span 4;}
+      .tile-4{grid-column:span 3; grid-row:span 5;}
+      .tile-5{grid-column:span 3; grid-row:span 5;}
+      .tile-6{grid-column:span 3; grid-row:span 5;}
+      .tile-7{grid-column:span 3; grid-row:span 5;}
+      .tile-8{grid-column:span 6; grid-row:span 4;}
     }
 
     @media (max-width: 700px){
@@ -552,17 +561,27 @@
       .nav-links{display:none}
       .hero{padding-top:42px}
       .hero-stats{grid-template-columns:1fr}
-      .collage-grid{grid-template-columns:1fr}
       .hero-panel{min-height:340px}
       .collage-shell,
       .text-block,
       .seo-copy,
       .cta-box,
       .author-feature{padding:20px}
+
+      .collage-grid{
+        grid-template-columns:1fr;
+        grid-auto-rows:auto;
+      }
+
+      .collage-tile,
+      .tile-1,.tile-2,.tile-3,.tile-4,.tile-5,.tile-6,.tile-7,.tile-8{
+        grid-column:auto;
+        grid-row:auto;
+        min-height:280px;
+      }
     }
   </style>
 
-  <!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-0DYQYNMX6T"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
@@ -596,29 +615,26 @@
           <span class="eyebrow">⚔️ LitRPG / Progression Fantasy / Game Worlds</span>
           <h1>Worlds where levelling up changes everything.</h1>
           <p>
-            LitRPG brings together fantasy storytelling and game-inspired systems:
-            classes, skills, monsters, loot, brutal survival, and the addictive thrill
-            of seeing characters grow stronger. If you like dungeon crawls, escalating
-            danger, and series that know how to keep momentum, this is where to start.
+            Dungeon crawls, progression systems, monsters, loot, and long-form fantasy adventures built to keep readers hooked.
           </p>
 
           <div class="hero-actions">
-            <a class="btn btn-primary" href="#authors">Browse LitRPG authors</a>
-            <a class="btn btn-secondary" href="#collage">Explore the shelf</a>
+            <a class="btn btn-primary" href="#authors">Browse authors</a>
+            <a class="btn btn-secondary" href="#collage">Explore books</a>
           </div>
 
           <div class="hero-stats">
             <div class="stat">
               <strong>Dungeon survival</strong>
-              <span>Boss fights, danger, and systems that punish mistakes.</span>
+              <span>Boss fights, danger, and escalating stakes.</span>
             </div>
             <div class="stat">
               <strong>Progression</strong>
-              <span>Skills, upgrades, classes, and satisfying growth.</span>
+              <span>Skills, upgrades, classes, and growth.</span>
             </div>
             <div class="stat">
               <strong>Series momentum</strong>
-              <span>The kind of books that make one more chapter a lie.</span>
+              <span>Big worlds built for binge reading.</span>
             </div>
           </div>
         </div>
@@ -634,14 +650,8 @@
           <div class="hero-badge-box">
             <div class="hero-badge">
               <div class="hero-badge-row">
-                <span>Featured path</span>
-                <span>Matt Dinniman → Travis Deverell</span>
-              </div>
-            </div>
-            <div class="hero-badge">
-              <div class="hero-badge-row">
-                <span>Reader objective</span>
-                <span>Find your next obsession</span>
+                <span>Featured authors</span>
+                <span>Matt Dinniman / Travis Deverell</span>
               </div>
             </div>
           </div>
@@ -654,15 +664,11 @@
         <div class="section-head">
           <div>
             <h2>Featured LitRPG authors</h2>
-            <p>
-              This page should feel like a curated shelf, not a dead list. These are your
-              current LitRPG anchors.
-            </p>
           </div>
           <div class="chips">
             <span class="chip">Dungeon crawls</span>
-            <span class="chip">Monster battles</span>
             <span class="chip">Progression</span>
+            <span class="chip">Adventure</span>
           </div>
         </div>
 
@@ -679,12 +685,10 @@
               <div class="author-meta">
                 <span class="meta-pill">Dungeon chaos</span>
                 <span class="meta-pill">Dark humour</span>
-                <span class="meta-pill">High-pressure survival</span>
+                <span class="meta-pill">Survival</span>
               </div>
               <p>
-                Matt Dinniman is the strongest current fit for readers who want LitRPG with
-                a sharp voice, savage escalation, and a series that refuses to play safe.
-                He is an ideal anchor for the darker, more chaotic side of the genre.
+                Sharp, strange, and relentlessly entertaining LitRPG with real pressure behind the systems.
               </p>
               <div class="hero-actions" style="margin-top:14px;margin-bottom:0;">
                 <a class="btn btn-primary" href="https://www.authorsbookclub.com/Matt-Dinniman/">View author page</a>
@@ -703,13 +707,11 @@
               <h3>Travis Deverell</h3>
               <div class="author-meta">
                 <span class="meta-pill">Adventure</span>
-                <span class="meta-pill">Outworld progression</span>
-                <span class="meta-pill">Big-series energy</span>
+                <span class="meta-pill">Progression</span>
+                <span class="meta-pill">Big-series fantasy</span>
               </div>
               <p>
-                Travis Deverell brings a broader progression-fantasy appeal with strong
-                crossover energy for readers who like big adventures, character growth,
-                and long-form series immersion.
+                Expansive progression fantasy with strong world-building, momentum, and crossover appeal.
               </p>
               <div class="hero-actions" style="margin-top:14px;margin-bottom:0;">
                 <a class="btn btn-primary" href="https://www.authorsbookclub.com/TravisDeverell/">View author page</a>
@@ -724,17 +726,13 @@
       <div class="wrap">
         <div class="section-head">
           <div>
-            <h2>Explore the LitRPG shelf</h2>
-            <p>
-              Inspired by a collage layout, but built for clicks. Every tile leads to the
-              relevant author page first.
-            </p>
+            <h2>LitRPG shelf</h2>
           </div>
         </div>
 
         <div class="card collage-shell">
           <div class="collage-grid">
-            <a class="collage-tile" href="https://www.authorsbookclub.com/Matt-Dinniman/">
+            <a class="collage-tile tile-1" href="https://www.authorsbookclub.com/Matt-Dinniman/">
               <img
                 src="../../Matt-Dinniman/assets/dungeon-crawler-carl-01.webp"
                 alt="Dungeon Crawler Carl by Matt Dinniman"
@@ -743,11 +741,11 @@
               <div class="tile-copy">
                 <span class="tile-kicker">Matt Dinniman</span>
                 <div class="tile-title">Dungeon Crawler Carl</div>
-                <div class="tile-sub">Dungeon survival, pressure, and chaos</div>
+                <div class="tile-sub">Dungeon survival and chaos</div>
               </div>
             </a>
 
-            <a class="collage-tile" href="https://www.authorsbookclub.com/Matt-Dinniman/">
+            <a class="collage-tile tile-2" href="https://www.authorsbookclub.com/Matt-Dinniman/">
               <img
                 src="../../Matt-Dinniman/assets/dominion-of-blades.webp"
                 alt="Dominion of Blades by Matt Dinniman"
@@ -756,11 +754,24 @@
               <div class="tile-copy">
                 <span class="tile-kicker">Matt Dinniman</span>
                 <div class="tile-title">Dominion of Blades</div>
-                <div class="tile-sub">Game-world danger and escalating stakes</div>
+                <div class="tile-sub">Game-world danger</div>
               </div>
             </a>
 
-            <a class="collage-tile" href="https://www.authorsbookclub.com/Matt-Dinniman/">
+            <a class="collage-tile tile-3" href="https://www.authorsbookclub.com/TravisDeverell/">
+              <img
+                src="../../TravisDeverell/assets/he-who-fights-with-monsters-hero.jpg"
+                alt="He Who Fights With Monsters Hero by Travis Deverell"
+                loading="lazy"
+              />
+              <div class="tile-copy">
+                <span class="tile-kicker">Travis Deverell</span>
+                <div class="tile-title">He Who Fights With Monsters</div>
+                <div class="tile-sub">Adventure and progression</div>
+              </div>
+            </a>
+
+            <a class="collage-tile tile-4" href="https://www.authorsbookclub.com/Matt-Dinniman/">
               <img
                 src="../../Matt-Dinniman/assets/kaiju-battlefield-surgeon.webp"
                 alt="Kaiju Battlefield Surgeon by Matt Dinniman"
@@ -769,11 +780,24 @@
               <div class="tile-copy">
                 <span class="tile-kicker">Matt Dinniman</span>
                 <div class="tile-title">Kaiju Battlefield Surgeon</div>
-                <div class="tile-sub">Brutal, strange, and impossible to ignore</div>
+                <div class="tile-sub">Dark and brutal</div>
               </div>
             </a>
 
-            <a class="collage-tile" href="https://www.authorsbookclub.com/Matt-Dinniman/">
+            <a class="collage-tile tile-5" href="https://www.authorsbookclub.com/TravisDeverell/">
+              <img
+                src="../../TravisDeverell/assets/he-who-fights-with-monsters-adventurer.jpg"
+                alt="He Who Fights With Monsters Adventurer by Travis Deverell"
+                loading="lazy"
+              />
+              <div class="tile-copy">
+                <span class="tile-kicker">Travis Deverell</span>
+                <div class="tile-title">Adventurer</div>
+                <div class="tile-sub">Fast-moving fantasy</div>
+              </div>
+            </a>
+
+            <a class="collage-tile tile-6" href="https://www.authorsbookclub.com/Matt-Dinniman/">
               <img
                 src="../../Matt-Dinniman/assets/operation-bounce-house.webp"
                 alt="Operation Bounce House by Matt Dinniman"
@@ -782,37 +806,11 @@
               <div class="tile-copy">
                 <span class="tile-kicker">Matt Dinniman</span>
                 <div class="tile-title">Operation Bounce House</div>
-                <div class="tile-sub">Offbeat energy with strong visual pull</div>
+                <div class="tile-sub">Offbeat energy</div>
               </div>
             </a>
 
-            <a class="collage-tile" href="https://www.authorsbookclub.com/TravisDeverell/">
-              <img
-                src="../../TravisDeverell/assets/he-who-fights-with-monsters-adventurer.jpg"
-                alt="He Who Fights With Monsters Adventurer by Travis Deverell"
-                loading="lazy"
-              />
-              <div class="tile-copy">
-                <span class="tile-kicker">Travis Deverell</span>
-                <div class="tile-title">He Who Fights With Monsters</div>
-                <div class="tile-sub">Adventure and progression at full speed</div>
-              </div>
-            </a>
-
-            <a class="collage-tile" href="https://www.authorsbookclub.com/TravisDeverell/">
-              <img
-                src="../../TravisDeverell/assets/he-who-fights-with-monsters-hero.jpg"
-                alt="He Who Fights With Monsters Hero by Travis Deverell"
-                loading="lazy"
-              />
-              <div class="tile-copy">
-                <span class="tile-kicker">Travis Deverell</span>
-                <div class="tile-title">Hero Path</div>
-                <div class="tile-sub">Readers who want scale, action, and growth</div>
-              </div>
-            </a>
-
-            <a class="collage-tile" href="https://www.authorsbookclub.com/TravisDeverell/">
+            <a class="collage-tile tile-7" href="https://www.authorsbookclub.com/TravisDeverell/">
               <img
                 src="../../TravisDeverell/assets/he-who-fights-with-monsters-outworlder.jpg"
                 alt="He Who Fights With Monsters Outworlder by Travis Deverell"
@@ -821,20 +819,20 @@
               <div class="tile-copy">
                 <span class="tile-kicker">Travis Deverell</span>
                 <div class="tile-title">Outworlder</div>
-                <div class="tile-sub">Portal energy, systems, and momentum</div>
+                <div class="tile-sub">Portal-world momentum</div>
               </div>
             </a>
 
-            <a class="collage-tile" href="#next-slot">
+            <a class="collage-tile tile-8" href="https://www.authorsbookclub.com/TravisDeverell/">
               <img
-                src="../../Matt-Dinniman/assets/dungeon-crawler-carl-01.webp"
-                alt="More LitRPG authors coming soon"
+                src="../../TravisDeverell/assets/he-who-fights-with-monsters-hero.jpg"
+                alt="He Who Fights With Monsters by Travis Deverell"
                 loading="lazy"
               />
               <div class="tile-copy">
-                <span class="tile-kicker">Coming next</span>
-                <div class="tile-title">More LitRPG soon</div>
-                <div class="tile-sub">This shelf is built to expand as you add more authors</div>
+                <span class="tile-kicker">Travis Deverell</span>
+                <div class="tile-title">Epic progression fantasy</div>
+                <div class="tile-sub">Long-form adventure and scale</div>
               </div>
             </a>
           </div>
@@ -847,26 +845,24 @@
         <div class="split">
           <article class="card text-block">
             <span class="tag">Start here</span>
-            <h3>Best entry point right now</h3>
+            <h3>Matt Dinniman</h3>
             <p>
-              If someone is new to LitRPG, the safest current route is to let them click
-              into Matt Dinniman first, then use Travis Deverell as the second major branch.
-              That creates a clean path instead of dumping too many equal choices on the reader.
+              A strong first stop for readers who want sharper humour, stranger worlds, and harder edges.
             </p>
             <div class="hero-actions" style="margin-top:16px;margin-bottom:0;">
-              <a class="btn btn-primary" href="https://www.authorsbookclub.com/Matt-Dinniman/">Start with Matt Dinniman</a>
-              <a class="btn btn-secondary" href="https://www.authorsbookclub.com/TravisDeverell/">Then try Travis Deverell</a>
+              <a class="btn btn-primary" href="https://www.authorsbookclub.com/Matt-Dinniman/">Explore Matt Dinniman</a>
             </div>
           </article>
 
-          <article class="card text-block" id="next-slot">
-            <span class="tag">Built to grow</span>
-            <h3>Add more authors without redesigning the page</h3>
+          <article class="card text-block">
+            <span class="tag">Also featured</span>
+            <h3>Travis Deverell</h3>
             <p>
-              This layout is the right one because you can keep dropping in more tiles,
-              more featured authors, and more book covers later without rebuilding the page.
-              That is the whole point of making a proper genre landing page instead of a one-off.
+              A strong fit for readers who want broad adventure, progression, and immersive series reading.
             </p>
+            <div class="hero-actions" style="margin-top:16px;margin-bottom:0;">
+              <a class="btn btn-primary" href="https://www.authorsbookclub.com/TravisDeverell/">Explore Travis Deverell</a>
+            </div>
           </article>
         </div>
       </div>
@@ -877,16 +873,11 @@
         <article class="card seo-copy">
           <div class="section-head" style="margin-bottom:12px;">
             <div>
-              <h2>Why LitRPG works so well</h2>
+              <h2>Why readers love LitRPG</h2>
             </div>
           </div>
           <p>
-            LitRPG blends the progression logic of games with the emotional pull of fantasy and
-            adventure fiction. Characters gain levels, unlock abilities, confront stronger enemies,
-            and move through systems that make every decision feel meaningful. For readers, that creates
-            a rare mix of momentum and satisfaction: visible progress, rising stakes, and the constant
-            promise that the next battle, upgrade, or twist is just ahead. The best LitRPG stories do
-            more than show stats on a page. They build obsession.
+            LitRPG combines fantasy storytelling with visible progression, game-like systems, rising stakes, and the constant pull of what comes next.
           </p>
         </article>
       </div>
@@ -895,10 +886,8 @@
     <section class="section">
       <div class="wrap">
         <div class="cta-box">
-          <h2>Ready to find your next LitRPG series?</h2>
-          <p>
-            Start with the authors, then let their pages close the sale properly.
-          </p>
+          <h2>Find your next LitRPG series</h2>
+          <p>Start with an author, then go deeper from there.</p>
           <div class="cta-actions">
             <a class="btn btn-primary" href="https://www.authorsbookclub.com/Matt-Dinniman/">Explore Matt Dinniman</a>
             <a class="btn btn-secondary" href="https://www.authorsbookclub.com/TravisDeverell/">Explore Travis Deverell</a>
