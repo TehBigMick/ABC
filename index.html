@@ -5,36 +5,30 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Authors Book Club</title>
   <link rel="stylesheet" href="styles.css">
-  <style>
-    body { font-family: Arial, sans-serif; padding: 20px; background: #f4f4f4; }
-    h1, h2 { color: #333; }
-    .author-list, .genre-list { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 10px; }
-    .author-card, .genre-button { background: #fff; padding: 10px 15px; border-radius: 8px; box-shadow: 0 2px 5px rgba(0,0,0,0.1); cursor: pointer; }
-    .random-section { margin: 20px 0; }
-    #random-author { font-weight: bold; color: #2a7ae2; }
-  </style>
 </head>
 <body>
 
-  <h1>Welcome to Authors Book Club</h1>
+  <div class="container">
+    <h1>Welcome to Authors Book Club</h1>
 
-  <!-- Random Author Section -->
-  <div class="random-section">
-    <h2>Surprise Me!</h2>
-    <div id="random-author">Click below to discover an author</div>
-    <button onclick="displayRandomAuthor()">🎲 Random Author</button>
-  </div>
+    <!-- Random Author Section -->
+    <div class="random-section">
+      <h2>Surprise Me!</h2>
+      <div id="random-author">Click below to discover an author</div>
+      <div class="bubble-button" onclick="displayRandomAuthor()">🎲 Random Author</div>
+    </div>
 
-  <!-- Genre Filter Section -->
-  <div class="genre-section">
-    <h2>Browse by Genre</h2>
-    <div id="genre-buttons" class="genre-list"></div>
-  </div>
+    <!-- Genre Filter Section -->
+    <div class="genre-section">
+      <h2>Browse by Genre</h2>
+      <div id="genre-buttons" class="genre-list"></div>
+    </div>
 
-  <!-- Authors Display Section -->
-  <div class="all-authors">
-    <h2>All Authors</h2>
-    <div id="author-container" class="author-list"></div>
+    <!-- Authors Display Section -->
+    <div class="all-authors">
+      <h2>All Authors</h2>
+      <div id="author-container" class="author-list"></div>
+    </div>
   </div>
 
   <script>
@@ -78,17 +72,27 @@
 
     // Populate All Authors
     const authorContainer = document.getElementById("author-container");
-    authors.forEach(author => {
-      const div = document.createElement("div");
-      div.className = "author-card";
-      div.textContent = author;
-      authorContainer.appendChild(div);
-    });
+    function displayAllAuthors(list) {
+      authorContainer.innerHTML = "";
+      list.forEach(author => {
+        const div = document.createElement("div");
+        div.className = "author-card";
+        div.textContent = author;
+        authorContainer.appendChild(div);
+      });
+    }
+    displayAllAuthors(authors);
 
     // Random Author Function
     function displayRandomAuthor() {
       const randomIndex = Math.floor(Math.random() * authors.length);
-      document.getElementById("random-author").textContent = authors[randomIndex];
+      const randomAuthor = authors[randomIndex];
+      document.getElementById("random-author").textContent = randomAuthor;
+      
+      // Optional: highlight the author in the list
+      const cards = document.querySelectorAll(".author-card");
+      cards.forEach(card => card.classList.remove("highlight"));
+      cards[randomIndex].classList.add("highlight");
     }
 
     // Populate Genre Buttons
@@ -98,21 +102,12 @@
       const btn = document.createElement("div");
       btn.className = "genre-button";
       btn.textContent = genre;
-      btn.onclick = () => filterByGenre(genre);
+      btn.onclick = () => {
+        const filtered = authors.filter(author => authorGenres[author] === genre);
+        displayAllAuthors(filtered);
+      };
       genreButtons.appendChild(btn);
     });
-
-    // Filter Authors by Genre
-    function filterByGenre(genre) {
-      authorContainer.innerHTML = "";
-      const filtered = authors.filter(author => authorGenres[author] === genre);
-      filtered.forEach(author => {
-        const div = document.createElement("div");
-        div.className = "author-card";
-        div.textContent = author;
-        authorContainer.appendChild(div);
-      });
-    }
   </script>
 
 </body>
