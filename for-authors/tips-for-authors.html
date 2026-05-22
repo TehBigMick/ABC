@@ -14,7 +14,63 @@
     gtag('js', new Date());
     gtag('config', 'G-0DYQYNMX6T');
   </script>
+
+  <style>
+    /* Full original styles from index.html */
+    *, *::before, *::after { box-sizing: border-box; }
+    :root{
+      --ink:#15110e; --ink-soft:#3b332c; --paper:#f6f0e6; --paper-2:#efe6d7;
+      --line: rgba(21,17,14,.14); --panel: rgba(255,255,255,.74); --shadow: 0 18px 40px rgba(0,0,0,.12);
+      --radius: 18px; --accent-1:#c7a44c; --accent-2:#2d7a66; --accent-3:#8a5a2b;
+      --success-bg: rgba(45,122,102,.10); --success-border: rgba(45,122,102,.22);
+      --error-bg: rgba(139,63,36,.10); --error-border: rgba(139,63,36,.22);
+    }
+    html{ scroll-behaviour:smooth; }
+    body.home{
+      background:
+        radial-gradient(900px 520px at 18% 12%, rgba(199,164,76,.16), transparent 60%),
+        radial-gradient(900px 520px at 82% 20%, rgba(45,122,102,.13), transparent 60%),
+        linear-gradient(180deg, var(--paper) 0%, var(--paper-2) 100%);
+      color: var(--ink); margin:0; overflow-x:hidden;
+    }
+    .wrap{ padding: 4rem 0; }
+    .wrap-tight{ padding: 2.75rem 0; }
+    .container{ max-width: 1100px; margin: 0 auto; padding: 0 1.25rem; }
+    .topbar{ position: sticky; top: 0; z-index: 50; background: rgba(246,240,230,.92);
+      border-bottom: 1px solid rgba(0,0,0,.08); backdrop-filter: blur(10px); }
+    .topbar-inner{ display:flex; align-items:center; justify-content:space-between; gap: 1rem; padding: .9rem 0; }
+    .brand{ display:flex; align-items:center; gap:.75rem; text-decoration:none; color: var(--ink); font-weight: 900; }
+    .brand-mark{ width: 40px; height: 40px; border-radius: 14px; display:grid; place-items:center;
+      background: linear-gradient(135deg, var(--accent-1), var(--accent-2)); border: 1px solid rgba(0,0,0,.08); box-shadow: var(--shadow); font-weight: 900; }
+    nav.site-nav{ display:flex; align-items:center; gap: .6rem; flex-wrap: wrap; }
+    nav.site-nav a{ color: var(--ink-soft); text-decoration:none; font-weight: 800; padding: .55rem .75rem; border-radius: 12px; }
+    nav.site-nav a:hover{ background: rgba(199,164,76,.12); }
+    .btn{ display:inline-flex; align-items:center; justify-content:center; gap:.55rem; padding: .85rem 1.15rem; border-radius: 12px; border: 1px solid rgba(0,0,0,.18); font-weight: 900; text-decoration:none; color: var(--ink); transition: transform .18s ease, box-shadow .18s ease, filter .18s ease; cursor: pointer; background: rgba(255,255,255,.78); }
+    .btn-primary{ border: none; background: linear-gradient(135deg, var(--accent-1), var(--accent-2)); color: var(--ink); box-shadow: var(--shadow); }
+    .btn-ghost{ background: rgba(255,255,255,.78); color: var(--ink); }
+    .btn-dark{ border:none; background: linear-gradient(135deg, var(--accent-3), var(--accent-2)); color:#fff; box-shadow: var(--shadow); }
+    @media (hover:hover){ .btn:hover{ transform: translateY(-2px); box-shadow: 0 14px 30px rgba(0,0,0,.14); filter: brightness(1.02); } }
+    @media (prefers-reduced-motion: reduce){ .btn{ transition:none; } }
+
+    /* Amazon-style button for Buy links */
+    .btn-amazon {
+      background-color: #FF9900;
+      color: #111;
+      font-weight: 700;
+      padding: 0.6rem 1.2rem;
+      border-radius: 24px;
+      border: none;
+      display: inline-block;
+      text-decoration: none;
+      transition: transform 0.15s ease, box-shadow 0.15s ease;
+    }
+    .btn-amazon:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+    }
+  </style>
 </head>
+
 <body class="home">
 
   <header class="topbar">
@@ -25,13 +81,14 @@
       </a>
       <nav class="site-nav" aria-label="Primary">
         <a href="index.html">Home</a>
-        <a href="#writers-deck" class="btn btn-ghost">Writers Deck</a>
+        <a class="btn btn-ghost" href="#writers-deck">Writers Deck</a>
       </nav>
     </div>
   </header>
 
   <main id="main">
 
+    <!-- Writers Deck Section -->
     <section class="wrap-tight" id="writers-deck">
       <div class="container">
         <h1 class="section-title">Building a Writers Deck</h1>
@@ -44,21 +101,21 @@
             <img src="../assets/xteink-x4.webp" alt="Xteink X4 E-Paper Device">
             <h3>Xteink X4 E-Paper Device</h3>
             <p>A lightweight e-paper device perfect for writing and note-taking wherever you are. Portable, easy on the eyes, and ideal for your writers deck setup.</p>
-            <p><a href="https://amzn.to/3RU177W" target="_blank">Buy on Amazon</a></p>
+            <p><a href="https://amzn.to/3RU177W" target="_blank" class="btn-amazon">Buy on Amazon</a></p>
           </div>
 
           <div class="card">
             <img src="../assets/logitech-keys2go.webp" alt="Logitech Keys-to-GO 2">
             <h3>Logitech Keys-to-GO 2</h3>
             <p>A compact wireless keyboard that pairs perfectly with your device. Type comfortably anytime, anywhere as part of your writers deck.</p>
-            <p><a href="https://amzn.to/3RVz5ZJ" target="_blank">Buy on Amazon</a></p>
+            <p><a href="https://amzn.to/3RVz5ZJ" target="_blank" class="btn-amazon">Buy on Amazon</a></p>
           </div>
 
           <div class="card">
             <img src="../assets/itramax-phone-holder.webp" alt="Itramax Magnetic Gym Phone Holder">
             <h3>Itramax Magnetic Gym Phone Holder</h3>
             <p>Secure your phone or tablet to stay hands-free while you write. Keeps your writers deck tidy and efficient.</p>
-            <p><a href="https://amzn.to/4v0xwb8" target="_blank">Buy on Amazon</a></p>
+            <p><a href="https://amzn.to/4v0xwb8" target="_blank" class="btn-amazon">Buy on Amazon</a></p>
           </div>
         </div>
 
