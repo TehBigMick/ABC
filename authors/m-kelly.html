@@ -1,3 +1,4 @@
+```html
 <!DOCTYPE html>
 <html lang="en-GB">
 <head>
@@ -5,12 +6,12 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
   <title>M Kelly | The Last Harbour | Coming Soon</title>
-  <meta name="description" content="The Last Harbour by M Kelly is a dark, atmospheric coming-soon novel set around a frozen harbour, a divided family, and a town caught under occupation. Sign up for early excerpts." />
-  <meta name="keywords" content="M Kelly, The Last Harbour, dark fiction, literary suspense, coming soon book, early excerpts, indie author, Authors Book Club" />
+  <meta name="description" content="The Last Harbour by M Kelly is a dark, atmospheric coming-soon novel set around a frozen harbour, a divided family, and a town caught under occupation. Read early excerpts on Wattpad." />
+  <meta name="keywords" content="M Kelly, The Last Harbour, dark fiction, literary suspense, political thriller, coming soon book, Wattpad excerpts, indie author, Authors Book Club" />
   <meta name="author" content="M Kelly" />
 
   <meta property="og:title" content="The Last Harbour by M Kelly | Coming Soon" />
-  <meta property="og:description" content="A dark, atmospheric story of family, fear, occupation, and a harbour that will not let go. Sign up for early excerpts." />
+  <meta property="og:description" content="A dark, atmospheric story of family, fear, occupation, and a harbour that will not let go. Read early excerpts on Wattpad." />
   <meta property="og:type" content="book" />
   <meta property="og:image" content="../assets/the-last-harbour-cover.webp" />
   <meta property="og:url" content="https://authorsbookclub.com/authors/m-kelly.html" />
@@ -156,6 +157,7 @@
       font-weight: 800;
       font-size: 0.98rem;
       transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+      display: inline-block;
     }
 
     .btn-primary {
@@ -188,7 +190,7 @@
         linear-gradient(180deg, rgba(0,0,0,0.12), rgba(0,0,0,0.85)),
         url("../assets/images/the-last-harbour-cover.webp");
       background-size: cover;
-      background-position: centre;
+      background-position: center;
       box-shadow: var(--shadow);
       border: 1px solid var(--line);
       overflow: hidden;
@@ -277,53 +279,16 @@
       line-height: 1.45;
     }
 
-    .signup-card {
+    .wattpad-card {
       background:
         linear-gradient(180deg, rgba(23,37,43,0.96), rgba(9,16,19,0.96));
       border: 1px solid rgba(199,154,75,0.28);
     }
 
-    form {
-      margin-top: 22px;
-      font-family: Arial, sans-serif;
-    }
-
-    label {
-      display: block;
-      margin-bottom: 8px;
-      color: var(--text);
-      font-weight: 700;
-      font-size: 0.92rem;
-    }
-
-    input,
-    textarea {
-      width: 100%;
-      padding: 14px 15px;
-      margin-bottom: 16px;
-      border-radius: 14px;
-      border: 1px solid rgba(255,255,255,0.16);
-      background: rgba(255,255,255,0.07);
-      color: var(--text);
-      font-size: 1rem;
-      outline: none;
-    }
-
-    input:focus,
-    textarea:focus {
-      border-color: rgba(199,154,75,0.78);
-      box-shadow: 0 0 0 4px rgba(199,154,75,0.12);
-    }
-
-    textarea {
-      resize: vertical;
-      min-height: 100px;
-    }
-
     .form-note {
       font-size: 0.86rem;
       color: var(--muted);
-      margin-top: 12px;
+      margin-top: 16px;
       font-family: Arial, sans-serif;
     }
 
@@ -370,7 +335,7 @@
         linear-gradient(135deg, rgba(199,154,75,0.35), rgba(255,255,255,0.05)),
         url("../assets/images/m-kelly-author.webp");
       background-size: cover;
-      background-position: centre;
+      background-position: center;
       border: 1px solid rgba(199,154,75,0.4);
     }
 
@@ -426,6 +391,11 @@
     "genre": ["Dark Fiction", "Literary Suspense", "Political Thriller"],
     "description": "A dark, atmospheric coming-soon novel set around a frozen harbour, a divided family, and a town trapped between occupation, grief, and resistance.",
     "url": "https://authorsbookclub.com/authors/m-kelly.html",
+    "workExample": {
+      "@type": "CreativeWork",
+      "name": "The Last Harbour - Chapter 1: The Catch",
+      "url": "https://www.wattpad.com/1633013983-the-last-harbour-chapter-1-the-catch"
+    },
     "publisher": {
       "@type": "Organization",
       "name": "Authors Book Club"
@@ -448,11 +418,17 @@
           <div class="eyebrow">M Kelly presents</div>
           <h1>The Last Harbour</h1>
           <p class="subtitle">
-            A dark, atmospheric story of a frozen harbour, a divided family, and a town slowly learning what happens when temporary power refuses to leave.
+            A dark, atmospheric story of a frozen harbour, a divided family, and a town slowly learning what happens when temporary power refuses to leave. Read the opening chapter now on Wattpad.
           </p>
 
           <div class="hero-actions">
-            <a href="#early-excerpts" class="btn btn-primary">Get Early Excerpts</a>
+            <a href="https://www.wattpad.com/1633013983-the-last-harbour-chapter-1-the-catch"
+               class="btn btn-primary"
+               target="_blank"
+               rel="noopener noreferrer">
+              Read Early Excerpts on Wattpad
+            </a>
+
             <a href="#about-book" class="btn btn-secondary">Read About the Book</a>
           </div>
         </div>
@@ -509,39 +485,36 @@
 
       <section class="section" id="early-excerpts">
         <div class="section-grid">
-          <div class="panel signup-card">
-            <h2>Sign up for early excerpts</h2>
+          <div class="panel wattpad-card">
+            <h2>Read the opening chapter</h2>
             <p>
-              Join the early reader list for private excerpts, release updates, and behind-the-scenes notes from <em>The Last Harbour</em>.
+              <em>The Last Harbour</em> is not released yet, but early excerpts are now available to read on Wattpad.
+            </p>
+            <p>
+              Begin with Chapter 1, <em>The Catch</em>, and follow the story as new excerpts are shared.
             </p>
 
-            <form action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
-              <input type="hidden" name="_subject" value="New early excerpt signup for The Last Harbour" />
+            <div class="hero-actions">
+              <a href="https://www.wattpad.com/1633013983-the-last-harbour-chapter-1-the-catch"
+                 class="btn btn-primary"
+                 target="_blank"
+                 rel="noopener noreferrer">
+                Read on Wattpad
+              </a>
+            </div>
 
-              <label for="name">Name</label>
-              <input id="name" type="text" name="name" placeholder="Your name" />
-
-              <label for="email">Email address</label>
-              <input id="email" type="email" name="email" placeholder="you@example.com" required />
-
-              <label for="message">Optional message</label>
-              <textarea id="message" name="message" placeholder="Tell M Kelly what drew you to The Last Harbour..."></textarea>
-
-              <button class="btn btn-primary" type="submit">Request Early Excerpts</button>
-
-              <p class="form-note">
-                Your email will only be used for updates about <em>The Last Harbour</em>. Replace the form action with your own Formspree endpoint before publishing.
-              </p>
-            </form>
+            <p class="form-note">
+              Opens in a new tab on Wattpad.
+            </p>
           </div>
 
           <div class="panel">
-            <h2>For readers who like their fiction cold, tense, and human.</h2>
+            <h2>Follow the story before release.</h2>
             <p>
-              This is not a cosy harbour story. It is a slow-burn descent into pressure: political, domestic, emotional, and moral.
+              Early excerpts will give readers a first look at the world of Lars, Elias, Sila, and the harbour before the full book is released.
             </p>
             <p>
-              Expect a close, character-led story with a bleak coastal atmosphere, family conflict, escalating occupation, and the painful cost of staying silent too long.
+              The story begins quietly, but the pressure builds quickly: poor catches, official notices, closed waters, soldiers, grief, and a town pushed too far.
             </p>
           </div>
         </div>
@@ -567,3 +540,4 @@
   </div>
 </body>
 </html>
+```
