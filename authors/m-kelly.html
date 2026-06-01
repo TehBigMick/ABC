@@ -1,0 +1,569 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>M Kelly | The Last Harbour | Coming Soon</title>
+  <meta name="description" content="The Last Harbour by M Kelly is a dark, atmospheric coming-soon novel set around a frozen harbour, a divided family, and a town caught under occupation. Sign up for early excerpts." />
+  <meta name="keywords" content="M Kelly, The Last Harbour, dark fiction, literary suspense, coming soon book, early excerpts, indie author, Authors Book Club" />
+  <meta name="author" content="M Kelly" />
+
+  <meta property="og:title" content="The Last Harbour by M Kelly | Coming Soon" />
+  <meta property="og:description" content="A dark, atmospheric story of family, fear, occupation, and a harbour that will not let go. Sign up for early excerpts." />
+  <meta property="og:type" content="book" />
+  <meta property="og:image" content="../assets/images/the-last-harbour-cover.webp" />
+  <meta property="og:url" content="https://authorsbookclub.com/authors/m-kelly.html" />
+
+  <link rel="canonical" href="https://authorsbookclub.com/authors/m-kelly.html" />
+
+  <style>
+    :root {
+      --bg: #071013;
+      --panel: #101a1f;
+      --panel-soft: #17252b;
+      --text: #f3efe7;
+      --muted: #b8c0bd;
+      --accent: #c79a4b;
+      --accent-dark: #8f682a;
+      --line: rgba(255,255,255,0.13);
+      --danger: #7d1f1f;
+      --shadow: 0 24px 70px rgba(0,0,0,0.45);
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: Georgia, "Times New Roman", serif;
+      background:
+        radial-gradient(circle at top left, rgba(199,154,75,0.12), transparent 35%),
+        linear-gradient(180deg, #071013 0%, #0c171b 48%, #05090b 100%);
+      color: var(--text);
+      line-height: 1.6;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .page {
+      min-height: 100vh;
+      overflow: hidden;
+    }
+
+    .nav {
+      width: min(1120px, 92%);
+      margin: 0 auto;
+      padding: 22px 0;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 1px solid var(--line);
+      font-family: Arial, sans-serif;
+    }
+
+    .nav-logo {
+      font-weight: 800;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      font-size: 0.9rem;
+      color: var(--accent);
+    }
+
+    .nav a.back-link {
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+
+    .nav a.back-link:hover {
+      color: var(--text);
+    }
+
+    .hero {
+      width: min(1120px, 92%);
+      margin: 0 auto;
+      padding: 76px 0 56px;
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 48px;
+      align-items: center;
+    }
+
+    .eyebrow {
+      font-family: Arial, sans-serif;
+      text-transform: uppercase;
+      letter-spacing: 0.18em;
+      color: var(--accent);
+      font-size: 0.78rem;
+      margin-bottom: 16px;
+      font-weight: 700;
+    }
+
+    h1 {
+      font-size: clamp(3rem, 7vw, 6.8rem);
+      line-height: 0.9;
+      margin: 0 0 18px;
+      letter-spacing: -0.06em;
+    }
+
+    .subtitle {
+      font-size: clamp(1.15rem, 2.1vw, 1.55rem);
+      color: var(--muted);
+      max-width: 680px;
+      margin-bottom: 28px;
+    }
+
+    .coming-soon {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 10px 16px;
+      border: 1px solid rgba(199,154,75,0.45);
+      border-radius: 999px;
+      color: var(--accent);
+      background: rgba(199,154,75,0.08);
+      font-family: Arial, sans-serif;
+      font-size: 0.9rem;
+      font-weight: 700;
+      margin-bottom: 24px;
+    }
+
+    .coming-soon span {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--accent);
+      box-shadow: 0 0 18px rgba(199,154,75,0.9);
+    }
+
+    .hero-actions {
+      display: flex;
+      gap: 14px;
+      flex-wrap: wrap;
+      margin-top: 30px;
+      font-family: Arial, sans-serif;
+    }
+
+    .btn {
+      border: none;
+      cursor: pointer;
+      padding: 14px 22px;
+      border-radius: 999px;
+      font-weight: 800;
+      font-size: 0.98rem;
+      transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+    }
+
+    .btn-primary {
+      background: linear-gradient(135deg, var(--accent), #f0c671);
+      color: #14100a;
+      box-shadow: 0 12px 28px rgba(199,154,75,0.24);
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 16px 34px rgba(199,154,75,0.32);
+    }
+
+    .btn-secondary {
+      background: rgba(255,255,255,0.08);
+      color: var(--text);
+      border: 1px solid var(--line);
+    }
+
+    .btn-secondary:hover {
+      background: rgba(255,255,255,0.14);
+      transform: translateY(-2px);
+    }
+
+    .cover-card {
+      position: relative;
+      min-height: 560px;
+      border-radius: 28px;
+      background:
+        linear-gradient(180deg, rgba(0,0,0,0.12), rgba(0,0,0,0.85)),
+        url("../assets/images/the-last-harbour-cover.webp");
+      background-size: cover;
+      background-position: centre;
+      box-shadow: var(--shadow);
+      border: 1px solid var(--line);
+      overflow: hidden;
+    }
+
+    .cover-card::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background:
+        linear-gradient(120deg, rgba(7,16,19,0.2), rgba(7,16,19,0.75)),
+        radial-gradient(circle at bottom, rgba(199,154,75,0.16), transparent 42%);
+      pointer-events: none;
+    }
+
+    .cover-fallback {
+      position: absolute;
+      inset: 0;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      padding: 36px;
+      z-index: 1;
+    }
+
+    .cover-fallback h2 {
+      font-size: 3rem;
+      line-height: 0.95;
+      margin: 0 0 12px;
+      letter-spacing: -0.04em;
+    }
+
+    .cover-fallback p {
+      margin: 0;
+      color: var(--muted);
+      font-family: Arial, sans-serif;
+      max-width: 360px;
+    }
+
+    .section {
+      width: min(1120px, 92%);
+      margin: 0 auto;
+      padding: 54px 0;
+    }
+
+    .section-grid {
+      display: grid;
+      grid-template-columns: 0.85fr 1.15fr;
+      gap: 34px;
+      align-items: start;
+    }
+
+    .panel {
+      background: rgba(16,26,31,0.82);
+      border: 1px solid var(--line);
+      border-radius: 28px;
+      padding: 30px;
+      box-shadow: 0 20px 55px rgba(0,0,0,0.28);
+      backdrop-filter: blur(10px);
+    }
+
+    .panel h2 {
+      margin-top: 0;
+      font-size: clamp(1.9rem, 3vw, 3rem);
+      line-height: 1;
+      letter-spacing: -0.04em;
+    }
+
+    .panel p {
+      color: var(--muted);
+      margin-bottom: 0;
+    }
+
+    .about-book {
+      font-size: 1.12rem;
+    }
+
+    .quote-strip {
+      margin: 46px 0 0;
+      padding: 28px;
+      border-left: 4px solid var(--accent);
+      background: rgba(255,255,255,0.04);
+      border-radius: 0 22px 22px 0;
+      color: #efe6d4;
+      font-size: 1.25rem;
+      line-height: 1.45;
+    }
+
+    .signup-card {
+      background:
+        linear-gradient(180deg, rgba(23,37,43,0.96), rgba(9,16,19,0.96));
+      border: 1px solid rgba(199,154,75,0.28);
+    }
+
+    form {
+      margin-top: 22px;
+      font-family: Arial, sans-serif;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 8px;
+      color: var(--text);
+      font-weight: 700;
+      font-size: 0.92rem;
+    }
+
+    input,
+    textarea {
+      width: 100%;
+      padding: 14px 15px;
+      margin-bottom: 16px;
+      border-radius: 14px;
+      border: 1px solid rgba(255,255,255,0.16);
+      background: rgba(255,255,255,0.07);
+      color: var(--text);
+      font-size: 1rem;
+      outline: none;
+    }
+
+    input:focus,
+    textarea:focus {
+      border-color: rgba(199,154,75,0.78);
+      box-shadow: 0 0 0 4px rgba(199,154,75,0.12);
+    }
+
+    textarea {
+      resize: vertical;
+      min-height: 100px;
+    }
+
+    .form-note {
+      font-size: 0.86rem;
+      color: var(--muted);
+      margin-top: 12px;
+      font-family: Arial, sans-serif;
+    }
+
+    .details {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+      margin-top: 34px;
+    }
+
+    .detail {
+      padding: 22px;
+      border-radius: 22px;
+      background: rgba(255,255,255,0.05);
+      border: 1px solid var(--line);
+    }
+
+    .detail strong {
+      display: block;
+      color: var(--accent);
+      font-family: Arial, sans-serif;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      font-size: 0.73rem;
+      margin-bottom: 8px;
+    }
+
+    .detail span {
+      color: var(--muted);
+    }
+
+    .author-box {
+      display: flex;
+      gap: 22px;
+      align-items: center;
+    }
+
+    .author-photo {
+      width: 94px;
+      height: 94px;
+      flex: 0 0 94px;
+      border-radius: 50%;
+      background:
+        linear-gradient(135deg, rgba(199,154,75,0.35), rgba(255,255,255,0.05)),
+        url("../assets/images/m-kelly-author.webp");
+      background-size: cover;
+      background-position: centre;
+      border: 1px solid rgba(199,154,75,0.4);
+    }
+
+    .footer {
+      width: min(1120px, 92%);
+      margin: 0 auto;
+      padding: 36px 0 48px;
+      border-top: 1px solid var(--line);
+      color: var(--muted);
+      font-family: Arial, sans-serif;
+      font-size: 0.92rem;
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    @media (max-width: 850px) {
+      .hero,
+      .section-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .hero {
+        padding-top: 46px;
+      }
+
+      .cover-card {
+        min-height: 460px;
+      }
+
+      .details {
+        grid-template-columns: 1fr;
+      }
+
+      .author-box {
+        align-items: flex-start;
+      }
+    }
+  </style>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Book",
+    "name": "The Last Harbour",
+    "author": {
+      "@type": "Person",
+      "name": "M Kelly"
+    },
+    "bookFormat": "EBook",
+    "inLanguage": "en-GB",
+    "genre": ["Dark Fiction", "Literary Suspense", "Political Thriller"],
+    "description": "A dark, atmospheric coming-soon novel set around a frozen harbour, a divided family, and a town trapped between occupation, grief, and resistance.",
+    "url": "https://authorsbookclub.com/authors/m-kelly.html",
+    "publisher": {
+      "@type": "Organization",
+      "name": "Authors Book Club"
+    }
+  }
+  </script>
+</head>
+
+<body>
+  <div class="page">
+    <header class="nav">
+      <a href="../index.html" class="nav-logo">Authors Book Club</a>
+      <a href="../index.html" class="back-link">← Back to Home</a>
+    </header>
+
+    <main>
+      <section class="hero">
+        <div>
+          <div class="coming-soon"><span></span> Coming Soon</div>
+          <div class="eyebrow">M Kelly presents</div>
+          <h1>The Last Harbour</h1>
+          <p class="subtitle">
+            A dark, atmospheric story of a frozen harbour, a divided family, and a town slowly learning what happens when temporary power refuses to leave.
+          </p>
+
+          <div class="hero-actions">
+            <a href="#early-excerpts" class="btn btn-primary">Get Early Excerpts</a>
+            <a href="#about-book" class="btn btn-secondary">Read About the Book</a>
+          </div>
+        </div>
+
+        <aside class="cover-card" aria-label="The Last Harbour book cover placeholder">
+          <div class="cover-fallback">
+            <h2>The Last Harbour</h2>
+            <p>Cover coming soon. Add your final cover image as <strong>the-last-harbour-cover.webp</strong>.</p>
+          </div>
+        </aside>
+      </section>
+
+      <section class="section" id="about-book">
+        <div class="section-grid">
+          <div class="panel">
+            <h2>A harbour under watch. A family under strain.</h2>
+            <p>
+              In a small northern town, fishing boats sit tied beneath floodlights while official notices multiply, soldiers arrive, and the word “temporary” begins to sound like a threat.
+            </p>
+          </div>
+
+          <div class="panel about-book">
+            <p>
+              <em>The Last Harbour</em> follows Lars, a fisherman fighting to hold on to the only life he understands, as his family and community are pulled into something darker than a dispute over access, borders, or boats.
+            </p>
+            <p>
+              As the harbour closes, grief hardens into resistance. His son Elias is drawn towards the young men gathering in sheds and back rooms, while Sila, the youngest, records the town’s fear in drawings no adult wants to look at too closely.
+            </p>
+            <p>
+              Bleak, intimate, and tense, this is a story about occupation, fatherhood, silence, and the moment ordinary people realise that waiting is no longer neutral.
+            </p>
+
+            <div class="quote-strip">
+              “If something is temporary, it should know when to stop.”
+            </div>
+
+            <div class="details">
+              <div class="detail">
+                <strong>Status</strong>
+                <span>Coming soon</span>
+              </div>
+              <div class="detail">
+                <strong>Genre</strong>
+                <span>Dark literary suspense</span>
+              </div>
+              <div class="detail">
+                <strong>Author</strong>
+                <span>M Kelly</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="early-excerpts">
+        <div class="section-grid">
+          <div class="panel signup-card">
+            <h2>Sign up for early excerpts</h2>
+            <p>
+              Join the early reader list for private excerpts, release updates, and behind-the-scenes notes from <em>The Last Harbour</em>.
+            </p>
+
+            <form action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+              <input type="hidden" name="_subject" value="New early excerpt signup for The Last Harbour" />
+
+              <label for="name">Name</label>
+              <input id="name" type="text" name="name" placeholder="Your name" />
+
+              <label for="email">Email address</label>
+              <input id="email" type="email" name="email" placeholder="you@example.com" required />
+
+              <label for="message">Optional message</label>
+              <textarea id="message" name="message" placeholder="Tell M Kelly what drew you to The Last Harbour..."></textarea>
+
+              <button class="btn btn-primary" type="submit">Request Early Excerpts</button>
+
+              <p class="form-note">
+                Your email will only be used for updates about <em>The Last Harbour</em>. Replace the form action with your own Formspree endpoint before publishing.
+              </p>
+            </form>
+          </div>
+
+          <div class="panel">
+            <h2>For readers who like their fiction cold, tense, and human.</h2>
+            <p>
+              This is not a cosy harbour story. It is a slow-burn descent into pressure: political, domestic, emotional, and moral.
+            </p>
+            <p>
+              Expect a close, character-led story with a bleak coastal atmosphere, family conflict, escalating occupation, and the painful cost of staying silent too long.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="panel author-box">
+          <div class="author-photo" aria-label="M Kelly author photo placeholder"></div>
+          <div>
+            <h2>About M Kelly</h2>
+            <p>
+              M Kelly writes dark, character-driven fiction about pressure, loyalty, family, and the quiet moments before people are forced to choose who they are.
+            </p>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <span>© M Kelly. All rights reserved.</span>
+      <span>The Last Harbour — Coming Soon</span>
+    </footer>
+  </div>
+</body>
+</html>
