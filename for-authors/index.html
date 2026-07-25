@@ -1,15 +1,19 @@
 <!DOCTYPE html>
 <html lang="en-GB">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>For Authors | Apply to Authors Book Club</title>
+  <meta name="description" content="Apply for an Authors Book Club feature and give readers a clear, curated introduction to your books, genre and best starting point.">
+  <meta name="theme-color" content="#173f35">
+  <link rel="canonical" href="https://www.authorsbookclub.com/for-authors/">
+  <link rel="stylesheet" href="/for-authors/author-portal.css">
 
-  <title>Tips for Authors: Building a Portable Writers Deck | AuthorsBookClub</title>
-  <meta name="description" content="Build a portable writers deck with Xteink X4, Logitech Keys-to-GO 2, and Itramax Phone Holder. Learn how to write anywhere anytime.">
-  <meta name="keywords" content="writers deck, portable writing setup, Xteink X4, Logitech Keys-to-GO 2, Itramax Phone Holder, TypeSlate">
-  <link rel="canonical" href="https://www.authorsbookclub.com/for-authors/tips-for-authors.html">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="For Authors | Authors Book Club">
+  <meta property="og:description" content="Give readers a useful front door to your books. See what an author feature includes and submit your work for consideration.">
+  <meta property="og:url" content="https://www.authorsbookclub.com/for-authors/">
 
-  <!-- Google Analytics -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-0DYQYNMX6T"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
@@ -18,152 +22,402 @@
     gtag('config', 'G-0DYQYNMX6T');
   </script>
 
-  <style>
-    /* Original site styles restored */
-    *, *::before, *::after { box-sizing: border-box; }
-    :root{
-      --ink:#15110e; --ink-soft:#3b332c; --paper:#f6f0e6; --paper-2:#efe6d7;
-      --line: rgba(21,17,14,.14); --panel: rgba(255,255,255,.74); --shadow: 0 18px 40px rgba(0,0,0,.12);
-      --radius: 18px; --accent-1:#c7a44c; --accent-2:#2d7a66; --accent-3:#8a5a2b;
-      --success-bg: rgba(45,122,102,.10); --success-border: rgba(45,122,102,.22);
-      --error-bg: rgba(139,63,36,.10); --error-border: rgba(139,63,36,.22);
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "name": "For Authors",
+    "url": "https://www.authorsbookclub.com/for-authors/",
+    "description": "Information and an application route for authors who want their books considered for Authors Book Club.",
+    "isPartOf": {
+      "@type": "WebSite",
+      "name": "Authors Book Club",
+      "url": "https://www.authorsbookclub.com/"
     }
-    html{ scroll-behaviour:smooth; }
-    body.home{
-      background:
-        radial-gradient(900px 520px at 18% 12%, rgba(199,164,76,.16), transparent 60%),
-        radial-gradient(900px 520px at 82% 20%, rgba(45,122,102,.13), transparent 60%),
-        linear-gradient(180deg, var(--paper) 0%, var(--paper-2) 100%);
-      color: var(--ink); margin:0; overflow-x:hidden;
-      font-family: Georgia, "Times New Roman", serif;
-    }
-    .wrap{ padding: 4rem 0; }
-    .wrap-tight{ padding: 2.75rem 0; }
-    .container{ max-width: 1100px; margin: 0 auto; padding: 0 1.25rem; }
+  }
+  </script>
 
-    .topbar{ position: sticky; top: 0; z-index: 50; background: rgba(246,240,230,.92);
-      border-bottom: 1px solid rgba(0,0,0,.08); backdrop-filter: blur(10px); }
-    .topbar-inner{ display:flex; align-items:center; justify-content:space-between; gap: 1rem; padding: .9rem 0; }
-    .brand{ display:flex; align-items:center; gap:.75rem; text-decoration:none; color: var(--ink); font-weight: 900; }
-    .brand-mark{ width: 40px; height: 40px; border-radius: 14px; display:grid; place-items:center;
-      background: linear-gradient(135deg, var(--accent-1), var(--accent-2)); border: 1px solid rgba(0,0,0,.08); box-shadow: var(--shadow); font-weight: 900; }
-    nav.site-nav{ display:flex; align-items:center; gap: .6rem; flex-wrap: wrap; }
-    nav.site-nav a{ color: var(--ink-soft); text-decoration:none; font-weight: 800; padding: .55rem .75rem; border-radius: 12px; }
-    nav.site-nav a:hover{ background: rgba(199,164,76,.12); }
-
-    .grid-3{ display:grid; grid-template-columns: repeat(3, 1fr); gap: 1.25rem; margin-top: 1.5rem; }
-    .card{
-      background: var(--panel);
-      border: 1px solid var(--line);
-      border-radius: var(--radius);
-      box-shadow: var(--shadow);
-      padding: 1.1rem;
-      text-align: center;
-      transition: transform .18s ease, box-shadow .18s ease;
-    }
-    .card:hover{
-      transform: translateY(-3px);
-      box-shadow: 0 20px 44px rgba(0,0,0,.14);
-    }
-    .card img{ max-width: 100%; border-radius: 12px; margin-bottom: .8rem; }
-
-    .section-title{ font-size: clamp(2rem, 4vw, 2.5rem); margin-bottom: 1rem; }
-    .section-lead{ color: var(--ink-soft); font-size: 1.05rem; line-height:1.55; margin-bottom: 1.2rem; }
-
-    /* Amazon-style button for Buy links */
-    .btn-amazon {
-      background-color: #FF9900;
-      color: #111;
-      font-weight: 700;
-      padding: 0.6rem 1.2rem;
-      border-radius: 24px;
-      border: none;
-      display: inline-block;
-      text-decoration: none;
-      transition: transform 0.15s ease, box-shadow 0.15s ease;
-    }
-    .btn-amazon:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 6px 12px rgba(0,0,0,0.15);
-    }
-
-    @media (max-width: 980px){ .grid-3{ grid-template-columns: 1fr; } }
-  </style>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Does applying guarantee a feature?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "No. Every submission is reviewed for fit, accuracy and usefulness to readers before a feature is offered."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Do you sell or distribute books?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "No. Authors Book Club helps readers discover books and links them to the author's chosen website or retailer."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What information should an author prepare?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Prepare a short biography, a professional cover image, a concise book description, genre and audience information, and working links to the book."
+        }
+      }
+    ]
+  }
+  </script>
+  <script defer src="/for-authors/author-application.js"></script>
 </head>
 
-<body class="home">
-  <header class="topbar">
-    <div class="container topbar-inner">
-      <a class="brand" href="/" aria-label="AuthorsBookClub home">
+<body>
+  <a class="skip-link" href="#main-content">Skip to the author information</a>
+
+  <header class="site-header">
+    <div class="nav-shell">
+      <a class="brand" href="/" aria-label="Authors Book Club home">
         <span class="brand-mark" aria-hidden="true">ABC</span>
-        <span>AuthorsBookClub</span>
+        <span>Authors Book Club</span>
       </a>
-      <nav class="site-nav" aria-label="Primary">
-        <a href="/">Home</a>
-        <a class="btn btn-ghost" href="#writers-deck">Writers Deck</a>
+
+      <nav class="site-nav" aria-label="Primary navigation">
+        <a href="/">Find a book</a>
+        <a href="#what-you-get">Author features</a>
+        <a href="#resources">Resources</a>
+        <a class="nav-cta" href="#apply">Apply</a>
       </nav>
     </div>
   </header>
 
-  <main id="main">
-    <section class="wrap-tight" id="writers-deck">
-      <div class="container">
-        <h1 class="section-title">Building a Writers Deck</h1>
-        <p class="section-lead">
-          Create a portable writing setup so you can write anywhere, anytime. A well-built <strong>writers deck</strong> allows maximum visibility, easy access to your tools, and flexibility for inspiration on the go.
+  <main id="main-content">
+    <section class="author-hero">
+      <div class="shell hero-grid">
+        <div class="hero-copy">
+          <p class="eyebrow">For independent authors</p>
+          <h1>Give your books a better front door.</h1>
+          <p class="hero-lede">
+            Readers do not need another endless catalogue. They need to know what your books feel like, where to begin and why your work deserves their time.
+          </p>
+          <div class="hero-actions">
+            <a class="button button-primary" href="#apply">Apply to be featured</a>
+            <a class="button button-secondary" href="#what-you-get">See what is included</a>
+          </div>
+          <p class="hero-note">Submitting your work does not guarantee publication. Every feature is reviewed before it goes live.</p>
+        </div>
+
+        <aside class="feature-preview" aria-label="Example author feature">
+          <p class="preview-kicker">Your author page</p>
+          <div class="preview-window" aria-hidden="true">
+            <div class="preview-cover">
+              <span>Your<br>cover</span>
+            </div>
+            <div class="preview-copy">
+              <span class="preview-label">Start here</span>
+              <span class="preview-title">Your strongest reader hook</span>
+              <span class="preview-line"></span>
+              <span class="preview-line preview-line-short"></span>
+              <span class="preview-button">Explore the book</span>
+            </div>
+          </div>
+          <ul class="preview-list">
+            <li>Clear reader positioning</li>
+            <li>Useful book starting points</li>
+            <li>Direct links to buy or learn more</li>
+          </ul>
+        </aside>
+      </div>
+    </section>
+
+    <section class="principles-strip" aria-label="How author features work">
+      <div class="shell principles-grid">
+        <div><strong>Reader-first</strong><span>Pages answer “Why this book?”</span></div>
+        <div><strong>Curated</strong><span>Every submission is reviewed</span></div>
+        <div><strong>Direct</strong><span>Readers reach your chosen links</span></div>
+      </div>
+    </section>
+
+    <section class="section shell" id="what-you-get">
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow">What an author feature includes</p>
+          <h2>More useful than a name in a directory.</h2>
+        </div>
+        <p>
+          The aim is to help the right reader understand your work quickly, then give them a clear next step.
         </p>
+      </div>
 
-        <div class="grid-3">
-          <div class="card">
-            <img src="../assets/xteink-x4.webp" alt="Xteink X4 E-Paper Device for portable writers deck setup">
-            <h3>Xteink X4 E-Paper Device</h3>
-            <p>A lightweight e-paper device perfect for writing and note-taking wherever you are. Portable, easy on the eyes, and ideal for your writers deck setup.</p>
-            <p><a href="https://amzn.to/3RU177W" target="_blank" rel="noopener noreferrer sponsored" class="btn-amazon">Buy on Amazon</a></p>
+      <div class="benefit-grid">
+        <article class="benefit-card">
+          <span class="card-number">01</span>
+          <h3>A focused author page</h3>
+          <p>Your biography, writing style and key themes presented as a concise introduction rather than a wall of promotional copy.</p>
+        </article>
+        <article class="benefit-card">
+          <span class="card-number">02</span>
+          <h3>A clear place to start</h3>
+          <p>One or more recommended entry points, with genre, mood and story hooks that help readers choose confidently.</p>
+        </article>
+        <article class="benefit-card">
+          <span class="card-number">03</span>
+          <h3>Discovery across the site</h3>
+          <p>Accepted books can be considered for relevant homepage shelves, genre filters and editorial discovery features.</p>
+        </article>
+        <article class="benefit-card">
+          <span class="card-number">04</span>
+          <h3>Your official destinations</h3>
+          <p>Links can direct readers to your website, retailer page or other agreed destination. The site does not host or sell your book.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="section section-tint">
+      <div class="shell fit-grid">
+        <div>
+          <p class="eyebrow">Before you apply</p>
+          <h2>Make the submission easy to assess.</h2>
+          <p class="section-copy">
+            A strong application is specific, accurate and written for readers. You do not need a huge following, but your book must be published or have a confirmed release page.
+          </p>
+        </div>
+
+        <div class="check-panel">
+          <h3>Have these ready</h3>
+          <ul class="check-list">
+            <li>A professional book cover you can authorise us to display</li>
+            <li>A working book, retailer or author website link</li>
+            <li>A short description of the book’s audience and appeal</li>
+            <li>Accurate genre, tone and content information</li>
+          </ul>
+        </div>
+
+        <div class="check-panel check-panel-muted">
+          <h3>What to avoid</h3>
+          <ul class="check-list">
+            <li>Unpublished concepts with no confirmed release information</li>
+            <li>Placeholder, misleading or low-resolution cover artwork</li>
+            <li>Claims or review quotes you cannot substantiate</li>
+            <li>Submitting work you do not own or represent</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="section shell">
+      <div class="section-heading process-heading">
+        <div>
+          <p class="eyebrow">The process</p>
+          <h2>Three steps, with no mystery.</h2>
+        </div>
+      </div>
+
+      <ol class="process-list">
+        <li>
+          <span>1</span>
+          <div>
+            <h3>Send the essentials</h3>
+            <p>Tell us who you are, where the book can be found and why a particular reader would care.</p>
           </div>
-
-          <div class="card">
-            <img src="../assets/logitech-keys2go.webp" alt="Logitech Keys-to-GO 2 for portable writers deck setup">
-            <h3>Logitech Keys-to-GO 2</h3>
-            <p>A compact wireless keyboard that pairs perfectly with your device. Type comfortably anytime, anywhere as part of your writers deck.</p>
-            <p><a href="https://amzn.to/3RVz5ZJ" target="_blank" rel="noopener noreferrer sponsored" class="btn-amazon">Buy on Amazon</a></p>
+        </li>
+        <li>
+          <span>2</span>
+          <div>
+            <h3>Editorial review</h3>
+            <p>The submission is checked for fit, accuracy, presentation and whether it offers readers a useful recommendation.</p>
           </div>
+        </li>
+        <li>
+          <span>3</span>
+          <div>
+            <h3>Agree the feature</h3>
+            <p>If accepted, we will contact you before publication to confirm the material, links and any terms that apply.</p>
+          </div>
+        </li>
+      </ol>
+    </section>
 
-          <div class="card">
-            <img src="../assets/itramax-phone-holder.webp" alt="Itramax Magnetic Gym Phone Holder for writers deck">
-            <h3>Itramax Magnetic Gym Phone Holder</h3>
-            <p>Secure your phone or tablet to stay hands-free while you write. Keeps your writers deck tidy and efficient.</p>
-            <p><a href="https://amzn.to/4v0xwb8" target="_blank" rel="noopener noreferrer sponsored" class="btn-amazon">Buy on Amazon</a></p>
+    <section class="application-section" id="apply">
+      <div class="shell application-grid">
+        <div class="application-intro">
+          <p class="eyebrow eyebrow-light">Author application</p>
+          <h2>Tell us what readers should discover.</h2>
+          <p>
+            Start with one book. Keep the pitch concrete and reader-focused; a few strong details are more useful than a long synopsis.
+          </p>
+          <div class="privacy-note">
+            <strong>Your contact details stay private.</strong>
+            <span>They are processed by the form provider and used to review the submission and reply to you. Nothing is published without a separate agreement.</span>
           </div>
         </div>
 
-        <p class="section-lead" style="margin-top:1.5rem;">
-          Install the latest firmware to make your writers deck even more powerful: 
-          <a href="https://typeslate.com/tools/microslate/" target="_blank" rel="noopener noreferrer">TypeSlate MicroSlate Tools</a>.
-        </p>
+        <!-- Add the Formspree endpoint here; keep the recipient email in Formspree, not this repository. -->
+        <form
+          class="application-form"
+          id="authorApplication"
+          data-form-endpoint=""
+          novalidate
+        >
+          <div class="field-row">
+            <div class="field">
+              <label for="authorName">Author or pen name</label>
+              <input id="authorName" name="author_name" type="text" autocomplete="name" maxlength="100" required>
+            </div>
+            <div class="field">
+              <label for="contactEmail">Private contact email</label>
+              <input id="contactEmail" name="email" type="email" autocomplete="email" maxlength="160" required>
+            </div>
+          </div>
 
-        <p class="section-lead">
-          For a detailed guide on building your pocket-sized writers deck, visit 
-          <a href="https://typeslate.com/blog/pocket-sized-writers-deck-setup/" target="_blank" rel="noopener noreferrer">this blog post</a>.
-        </p>
+          <div class="field-row">
+            <div class="field">
+              <label for="bookTitle">Book title</label>
+              <input id="bookTitle" name="book_title" type="text" maxlength="160" required>
+            </div>
+            <div class="field">
+              <label for="genre">Primary genre</label>
+              <select id="genre" name="genre" required>
+                <option value="">Choose a genre</option>
+                <option>Romance</option>
+                <option>Fantasy</option>
+                <option>LitRPG</option>
+                <option>Crime and thriller</option>
+                <option>Horror</option>
+                <option>Contemporary fiction</option>
+                <option>Science fiction</option>
+                <option>Children's books</option>
+                <option>Non-fiction</option>
+                <option>Other</option>
+              </select>
+            </div>
+          </div>
 
-        <p class="section-lead">
-          Your writers deck setup means you can write anywhere, anytime, keeping your ideas flowing and your workflow organised.
-        </p>
+          <div class="field-row">
+            <div class="field">
+              <label for="bookUrl">Book or retailer link</label>
+              <input id="bookUrl" name="book_url" type="url" inputmode="url" placeholder="https://" maxlength="500" required>
+            </div>
+            <div class="field">
+              <label for="authorUrl">Author website <span>(optional)</span></label>
+              <input id="authorUrl" name="author_url" type="url" inputmode="url" placeholder="https://" maxlength="500">
+            </div>
+          </div>
+
+          <div class="field">
+            <div class="label-line">
+              <label for="bookHook">One-sentence reader hook</label>
+              <span id="hookCount">0/180</span>
+            </div>
+            <textarea id="bookHook" name="reader_hook" rows="3" maxlength="180" aria-describedby="hookHelp hookCount" required></textarea>
+            <small id="hookHelp">Describe the experience, conflict or promise—not the entire plot.</small>
+          </div>
+
+          <div class="field">
+            <label for="audience">Who is this book for?</label>
+            <textarea id="audience" name="ideal_reader" rows="4" maxlength="400" placeholder="For readers who enjoy…" required></textarea>
+          </div>
+
+          <div class="field">
+            <label for="notes">Anything else we should know? <span>(optional)</span></label>
+            <textarea id="notes" name="notes" rows="4" maxlength="700" placeholder="Series order, release date, content notes or relevant background"></textarea>
+          </div>
+
+          <div class="honeypot" aria-hidden="true">
+            <label for="companyWebsite">Leave this field empty</label>
+            <input id="companyWebsite" name="_gotcha" type="text" tabindex="-1" autocomplete="off">
+          </div>
+
+          <input type="hidden" name="_subject" value="New Authors Book Club application">
+          <input type="hidden" name="source_page" value="For Authors">
+
+          <label class="consent-row">
+            <input name="cover_permission" type="checkbox" value="confirmed" required>
+            <span>I own or represent this work and can grant permission for Authors Book Club to display its cover and supplied promotional material if the submission is accepted.</span>
+          </label>
+
+          <label class="consent-row">
+            <input name="editorial_review" type="checkbox" value="accepted" required>
+            <span>I understand that submitting does not guarantee a feature and that publication details will be agreed separately.</span>
+          </label>
+
+          <div class="form-footer">
+            <button class="button button-submit" id="submitApplication" type="submit" disabled>Send application</button>
+            <p class="form-status" id="formStatus" role="status" aria-live="polite">
+              Online applications are being connected. Please check back shortly.
+            </p>
+          </div>
+        </form>
+      </div>
+    </section>
+
+    <section class="section shell" id="resources">
+      <div class="resource-card">
+        <div>
+          <p class="eyebrow">Author resources</p>
+          <h2>Build a writers deck you can actually carry.</h2>
+          <p>
+            The original writers-deck guide now has its own home. See the compact e-paper device, keyboard and phone-holder setup designed for writing away from a desk.
+          </p>
+          <a class="text-link" href="/for-authors/tips-for-authors.html">Read the writers-deck guide <span aria-hidden="true">→</span></a>
+        </div>
+        <div class="resource-object" aria-hidden="true">
+          <span class="resource-screen">Draft<br>anywhere.</span>
+          <span class="resource-keyboard"></span>
+        </div>
+      </div>
+    </section>
+
+    <section class="section shell faq-section">
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow">Questions, answered</p>
+          <h2>Before you press send.</h2>
+        </div>
+      </div>
+
+      <div class="faq-list">
+        <details>
+          <summary>Does applying guarantee a feature?</summary>
+          <p>No. Every submission is reviewed for fit, accuracy and usefulness to readers. If it is accepted, you will be contacted before anything is published.</p>
+        </details>
+        <details>
+          <summary>Do you sell or distribute books?</summary>
+          <p>No. Authors Book Club is a discovery site. Its pages direct readers to the author’s website, a retailer or another agreed destination.</p>
+        </details>
+        <details>
+          <summary>Can I submit more than one book?</summary>
+          <p>Start with the book that gives a new reader the best introduction to your work. You can mention a series or other relevant titles in the final notes field.</p>
+        </details>
+        <details>
+          <summary>Will my email address appear on the website?</summary>
+          <p>No. The contact email in the application is for reviewing the submission and replying to you. It is not published as part of an author feature.</p>
+        </details>
+        <details>
+          <summary>Are retailer links affiliate links?</summary>
+          <p>Some retailer links may be affiliate links. Where applicable, Authors Book Club may earn a commission without changing the price paid by the reader.</p>
+        </details>
       </div>
     </section>
   </main>
 
-  <footer class="footer">
-    <div class="container footer-inner">
-      <div>© <span id="year"></span> AuthorsBookClub</div>
-      <div style="display:flex; gap:.9rem; flex-wrap:wrap;">
-        <a href="/">Home</a>
+  <footer class="site-footer">
+    <div class="shell footer-grid">
+      <div>
+        <a class="brand footer-brand" href="/">
+          <span class="brand-mark" aria-hidden="true">ABC</span>
+          <span>Authors Book Club</span>
+        </a>
+        <p>Curated routes into books worth opening.</p>
       </div>
+      <nav aria-label="Footer navigation">
+        <a href="/">Find a book</a>
+        <a href="#what-you-get">Author features</a>
+        <a href="#resources">Resources</a>
+        <a href="#apply">Apply</a>
+      </nav>
+      <p class="copyright">© <span id="year"></span> Authors Book Club</p>
     </div>
   </footer>
-
-  <script>
-    document.getElementById("year").textContent = new Date().getFullYear();
-  </script>
 </body>
 </html>
