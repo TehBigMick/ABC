@@ -195,7 +195,7 @@
       border-radius: 28px;
       background:
         linear-gradient(180deg, rgba(0,0,0,0.12), rgba(0,0,0,0.85)),
-        url("../assets/images/the-last-harbour-cover.webp");
+        url("../assets/the-last-harbour-cover.webp");
       background-size: cover;
       background-position: center;
       box-shadow: var(--shadow);
@@ -338,12 +338,19 @@
       height: 94px;
       flex: 0 0 94px;
       border-radius: 50%;
-      background:
-        linear-gradient(135deg, rgba(199,154,75,0.35), rgba(255,255,255,0.05)),
-        url("../assets/images/m-kelly-author.webp");
-      background-size: cover;
-      background-position: center;
+      display: grid;
+      place-items: center;
+      background: linear-gradient(135deg, rgba(199,154,75,0.35), rgba(255,255,255,0.05));
       border: 1px solid rgba(199,154,75,0.4);
+    }
+
+    .author-photo::after {
+      content: "MK";
+      color: var(--accent-2);
+      font-family: Arial, sans-serif;
+      font-size: 1.35rem;
+      font-weight: 800;
+      letter-spacing: 0.08em;
     }
 
     .footer {
@@ -440,10 +447,10 @@
           </div>
         </div>
 
-        <aside class="cover-card" aria-label="The Last Harbour book cover placeholder">
+        <aside class="cover-card" aria-labelledby="harbour-cover-title">
           <div class="cover-fallback">
-            <h2>The Last Harbour</h2>
-            <p>Cover coming soon. Add your final cover image as <strong>the-last-harbour-cover.webp</strong>.</p>
+            <h2 id="harbour-cover-title">The Last Harbour</h2>
+            <p>A frozen harbour. A divided family. A town running out of time.</p>
           </div>
         </aside>
       </section>
@@ -529,7 +536,7 @@
 
       <section class="section">
         <div class="panel author-box">
-          <div class="author-photo" aria-label="M Kelly author photo placeholder"></div>
+          <div class="author-photo" role="img" aria-label="M Kelly author placeholder"></div>
           <div>
             <h2>About M Kelly</h2>
             <p>
@@ -547,4 +554,3 @@
   </div>
 </body>
 </html>
-```
