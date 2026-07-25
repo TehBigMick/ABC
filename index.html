@@ -1,13 +1,19 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en-GB">
 <head>
-  <meta charset="utf-8" />
-  <meta name="description" content="Discover indie authors and their books at Authors Book Club. Browse romance, thriller, fantasy, and more. Find your next favourite author and start reading today.">
-  <title>Authors Book Club – Discover Indie Authors and Books Online</title>
-  <meta name="description" content="Discover indie authors across romance, horror, crime, thriller, fantasy, LitRPG, urban fiction, romantasy, and practical non-fiction. Browse by genre or let fate choose your next author." />
-  <link rel="canonical" href="https://www.authorsbookclub.com/" />
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Find Your Next Book | Authors Book Club</title>
+  <meta name="description" content="Find your next read across romance, horror, crime, fantasy, LitRPG, contemporary fiction and practical non-fiction. Search hand-picked books and discover independent authors.">
+  <meta name="theme-color" content="#173f35">
+  <link rel="canonical" href="https://www.authorsbookclub.com/">
+  <link rel="stylesheet" href="/homepage.css">
 
-  <!-- Google Analytics -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Find Your Next Book | Authors Book Club">
+  <meta property="og:description" content="Search hand-picked books by genre, mood, title or author.">
+  <meta property="og:url" content="https://www.authorsbookclub.com/">
+
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-0DYQYNMX6T"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
@@ -16,911 +22,236 @@
     gtag('config', 'G-0DYQYNMX6T');
   </script>
 
-  <style>
-    :root{
-      --ink:#2b1e16;
-      --muted:#6e5a4d;
-      --cream:#fbf3e8;
-      --caramel:#c28b4f;
-      --rust:#8b3f24;
-      --evergreen:#3d5a4c;
-      --radius:18px;
-      --radius2:24px;
-      --max:1160px;
-      --shadow:0 18px 50px rgba(0,0,0,.16);
-      --shadow2:0 12px 30px rgba(0,0,0,.14);
-    }
-
-    *{ box-sizing:border-box; }
-    html, body{ height:100%; scroll-behaviour:smooth; }
-
-    body{
-      margin:0;
-      font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
-      background:var(--cream);
-      color:var(--ink);
-      overflow-x:hidden;
-    }
-
-    body::before{
-      content:"";
-      position:fixed;
-      inset:0;
-      background:url("./assets/bg-autumn-coffee.webp") center/cover no-repeat;
-      z-index:-2;
-    }
-
-    body::after{
-      content:"";
-      position:fixed;
-      inset:0;
-      background:
-        radial-gradient(1200px 650px at 18% 0%, rgba(194,139,79,.20), transparent 55%),
-        radial-gradient(900px 560px at 90% 10%, rgba(61,90,76,.14), transparent 55%),
-        linear-gradient(rgba(251,243,232,.86), rgba(245,232,218,.92));
-      z-index:-1;
-      pointer-events:none;
-    }
-
-    header{
-      position:sticky;
-      top:0;
-      z-index:50;
-      backdrop-filter:blur(12px);
-      background:rgba(251,243,232,.76);
-      border-bottom:1px solid rgba(0,0,0,.08);
-    }
-
-    .nav{
-      max-width:var(--max);
-      margin:auto;
-      padding:14px 16px;
-      display:flex;
-      justify-content:space-between;
-      align-items:center;
-      gap:12px;
-    }
-
-    .brand{
-      display:flex;
-      align-items:center;
-      gap:10px;
-      font-weight:900;
-      letter-spacing:.2px;
-      text-decoration:none;
-      color:var(--ink);
-      white-space:nowrap;
-    }
-
-    .mark{
-      width:34px;
-      height:34px;
-      border-radius:12px;
-      background:linear-gradient(135deg, rgba(194,139,79,.95), rgba(139,63,36,.95));
-      box-shadow:0 10px 18px rgba(0,0,0,.18);
-    }
-
-    .navlinks{
-      display:flex;
-      gap:10px;
-      flex-wrap:wrap;
-      justify-content:flex-end;
-    }
-
-    .pill{
-      padding:8px 14px;
-      border-radius:999px;
-      background:rgba(255,255,255,.70);
-      border:1px solid rgba(0,0,0,.08);
-      font-weight:700;
-      text-decoration:none;
-      color:var(--ink);
-      transition:.14s ease;
-    }
-
-    .pill:hover{
-      background:#fff;
-      transform:translateY(-1px);
-    }
-
-    .pill.cta{
-      background:linear-gradient(135deg, rgba(61,90,76,.22), rgba(61,90,76,.12));
-      border-color:rgba(61,90,76,.30);
-    }
-
-    .wrap{
-      max-width:var(--max);
-      margin:auto;
-      padding:20px 16px 90px;
-    }
-
-    section{
-      margin-top:58px;
-      scroll-margin-top:90px;
-    }
-
-    .hero{
-      margin-top:22px;
-      border-radius:var(--radius2);
-      background:rgba(255,255,255,.72);
-      border:1px solid rgba(0,0,0,.08);
-      box-shadow:var(--shadow2);
-      overflow:hidden;
-    }
-
-    .hero-inner{
-      padding:28px 20px;
-      display:grid;
-      grid-template-columns:1.1fr .9fr;
-      gap:16px;
-      align-items:stretch;
-    }
-
-    @media (max-width:920px){
-      .hero-inner{ grid-template-columns:1fr; }
-    }
-
-    h1{
-      margin:0 0 10px;
-      font-size:clamp(30px, 3.3vw, 46px);
-      line-height:1.08;
-      letter-spacing:-.4px;
-    }
-
-    .lede{
-      margin:0 0 16px;
-      color:var(--muted);
-      font-size:1.06rem;
-      max-width:64ch;
-    }
-
-    .hero-actions{
-      display:flex;
-      gap:10px;
-      flex-wrap:wrap;
-      align-items:center;
-      margin-top:12px;
-    }
-
-    .btn{
-      border:none;
-      padding:12px 16px;
-      border-radius:14px;
-      font-weight:900;
-      cursor:pointer;
-      transition:.14s ease;
-      box-shadow:0 14px 28px rgba(0,0,0,.14);
-      text-decoration:none;
-      display:inline-flex;
-      align-items:center;
-      justify-content:center;
-    }
-
-    .btn:hover{ transform:translateY(-2px); }
-
-    .btn.primary{
-      color:#fff;
-      background:linear-gradient(135deg, var(--caramel), var(--rust));
-    }
-
-    .btn.secondary{
-      color:#fff;
-      background:linear-gradient(135deg, var(--evergreen), #2f4a3f);
-    }
-
-    .btn.ghost{
-      background:rgba(255,255,255,.75);
-      border:1px solid rgba(0,0,0,.10);
-      box-shadow:none;
-      color:inherit;
-    }
-
-    .surprise{
-      border-radius:var(--radius);
-      background:rgba(255,255,255,.62);
-      border:1px solid rgba(0,0,0,.08);
-      padding:16px;
-      box-shadow:var(--shadow2);
-    }
-
-    .surprise h2{
-      margin:0 0 6px;
-      font-size:1.12rem;
-      letter-spacing:-.2px;
-    }
-
-    .surprise p{
-      margin:0 0 12px;
-      color:var(--muted);
-      font-size:.96rem;
-    }
-
-    .grid2{
-      display:grid;
-      grid-template-columns:1fr 1fr;
-      gap:10px;
-    }
-
-    @media (max-width:520px){
-      .grid2{ grid-template-columns:1fr; }
-    }
-
-    label{
-      display:block;
-      font-weight:900;
-      font-size:.86rem;
-      margin:0 0 6px;
-      color:var(--ink);
-    }
-
-    select{
-      width:100%;
-      padding:11px 12px;
-      border-radius:12px;
-      border:1px solid rgba(0,0,0,.12);
-      background:rgba(255,255,255,.82);
-      color:var(--ink);
-    }
-
-    .hint{
-      margin:10px 0 0;
-      font-size:.86rem;
-      color:var(--muted);
-    }
-
-    .section-head{
-      display:flex;
-      align-items:flex-end;
-      justify-content:space-between;
-      gap:12px;
-      margin-bottom:14px;
-    }
-
-    .section-head h2{
-      margin:0;
-      font-size:1.4rem;
-    }
-
-    .section-head .sub{
-      margin:6px 0 0;
-      color:var(--muted);
-    }
-
-    .genre-grid{
-      display:grid;
-      grid-template-columns:repeat(4, 1fr);
-      gap:12px;
-    }
-
-    @media (max-width:940px){ .genre-grid{ grid-template-columns:repeat(2, 1fr); } }
-    @media (max-width:520px){ .genre-grid{ grid-template-columns:1fr; } }
-
-    .genre-card{
-      padding:16px;
-      border-radius:var(--radius);
-      background:rgba(255,255,255,.66);
-      border:1px solid rgba(0,0,0,.08);
-      cursor:pointer;
-      transition:.14s ease;
-      box-shadow:var(--shadow2);
-      text-align:left;
-    }
-
-    .genre-card:hover{
-      transform:translateY(-3px);
-      box-shadow:var(--shadow);
-    }
-
-    .genre-name{
-      font-weight:950;
-      letter-spacing:-.2px;
-    }
-
-    .genre-meta{
-      margin-top:6px;
-      color:var(--muted);
-      font-weight:700;
-      font-size:.92rem;
-    }
-
-    .shelf-grid{
-      display:grid;
-      grid-template-columns:repeat(3, 1fr);
-      gap:14px;
-    }
-
-    @media (max-width:920px){
-      .shelf-grid{ grid-template-columns:1fr; }
-    }
-
-    .author-card{
-      padding:16px;
-      border-radius:var(--radius);
-      background:rgba(255,255,255,.72);
-      border:1px solid rgba(0,0,0,.08);
-      display:flex;
-      gap:14px;
-      align-items:flex-start;
-      text-decoration:none;
-      color:inherit;
-      transition:.14s ease;
-      box-shadow:var(--shadow2);
-      min-height:150px;
-    }
-
-    .author-card:hover{
-      transform:translateY(-3px);
-      box-shadow:var(--shadow);
-    }
-
-    .cover{
-      width:64px;
-      height:92px;
-      border-radius:12px;
-      flex:0 0 auto;
-      box-shadow:0 10px 18px rgba(0,0,0,.14);
-      object-fit:cover;
-      background:#ddd;
-    }
-
-    .author-card h3{
-      margin:0 0 6px;
-      font-size:1.08rem;
-      letter-spacing:-.2px;
-    }
-
-    .by{
-      margin:0 0 8px;
-      color:var(--muted);
-      font-weight:800;
-      font-size:.92rem;
-    }
-
-    .tagline{
-      margin:0;
-      color:#3a2a21;
-    }
-
-    .badge{
-      display:inline-block;
-      margin-top:10px;
-      padding:4px 10px;
-      border-radius:999px;
-      background:rgba(194,139,79,.18);
-      border:1px solid rgba(194,139,79,.35);
-      font-weight:950;
-      font-size:.8rem;
-    }
-
-    .newsletter{
-      padding:22px;
-      border-radius:var(--radius);
-      background:rgba(255,255,255,.72);
-      border:1px solid rgba(0,0,0,.08);
-      box-shadow:var(--shadow2);
-    }
-
-    .newsletter h2{ margin:0 0 8px; }
-    .newsletter p{ margin:0 0 12px; color:var(--muted); }
-
-    .newsletter form{
-      display:flex;
-      gap:10px;
-      flex-wrap:wrap;
-    }
-
-    .newsletter input{
-      flex:1 1 240px;
-      padding:12px 12px;
-      border-radius:12px;
-      border:1px solid rgba(0,0,0,.12);
-      background:rgba(255,255,255,.86);
-    }
-
-    footer{
-      margin-top:60px;
-      padding:18px 0;
-      display:flex;
-      justify-content:space-between;
-      gap:12px;
-      flex-wrap:wrap;
-      color:var(--muted);
-      font-size:.92rem;
-    }
-  </style>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "Authors Book Club",
+    "url": "https://www.authorsbookclub.com/",
+    "description": "A curated place to discover books and independent authors across popular genres."
+  }
+  </script>
+  <script defer src="/homepage.js"></script>
 </head>
 
 <body>
+  <a class="skip-link" href="#main-content">Skip to the books</a>
 
-<header>
-  <nav class="nav" aria-label="Primary">
-    <a class="brand" href="/" aria-label="Authors Book Club home">
-      <span class="mark" aria-hidden="true"></span>
-      <span>Authors Book Club</span>
-    </a>
+  <header class="site-header">
+    <div class="nav-shell">
+      <a class="brand" href="/" aria-label="Authors Book Club home">
+        <span class="brand-mark" aria-hidden="true">ABC</span>
+        <span>Authors Book Club</span>
+      </a>
 
-    <div class="navlinks">
-      <a class="pill" href="#browse">Browse</a>
-      <a class="pill" href="#featured">Featured</a>
-      <a class="pill" href="#newest">Spotlight</a>
-      <a class="pill cta" href="/for-authors/">For Authors</a>
+      <nav class="site-nav" aria-label="Primary navigation">
+        <a href="#discover">Find a book</a>
+        <a href="#moods">Browse by mood</a>
+        <a href="#authors">Authors</a>
+        <a class="nav-cta" href="/for-authors/">For authors</a>
+      </nav>
     </div>
-  </nav>
-</header>
+  </header>
 
-<main class="wrap">
+  <main id="main-content">
+    <section class="hero">
+      <div class="shell hero-grid">
+        <div class="hero-copy">
+          <p class="eyebrow">Independent reads, properly curated</p>
+          <h1>Find the book you will recommend to everyone.</h1>
+          <p class="hero-lede">
+            Search by title, author or feeling. Every result leads to a useful starting point, so you can spend less time scrolling and more time reading.
+          </p>
 
-  <section class="hero" aria-label="Homepage introduction">
-    <div class="hero-inner">
-      <div>
-        <h1>Discover indie authors worth your time.</h1>
-        <p class="lede">
-          Romance, horror, crime, thriller, fantasy, LitRPG, urban fiction, romantasy, and practical non-fiction — chosen to feel like a proper shelf, not a dumping ground of random books.
-        </p>
+          <form class="book-search" id="heroSearchForm" role="search">
+            <label class="sr-only" for="heroSearch">Search books or authors</label>
+            <span class="search-icon" aria-hidden="true">⌕</span>
+            <input id="heroSearch" type="search" name="q" placeholder="Try “romance”, “dark” or an author…" autocomplete="off">
+            <button class="button button-primary" type="submit">Find books</button>
+          </form>
 
-        <div class="hero-actions">
-          <button class="btn primary" id="heroSurprise" type="button">🎲 Surprise me</button>
-          <a class="btn ghost" href="#browse">Browse genres</a>
-          <a class="btn secondary" href="/for-authors/">I’m an author</a>
-        </div>
-      </div>
-
-      <aside class="surprise" aria-label="Surprise picker">
-        <h2>🎲 Quick pick</h2>
-        <p>Select a genre and vibe, and we’ll send you to a matching author page.</p>
-
-        <div class="grid2" role="form" aria-label="Surprise form">
-          <div>
-            <label for="genreSelect">Genre</label>
-            <select id="genreSelect">
-              <option value="">Any genre</option>
-            </select>
+          <div class="hero-actions">
+            <button class="text-button" id="surpriseButton" type="button">
+              <span aria-hidden="true">✦</span> Give me a surprise
+            </button>
+            <span class="hero-note">18 hand-picked starting points</span>
           </div>
-          <div>
-            <label for="toneSelect">Vibe</label>
-            <select id="toneSelect">
-              <option value="">Any vibe</option>
-              <option value="cosy">Cosy / comforting</option>
-              <option value="dark">Dark / eerie</option>
-              <option value="bold">Bold / dramatic</option>
-              <option value="practical">Practical / helpful</option>
-            </select>
+
+          <div class="quick-links" role="group" aria-label="Popular searches">
+            <span>Popular:</span>
+            <button type="button" data-quick-genre="Romance">Romance</button>
+            <button type="button" data-quick-genre="Fantasy &amp; LitRPG">LitRPG</button>
+            <button type="button" data-quick-mood="Eerie">Something eerie</button>
           </div>
         </div>
 
-        <div class="hero-actions" style="margin-top:12px;">
-          <button class="btn primary" id="findBtn" type="button">Find my author</button>
-          <button class="btn ghost" id="resetBtn" type="button">Reset</button>
+        <aside class="spotlight-card" id="spotlightCard" aria-labelledby="spotlightTitle">
+          <div class="spotlight-cover-wrap">
+            <img
+              id="spotlightCover"
+              class="spotlight-cover"
+              src="/Matt-Dinniman/assets/dungeon-crawler-carl-01.webp"
+              alt="Dungeon Crawler Carl by Matt Dinniman"
+              width="423"
+              height="627"
+            >
+          </div>
+          <div class="spotlight-copy">
+            <span class="spotlight-kicker" id="spotlightKicker">Tonight’s wild card</span>
+            <h2 id="spotlightTitle">Dungeon Crawler Carl</h2>
+            <p class="spotlight-author" id="spotlightAuthor">Matt Dinniman</p>
+            <p id="spotlightHook">Savage humour, dungeon-crawl chaos and a series built for binge-reading.</p>
+            <div class="spotlight-meta">
+              <span id="spotlightGenre">LitRPG</span>
+              <span id="spotlightMood">Adrenaline</span>
+            </div>
+            <a class="button button-light" id="spotlightLink" href="/Matt-Dinniman/">See why it is worth starting</a>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <section class="trust-strip" aria-label="What readers can browse">
+      <div class="shell trust-grid">
+        <div><strong>18</strong><span>starting points</span></div>
+        <div><strong>6</strong><span>genre shelves</span></div>
+        <div><strong>1 click</strong><span>to each author guide</span></div>
+      </div>
+    </section>
+
+    <section class="discover shell" id="discover">
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow">The discovery shelf</p>
+          <h2>What are you in the mood to read?</h2>
+          <p>Use the filters, search for something specific, or let the shelf surprise you.</p>
+        </div>
+        <label class="compact-search">
+          <span class="sr-only">Filter books by title or author</span>
+          <input id="catalogueSearch" type="search" placeholder="Search this shelf…" autocomplete="off">
+        </label>
+      </div>
+
+      <div class="filter-bar">
+        <div class="genre-filters" id="genreFilters" role="group" aria-label="Filter by genre">
+          <button class="filter-chip is-active" type="button" data-genre="All" aria-pressed="true">All books</button>
+          <button class="filter-chip" type="button" data-genre="Romance" aria-pressed="false">Romance</button>
+          <button class="filter-chip" type="button" data-genre="Horror" aria-pressed="false">Horror</button>
+          <button class="filter-chip" type="button" data-genre="Crime &amp; Thriller" aria-pressed="false">Crime &amp; thriller</button>
+          <button class="filter-chip" type="button" data-genre="Fantasy &amp; LitRPG" aria-pressed="false">Fantasy &amp; LitRPG</button>
+          <button class="filter-chip" type="button" data-genre="Contemporary" aria-pressed="false">Contemporary</button>
+          <button class="filter-chip" type="button" data-genre="Non-fiction" aria-pressed="false">Non-fiction</button>
         </div>
 
-        <p class="hint" id="matchHint"></p>
-      </aside>
-    </div>
-  </section>
-
-  <section id="browse" aria-label="Browse by genre">
-    <div class="section-head">
-      <div>
-        <h2>Browse by genre</h2>
-        <p class="sub">Start with the shelf that fits what you actually want to read.</p>
+        <label class="mood-select">
+          <span>Reading mood</span>
+          <select id="moodFilter">
+            <option value="All">Any mood</option>
+            <option value="Cosy">Cosy and comforting</option>
+            <option value="Adrenaline">Fast and addictive</option>
+            <option value="Eerie">Dark and eerie</option>
+            <option value="Emotional">Emotional and heartfelt</option>
+            <option value="Thoughtful">Thoughtful and practical</option>
+          </select>
+        </label>
       </div>
-    </div>
 
-    <div class="genre-grid" id="genreGrid"></div>
-  </section>
-
-  <section id="featured" aria-label="Featured authors">
-    <div class="section-head">
-      <div>
-        <h2>Featured shelf</h2>
-        <p class="sub">The strongest entry points on the site right now.</p>
+      <div class="results-line">
+        <p id="resultCount" aria-live="polite">Showing all 18 books</p>
+        <button class="clear-button" id="clearFilters" type="button" hidden>Clear filters</button>
       </div>
-    </div>
 
-    <div class="shelf-grid" id="featuredGrid"></div>
-  </section>
+      <div class="book-grid" id="bookGrid"></div>
 
-  <section id="newest" aria-label="Spotlight authors">
-    <div class="section-head">
-      <div>
-        <h2>Spotlight shelf</h2>
-        <p class="sub">More pages worth clicking into next.</p>
+      <div class="empty-state" id="emptyState" hidden>
+        <h3>No exact match on this shelf yet.</h3>
+        <p>Try a broader genre, a different mood or another search term.</p>
+        <button class="button button-primary" id="emptyReset" type="button">Show every book</button>
       </div>
-    </div>
 
-    <div class="shelf-grid" id="newestGrid"></div>
-  </section>
+      <noscript>
+        <div class="noscript-message">
+          JavaScript is needed for the filters. You can still start with
+          <a href="/Matt-Dinniman/">Dungeon Crawler Carl</a>,
+          <a href="/DevneyPerry/">Indigo Ridge</a> or
+          <a href="/AmyCross/">Asylum</a>.
+        </div>
+      </noscript>
+    </section>
 
-  <section class="newsletter" aria-label="Newsletter">
-    <h2>Get 3 cosy discoveries each week</h2>
-    <p>One short email. No spam. Just authors worth trying.</p>
-    <form id="newsletterForm">
-      <input type="email" id="email" name="email" placeholder="you@example.com" autocomplete="email" required />
-      <button class="btn primary" type="submit">Subscribe</button>
-    </form>
-    <p class="hint" id="newsletterHint"></p>
-  </section>
+    <section class="mood-section" id="moods">
+      <div class="shell">
+        <div class="section-heading section-heading-light">
+          <div>
+            <p class="eyebrow">Skip the genre labels</p>
+            <h2>Choose the feeling instead.</h2>
+            <p>Sometimes you know the experience you want before you know the title.</p>
+          </div>
+        </div>
 
-  <footer>
-    <div>© <span id="year"></span> Authors Book Club</div>
-    <div style="display:flex; gap:10px; flex-wrap:wrap;">
-      <a class="pill" href="#browse">Browse</a>
-      <a class="pill" href="#featured">Featured</a>
-      <a class="pill" href="#newest">Spotlight</a>
-      <a class="pill cta" href="/for-authors/">For Authors</a>
+        <div class="mood-grid">
+          <button class="mood-card mood-cosy" type="button" data-mood-card="Cosy">
+            <span class="mood-number">01</span>
+            <strong>Comfort me</strong>
+            <span>Warm romance and easy escape</span>
+          </button>
+          <button class="mood-card mood-fast" type="button" data-mood-card="Adrenaline">
+            <span class="mood-number">02</span>
+            <strong>Keep me up late</strong>
+            <span>Momentum, danger and one more chapter</span>
+          </button>
+          <button class="mood-card mood-dark" type="button" data-mood-card="Eerie">
+            <span class="mood-number">03</span>
+            <strong>Unsettle me</strong>
+            <span>Hauntings, dread and darker turns</span>
+          </button>
+          <button class="mood-card mood-thoughtful" type="button" data-mood-card="Thoughtful">
+            <span class="mood-number">04</span>
+            <strong>Teach me something</strong>
+            <span>Practical help and thoughtful non-fiction</span>
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <section class="authors-section shell" id="authors">
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow">Meet the writers</p>
+          <h2>Explore every author on this shelf.</h2>
+          <p>Each guide gives you a clear place to begin instead of another endless bibliography.</p>
+        </div>
+      </div>
+      <div class="author-list" id="authorList"></div>
+    </section>
+
+    <section class="author-cta shell">
+      <div>
+        <p class="eyebrow">Written something worth discovering?</p>
+        <h2>Give your books a better front door.</h2>
+        <p>Authors Book Club builds focused pages that help readers understand what to start with and why.</p>
+      </div>
+      <a class="button button-primary" href="/for-authors/">See the author options</a>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="shell footer-grid">
+      <div>
+        <a class="brand footer-brand" href="/">
+          <span class="brand-mark" aria-hidden="true">ABC</span>
+          <span>Authors Book Club</span>
+        </a>
+        <p>Curated routes into books worth opening.</p>
+      </div>
+      <nav aria-label="Footer navigation">
+        <a href="#discover">Find a book</a>
+        <a href="#moods">Browse by mood</a>
+        <a href="#authors">Authors</a>
+        <a href="/for-authors/">For authors</a>
+      </nav>
+      <p class="copyright">© <span id="year"></span> Authors Book Club</p>
     </div>
   </footer>
-
-</main>
-
-<script>
-  const AUTHORS = [
-  {
-    name: "Amy Cross",
-    url: "/AmyCross/",
-    genres: ["Horror"],
-    tone: ["dark"],
-    image: "/AmyCross/assets/amy-cross-asylum-cover.webp",
-    tagline: "Haunted houses, eerie towns, and bingeable supernatural horror.",
-    featured: true,
-    spotlight: false
-  },
-  {
-    name: "Boris Bacic",
-    url: "/BorisBacic/",
-    genres: ["Horror", "Thriller"],
-    tone: ["dark", "bold"],
-    image: "/BorisBacic/assets/book-haunted.webp",
-    tagline: "Fast, unsettling horror and thriller reads built to keep pages turning.",
-    featured: false,
-    spotlight: true
-  },
-  {
-    name: "Devney Perry",
-    url: "/DevneyPerry/",
-    genres: ["Romance", "Romantasy"],
-    tone: ["cosy", "bold"],
-    image: "/DevneyPerry/assets/devney-perry-indigo-ridge.webp",
-    tagline: "Small-town romance, emotional contemporary stories, and romantasy appeal.",
-    featured: true,
-    spotlight: false
-  },
-  {
-    name: "J.D. Kirk",
-    url: "/JD-Kirk/",
-    genres: ["Crime", "Thriller"],
-    tone: ["bold"],
-    image: "/JD-Kirk/assets/jd-kirk-book1.webp",
-    tagline: "Taut crime fiction and thriller energy for readers who want real momentum.",
-    featured: false,
-    spotlight: true
-  },
-  {
-    name: "K.M. Avery",
-    url: "/KMAvery/",
-    genres: ["Romance"],
-    tone: ["cosy", "bold"],
-    image: "/KMAvery/assets/book-daddy-cover.webp",
-    tagline: "Bingeable romance with warmth, chemistry, and strong click-through appeal.",
-    featured: false,
-    spotlight: true
-  },
-  {
-    name: "LADY LEGACY",
-    url: "/LadyLegacy/",
-    genres: ["Urban Fiction"],
-    tone: ["bold"],
-    image: "/LadyLegacy/assets/lady-legacy-cover.webp",
-    tagline: "Power, betrayal, infidelity, and explosive urban fiction drama.",
-    featured: false,
-    spotlight: false
-  },
-  {
-    name: "Lila Rose",
-    url: "/LilaRose/",
-    genres: ["Romance"],
-    tone: ["cosy"],
-    image: "/LilaRose/assets/the-mysterious-santa.webp",
-    tagline: "Sweet, wholesome small-town romance with proper comfort-read energy.",
-    featured: true,
-    spotlight: false
-  },
-  {
-    name: "Marie McKenzie",
-    url: "/MarieMcKenzie/",
-    genres: ["Non-fiction"],
-    tone: ["practical", "cosy"],
-    image: "/MarieMcKenzie/assets/marie-mckenzie-cover.webp",
-    tagline: "Trauma-informed writing about healing, support, and being human.",
-    featured: false,
-    spotlight: false
-  },
-  {
-    name: "Matt Dinniman",
-    url: "/Matt-Dinniman/",
-    genres: ["Horror", "Fantasy", "Sci-Fi", "LitRPG"],
-    tone: ["dark", "bold"],
-    image: "/Matt-Dinniman/assets/dungeon-crawler-carl-01.webp",
-    tagline: "Apocalyptic chaos, savage humour, dungeon-crawl momentum, and one of the strongest binge-series hooks on the site.",
-    featured: true,
-    spotlight: false
-  },
-  {
-    name: "Tory Hunt",
-    url: "/ToryHunt/",
-    genres: ["Non-fiction", "Self-Help"],
-    tone: ["practical"],
-    image: "/ToryHunt/assets/tory-hunt-cover.webp",
-    tagline: "Practical life-skills books for teens and tweens that solve real problems.",
-    featured: false,
-    spotlight: false
-  },
-  {
-    name: "Travis Deverell",
-    url: "/TravisDeverell/",
-    genres: ["Fantasy", "LitRPG"],
-    tone: ["bold"],
-    image: "/TravisDeverell/assets/he-who-fights-with-monsters-outworlder.jpg",
-    tagline: "Magic, monsters, progression, and one of LitRPG’s strongest binge-series entry points.",
-    featured: true,
-    spotlight: false
-  },
-  {
-    name: "Zogarth",
-    url: "/Zogarth/",
-    genres: ["Fantasy", "LitRPG"],
-    tone: ["dark", "bold"],
-    image: "/Zogarth/assets/the-primal-hunter-01.jpg",
-    tagline: "System apocalypse, hunter instinct, hard progression, and a long-running series built for real read-through.",
-    featured: false,
-    spotlight: false
-  },
-  {
-    name: "Bella Andre",
-    url: "/bella-andre/",
-    genres: ["Romance"],
-    tone: ["cosy", "bold"],
-    image: "/bella-andre/assets/bella-andre-cover.webp",
-    tagline: "Commercial contemporary romance built for readers who like to binge.",
-    featured: false,
-    spotlight: false
-  },
-  {
-    name: "Lucy Score",
-    url: "/lucy-score/",
-    genres: ["Romance"],
-    tone: ["cosy", "bold"],
-    image: "/lucy-score/assets/lucy-score-cover.webp",
-    tagline: "Big contemporary romance energy with humour, heat, and momentum.",
-    featured: false,
-    spotlight: false
-  },
-  {
-    name: "Penny Reid",
-    url: "/penny-reid/",
-    genres: ["Romance"],
-    tone: ["cosy", "bold"],
-    image: "/penny-reid/assets/penny-reid-cover.webp",
-    tagline: "Smart, addictive romance with a loyal binge-reading audience.",
-    featured: false,
-    spotlight: false
-  },
-  {
-    name: "Liv Little",
-    url: "/LivLittle/",
-    genres: ["Contemporary", "Queer-Inclusive Fiction"],
-    tone: ["emotional", "uplifting"],
-    image: "/LivLittle/assets/Liv-Little.webp",
-    tagline: "Fresh, inclusive storytelling exploring identity, love, and community.",
-    featured: true,
-    spotlight: false
-  },
-  {
-    name: "Sasha R.C.",
-    url: "/SashaRC/",
-    genres: ["Dark Romance", "New Adult Fiction"],
-    tone: ["intense", "emotional"],
-    image: "/SashaRC/assets/Sasha-RC.webp",
-    tagline: "Indie dark romance with high-stakes, unforgettable characters.",
-    featured: false,
-    spotlight: true
-  },
-  {
-    name: "Sara Jafari",
-    url: "/SaraJafari/",
-    genres: ["Contemporary Fiction", "Romance"],
-    tone: ["heartfelt", "relatable"],
-    image: "/SaraJafari/assets/sara-jafari.webp",
-    tagline: "Stories of love, relationships, and personal growth.",
-    featured: true,
-    spotlight: false
-  }
-];
-
-  function $(id){ return document.getElementById(id); }
-  function pickRandom(arr){ return arr[Math.floor(Math.random() * arr.length)]; }
-
-  function trackEvent(name, params = {}) {
-    if (typeof gtag === "function") {
-      gtag("event", name, params);
-    }
-  }
-
-  function buildGenreList(){
-    const genres = new Set();
-    AUTHORS.forEach(author => {
-      (author.genres || []).forEach(genre => genres.add(genre));
-    });
-    return [...genres].sort((a, b) => a.localeCompare(b, "en-GB"));
-  }
-
-  function populateGenreSelect(){
-    const genres = buildGenreList();
-    const select = $("genreSelect");
-
-    select.querySelectorAll("option:not([value=''])").forEach(option => option.remove());
-
-    genres.forEach(genre => {
-      const option = document.createElement("option");
-      option.value = genre;
-      option.textContent = genre;
-      select.appendChild(option);
-    });
-  }
-
-  function renderGenreGrid(){
-    const genres = buildGenreList();
-    const grid = $("genreGrid");
-    grid.innerHTML = "";
-
-    genres.forEach(genre => {
-      const button = document.createElement("button");
-      button.type = "button";
-      button.className = "genre-card";
-      button.innerHTML = `
-        <div class="genre-name">${genre}</div>
-        <div class="genre-meta">Open this shelf →</div>
-      `;
-      button.addEventListener("click", () => {
-        trackEvent("genre_click", {
-          genre,
-          location: "genre_grid"
-        });
-        goToRandomAuthor({ genre });
-      });
-      grid.appendChild(button);
-    });
-  }
-
-  function createAuthorCard(author, metaText, badgeText, location){
-    const anchor = document.createElement("a");
-    anchor.className = "author-card";
-    anchor.href = author.url;
-
-    anchor.addEventListener("click", () => {
-      trackEvent("homepage_author_click", {
-        author_name: author.name,
-        location
-      });
-    });
-
-    anchor.innerHTML = `
-      <img class="cover" src="${author.image}" alt="${author.name} cover image" loading="lazy">
-      <div>
-        <h3>${author.name}</h3>
-        <p class="by">${metaText}</p>
-        <p class="tagline">${author.tagline}</p>
-        <span class="badge">${badgeText}</span>
-      </div>
-    `;
-    return anchor;
-  }
-
-  function renderFeatured(){
-    const grid = $("featuredGrid");
-    grid.innerHTML = "";
-
-    const featuredAuthors = AUTHORS.filter(author => author.featured).slice(0, 3);
-    featuredAuthors.forEach(author => {
-      grid.appendChild(createAuthorCard(author, "Featured author", "Start here", "featured"));
-    });
-  }
-
-  function renderSpotlight(){
-    const grid = $("newestGrid");
-    grid.innerHTML = "";
-
-    const spotlightAuthors = AUTHORS.filter(author => author.spotlight).slice(0, 3);
-    spotlightAuthors.forEach(author => {
-      grid.appendChild(createAuthorCard(author, "Spotlight author", "Worth a click", "spotlight"));
-    });
-  }
-
-  function matchesFilters(author, filters){
-    const { genre, tone } = filters;
-
-    if (genre && !(author.genres || []).includes(genre)) return false;
-    if (tone && !(author.tone || []).includes(tone)) return false;
-
-    return true;
-  }
-
-  function goToRandomAuthor(overrides = {}){
-    const genre = overrides.genre ?? $("genreSelect").value;
-    const tone = overrides.tone ?? $("toneSelect").value;
-
-    const pool = AUTHORS.filter(author => matchesFilters(author, { genre, tone }));
-
-    if (!pool.length) {
-      $("matchHint").textContent = "No exact matches for that combination yet. Try Any vibe or Any genre.";
-      trackEvent("no_match", {
-        genre: genre || "any",
-        tone: tone || "any"
-      });
-      return;
-    }
-
-    const chosen = pickRandom(pool);
-
-    trackEvent("random_author_selected", {
-      author_name: chosen.name,
-      genre: genre || "any",
-      tone: tone || "any"
-    });
-
-    window.location.href = chosen.url;
-  }
-
-  function resetFilters(){
-    $("genreSelect").value = "";
-    $("toneSelect").value = "";
-    $("matchHint").textContent = "";
-
-    trackEvent("filters_reset", {
-      location: "quick_pick"
-    });
-  }
-
-  $("newsletterForm").addEventListener("submit", event => {
-    event.preventDefault();
-    const email = $("email").value.trim();
-    if (!email) return;
-
-    trackEvent("newsletter_submit", {
-      location: "homepage_placeholder"
-    });
-
-    try {
-      localStorage.setItem("abc_newsletter_email", email);
-    } catch (_) {}
-
-    $("newsletterHint").textContent = "Thanks — you’re on the list.";
-    event.target.reset();
-  });
-
-  $("year").textContent = new Date().getFullYear();
-
-  populateGenreSelect();
-  renderGenreGrid();
-  renderFeatured();
-  renderSpotlight();
-
-  $("findBtn").addEventListener("click", () => {
-    trackEvent("find_author_click", {
-      location: "quick_pick"
-    });
-    goToRandomAuthor();
-  });
-
-  $("heroSurprise").addEventListener("click", () => {
-    trackEvent("surprise_click", {
-      location: "hero"
-    });
-    goToRandomAuthor();
-  });
-
-  $("resetBtn").addEventListener("click", resetFilters);
-</script>
-
 </body>
 </html>
