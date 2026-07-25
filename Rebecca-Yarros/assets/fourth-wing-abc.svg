@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="420" height="620" viewBox="0 0 420 620" role="img" aria-labelledby="title desc">
+  <title id="title">Fourth Wing recommendation graphic</title><desc id="desc">Authors Book Club editorial graphic for Fourth Wing by Rebecca Yarros.</desc>
+  <defs><linearGradient id="g" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#22233a"/><stop offset="1" stop-color="#8165ba"/></linearGradient></defs>
+  <rect width="420" height="620" rx="20" fill="url(#g)"/><path d="M322 73l-65 74 54-9-57 94 99-110-58 11z" fill="none" stroke="#fff" stroke-opacity=".35" stroke-width="5"/><circle cx="330" cy="150" r="116" fill="none" stroke="#fff" stroke-opacity=".12"/>
+  <text x="36" y="58" fill="#fff" fill-opacity=".72" font-family="Arial,sans-serif" font-size="14" font-weight="700" letter-spacing="3">ABC RECOMMENDS</text>
+  <text x="36" y="397" fill="#fff" font-family="Georgia,serif" font-size="56" font-weight="700"><tspan x="36">Fourth</tspan><tspan x="36" dy="59">Wing</tspan></text>
+  <text x="36" y="525" fill="#fff" fill-opacity=".82" font-family="Arial,sans-serif" font-size="24">Rebecca Yarros</text><text x="36" y="568" fill="#fff" fill-opacity=".62" font-family="Arial,sans-serif" font-size="15">DRAGONS · DANGER · DESIRE</text>
+</svg>
