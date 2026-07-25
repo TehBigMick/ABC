@@ -1,0 +1,471 @@
+const BOOKS = [
+  {
+    title: "Dungeon Crawler Carl",
+    author: "Matt Dinniman",
+    category: "Fantasy & LitRPG",
+    genre: "LitRPG",
+    moods: ["Adrenaline", "Eerie"],
+    image: "/Matt-Dinniman/assets/dungeon-crawler-carl-01.webp",
+    url: "/Matt-Dinniman/",
+    hook: "Savage humour, dungeon-crawl chaos and a series built for binge-reading."
+  },
+  {
+    title: "Indigo Ridge",
+    author: "Devney Perry",
+    category: "Romance",
+    genre: "Small-town romance",
+    moods: ["Cosy", "Emotional"],
+    image: "/DevneyPerry/assets/devney-perry-indigo-ridge.webp",
+    url: "/DevneyPerry/",
+    hook: "Small-town tension, mystery and an emotionally satisfying romantic pay-off."
+  },
+  {
+    title: "Asylum",
+    author: "Amy Cross",
+    category: "Horror",
+    genre: "Supernatural horror",
+    moods: ["Eerie"],
+    image: "/AmyCross/assets/amy-cross-asylum-cover.webp",
+    url: "/AmyCross/",
+    hook: "An unsettling haunted-place read for anyone who likes dread that keeps building."
+  },
+  {
+    title: "A Litter of Bones",
+    author: "J.D. Kirk",
+    category: "Crime & Thriller",
+    genre: "Scottish crime",
+    moods: ["Adrenaline", "Eerie"],
+    image: "/JD-Kirk/assets/jd-kirk-book1.webp",
+    url: "/JD-Kirk/",
+    hook: "Dark cases, dry humour and the proper starting point for DCI Jack Logan."
+  },
+  {
+    title: "The Mysterious Santa",
+    author: "Lila Rose",
+    category: "Romance",
+    genre: "Festive romance",
+    moods: ["Cosy", "Emotional"],
+    image: "/LilaRose/assets/the-mysterious-santa.webp",
+    url: "/LilaRose/",
+    hook: "A wholesome festive romance with small-town warmth and comfort-read energy."
+  },
+  {
+    title: "The Beach Wedding",
+    author: "Bella Andre",
+    category: "Romance",
+    genre: "Contemporary romance",
+    moods: ["Cosy", "Emotional"],
+    image: "/bella-andre/assets/bella-andre-beach-wedding.webp",
+    url: "/bella-andre/",
+    hook: "Beachside escapism, big feelings and a romance designed for a weekend binge."
+  },
+  {
+    title: "Inheritance",
+    author: "Penny Reid",
+    category: "Romance",
+    genre: "Smart romance",
+    moods: ["Cosy", "Emotional"],
+    image: "/penny-reid/assets/penny-reid-inheritance.webp",
+    url: "/penny-reid/",
+    hook: "Fake dating, old history and chemistry that refuses to stay in the lab."
+  },
+  {
+    title: "He Who Fights with Monsters",
+    author: "Travis Deverell",
+    category: "Fantasy & LitRPG",
+    genre: "Progression fantasy",
+    moods: ["Adrenaline"],
+    image: "/TravisDeverell/assets/he-who-fights-with-monsters-outworlder.jpg",
+    url: "/TravisDeverell/",
+    hook: "Magic, monsters and progression fantasy that turns one chapter into half the night."
+  },
+  {
+    title: "The Primal Hunter",
+    author: "Zogarth",
+    category: "Fantasy & LitRPG",
+    genre: "System apocalypse",
+    moods: ["Adrenaline"],
+    image: "/Zogarth/assets/the-primal-hunter-01.jpg",
+    url: "/Zogarth/",
+    hook: "A deadly new world, relentless progression and a very long runway for series readers."
+  },
+  {
+    title: "Radio Tower",
+    author: "Boris Bacic",
+    category: "Horror",
+    genre: "Small-town horror",
+    moods: ["Eerie", "Adrenaline"],
+    image: "/BorisBacic/assets/start-1.webp",
+    url: "/BorisBacic/",
+    hook: "Fast, isolated and unsettling horror with nowhere safe for the characters to hide."
+  },
+  {
+    title: "Book Daddy",
+    author: "K.M. Avery",
+    category: "Romance",
+    genre: "Queer romance",
+    moods: ["Cosy", "Emotional"],
+    image: "/KMAvery/assets/book-daddy-cover.webp",
+    url: "/KMAvery/",
+    hook: "Warmth, chemistry and a romance hook that knows exactly what its readers want."
+  },
+  {
+    title: "Scandalous Affairs",
+    author: "Lady Legacy",
+    category: "Contemporary",
+    genre: "Urban fiction",
+    moods: ["Adrenaline", "Emotional"],
+    image: "/LadyLegacy/assets/scandalous-affairs-book-1.webp",
+    url: "/LadyLegacy/",
+    hook: "Power, betrayal and explosive relationship drama with no interest in playing safe."
+  },
+  {
+    title: "Rosewater",
+    author: "Liv Little",
+    category: "Contemporary",
+    genre: "Queer fiction",
+    moods: ["Emotional", "Thoughtful"],
+    image: "/LivLittle/assets/rosewater.webp",
+    url: "/LivLittle/",
+    hook: "Fresh, intimate storytelling about identity, love and the communities we build."
+  },
+  {
+    title: "The Mismatch",
+    author: "Sara Jafari",
+    category: "Contemporary",
+    genre: "Contemporary fiction",
+    moods: ["Emotional", "Thoughtful"],
+    image: "/SaraJafari/assets/the-mismatch.webp",
+    url: "/SaraJafari/",
+    hook: "Love, family and personal growth told with warmth and emotional honesty."
+  },
+  {
+    title: "Lost in Me",
+    author: "Sasha R.C.",
+    category: "Romance",
+    genre: "Dark romance",
+    moods: ["Eerie", "Emotional"],
+    image: "/SashaRC/assets/lost-in-me.webp",
+    url: "/SashaRC/",
+    hook: "High-stakes dark romance for readers who want intensity over easy answers."
+  },
+  {
+    title: "Things That Keep Me Up at Night",
+    author: "Marie McKenzie",
+    category: "Non-fiction",
+    genre: "Wellbeing",
+    moods: ["Thoughtful", "Emotional"],
+    image: "/MarieMcKenzie/things-that-keep-me-up-at-night.webp",
+    url: "/MarieMcKenzie/",
+    hook: "Trauma-informed writing about healing, support and the difficult work of being human."
+  },
+  {
+    title: "110 Life Skills for Teenage Boys",
+    author: "Tory Hunt",
+    category: "Non-fiction",
+    genre: "Practical guide",
+    moods: ["Thoughtful"],
+    image: "/ToryHunt/110-life-skills-teenage-boys.webp",
+    url: "/ToryHunt/",
+    hook: "Clear, practical help for building independence, responsibility and confidence."
+  },
+  {
+    title: "The Last Harbour",
+    author: "M Kelly",
+    category: "Crime & Thriller",
+    genre: "Literary suspense",
+    moods: ["Eerie", "Emotional"],
+    image: "/assets/the-last-harbour-cover.webp",
+    url: "/authors/m-kelly.html",
+    hook: "A frozen harbour, a divided family and a town learning that waiting is no longer neutral."
+  }
+];
+
+const state = {
+  query: "",
+  genre: "All",
+  mood: "All"
+};
+
+const elements = {
+  authorList: document.getElementById("authorList"),
+  bookGrid: document.getElementById("bookGrid"),
+  catalogueSearch: document.getElementById("catalogueSearch"),
+  clearFilters: document.getElementById("clearFilters"),
+  emptyReset: document.getElementById("emptyReset"),
+  emptyState: document.getElementById("emptyState"),
+  genreFilters: document.getElementById("genreFilters"),
+  heroSearch: document.getElementById("heroSearch"),
+  heroSearchForm: document.getElementById("heroSearchForm"),
+  moodFilter: document.getElementById("moodFilter"),
+  resultCount: document.getElementById("resultCount"),
+  spotlightAuthor: document.getElementById("spotlightAuthor"),
+  spotlightCard: document.getElementById("spotlightCard"),
+  spotlightCover: document.getElementById("spotlightCover"),
+  spotlightGenre: document.getElementById("spotlightGenre"),
+  spotlightHook: document.getElementById("spotlightHook"),
+  spotlightKicker: document.getElementById("spotlightKicker"),
+  spotlightLink: document.getElementById("spotlightLink"),
+  spotlightMood: document.getElementById("spotlightMood"),
+  spotlightTitle: document.getElementById("spotlightTitle"),
+  surpriseButton: document.getElementById("surpriseButton")
+};
+
+function trackEvent(name, parameters = {}) {
+  if (typeof window.gtag === "function") {
+    window.gtag("event", name, parameters);
+  }
+}
+
+function normalise(value) {
+  return value.toLocaleLowerCase("en-GB").trim();
+}
+
+function getFilteredBooks() {
+  const query = normalise(state.query);
+
+  return BOOKS.filter((book) => {
+    const matchesGenre = state.genre === "All" || book.category === state.genre;
+    const matchesMood = state.mood === "All" || book.moods.includes(state.mood);
+    const haystack = [
+      book.title,
+      book.author,
+      book.category,
+      book.genre,
+      book.hook,
+      ...book.moods
+    ].join(" ");
+    const matchesQuery = !query || normalise(haystack).includes(query);
+
+    return matchesGenre && matchesMood && matchesQuery;
+  });
+}
+
+function createTextElement(tagName, className, text) {
+  const element = document.createElement(tagName);
+  if (className) element.className = className;
+  element.textContent = text;
+  return element;
+}
+
+function createBookCard(book) {
+  const article = document.createElement("article");
+  article.className = "book-card";
+
+  const coverLink = document.createElement("a");
+  coverLink.className = "book-cover-link";
+  coverLink.href = book.url;
+  coverLink.setAttribute("aria-label", `Explore ${book.title} by ${book.author}`);
+
+  const image = document.createElement("img");
+  image.className = "book-cover";
+  image.src = book.image;
+  image.alt = `${book.title} by ${book.author}`;
+  image.loading = "lazy";
+  image.decoding = "async";
+  coverLink.appendChild(image);
+
+  const body = document.createElement("div");
+  body.className = "book-body";
+
+  const tags = document.createElement("div");
+  tags.className = "book-tags";
+  tags.appendChild(createTextElement("span", "", book.genre));
+  tags.appendChild(createTextElement("span", "", book.moods[0]));
+
+  const title = createTextElement("h3", "", book.title);
+  const author = createTextElement("p", "book-author", book.author);
+  const hook = createTextElement("p", "book-hook", book.hook);
+
+  const link = document.createElement("a");
+  link.className = "book-link";
+  link.href = book.url;
+  link.textContent = "Explore this book →";
+
+  for (const interactiveLink of [coverLink, link]) {
+    interactiveLink.addEventListener("click", () => {
+      trackEvent("homepage_book_click", {
+        book_title: book.title,
+        author_name: book.author,
+        genre: book.category
+      });
+    });
+  }
+
+  body.append(tags, title, author, hook, link);
+  article.append(coverLink, body);
+  return article;
+}
+
+function updateFilterButtons() {
+  elements.genreFilters.querySelectorAll("[data-genre]").forEach((button) => {
+    const isActive = button.dataset.genre === state.genre;
+    button.classList.toggle("is-active", isActive);
+    button.setAttribute("aria-pressed", String(isActive));
+  });
+}
+
+function updateQueryString() {
+  const parameters = new URLSearchParams();
+  if (state.query) parameters.set("q", state.query);
+  if (state.genre !== "All") parameters.set("genre", state.genre);
+  if (state.mood !== "All") parameters.set("mood", state.mood);
+  const suffix = parameters.toString() ? `?${parameters.toString()}` : window.location.pathname;
+  window.history.replaceState({}, "", suffix);
+}
+
+function renderBooks(options = {}) {
+  const books = getFilteredBooks();
+  elements.bookGrid.replaceChildren(...books.map(createBookCard));
+
+  const total = books.length;
+  elements.resultCount.textContent = total === BOOKS.length
+    ? `Showing all ${total} books`
+    : `Showing ${total} ${total === 1 ? "book" : "books"}`;
+
+  elements.bookGrid.hidden = total === 0;
+  elements.emptyState.hidden = total !== 0;
+  elements.clearFilters.hidden = !state.query && state.genre === "All" && state.mood === "All";
+  elements.catalogueSearch.value = state.query;
+  elements.moodFilter.value = state.mood;
+  updateFilterButtons();
+  updateQueryString();
+
+  if (options.scroll) {
+    document.getElementById("discover").scrollIntoView({ behavior: "smooth", block: "start" });
+  }
+}
+
+function resetFilters(options = {}) {
+  state.query = "";
+  state.genre = "All";
+  state.mood = "All";
+  elements.heroSearch.value = "";
+  renderBooks(options);
+}
+
+function setGenre(genre, options = {}) {
+  state.genre = genre;
+  renderBooks(options);
+  trackEvent("homepage_genre_filter", { genre });
+}
+
+function setMood(mood, options = {}) {
+  state.mood = mood;
+  renderBooks(options);
+  trackEvent("homepage_mood_filter", { mood });
+}
+
+function updateSpotlight(book) {
+  elements.spotlightCard.classList.add("is-changing");
+
+  window.setTimeout(() => {
+    elements.spotlightCover.src = book.image;
+    elements.spotlightCover.alt = `${book.title} by ${book.author}`;
+    elements.spotlightKicker.textContent = "Your surprise pick";
+    elements.spotlightTitle.textContent = book.title;
+    elements.spotlightAuthor.textContent = book.author;
+    elements.spotlightHook.textContent = book.hook;
+    elements.spotlightGenre.textContent = book.genre;
+    elements.spotlightMood.textContent = book.moods[0];
+    elements.spotlightLink.href = book.url;
+    elements.spotlightLink.textContent = "See why it is worth starting";
+    elements.spotlightCard.classList.remove("is-changing");
+  }, 170);
+}
+
+function pickSurprise() {
+  const pool = getFilteredBooks().length ? getFilteredBooks() : BOOKS;
+  const currentTitle = elements.spotlightTitle.textContent;
+  const alternatives = pool.filter((book) => book.title !== currentTitle);
+  const choices = alternatives.length ? alternatives : pool;
+  const book = choices[Math.floor(Math.random() * choices.length)];
+
+  updateSpotlight(book);
+  trackEvent("homepage_surprise_pick", {
+    book_title: book.title,
+    active_genre: state.genre,
+    active_mood: state.mood
+  });
+
+  elements.spotlightCard.scrollIntoView({ behavior: "smooth", block: "center" });
+}
+
+function renderAuthors() {
+  const authors = [...new Map(BOOKS.map((book) => [book.author, book.url])).entries()]
+    .sort(([first], [second]) => first.localeCompare(second, "en-GB"));
+
+  const links = authors.map(([name, url]) => {
+    const link = document.createElement("a");
+    link.className = "author-link";
+    link.href = url;
+    link.textContent = name;
+    link.addEventListener("click", () => {
+      trackEvent("homepage_author_click", { author_name: name });
+    });
+    return link;
+  });
+
+  elements.authorList.replaceChildren(...links);
+}
+
+function initialiseFromQueryString() {
+  const parameters = new URLSearchParams(window.location.search);
+  const query = parameters.get("q") || "";
+  const genre = parameters.get("genre") || "All";
+  const mood = parameters.get("mood") || "All";
+  const validGenres = new Set(["All", ...BOOKS.map((book) => book.category)]);
+  const validMoods = new Set(["All", ...BOOKS.flatMap((book) => book.moods)]);
+
+  state.query = query;
+  state.genre = validGenres.has(genre) ? genre : "All";
+  state.mood = validMoods.has(mood) ? mood : "All";
+  elements.heroSearch.value = state.query;
+}
+
+elements.heroSearchForm.addEventListener("submit", (event) => {
+  event.preventDefault();
+  state.query = elements.heroSearch.value.trim();
+  renderBooks({ scroll: true });
+  trackEvent("homepage_search", { search_term: state.query || "(empty)" });
+});
+
+elements.catalogueSearch.addEventListener("input", (event) => {
+  state.query = event.target.value.trim();
+  renderBooks();
+});
+
+elements.genreFilters.addEventListener("click", (event) => {
+  const button = event.target.closest("[data-genre]");
+  if (button) setGenre(button.dataset.genre);
+});
+
+elements.moodFilter.addEventListener("change", (event) => {
+  setMood(event.target.value);
+});
+
+document.querySelectorAll("[data-quick-genre]").forEach((button) => {
+  button.addEventListener("click", () => setGenre(button.dataset.quickGenre, { scroll: true }));
+});
+
+document.querySelectorAll("[data-quick-mood]").forEach((button) => {
+  button.addEventListener("click", () => setMood(button.dataset.quickMood, { scroll: true }));
+});
+
+document.querySelectorAll("[data-mood-card]").forEach((button) => {
+  button.addEventListener("click", () => setMood(button.dataset.moodCard, { scroll: true }));
+});
+
+elements.clearFilters.addEventListener("click", () => resetFilters());
+elements.emptyReset.addEventListener("click", () => resetFilters());
+elements.surpriseButton.addEventListener("click", pickSurprise);
+elements.spotlightLink.addEventListener("click", () => {
+  trackEvent("homepage_spotlight_click", {
+    book_title: elements.spotlightTitle.textContent
+  });
+});
+
+document.getElementById("year").textContent = new Date().getFullYear();
+initialiseFromQueryString();
+renderBooks();
+renderAuthors();
