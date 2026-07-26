@@ -178,6 +178,61 @@ const BOOKS = [
     image: "/assets/the-last-harbour-cover.webp",
     url: "/authors/m-kelly.html",
     hook: "A frozen harbour, a divided family and a town learning that waiting is no longer neutral."
+  },
+  {
+    title: "Project Hail Mary",
+    author: "Andy Weir",
+    category: "Science fiction",
+    genre: "Science-fiction adventure",
+    moods: ["Adrenaline", "Thoughtful"],
+    image: "/Andy-Weir/assets/project-hail-mary-abc.svg",
+    imageAlt: "Authors Book Club recommendation graphic for Project Hail Mary by Andy Weir",
+    url: "/Andy-Weir/",
+    hook: "A lone astronaut, a species-level crisis and science that turns every answer into a new problem."
+  },
+  {
+    title: "The Housemaid",
+    author: "Freida McFadden",
+    category: "Crime & Thriller",
+    genre: "Psychological thriller",
+    moods: ["Eerie", "Adrenaline"],
+    image: "/Freida-McFadden/assets/the-housemaid-abc.svg",
+    imageAlt: "Authors Book Club recommendation graphic for The Housemaid by Freida McFadden",
+    url: "/Freida-McFadden/",
+    hook: "A live-in job, a wealthy family and the creeping certainty that every person in the house is hiding something."
+  },
+  {
+    title: "Fourth Wing",
+    author: "Rebecca Yarros",
+    category: "Fantasy & LitRPG",
+    genre: "Romantasy",
+    moods: ["Adrenaline", "Emotional"],
+    image: "/Rebecca-Yarros/assets/fourth-wing-abc.svg",
+    imageAlt: "Authors Book Club recommendation graphic for Fourth Wing by Rebecca Yarros",
+    url: "/Rebecca-Yarros/",
+    hook: "A lethal dragon-rider college where survival, rebellion and romantic tension all arrive at once."
+  },
+  {
+    title: "Atmosphere",
+    author: "Taylor Jenkins Reid",
+    category: "Contemporary",
+    genre: "Historical fiction",
+    moods: ["Emotional", "Thoughtful"],
+    image: "/Taylor-Jenkins-Reid/assets/atmosphere-abc.svg",
+    imageAlt: "Authors Book Club recommendation graphic for Atmosphere by Taylor Jenkins Reid",
+    url: "/Taylor-Jenkins-Reid/",
+    hook: "Ambition, love and personal risk inside NASA's 1980s space-shuttle programme."
+  },
+  {
+    title: "Wombat Waiting",
+    author: "Katherine Applegate",
+    category: "Children's",
+    genre: "Middle-grade fiction",
+    moods: ["Cosy", "Emotional"],
+    image: "/Katherine-Applegate/assets/wombat-waiting-abc.svg",
+    imageAlt: "Authors Book Club recommendation graphic for Wombat Waiting by Katherine Applegate",
+    url: "/Katherine-Applegate/",
+    hook: "A compassionate animal story about resilience, belonging and a dog waiting to find her person."
   }
 ];
 
@@ -260,7 +315,7 @@ function createBookCard(book) {
   const image = document.createElement("img");
   image.className = "book-cover";
   image.src = book.image;
-  image.alt = `${book.title} by ${book.author}`;
+  image.alt = book.imageAlt || `${book.title} by ${book.author}`;
   image.loading = "lazy";
   image.decoding = "async";
   coverLink.appendChild(image);
@@ -320,8 +375,10 @@ function renderBooks(options = {}) {
 
   const total = books.length;
   elements.resultCount.textContent = total === BOOKS.length
-    ? `Showing all ${total} books`
-    : `Showing ${total} ${total === 1 ? "book" : "books"}`;
+    ? "Showing the whole curated shelf"
+    : total === 1
+      ? "Showing one matching book"
+      : "Showing matching books";
 
   elements.bookGrid.hidden = total === 0;
   elements.emptyState.hidden = total !== 0;
@@ -361,7 +418,7 @@ function updateSpotlight(book) {
 
   window.setTimeout(() => {
     elements.spotlightCover.src = book.image;
-    elements.spotlightCover.alt = `${book.title} by ${book.author}`;
+    elements.spotlightCover.alt = book.imageAlt || `${book.title} by ${book.author}`;
     elements.spotlightKicker.textContent = "Your surprise pick";
     elements.spotlightTitle.textContent = book.title;
     elements.spotlightAuthor.textContent = book.author;
