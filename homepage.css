@@ -685,6 +685,29 @@ h3 {
   text-underline-offset: 3px;
 }
 
+.catalogue-more,
+.author-list-more {
+  display: flex;
+  justify-content: center;
+}
+
+.catalogue-more {
+  margin-top: 30px;
+}
+
+.catalogue-more .button,
+.author-list-more .button {
+  color: var(--forest);
+  background: rgba(255, 255, 255, 0.78);
+  border: 1px solid var(--line);
+  box-shadow: none;
+}
+
+.catalogue-more .button:hover,
+.author-list-more .button:hover {
+  background: #fff;
+}
+
 .empty-state,
 .noscript-message {
   padding: 46px 24px;
@@ -818,6 +841,10 @@ h3 {
 
 .author-link:hover::after {
   transform: translate(2px, -2px);
+}
+
+.author-list-more {
+  margin-top: 24px;
 }
 
 .author-cta {
