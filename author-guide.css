@@ -474,57 +474,13 @@ h3 {
   box-shadow: 0 16px 42px rgba(35, 31, 24, 0.09);
 }
 
-.book-art {
-  position: relative;
-  min-height: 310px;
-  display: grid;
-  place-items: end start;
-  overflow: hidden;
-  padding: 26px;
-  color: #fff;
-  background:
-    linear-gradient(150deg, transparent 44%, rgba(255, 255, 255, 0.13) 45%, transparent 47%),
-    radial-gradient(circle at 78% 20%, var(--book-b, var(--accent)), transparent 31%),
-    linear-gradient(145deg, var(--book-a, var(--deep)), color-mix(in srgb, var(--book-a, var(--deep)) 72%, #000));
+.book-cover {
+  display: block;
+  width: 100%;
+  aspect-ratio: 2 / 3;
+  object-fit: contain;
+  background: color-mix(in srgb, var(--accent-soft) 72%, #fff);
 }
-
-.book-art::after {
-  content: "";
-  position: absolute;
-  width: 175px;
-  height: 175px;
-  top: -62px;
-  right: -48px;
-  border: 1px solid rgba(255, 255, 255, 0.23);
-  border-radius: 50%;
-}
-
-.book-art span {
-  position: relative;
-  z-index: 2;
-  max-width: 260px;
-  font-family: Georgia, "Times New Roman", serif;
-  font-size: clamp(1.75rem, 3vw, 2.55rem);
-  font-weight: 700;
-  line-height: 0.98;
-  letter-spacing: -0.04em;
-}
-
-.art-hail-mary { --book-a: #102d45; --book-b: #dd783a; }
-.art-martian { --book-a: #7d261b; --book-b: #e9a13f; }
-.art-artemis { --book-a: #263446; --book-b: #8db7c9; }
-.art-housemaid { --book-a: #25141d; --book-b: #c43f49; }
-.art-never-lie { --book-a: #263139; --book-b: #8aa6ac; }
-.art-boyfriend { --book-a: #40212d; --book-b: #dc8d78; }
-.art-fourth-wing { --book-a: #26273e; --book-b: #8b6bc7; }
-.art-iron-flame { --book-a: #3f1e27; --book-b: #d45b42; }
-.art-onyx-storm { --book-a: #202e3c; --book-b: #879bb4; }
-.art-evelyn-hugo { --book-a: #36523f; --book-b: #c8a164; }
-.art-daisy-jones { --book-a: #6c281d; --book-b: #df8a3f; }
-.art-atmosphere { --book-a: #18374b; --book-b: #8db6c7; }
-.art-wombat-waiting { --book-a: #71452c; --book-b: #d9a161; }
-.art-ivan { --book-a: #37493e; --book-b: #93ad81; }
-.art-wishtree { --book-a: #31543e; --book-b: #c59a58; }
 
 .book-body {
   display: flex;
@@ -707,8 +663,9 @@ h3 {
     grid-template-columns: minmax(210px, 0.55fr) 1fr;
   }
 
-  .book-art {
-    min-height: 100%;
+  .book-cover {
+    height: 100%;
+    aspect-ratio: auto;
   }
 }
 
@@ -760,8 +717,9 @@ h3 {
     display: flex;
   }
 
-  .book-art {
-    min-height: 270px;
+  .book-cover {
+    height: auto;
+    aspect-ratio: 2 / 3;
   }
 
   .final-panel .button {
