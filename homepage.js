@@ -40,6 +40,61 @@ const BOOKS = [
     hook: "Dark cases, dry humour and the proper starting point for DCI Jack Logan."
   },
   {
+    title: "Floating Hotel",
+    author: "Grace Curtis",
+    category: "Science fiction",
+    genre: "Cosy space opera",
+    moods: ["Cosy", "Thoughtful"],
+    image: "https://covers.openlibrary.org/b/isbn/0756419301-L.jpg?default=false",
+    imageAlt: "Floating Hotel book cover by Grace Curtis",
+    url: "/Grace-Curtis/",
+    hook: "A wandering luxury hotel, a found family and a quiet mystery moving through the stars."
+  },
+  {
+    title: "The Whistler",
+    author: "Nick Medina",
+    category: "Horror",
+    genre: "Indigenous horror",
+    moods: ["Eerie", "Adrenaline"],
+    image: "https://images2.penguinrandomhouse.com/cover/9780593820407",
+    imageAlt: "The Whistler book cover by Nick Medina",
+    url: "/Nick-Medina/",
+    hook: "Native folklore, a reckless ghost hunter and the terrible cost of whistling after dark."
+  },
+  {
+    title: "Rebel Skies",
+    author: "Ann Sei Lin",
+    category: "Children's",
+    genre: "Young-adult fantasy",
+    moods: ["Adrenaline", "Emotional"],
+    image: "https://images2.penguinrandomhouse.com/cover/9781774884003",
+    imageAlt: "Rebel Skies book cover by Ann Sei Lin",
+    url: "/Ann-Sei-Lin/",
+    hook: "Flying cities, living paper spirits and a young crafter questioning the empire she serves."
+  },
+  {
+    title: "The In Crowd",
+    author: "Charlotte Vassell",
+    category: "Crime & Thriller",
+    genre: "Society mystery",
+    moods: ["Adrenaline", "Thoughtful"],
+    image: "https://m.media-amazon.com/images/I/810mMG+EjvL._SL1500_.jpg",
+    imageAlt: "The In Crowd book cover by Charlotte Vassell",
+    url: "/Charlotte-Vassell/",
+    hook: "A Thames drowning, London privilege and a detective who knows money can distort justice."
+  },
+  {
+    title: "The Final Strife",
+    author: "Saara El-Arifi",
+    category: "Fantasy & LitRPG",
+    genre: "Epic fantasy",
+    moods: ["Adrenaline", "Emotional"],
+    image: "https://images2.penguinrandomhouse.com/cover/9780593356944",
+    imageAlt: "The Final Strife book cover by Saara El-Arifi",
+    url: "/Saara-El-Arifi/",
+    hook: "A blood-divided empire, three women and a rebellion built to overturn the rules of power."
+  },
+  {
     title: "The Mysterious Santa",
     author: "Lila Rose",
     category: "Romance",
@@ -236,14 +291,22 @@ const BOOKS = [
   }
 ];
 
+const INITIAL_BOOK_LIMIT = 16;
+const BOOK_LIMIT_INCREMENT = 8;
+const AUTHOR_PREVIEW_LIMIT = 8;
+
 const state = {
   query: "",
   genre: "All",
-  mood: "All"
+  mood: "All",
+  visibleBooks: INITIAL_BOOK_LIMIT
 };
+
+let allAuthorsVisible = false;
 
 const elements = {
   authorList: document.getElementById("authorList"),
+  toggleAuthors: document.getElementById("toggleAuthors"),
   bookGrid: document.getElementById("bookGrid"),
   catalogueSearch: document.getElementById("catalogueSearch"),
   clearFilters: document.getElementById("clearFilters"),
@@ -252,6 +315,7 @@ const elements = {
   genreFilters: document.getElementById("genreFilters"),
   heroSearch: document.getElementById("heroSearch"),
   heroSearchForm: document.getElementById("heroSearchForm"),
+  loadMoreBooks: document.getElementById("loadMoreBooks"),
   moodFilter: document.getElementById("moodFilter"),
   resultCount: document.getElementById("resultCount"),
   spotlightAuthor: document.getElementById("spotlightAuthor"),
@@ -371,15 +435,21 @@ function updateQueryString() {
 
 function renderBooks(options = {}) {
   const books = getFilteredBooks();
-  elements.bookGrid.replaceChildren(...books.map(createBookCard));
+  const isWholeShelf = !state.query && state.genre === "All" && state.mood === "All";
+  const visibleBooks = isWholeShelf ? books.slice(0, state.visibleBooks) : books;
+  elements.bookGrid.replaceChildren(...visibleBooks.map(createBookCard));
 
   const total = books.length;
+  const hasMore = isWholeShelf && visibleBooks.length < total;
   elements.resultCount.textContent = total === BOOKS.length
-    ? "Showing the whole curated shelf"
+    ? hasMore
+      ? "Showing a curated first look"
+      : "Showing the whole curated shelf"
     : total === 1
       ? "Showing one matching book"
       : "Showing matching books";
 
+  elements.loadMoreBooks.hidden = !hasMore;
   elements.bookGrid.hidden = total === 0;
   elements.emptyState.hidden = total !== 0;
   elements.clearFilters.hidden = !state.query && state.genre === "All" && state.mood === "All";
@@ -397,18 +467,21 @@ function resetFilters(options = {}) {
   state.query = "";
   state.genre = "All";
   state.mood = "All";
+  state.visibleBooks = INITIAL_BOOK_LIMIT;
   elements.heroSearch.value = "";
   renderBooks(options);
 }
 
 function setGenre(genre, options = {}) {
   state.genre = genre;
+  state.visibleBooks = INITIAL_BOOK_LIMIT;
   renderBooks(options);
   trackEvent("homepage_genre_filter", { genre });
 }
 
 function setMood(mood, options = {}) {
   state.mood = mood;
+  state.visibleBooks = INITIAL_BOOK_LIMIT;
   renderBooks(options);
   trackEvent("homepage_mood_filter", { mood });
 }
@@ -452,11 +525,12 @@ function renderAuthors() {
   const authors = [...new Map(BOOKS.map((book) => [book.author, book.url])).entries()]
     .sort(([first], [second]) => first.localeCompare(second, "en-GB"));
 
-  const links = authors.map(([name, url]) => {
+  const links = authors.map(([name, url], index) => {
     const link = document.createElement("a");
     link.className = "author-link";
     link.href = url;
     link.textContent = name;
+    link.hidden = !allAuthorsVisible && index >= AUTHOR_PREVIEW_LIMIT;
     link.addEventListener("click", () => {
       trackEvent("homepage_author_click", { author_name: name });
     });
@@ -464,6 +538,9 @@ function renderAuthors() {
   });
 
   elements.authorList.replaceChildren(...links);
+  elements.toggleAuthors.hidden = authors.length <= AUTHOR_PREVIEW_LIMIT;
+  elements.toggleAuthors.textContent = allAuthorsVisible ? "Show fewer authors" : "Show all authors";
+  elements.toggleAuthors.setAttribute("aria-expanded", String(allAuthorsVisible));
 }
 
 function initialiseFromQueryString() {
@@ -489,6 +566,7 @@ elements.heroSearchForm.addEventListener("submit", (event) => {
 
 elements.catalogueSearch.addEventListener("input", (event) => {
   state.query = event.target.value.trim();
+  state.visibleBooks = INITIAL_BOOK_LIMIT;
   renderBooks();
 });
 
@@ -515,6 +593,16 @@ document.querySelectorAll("[data-mood-card]").forEach((button) => {
 
 elements.clearFilters.addEventListener("click", () => resetFilters());
 elements.emptyReset.addEventListener("click", () => resetFilters());
+elements.loadMoreBooks.addEventListener("click", () => {
+  state.visibleBooks += BOOK_LIMIT_INCREMENT;
+  renderBooks();
+  trackEvent("homepage_show_more_books");
+});
+elements.toggleAuthors.addEventListener("click", () => {
+  allAuthorsVisible = !allAuthorsVisible;
+  renderAuthors();
+  trackEvent("homepage_toggle_authors", { expanded: allAuthorsVisible });
+});
 elements.surpriseButton.addEventListener("click", pickSurprise);
 elements.spotlightLink.addEventListener("click", () => {
   trackEvent("homepage_spotlight_click", {

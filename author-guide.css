@@ -49,6 +49,41 @@
   --wash: #e7efe7;
 }
 
+.theme-grace {
+  --accent: #4e8092;
+  --accent-soft: #cbdde2;
+  --deep: #173947;
+  --wash: #e5eef0;
+}
+
+.theme-nick {
+  --accent: #c04a37;
+  --accent-soft: #efc9bf;
+  --deep: #261d1d;
+  --wash: #f1e7e3;
+}
+
+.theme-ann {
+  --accent: #a4683c;
+  --accent-soft: #efd2b2;
+  --deep: #273648;
+  --wash: #e7edf1;
+}
+
+.theme-charlotte {
+  --accent: #2876a7;
+  --accent-soft: #c5dfed;
+  --deep: #182b3d;
+  --wash: #e8f0f5;
+}
+
+.theme-saara {
+  --accent: #b84d31;
+  --accent-soft: #efc7b8;
+  --deep: #36201d;
+  --wash: #f2e6df;
+}
+
 *,
 *::before,
 *::after {
