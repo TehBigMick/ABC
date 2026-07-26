@@ -185,8 +185,8 @@ const BOOKS = [
     category: "Science fiction",
     genre: "Science-fiction adventure",
     moods: ["Adrenaline", "Thoughtful"],
-    image: "/Andy-Weir/assets/project-hail-mary-abc.svg",
-    imageAlt: "Authors Book Club recommendation graphic for Project Hail Mary by Andy Weir",
+    image: "https://covers.openlibrary.org/b/isbn/0593135202-L.jpg?default=false",
+    imageAlt: "Project Hail Mary book cover by Andy Weir",
     url: "/Andy-Weir/",
     hook: "A lone astronaut, a species-level crisis and science that turns every answer into a new problem."
   },
@@ -196,8 +196,8 @@ const BOOKS = [
     category: "Crime & Thriller",
     genre: "Psychological thriller",
     moods: ["Eerie", "Adrenaline"],
-    image: "/Freida-McFadden/assets/the-housemaid-abc.svg",
-    imageAlt: "Authors Book Club recommendation graphic for The Housemaid by Freida McFadden",
+    image: "https://covers.openlibrary.org/b/isbn/1538742578-L.jpg?default=false",
+    imageAlt: "The Housemaid book cover by Freida McFadden",
     url: "/Freida-McFadden/",
     hook: "A live-in job, a wealthy family and the creeping certainty that every person in the house is hiding something."
   },
@@ -207,8 +207,8 @@ const BOOKS = [
     category: "Fantasy & LitRPG",
     genre: "Romantasy",
     moods: ["Adrenaline", "Emotional"],
-    image: "/Rebecca-Yarros/assets/fourth-wing-abc.svg",
-    imageAlt: "Authors Book Club recommendation graphic for Fourth Wing by Rebecca Yarros",
+    image: "https://covers.openlibrary.org/b/isbn/1649374046-L.jpg?default=false",
+    imageAlt: "Fourth Wing book cover by Rebecca Yarros",
     url: "/Rebecca-Yarros/",
     hook: "A lethal dragon-rider college where survival, rebellion and romantic tension all arrive at once."
   },
@@ -218,8 +218,8 @@ const BOOKS = [
     category: "Contemporary",
     genre: "Historical fiction",
     moods: ["Emotional", "Thoughtful"],
-    image: "/Taylor-Jenkins-Reid/assets/atmosphere-abc.svg",
-    imageAlt: "Authors Book Club recommendation graphic for Atmosphere by Taylor Jenkins Reid",
+    image: "https://covers.openlibrary.org/b/isbn/0593158717-L.jpg?default=false",
+    imageAlt: "Atmosphere book cover by Taylor Jenkins Reid",
     url: "/Taylor-Jenkins-Reid/",
     hook: "Ambition, love and personal risk inside NASA's 1980s space-shuttle programme."
   },
@@ -229,8 +229,8 @@ const BOOKS = [
     category: "Children's",
     genre: "Middle-grade fiction",
     moods: ["Cosy", "Emotional"],
-    image: "/Katherine-Applegate/assets/wombat-waiting-abc.svg",
-    imageAlt: "Authors Book Club recommendation graphic for Wombat Waiting by Katherine Applegate",
+    image: "https://m.media-amazon.com/images/I/41EJTU5KzzL._SY445_SX342_ML2_.jpg",
+    imageAlt: "Wombat Waiting book cover by Katherine Applegate",
     url: "/Katherine-Applegate/",
     hook: "A compassionate animal story about resilience, belonging and a dog waiting to find her person."
   }
