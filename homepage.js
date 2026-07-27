@@ -306,7 +306,7 @@ const BOOKS = [
     category: "Fantasy & LitRPG",
     genre: "Queer gothic fantasy",
     moods: ["Eerie", "Emotional"],
-    image: "https://covers.openlibrary.org/b/isbn/0316501071-L.jpg?default=false",
+    image: "https://m.media-amazon.com/images/I/41ARWDPFglL._SY445_SX342_ML2_.jpg",
     imageAlt: "A Dowry of Blood book cover by S. T. Gibson",
     url: "/ST-Gibson/",
     hook: "A lyrical, bloody reimagining of Dracula’s brides about obsession, control and choosing freedom."
@@ -317,7 +317,7 @@ const BOOKS = [
     category: "Children's",
     genre: "Middle-grade fantasy",
     moods: ["Cosy", "Adrenaline"],
-    image: "https://covers.openlibrary.org/b/isbn/1801300089-L.jpg?default=false",
+    image: "https://skyemckenna.com/wp-content/uploads/2024/05/9781801300087-667x1024.jpg",
     imageAlt: "Hedgewitch book cover by Skye McKenna",
     url: "/Skye-McKenna/",
     hook: "A young witch, a talking cat and a cosy village facing dangers from the world beyond the hedge."
@@ -339,7 +339,7 @@ const BOOKS = [
     category: "Fantasy & LitRPG",
     genre: "Romantasy",
     moods: ["Adrenaline", "Emotional"],
-    image: "https://covers.openlibrary.org/b/isbn/0593641906-L.jpg?default=false",
+    image: "https://m.media-amazon.com/images/I/51Kt1U6tuxL._SY445_SX342_ML2_.jpg",
     imageAlt: "A Dawn of Onyx book cover by Kate Golden",
     url: "/Kate-Golden/",
     hook: "A captured healer, a dangerous king and a completed enemies-to-lovers fantasy trilogy."
