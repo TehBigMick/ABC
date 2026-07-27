@@ -295,7 +295,7 @@ const BOOKS = [
     category: "Romance",
     genre: "Cosy fantasy romance",
     moods: ["Cosy", "Emotional"],
-    image: "https://covers.openlibrary.org/b/isbn/1801300682-L.jpg?default=false",
+    image: "https://covers.openlibrary.org/b/isbn/000872766X-L.jpg?default=false",
     imageAlt: "The Baby Dragon Cafe book cover by A. T. Qureshi",
     url: "/AT-Qureshi/",
     hook: "Baby dragons, a struggling café and a grumpy-sunshine bargain with a warm romantic centre."
