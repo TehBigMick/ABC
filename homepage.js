@@ -288,6 +288,61 @@ const BOOKS = [
     imageAlt: "Wombat Waiting book cover by Katherine Applegate",
     url: "/Katherine-Applegate/",
     hook: "A compassionate animal story about resilience, belonging and a dog waiting to find her person."
+  },
+  {
+    title: "The Baby Dragon Cafe",
+    author: "A. T. Qureshi",
+    category: "Romance",
+    genre: "Cosy fantasy romance",
+    moods: ["Cosy", "Emotional"],
+    image: "https://covers.openlibrary.org/b/isbn/1801300682-L.jpg?default=false",
+    imageAlt: "The Baby Dragon Cafe book cover by A. T. Qureshi",
+    url: "/AT-Qureshi/",
+    hook: "Baby dragons, a struggling café and a grumpy-sunshine bargain with a warm romantic centre."
+  },
+  {
+    title: "A Dowry of Blood",
+    author: "S. T. Gibson",
+    category: "Fantasy & LitRPG",
+    genre: "Queer gothic fantasy",
+    moods: ["Eerie", "Emotional"],
+    image: "https://covers.openlibrary.org/b/isbn/0316501071-L.jpg?default=false",
+    imageAlt: "A Dowry of Blood book cover by S. T. Gibson",
+    url: "/ST-Gibson/",
+    hook: "A lyrical, bloody reimagining of Dracula’s brides about obsession, control and choosing freedom."
+  },
+  {
+    title: "Hedgewitch",
+    author: "Skye McKenna",
+    category: "Children's",
+    genre: "Middle-grade fantasy",
+    moods: ["Cosy", "Adrenaline"],
+    image: "https://covers.openlibrary.org/b/isbn/1801300089-L.jpg?default=false",
+    imageAlt: "Hedgewitch book cover by Skye McKenna",
+    url: "/Skye-McKenna/",
+    hook: "A young witch, a talking cat and a cosy village facing dangers from the world beyond the hedge."
+  },
+  {
+    title: "This Book Kills",
+    author: "Ravena Guron",
+    category: "Crime & Thriller",
+    genre: "Young-adult mystery",
+    moods: ["Adrenaline", "Eerie"],
+    image: "https://covers.openlibrary.org/b/isbn/1728296900-L.jpg?default=false",
+    imageAlt: "This Book Kills book cover by Ravena Guron",
+    url: "/Ravena-Guron/",
+    hook: "A student’s murder story becomes real at an elite boarding school, placing its author under suspicion."
+  },
+  {
+    title: "A Dawn of Onyx",
+    author: "Kate Golden",
+    category: "Fantasy & LitRPG",
+    genre: "Romantasy",
+    moods: ["Adrenaline", "Emotional"],
+    image: "https://covers.openlibrary.org/b/isbn/0593641906-L.jpg?default=false",
+    imageAlt: "A Dawn of Onyx book cover by Kate Golden",
+    url: "/Kate-Golden/",
+    hook: "A captured healer, a dangerous king and a completed enemies-to-lovers fantasy trilogy."
   }
 ];
 
