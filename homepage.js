@@ -343,6 +343,17 @@ const BOOKS = [
     imageAlt: "A Dawn of Onyx book cover by Kate Golden",
     url: "/Kate-Golden/",
     hook: "A captured healer, a dangerous king and a completed enemies-to-lovers fantasy trilogy."
+  },
+  {
+    title: "Lead Last",
+    author: "Olaolu Ogunyemi",
+    category: "Non-fiction",
+    genre: "Leadership",
+    moods: ["Thoughtful"],
+    image: "https://m.media-amazon.com/images/I/41tUV0E2MIL._SY445_SX342_ML2_.jpg",
+    imageAlt: "Lead Last book cover by Olaolu Ogunyemi",
+    url: "/Olaolu-Ogunyemi/",
+    hook: "Twenty-one counterintuitive principles for building bold, decisive and people-first teams."
   }
 ];
 
