@@ -1,5 +1,27 @@
 const BOOKS = [
   {
+    title: "The Source",
+    author: "Dominic Nessi",
+    category: "Science fiction",
+    genre: "Speculative techno-thriller",
+    moods: ["Adrenaline", "Thoughtful"],
+    image: "https://imgv2-2-f.scribdassets.com/img/word_document/1048477723/original/216x287/36e15bab5a/1786486244?v=1",
+    imageAlt: "The Source book cover by Dominic Nessi",
+    url: "/Dominic-Nessi/",
+    hook: "Planetary anomalies, ancient sites and five women scientists racing to decode a world-sized pattern."
+  },
+  {
+    title: "Septemics",
+    author: "Jim Marshall",
+    category: "Non-fiction",
+    genre: "Psychological philosophy",
+    moods: ["Thoughtful"],
+    image: "https://media2.hugendubel.de/shop/coverscans/402/40277094_9781665512459_xl.jpg",
+    imageAlt: "Septemics book cover by Jim Marshall",
+    url: "/Jim-Marshall/",
+    hook: "Thirty-five scales and seven-level hierarchies for examining patterns in individual and group behaviour."
+  },
+  {
     title: "Dungeon Crawler Carl",
     author: "Matt Dinniman",
     category: "Fantasy & LitRPG",
