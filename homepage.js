@@ -1,5 +1,16 @@
 const BOOKS = [
   {
+    title: "Safe Distance",
+    author: "E.D. Dylan",
+    category: "Non-fiction",
+    genre: "Travel memoir",
+    moods: ["Emotional", "Thoughtful"],
+    image: "https://static.wixstatic.com/media/4c09e0_41de253f317846d4b68ce20a0539f99a~mv2.png",
+    imageAlt: "Safe Distance book cover by E.D. Dylan",
+    url: "/ED-Dylan/",
+    hook: "Two women seek safety on very different journeys in a candid memoir of travel, displacement and the past we carry."
+  },
+  {
     title: "The Source",
     author: "Dominic Nessi",
     category: "Science fiction",
