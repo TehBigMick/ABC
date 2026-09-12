@@ -1,5 +1,27 @@
 const BOOKS = [
   {
+    title: "Hidden in the Drizzle",
+    author: "Atom Castle",
+    category: "Crime & Thriller",
+    genre: "Locked-room mystery",
+    moods: ["Eerie", "Thoughtful"],
+    image: "https://hidden-in-the-drizzle-atom-castle.xudxud2026.chatgpt.site/cover.jpg",
+    imageAlt: "Hidden in the Drizzle book cover by Atom Castle",
+    url: "/Atom-Castle/",
+    hook: "A corpse vanishes from a locked morgue, leaving Detective Arthur Crow to reconstruct the impossible from seven diaries and physical clues."
+  },
+  {
+    title: "I Won't Say I've Seen It All, But I've Seen Most of It",
+    author: "Deven Matthews",
+    category: "Non-fiction",
+    genre: "True hotel stories",
+    moods: ["Cosy", "Thoughtful"],
+    image: "https://devenmatthews.com/wp-content/uploads/2026/07/Screen-Shot-2026-07-10-at-4.56.18-PM-7.png",
+    imageAlt: "I Won't Say I've Seen It All, But I've Seen Most of It book cover by Deven Matthews",
+    url: "/Deven-Matthews/",
+    hook: "Twenty-five years behind a hotel front desk, told through true encounters with the funniest, strangest and most unforgettable guests."
+  },
+  {
     title: "Safe Distance",
     author: "E.D. Dylan",
     category: "Non-fiction",
