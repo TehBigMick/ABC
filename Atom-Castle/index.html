@@ -245,6 +245,29 @@
       border-radius: 5px 18px 18px 18px;
     }
 
+    .theme-atom .section {
+      padding-top: 78px;
+      padding-bottom: 78px;
+    }
+
+    .theme-atom #book .section-heading {
+      margin-bottom: 30px;
+    }
+
+    .theme-atom .book-grid-single {
+      grid-template-columns: minmax(0, 760px);
+    }
+
+    .theme-atom .book-grid-single .book-cover {
+      height: auto;
+      align-self: start;
+      aspect-ratio: auto;
+    }
+
+    .theme-atom .book-grid-single .book-body {
+      padding: 30px;
+    }
+
     .theme-atom .start-panel {
       border-radius: 18px 5px 18px 18px;
     }
@@ -264,7 +287,8 @@
     }
 
     .content-advisory {
-      margin-top: 24px;
+      max-width: 960px;
+      margin: 22px auto 0;
       padding: 22px 24px;
       color: #d9e5e8;
       background: #14262e;
@@ -288,7 +312,8 @@
     }
 
     .publication-panel {
-      margin: 20px 0 0;
+      max-width: 760px;
+      margin: 18px auto 0;
       padding: 15px 18px;
       color: #344750;
       background: rgba(201, 220, 225, 0.5);
@@ -309,6 +334,15 @@
     }
 
     @media (max-width: 700px) {
+      .theme-atom .section {
+        padding-top: 62px;
+        padding-bottom: 62px;
+      }
+
+      .theme-atom .book-grid-single .book-body {
+        padding: 25px;
+      }
+
       .case-hero-art {
         min-height: 460px;
       }
