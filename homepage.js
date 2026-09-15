@@ -27,7 +27,8 @@ const BOOKS = [
     category: "Non-fiction",
     genre: "Travel memoir",
     moods: ["Emotional", "Thoughtful"],
-    image: "https://static.wixstatic.com/media/4c09e0_41de253f317846d4b68ce20a0539f99a~mv2.png",
+    image: "/ED-Dylan/assets/safe-distance-cover.webp",
+    imageFit: "contain",
     imageAlt: "Safe Distance book cover by E.D. Dylan",
     url: "/ED-Dylan/",
     hook: "Two women seek safety on very different journeys in a candid memoir of travel, displacement and the past we carry."
@@ -503,6 +504,7 @@ function createBookCard(book) {
   image.alt = book.imageAlt || `${book.title} by ${book.author}`;
   image.loading = "lazy";
   image.decoding = "async";
+  image.style.objectFit = book.imageFit || "cover";
   coverLink.appendChild(image);
 
   const body = document.createElement("div");
@@ -613,6 +615,7 @@ function updateSpotlight(book) {
   window.setTimeout(() => {
     elements.spotlightCover.src = book.image;
     elements.spotlightCover.alt = book.imageAlt || `${book.title} by ${book.author}`;
+    elements.spotlightCover.style.objectFit = book.imageFit || "cover";
     elements.spotlightKicker.textContent = "Your surprise pick";
     elements.spotlightTitle.textContent = book.title;
     elements.spotlightAuthor.textContent = book.author;
