@@ -1,5 +1,17 @@
 const BOOKS = [
   {
+    title: "Between You, Me, and the Fence Post",
+    author: "Hunter Snow",
+    category: "Contemporary",
+    genre: "Women's fiction",
+    moods: ["Emotional", "Thoughtful"],
+    image: "/Hunter-Snow/assets/between-you-me-fence-post.webp",
+    imageFit: "contain",
+    imageAlt: "Between You, Me, and the Fence Post book cover by Hunter Snow",
+    url: "/Hunter-Snow/",
+    hook: "Complicated love, emotional healing and the courage to stop waiting and choose yourself."
+  },
+  {
     title: "Hidden in the Drizzle",
     author: "Atom Castle",
     category: "Crime & Thriller",
