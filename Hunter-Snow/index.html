@@ -167,12 +167,15 @@
       z-index: 3;
       width: min(70%, 315px);
       margin: 0;
-      transform: rotate(-1.4deg);
+      transform: none;
     }
 
     .snow-cover-frame img {
       display: block;
       width: 100%;
+      height: auto;
+      aspect-ratio: 1000 / 1545;
+      object-fit: contain;
       border: 7px solid #fffaf1;
       border-radius: 4px;
       box-shadow: 0 28px 45px rgba(37, 39, 72, 0.42);
@@ -237,6 +240,20 @@
       border-top-color: #a8b82d;
     }
 
+    .theme-hunter-snow .book-grid-single .book-card {
+      grid-template-columns: minmax(240px, 322px) minmax(0, 1fr);
+      align-items: center;
+    }
+
+    .theme-hunter-snow .book-cover {
+      width: 100%;
+      height: auto;
+      max-height: 500px;
+      aspect-ratio: 1000 / 1545;
+      object-fit: contain;
+      align-self: center;
+    }
+
     .publication-panel {
       max-width: 780px;
       margin: 28px auto 0;
@@ -264,6 +281,7 @@
     .author-portrait-panel img {
       display: block;
       width: 100%;
+      height: auto;
       aspect-ratio: 1;
       object-fit: contain;
       background: radial-gradient(circle, #e4e9a7 0 55%, transparent 56%);
@@ -279,10 +297,12 @@
 
     @media (max-width: 700px) {
       .theme-hunter-snow .site-header .site-nav .nav-cta { color: #252748; }
-      .snow-hero-art { min-height: 500px; }
-      .snow-cover-frame { width: min(72%, 285px); }
-      .story-sticker-one { top: 5%; left: 3%; }
-      .story-sticker-two { right: 3%; bottom: 6%; }
+      .snow-hero-art { min-height: 500px; padding: 24px 18px; }
+      .snow-cover-frame { width: min(78%, 270px); }
+      .story-sticker-one { top: 18px; left: 14px; }
+      .story-sticker-two { right: 14px; bottom: 18px; }
+      .theme-hunter-snow .book-grid-single .book-card { display: flex; }
+      .theme-hunter-snow .book-cover { max-height: none; }
       .publication-panel { border-radius: 18px; }
       .author-portrait-panel { grid-template-columns: 1fr; text-align: center; }
       .author-portrait-panel img { width: min(72%, 220px); margin: 0 auto; }
