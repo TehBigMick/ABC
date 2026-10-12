@@ -1,0 +1,291 @@
+.theme-renee {
+  --ink: #203340;
+  --muted: #52636c;
+  --paper: #f5f4ef;
+  --card: #fffdf8;
+  --line: rgba(32, 51, 64, 0.15);
+  --accent: #886044;
+  --accent-soft: #d9e5ee;
+  --deep: #243e50;
+  --wash: #e5edf1;
+  --gold: #b47842;
+  background: linear-gradient(180deg, #f4f7f9, #f5f4ef 50%, #edf1f3);
+}
+
+.theme-renee .hero {
+  background:
+    radial-gradient(ellipse at 70% 20%, rgba(201, 220, 237, 0.55), transparent 70%),
+    linear-gradient(180deg, #f0f5f8, #f9f7f1);
+}
+
+.theme-renee .hero-grid {
+  gap: clamp(36px, 6vw, 76px);
+}
+
+.theme-renee .hero h1 {
+  max-width: 620px;
+  font-size: clamp(3.2rem, 6.2vw, 5.9rem);
+  line-height: 1;
+}
+
+.hero-book-title {
+  margin-bottom: 16px;
+  color: var(--deep);
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(1.55rem, 2.6vw, 2rem);
+  line-height: 1.2;
+}
+
+.theme-renee .hero-note {
+  margin-top: 20px;
+}
+
+.theme-renee .memoir-art {
+  min-height: 550px;
+  padding: 34px 24px;
+  background: var(--deep);
+  border-color: rgba(36, 62, 80, 0.2);
+  border-radius: 30px;
+  transform: none;
+  isolation: isolate;
+}
+
+.journey-backdrop {
+  position: absolute;
+  inset: 0;
+  z-index: -2;
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.theme-renee .memoir-art::before {
+  inset: 0;
+  z-index: -1;
+  width: auto;
+  height: auto;
+  background: linear-gradient(180deg, rgba(36, 62, 80, 0.15), rgba(24, 44, 60, 0.74));
+  border: 0;
+  border-radius: inherit;
+}
+
+.theme-renee .memoir-art::after {
+  display: none;
+}
+
+.memoir-cover-frame {
+  width: min(82%, 278px);
+  margin: 0;
+  text-align: center;
+}
+
+.memoir-cover-frame img {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 1000 / 1480;
+  object-fit: contain;
+  border: 5px solid #fffdf8;
+  border-radius: 3px;
+  box-shadow: 0 24px 48px rgba(18, 34, 48, 0.38);
+}
+
+.memoir-cover-frame figcaption {
+  margin-top: 19px;
+  color: #fff;
+  font-size: 0.7rem;
+  font-weight: 850;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.theme-renee .trust-grid strong {
+  color: #dfeaf5;
+}
+
+.theme-renee .book-grid-single {
+  grid-template-columns: minmax(0, 900px);
+}
+
+.theme-renee .book-grid-single .book-card {
+  grid-template-columns: minmax(240px, 320px) minmax(0, 1fr);
+  align-items: center;
+}
+
+.theme-renee .book-cover {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 1000 / 1480;
+  object-fit: contain;
+  align-self: center;
+}
+
+.theme-renee .book-body {
+  padding: clamp(25px, 4vw, 42px);
+}
+
+.theme-renee .book-subtitle {
+  color: var(--deep);
+  font-weight: 750;
+  line-height: 1.4;
+}
+
+.theme-renee .book-actions {
+  margin-top: 12px;
+}
+
+.publication-panel {
+  max-width: 900px;
+  margin: 24px auto 0;
+  padding: 15px 20px;
+  color: var(--deep);
+  background: #d9e5ee;
+  border-radius: 16px;
+  font-size: 0.85rem;
+  font-weight: 750;
+  text-align: center;
+}
+
+.theme-renee .affiliate-note {
+  max-width: 900px;
+  margin-inline: auto;
+}
+
+.theme-renee .route-card {
+  background: #fffdf8;
+  border-top-color: #687f93;
+}
+
+.theme-renee .route-card:nth-child(2) {
+  border-top-color: #886044;
+}
+
+.theme-renee .route-card:nth-child(3) {
+  border-top-color: #82947c;
+}
+
+.author-portrait-panel {
+  display: grid;
+  grid-template-columns: minmax(110px, 145px) minmax(0, 1fr);
+  gap: 20px;
+  align-items: center;
+  padding: 24px;
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  box-shadow: 0 15px 42px rgba(32, 51, 64, 0.08);
+}
+
+.author-portrait-panel img {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 800 / 1067;
+  object-fit: contain;
+  border-radius: 16px;
+}
+
+.author-portrait-panel h3 {
+  margin-bottom: 12px;
+  font-size: 1.6rem;
+  line-height: 1.1;
+}
+
+.author-portrait-panel p {
+  color: var(--muted);
+}
+
+.author-portrait-panel .eyebrow {
+  color: var(--accent);
+}
+
+.author-portrait-panel > .button {
+  grid-column: 1 / -1;
+  justify-self: center;
+  max-width: 100%;
+  text-align: center;
+}
+
+.theme-renee .final-panel {
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 30px;
+}
+
+.theme-renee .final-panel .eyebrow {
+  color: #d9e5ee;
+}
+
+.theme-renee .final-copy p {
+  color: rgba(255, 255, 255, 0.82);
+}
+
+.theme-renee .site-footer {
+  background: #1d3344;
+}
+
+@media (min-width: 941px) {
+  .theme-renee .about-grid {
+    grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr);
+  }
+}
+
+@media (max-width: 940px) {
+  .theme-renee .memoir-art {
+    min-height: 510px;
+  }
+
+  .theme-renee .final-panel {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .theme-renee .final-panel > .button {
+    justify-self: start;
+  }
+}
+
+@media (max-width: 700px) {
+  .theme-renee .hero h1 {
+    font-size: clamp(3rem, 13vw, 4.5rem);
+  }
+
+  .theme-renee .memoir-art {
+    min-height: 0;
+    padding: 30px 20px;
+  }
+
+  .memoir-cover-frame {
+    width: min(88%, 250px);
+  }
+
+  .theme-renee .book-grid-single .book-card {
+    display: flex;
+  }
+
+  .theme-renee .book-cover {
+    width: min(100%, 320px);
+    margin-top: 24px;
+    border-radius: 3px;
+  }
+
+  .theme-renee .book-actions,
+  .theme-renee .book-actions .button {
+    width: 100%;
+  }
+
+  .author-portrait-panel {
+    grid-template-columns: minmax(0, 1fr);
+    text-align: center;
+  }
+
+  .author-portrait-panel img {
+    width: min(75%, 230px);
+    margin-inline: auto;
+  }
+
+  .theme-renee .final-copy h2 {
+    font-size: clamp(2.2rem, 10vw, 3.3rem);
+    line-height: 1.05;
+  }
+}

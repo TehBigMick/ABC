@@ -1,5 +1,17 @@
 const BOOKS = [
   {
+    title: "The Fog and the Flow: A Memoir of Finding Trust in the Face of Uncertainty",
+    author: "Renee Maxine Haas",
+    category: "Non-fiction",
+    genre: "Travel memoir",
+    moods: ["Thoughtful", "Emotional"],
+    image: "/Renee-Maxine-Haas/assets/the-fog-and-the-flow-cover.webp",
+    imageFit: "contain",
+    imageAlt: "The Fog and the Flow book cover by Renee Maxine Haas",
+    url: "/Renee-Maxine-Haas/",
+    hook: "A reflective travel memoir about life transitions, self-trust and learning to move with life through uncertainty."
+  },
+  {
     title: "Between You, Me, and the Fence Post",
     author: "Hunter Snow",
     category: "Contemporary",
