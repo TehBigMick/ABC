@@ -1,5 +1,17 @@
 const BOOKS = [
   {
+    title: "The F*ck Them Theory: Self-Help for People Who Are Done Being the Bigger Person",
+    author: "Keltie Knight",
+    category: "Non-fiction",
+    genre: "Self-help",
+    moods: ["Thoughtful", "Emotional"],
+    image: "/Keltie-Knight/assets/the-fck-them-theory-cover.webp",
+    imageFit: "contain",
+    imageAlt: "The F*ck Them Theory book cover by Keltie Knight",
+    url: "/Keltie-Knight/",
+    hook: "Bold, funny self-help on confidence, female empowerment, relationships and overcoming rejection for anyone ready to stop people-pleasing."
+  },
+  {
     title: "The Fog and the Flow: A Memoir of Finding Trust in the Face of Uncertainty",
     author: "Renee Maxine Haas",
     category: "Non-fiction",
