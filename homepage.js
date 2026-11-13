@@ -1,5 +1,17 @@
 const BOOKS = [
   {
+    title: "You Don't Own Them: A Practical Parenting Guide for Raising Humans You Actually Like",
+    author: "Jonathan Smolowe",
+    category: "Non-fiction",
+    genre: "Parenting",
+    moods: ["Thoughtful"],
+    image: "/Jonathan-Smolowe/assets/you-dont-own-them-cover.webp",
+    imageFit: "contain",
+    imageAlt: "You Don't Own Them book cover by Jonathan Smolowe",
+    url: "/Jonathan-Smolowe/",
+    hook: "A father of three reflects on raising his children, and they respond as adults with their own memories and disagreements."
+  },
+  {
     title: "The F*ck Them Theory: Self-Help for People Who Are Done Being the Bigger Person",
     author: "Keltie Knight",
     category: "Non-fiction",

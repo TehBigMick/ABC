@@ -1,0 +1,88 @@
+.theme-smolowe {
+  --deep: #173c2d;
+  --accent: #4b6738;
+  --accent-soft: #dce5c7;
+  --paper: #f6f4e9;
+  --wash: #eaf0df;
+  --gold: #a46729;
+  --muted: #505b52;
+}
+
+.theme-smolowe .hero h1 {
+  margin-bottom: 16px;
+  font-size: clamp(3rem, 7.2vw, 6.5rem);
+  line-height: 0.96;
+}
+
+.theme-smolowe .book-subtitle {
+  max-width: 28ch;
+  margin-bottom: 15px;
+  color: var(--deep);
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(1.35rem, 2.4vw, 2rem);
+  line-height: 1.2;
+}
+
+.theme-smolowe .byline {
+  margin-bottom: 22px;
+  color: var(--accent);
+  font-weight: 750;
+}
+
+.theme-smolowe .byline a {
+  text-underline-offset: 4px;
+}
+
+.theme-smolowe .hero-art {
+  min-height: 0;
+  padding: clamp(26px, 5vw, 60px);
+  background: radial-gradient(ellipse at 35% 22%, #70915a, var(--deep) 75%);
+  border-radius: var(--radius);
+  transform: none;
+}
+
+.theme-smolowe .hero-cover {
+  z-index: 1;
+  display: block;
+  width: min(100%, 295px);
+  height: auto;
+  border-radius: 3px;
+  box-shadow: 0 20px 38px rgba(13, 34, 25, 0.45);
+}
+
+.theme-smolowe .start-panel {
+  background: var(--deep);
+}
+
+.theme-smolowe .start-panel p {
+  margin-bottom: 0;
+  color: #edf1e6;
+}
+
+.theme-smolowe .author-profile {
+  align-items: center;
+}
+
+.theme-smolowe .author-profile .book-actions {
+  margin-top: 24px;
+}
+
+.theme-smolowe .author-portrait {
+  width: min(100%, 260px);
+  margin: 0 auto;
+}
+
+.theme-smolowe .author-portrait img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+}
+
+@media (max-width: 940px) {
+  .theme-smolowe .final-panel {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+}
