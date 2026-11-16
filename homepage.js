@@ -1,5 +1,65 @@
 const BOOKS = [
   {
+    title: "The Last Page",
+    author: "Katie Holt",
+    category: "Romance",
+    genre: "Bookshop romance",
+    moods: ["Cosy", "Emotional"],
+    image: "/Katie-Holt/assets/the-last-page.webp",
+    imageFit: "contain",
+    imageAlt: "Cover of The Last Page by Katie Holt",
+    url: "/Katie-Holt/",
+    hook: "A New York bookseller teams up with the man who inherited her beloved shop when they discover it might close."
+  },
+  {
+    title: "Like in Love with You",
+    author: "Emma R. Alban",
+    category: "Romance",
+    genre: "Sapphic Regency romance",
+    moods: ["Emotional", "Cosy"],
+    image: "/Emma-R-Alban/assets/like-in-love-with-you.webp",
+    imageFit: "contain",
+    imageAlt: "Cover of Like in Love with You by Emma R. Alban",
+    url: "/Emma-R-Alban/",
+    hook: "In Regency Bath, Catherine plans to steal a rival’s suitor and finds herself falling for her rival."
+  },
+  {
+    title: "The Iron Garden Sutra",
+    author: "A. D. Sui",
+    category: "Science fiction",
+    genre: "Science-fiction mystery",
+    moods: ["Eerie", "Thoughtful"],
+    image: "/AD-Sui/assets/the-iron-garden-sutra.webp",
+    imageFit: "contain",
+    imageAlt: "Cover of The Iron Garden Sutra by A. D. Sui",
+    url: "/AD-Sui/",
+    hook: "A monk boards a long-lost starship to tend to its dead. Something aboard starts hunting the living."
+  },
+  {
+    title: "Molting",
+    author: "Kathryn Tennison",
+    category: "Horror",
+    genre: "Haunted-house horror",
+    moods: ["Eerie"],
+    image: "/Kathryn-Tennison/assets/molting.webp",
+    imageFit: "contain",
+    imageAlt: "Cover of Molting by Kathryn Tennison",
+    url: "/Kathryn-Tennison/",
+    hook: "Michelle buys an isolated house to start over and discovers something is already nesting there."
+  },
+  {
+    title: "Murder Most Cryptic",
+    author: "Alys Cummings",
+    category: "Crime & Thriller",
+    genre: "Puzzle mystery",
+    moods: ["Thoughtful", "Cosy"],
+    image: "/Alys-Cummings/assets/murder-most-cryptic.webp",
+    imageFit: "contain",
+    imageAlt: "Cover of Murder Most Cryptic by Alys Cummings",
+    url: "/Alys-Cummings/",
+    hook: "A stranger dies at a recovery meeting, leaving a cryptic clue in his pocket that points to murder."
+  },
+  {
     title: "How to Find Love in the Cereal Aisle",
     author: "Alissa DeRogatis",
     category: "Romance",
@@ -124,7 +184,8 @@ const BOOKS = [
     category: "Non-fiction",
     genre: "True hotel stories",
     moods: ["Cosy", "Thoughtful"],
-    image: "https://devenmatthews.com/wp-content/uploads/2026/07/Screen-Shot-2026-07-10-at-4.56.18-PM-7.png",
+    image: "/Deven-Matthews/assets/seen-most-of-it-cover.webp",
+    imageFit: "contain",
     imageAlt: "I Won't Say I've Seen It All, But I've Seen Most of It book cover by Deven Matthews",
     url: "/Deven-Matthews/",
     hook: "Twenty-five years behind a hotel front desk, told through true encounters with the funniest, strangest and most unforgettable guests."

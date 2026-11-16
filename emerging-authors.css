@@ -33,6 +33,41 @@
   --wash: #e7efe6;
 }
 
+.theme-holt {
+  --deep: #354c31;
+  --accent: #526b40;
+  --accent-soft: #e0e6c7;
+  --wash: #eef1dd;
+}
+
+.theme-alban {
+  --deep: #56324f;
+  --accent: #843c70;
+  --accent-soft: #f3d9e3;
+  --wash: #f7eaf0;
+}
+
+.theme-sui {
+  --deep: #31493f;
+  --accent: #4c6346;
+  --accent-soft: #d6e1c2;
+  --wash: #eaf0df;
+}
+
+.theme-tennison {
+  --deep: #35342a;
+  --accent: #6a5836;
+  --accent-soft: #e4d7bd;
+  --wash: #eee8dc;
+}
+
+.theme-cummings {
+  --deep: #24394d;
+  --accent: #49637c;
+  --accent-soft: #d6e5ec;
+  --wash: #e8f0f4;
+}
+
 .emerging-author .hero-grid {
   gap: clamp(32px, 6vw, 80px);
 }
