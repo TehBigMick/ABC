@@ -1,5 +1,17 @@
 const BOOKS = [
   {
+    title: "Letter To Service",
+    author: "DK Holmes",
+    category: "Non-fiction",
+    genre: "Military memoir",
+    moods: ["Thoughtful"],
+    image: "https://online.fliphtml5.com/kckkz/Letter-To-Service092526EBup16/files/shot.jpg?6=",
+    imageFit: "contain",
+    imageAlt: "Cover of Letter To Service by DK Holmes",
+    url: "/DK-Holmes/",
+    hook: "A retired U.S. Air Force veteran reflects on the meaning of service and what Americans owe one another."
+  },
+  {
     title: "The Last Page",
     author: "Katie Holt",
     category: "Romance",
