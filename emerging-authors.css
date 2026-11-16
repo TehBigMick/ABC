@@ -1,0 +1,144 @@
+.theme-derogatis {
+  --deep: #7b302e;
+  --accent: #9b4039;
+  --accent-soft: #f6d1be;
+  --wash: #f8ece2;
+}
+
+.theme-roe {
+  --deep: #431c45;
+  --accent: #783870;
+  --accent-soft: #ead3e7;
+  --wash: #f2e8f0;
+}
+
+.theme-odom {
+  --deep: #404335;
+  --accent: #75512e;
+  --accent-soft: #e8d3ae;
+  --wash: #f0ebdc;
+}
+
+.theme-kiefer {
+  --deep: #3e322b;
+  --accent: #805133;
+  --accent-soft: #edcfb2;
+  --wash: #f2e7d8;
+}
+
+.theme-odonnell {
+  --deep: #214744;
+  --accent: #346358;
+  --accent-soft: #d0e5d7;
+  --wash: #e7efe6;
+}
+
+.emerging-author .hero-grid {
+  gap: clamp(32px, 6vw, 80px);
+}
+
+.emerging-author .hero h1 {
+  margin-bottom: 18px;
+  font-size: clamp(2.9rem, 7.1vw, 6.4rem);
+  line-height: 0.97;
+}
+
+.emerging-author .first-book {
+  margin-bottom: 12px;
+  color: var(--deep);
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(1.3rem, 2.3vw, 2rem);
+  line-height: 1.24;
+}
+
+.emerging-author .hero-art {
+  min-height: 0;
+  padding: clamp(28px, 5vw, 57px);
+  background: radial-gradient(ellipse at 28% 12%, var(--accent), var(--deep) 77%);
+  border-radius: var(--radius);
+  transform: none;
+}
+
+.emerging-author .hero-cover {
+  z-index: 1;
+  display: block;
+  width: min(100%, 278px);
+  height: auto;
+  border-radius: 3px;
+  box-shadow: 0 16px 35px rgba(0, 0, 0, 0.42);
+}
+
+.emerging-author .section {
+  padding-block: clamp(60px, 7vw, 88px);
+}
+
+.emerging-author .section-heading {
+  display: block;
+  margin-bottom: 24px;
+}
+
+.emerging-author .section-heading h2,
+.emerging-author .about-copy h2 {
+  font-size: clamp(2rem, 4.1vw, 3.55rem);
+  line-height: 1.02;
+}
+
+.emerging-author .start-panel {
+  background: var(--deep);
+}
+
+.emerging-author .start-panel a {
+  font-weight: 750;
+  text-underline-offset: 4px;
+}
+
+.follow-up-books {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 27rem), 1fr));
+  gap: 20px;
+}
+
+.follow-up-books .book-card {
+  display: grid;
+  grid-template-columns: minmax(90px, 0.37fr) minmax(0, 1fr);
+}
+
+.follow-up-books .book-card:only-child {
+  max-width: 49rem;
+}
+
+.book-cover-frame {
+  display: grid;
+  align-content: center;
+  justify-items: center;
+  padding: clamp(9px, 1.6vw, 20px);
+  background: color-mix(in srgb, var(--accent-soft) 75%, #fff);
+}
+
+.book-cover-frame .book-cover {
+  width: min(100%, 135px);
+  height: auto;
+  aspect-ratio: auto;
+  border-radius: 2px;
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.18);
+}
+
+.follow-up-books .book-body {
+  padding: clamp(14px, 2.5vw, 28px);
+}
+
+@media (max-width: 940px) {
+  .emerging-author .hero-art {
+    max-width: 510px;
+  }
+}
+
+@media (max-width: 700px) {
+  .emerging-author .hero h1 {
+    font-size: clamp(2.65rem, 9.5vw, 4rem);
+  }
+
+  .emerging-author .hero-cover {
+    width: min(100%, 220px);
+  }
+}

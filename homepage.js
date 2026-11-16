@@ -1,5 +1,65 @@
 const BOOKS = [
   {
+    title: "How to Find Love in the Cereal Aisle",
+    author: "Alissa DeRogatis",
+    category: "Romance",
+    genre: "Contemporary romance",
+    moods: ["Emotional"],
+    image: "/Alissa-DeRogatis/assets/how-to-find-love-in-the-cereal-aisle.webp",
+    imageFit: "contain",
+    imageAlt: "Cover of How to Find Love in the Cereal Aisle by Alissa DeRogatis",
+    url: "/Alissa-DeRogatis/",
+    hook: "A blocked romance novelist tries to stage her own meet-cutes, with help from the best friend who might already be her leading man."
+  },
+  {
+    title: "A Game of Hearts and Heists",
+    author: "Ruby Roe",
+    category: "Romance",
+    genre: "Sapphic fantasy romance",
+    moods: ["Adrenaline", "Eerie"],
+    image: "/Ruby-Roe/assets/a-game-of-hearts-and-heists.webp",
+    imageFit: "contain",
+    imageAlt: "Cover of A Game of Hearts and Heists by Ruby Roe",
+    url: "/Ruby-Roe/",
+    hook: "Two women with a history take on a heist in a city where magical tattoos can make your fortune or make you a target."
+  },
+  {
+    title: "By Blood, By Salt",
+    author: "J. L. Odom",
+    category: "Fantasy & LitRPG",
+    genre: "Military fantasy",
+    moods: ["Adrenaline", "Thoughtful"],
+    image: "/JL-Odom/assets/by-blood-by-salt.webp",
+    imageFit: "contain",
+    imageAlt: "Cover of By Blood, By Salt by J. L. Odom",
+    url: "/JL-Odom/",
+    hook: "A debt soldier hunts a jinn in the desert and walks into a struggle for the throne."
+  },
+  {
+    title: "This Wretched Valley",
+    author: "Jenny Kiefer",
+    category: "Horror",
+    genre: "Wilderness horror",
+    moods: ["Eerie", "Adrenaline"],
+    image: "/Jenny-Kiefer/assets/this-wretched-valley.webp",
+    imageFit: "contain",
+    imageAlt: "Cover of This Wretched Valley by Jenny Kiefer",
+    url: "/Jenny-Kiefer/",
+    hook: "Four people head into the Kentucky backcountry to film a first ascent. The valley has other plans for them."
+  },
+  {
+    title: "No Comfort for the Dead",
+    author: "R. P. O’Donnell",
+    category: "Crime & Thriller",
+    genre: "Irish village mystery",
+    moods: ["Thoughtful", "Eerie"],
+    image: "/RP-ODonnell/assets/no-comfort-for-the-dead.webp",
+    imageFit: "contain",
+    imageAlt: "Cover of No Comfort for the Dead by R. P. O’Donnell",
+    url: "/RP-ODonnell/",
+    hook: "A West Cork librarian sees a murder and knows the police have arrested the wrong man. Also published as All the Old Clocks."
+  },
+  {
     title: "You Don't Own Them: A Practical Parenting Guide for Raising Humans You Actually Like",
     author: "Jonathan Smolowe",
     category: "Non-fiction",
@@ -507,7 +567,7 @@ function trackEvent(name, parameters = {}) {
 }
 
 function normalise(value) {
-  return value.toLocaleLowerCase("en-GB").trim();
+  return value.toLocaleLowerCase("en-GB").replace(/[‘’]/g, "'").trim();
 }
 
 function getFilteredBooks() {
