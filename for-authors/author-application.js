@@ -3,6 +3,7 @@ const submitButton = document.getElementById("submitApplication");
 const formStatus = document.getElementById("formStatus");
 const bookHook = document.getElementById("bookHook");
 const hookCount = document.getElementById("hookCount");
+const checkoutUrl = document.getElementById("stripeCheckoutLink")?.href;
 
 function trackEvent(name, parameters = {}) {
   if (typeof window.gtag === "function") {
@@ -34,7 +35,9 @@ const endpoint = form.dataset.formEndpoint.trim();
 
 if (isValidEndpoint(endpoint)) {
   submitButton.disabled = false;
-  setStatus("Required fields are checked before the application is sent.");
+  setStatus(checkoutUrl
+    ? "After you submit, you’ll continue to Stripe checkout."
+    : "Required fields are checked before the application is sent.");
 }
 
 bookHook.addEventListener("input", updateHookCount);
@@ -75,18 +78,26 @@ form.addEventListener("submit", async (event) => {
     if (!response.ok) {
       throw new Error(`Submission failed with status ${response.status}`);
     }
-
-    form.reset();
-    updateHookCount();
-    setStatus("Application received. Thank you—we will review it before getting in touch.", "success");
-    trackEvent("author_application_submitted");
   } catch (error) {
     setStatus("The application could not be sent. Please wait a moment and try again.", "error");
     trackEvent("author_application_error");
+    return;
   } finally {
     submitButton.disabled = false;
     submitButton.textContent = "Send application";
   }
+
+  form.reset();
+  updateHookCount();
+  trackEvent("author_application_submitted");
+
+  if (checkoutUrl) {
+    setStatus("Application received. Taking you to Stripe…", "success");
+    window.location.assign(checkoutUrl);
+    return;
+  }
+
+  setStatus("Application received. We’ll review it and get in touch.", "success");
 });
 
 document.getElementById("year").textContent = new Date().getFullYear();

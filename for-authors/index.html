@@ -69,7 +69,7 @@
     ]
   }
   </script>
-  <script defer src="/for-authors/author-application.js"></script>
+  <script defer src="/for-authors/author-application.js?v=2"></script>
 </head>
 
 <body>
@@ -104,7 +104,7 @@
             <a class="button button-primary" href="#apply">Apply to be featured</a>
             <a class="button button-secondary" href="#what-you-get">See what is included</a>
           </div>
-          <p class="hero-note">Applying is free. You can start an <a class="text-link" href="#pricing">author page subscription</a> after editorial approval.</p>
+          <p class="hero-note">Applying is free. Submit your application to continue to Stripe for your <a class="text-link" href="#pricing">author page trial</a>.</p>
         </div>
 
         <aside class="feature-preview" aria-label="Example author feature">
@@ -215,8 +215,9 @@
             <strong>30 days free, then US$7.99 per month.</strong>
             A payment method is required to start the trial. Billing begins after the trial and renews monthly until you cancel.
           </p>
-          <p id="checkout-instructions">Already approved? Use the email address from your application at checkout.</p>
-          <a class="button button-primary" href="https://buy.stripe.com/5kQ5kD7Yn89T5aF0UU83C00" aria-describedby="checkout-instructions">Start your free trial with Stripe</a>
+          <p id="checkout-instructions">Use the same email address at checkout so we can match your subscription to your application.</p>
+          <a class="button button-primary" href="#apply" aria-describedby="checkout-instructions">Start your application</a>
+          <p class="hero-note">Already applied? <a class="text-link" id="stripeCheckoutLink" href="https://buy.stripe.com/5kQ5kD7Yn89T5aF0UU83C00">Continue to Stripe</a>.</p>
         </div>
       </div>
 
@@ -231,15 +232,15 @@
         <li>
           <span>2</span>
           <div>
-            <h3>Editorial review</h3>
-            <p>The submission is checked for fit, accuracy, presentation and whether it offers readers a useful recommendation.</p>
+            <h3>Start your free trial</h3>
+            <p>Once your application is sent, you’ll go straight to Stripe to start your subscription.</p>
           </div>
         </li>
         <li>
           <span>3</span>
           <div>
-            <h3>Start your subscription</h3>
-            <p>We’ll confirm your page details after editorial approval. You can then start your subscription through Stripe.</p>
+            <h3>Editorial review</h3>
+            <p>We’ll check your submission for fit, accuracy and presentation. If accepted, we’ll confirm your page details before publication.</p>
           </div>
         </li>
       </ol>
@@ -345,7 +346,7 @@
 
           <label class="consent-row">
             <input name="editorial_review" type="checkbox" value="accepted" required>
-            <span>I understand that submitting does not guarantee a feature and that publication details will be agreed separately.</span>
+            <span>I understand that publication requires editorial approval and that listing details will be agreed separately.</span>
           </label>
 
           <div class="form-footer">
